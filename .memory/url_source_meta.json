@@ -1,0 +1,107 @@
+{
+  "_source_id": 14,
+  "sources": {
+    "FlClash项目架构分析": {
+      "https://github.com/chen08209/FlClash": {
+        "id": 1,
+        "publisher": "GitHub",
+        "url": "https://github.com/chen08209/FlClash",
+        "title": "FlClash GitHub项目主页",
+        "info": "项目基本信息、技术栈(Flutter 81.9%、Golang 2.8%)、支持平台(Android、Windows、macOS、Linux)、主要特性(多平台支持、Material You设计、WebDAV同步等)、构建要求等"
+      },
+      "https://deepwiki.com/chen08209/FlClash/9-dependencies": {
+        "id": 2,
+        "publisher": "DeepWiki",
+        "url": "https://deepwiki.com/chen08209/FlClash/9-dependencies",
+        "title": "FlClash项目依赖分析",
+        "info": "FlClash项目的完整依赖架构，包括Flutter/Dart依赖(状态管理Riverpod、UI组件、网络通信等)、Go模块依赖(ClashMeta核心引擎、加密库、系统集成库等)、构建时依赖等详细分析"
+      },
+      "https://gitcode.com/gh_mirrors/fl/FlClash/tree/main/lib": {
+        "id": 3,
+        "publisher": "GitCode",
+        "url": "https://gitcode.com/gh_mirrors/fl/FlClash/tree/main/lib",
+        "title": "FlClash Flutter前端代码结构",
+        "info": "Flutter前端代码的详细目录结构分析，包括lib/common(共享组件)、lib/core(核心业务)、lib/models(数据模型)、lib/pages(页面组件)、lib/manager(管理器)等模块化结构"
+      },
+      "https://github.com/chen08209/FlClash/issues/564": {
+        "id": 4,
+        "publisher": "GitHub",
+        "url": "https://github.com/chen08209/FlClash/issues/564",
+        "title": "Android VpnService实现问题分析",
+        "info": "Android平台VpnService实现的详细技术分析，包括问题描述(停止连接后VpnService没有停止)、解决方案演进(Intent控制机制)、技术架构(TempActivity+Intent Action)、兼容性问题等"
+      }
+    },
+    "FlClash 内置浏览器集成技术设计方案": {
+      "https://juejin.cn/post/7307857934923202611": {
+        "id": 5,
+        "publisher": "稀土掘金",
+        "url": "https://juejin.cn/post/7307857934923202611",
+        "title": "在 Flutter 中使用 WebView 创建一个功能齐全的浏览器",
+        "info": "详细介绍了使用flutter_inappwebview插件创建功能齐全的浏览器应用，包括标签页管理、状态维护、开发者控制台等完整实现方案"
+      },
+      "https://blog.csdn.net/shelutai/article/details/130132625": {
+        "id": 6,
+        "publisher": "CSDN博客",
+        "url": "https://blog.csdn.net/shelutai/article/details/130132625",
+        "title": "Flutter通过FFI调用Go动态库的完整实现方案",
+        "info": "提供了Flutter通过FFI调用Go动态库的完整技术方案，包括Go代码编写、编译、Dart FFI调用、Android平台配置等"
+      },
+      "https://blog.gitcode.com/2aa0af3de5aa335a788d8189eeff4e4c.html": {
+        "id": 7,
+        "publisher": "GitCode",
+        "url": "https://blog.gitcode.com/2aa0af3de5aa335a788d8189eeff4e4c.html",
+        "title": "Flutter_inappwebview在Flutter 3.27.x版本中的性能问题分析",
+        "info": "分析了Flutter 3.27.x版本中flutter_inappwebview的性能问题，包括页面导航缓慢、性能下降等问题，并提供了解决方案"
+      },
+      "https://bbs.itying.com/topic/67a39b6a55a429007d7cf282": {
+        "id": 8,
+        "publisher": "IT营",
+        "url": "https://bbs.itying.com/topic/67a39b6a55a429007d7cf282",
+        "title": "Flutter浏览器标签页管理插件chrome_tab_bar的使用",
+        "info": "介绍了Chrome Tab Bar插件的使用方法，包括安装、基础用法、高级用法以及与WebView结合的多标签页浏览器实现"
+      },
+      "https://bbs.itying.com/topic/67b08e8636bb8501316f0797": {
+        "id": 9,
+        "publisher": "IT营",
+        "url": "https://bbs.itying.com/topic/67b08e8636bb8501316f0797",
+        "title": "Flutter浏览器标签页插件flutter_browser_tabs的使用",
+        "info": "详细介绍了flutter_browser_tabs插件的使用方法，包括插件介绍、使用步骤、完整示例代码和详细说明"
+      },
+      "https://juejin.cn/post/7156901434489831461": {
+        "id": 10,
+        "publisher": "稀土掘金",
+        "url": "https://juejin.cn/post/7156901434489831461",
+        "title": "Flutter与WebView通信方案和JSBridge SDK实现详解",
+        "info": "详细介绍了Flutter与WebView通信方案，包括webview_flutter组件使用、双向通信机制、发布订阅和请求响应两种通信模式，以及完整的JSBridge SDK代码实现"
+      },
+      "https://www.freesion.com/article/9241151134/": {
+        "id": 11,
+        "publisher": "灰信网",
+        "url": "https://www.freesion.com/article/9241151134/",
+        "title": "Android接入WebView（四）——浏览器书签与历史记录详细处理",
+        "info": "提供了Android WebView书签和历史记录管理的完整实现方案，包括SQLite数据库操作、UI界面设计和功能实现"
+      },
+      "https://blog.csdn.net/vitaviva/article/details/105313729": {
+        "id": 12,
+        "publisher": "CSDN博客",
+        "url": "https://blog.csdn.net/vitaviva/article/details/105313729",
+        "title": "Flutter TabBarView实现多Tab页切换",
+        "info": "详细介绍了在Flutter中利用TabBar和TabBarView组件创建多标签页APP结构的技术方案，包括页面定义、TabInfo类使用及DefaultTabController的组合方式"
+      },
+      "https://developer.baidu.com/article/detail.html?id=3396577": {
+        "id": 13,
+        "publisher": "百度开发者中心",
+        "url": "https://developer.baidu.com/article/detail.html?id=3396577",
+        "title": "Flutter WebView与网页的深度交互探索",
+        "info": "深入探讨Flutter WebView与网页之间的交互方式，包括数据传递、事件处理及实现步骤，提供了完整的交互解决方案"
+      },
+      "https://docs.flutter.cn/cookbook/design/tabs/": {
+        "id": 14,
+        "publisher": "Flutter中文文档",
+        "url": "https://docs.flutter.cn/cookbook/design/tabs/",
+        "title": "使用 tabs",
+        "info": "Flutter官方文档中关于Tab组件的使用指南，提供了创建tabs布局的官方教程和最佳实践"
+      }
+    }
+  }
+}
