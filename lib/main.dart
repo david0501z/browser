@@ -11,7 +11,6 @@ import 'services/settings_service.dart';
 import 'services/database_service.dart';
 import 'themes/browser_theme.dart';
 import 'utils/device_info_helper.dart';
-import 'providers/browser_providers.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,6 +32,9 @@ void main() async {
 }
 
 Future<void> _requestPermissions() async {
+  // 请求网络权限
+  await Permission.network.request();
+  
   // 请求存储权限（Android）
   if (await DeviceInfoHelper.isAndroid()) {
     await Permission.storage.request();
@@ -41,9 +43,6 @@ Future<void> _requestPermissions() async {
   
   // 请求通知权限
   await Permission.notification.request();
-  
-  // 请求位置权限（如果需要）
-  await Permission.location.request();
 }
 
 class FlClashBrowserApp extends ConsumerWidget {
@@ -51,13 +50,14 @@ class FlClashBrowserApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final settingsService = ref.watch(settingsServiceProvider);
+    final settings = ref.watch(settingsServiceProvider);
     
     return MaterialApp(
       title: 'FlClash浏览器',
       debugShowCheckedModeBanner: false,
       theme: BrowserTheme.getTheme(
-        isDark: settingsService.currentSettings?.browserSettings.darkMode ?? false,
+        isDark: settings.isDarkMode,
+        primaryColor: settings.primaryColor,
       ),
       home: const RootPage(),
       routes: {

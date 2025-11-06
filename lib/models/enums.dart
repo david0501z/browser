@@ -50,7 +50,7 @@ enum CloudService {
 /// 缓存模式枚举
 enum CacheMode {
   /// 默认缓存
-  default,
+  defaultCache,
   
   /// 忽略缓存
   ignore,
@@ -1522,10 +1522,10 @@ enum MessageQueueType {
   /// Azure Service Bus
   servicebus,
   
-  • ActiveMQ
+  /// ActiveMQ
   activemq,
   
-  • ZeroMQ
+  /// ZeroMQ
   zmq,
 }
 
@@ -2488,25 +2488,25 @@ enum MessageBroker {
   /// Azure Service Bus
   servicebus,
   
-  • IBM MQ
+  /// IBM MQ
   ibmmq,
   
-  • TIBCO EMS
+  /// TIBCO EMS
   tibco,
   
-  • ActiveMQ
+  /// ActiveMQ
   activemq,
   
-  • HornetQ
+  /// HornetQ
   hornetq,
   
-  • Qpid
+  /// Qpid
   qpid,
   
-  • ZeroMQ
+  /// ZeroMQ
   zmq,
   
-  • NATS
+  /// NATS
   nats,
 }
 
@@ -2527,37 +2527,37 @@ enum CacheServer {
   /// Infinispan
   infinispan,
   
-  • Couchbase
+  /// Couchbase
   couchbase,
   
-  • Aerospike
+  /// Aerospike
   aerospike,
   
-  • Riak KV
+  /// Riak KV
   riak,
   
-  • etcd
+  /// etcd
   etcd,
   
-  • Consul
+  /// Consul
   consul,
   
-  • Voldemort
+  /// Voldemort
   voldemort,
   
-  • Tokyo Cabinet
+  /// Tokyo Cabinet
   tokyo,
   
-  • LevelDB
+  /// LevelDB
   leveldb,
   
-  • RocksDB
+  /// RocksDB
   rocksdb,
   
-  • Cassandra
+  /// Cassandra
   cassandra,
   
-  • ScyllaDB
+  /// ScyllaDB
   scylladb,
 }
 
@@ -2575,25 +2575,25 @@ enum SearchEngine {
   /// Lucene
   lucene,
   
-  • Algolia
+  /// Algolia
   algolia,
   
-  • MeiliSearch
+  /// MeiliSearch
   meilisearch,
   
-  • Typesense
+  /// Typesense
   typesense,
   
-  • OpenSearch
+  /// OpenSearch
   opensearch,
   
-  • Amazon CloudSearch
+  /// Amazon CloudSearch
   cloudsearch,
   
-  • Azure Cognitive Search
+  /// Azure Cognitive Search
   cognitive,
   
-  • Google Custom Search
+  /// Google Custom Search
   customsearch,
 }
 
@@ -2611,28 +2611,28 @@ enum StreamProcessingFramework {
   /// Apache Samza
   samza,
   
-  • Apache Beam
+  /// Apache Beam
   beam,
   
-  • Apache Pulsar Functions
+  /// Apache Pulsar Functions
   pulsar,
   
-  • Akka Streams
+  /// Akka Streams
   akka,
   
-  • RxJava
+  /// RxJava
   rxjava,
   
-  • Reactor
+  /// Reactor
   reactor,
   
-  • Vert.x
+  /// Vert.x
   vertx,
   
-  • Quarkus
+  /// Quarkus
   quarkus,
   
-  • Micronaut
+  /// Micronaut
   micronaut,
 }
 
@@ -2641,911 +2641,900 @@ enum BatchProcessingFramework {
   /// Apache Spark
   spark,
   
-  • Apache Hadoop MapReduce
+  /// Apache Hadoop MapReduce
   mapreduce,
   
-  • Apache Pig
+  /// Apache Pig
   pig,
   
-  • Apache Hive
+  /// Apache Hive
   hive,
   
-  • Apache Impala
+  /// Apache Impala
   impala,
   
-  • Apache Drill
+  /// Apache Drill
   drill,
   
-  • Apache Flink
+  /// Apache Flink
   flink,
   
-  • Apache Beam
+  /// Apache Beam
   beam,
   
-  • Dask
+  /// Dask
   dask,
   
-  • Ray
+  /// Ray
   ray,
   
-  • Celery
+  /// Celery
   celery,
 }
 
 /// 数据仓库枚举
 enum DataWarehouse {
-  • Amazon Redshift
+  /// Amazon Redshift
   redshift,
   
-  • Google BigQuery
+  /// Google BigQuery
   bigquery,
   
-  • Snowflake
+  /// Snowflake
   snowflake,
   
-  • Azure Synapse
+  /// Azure Synapse
   synapse,
   
-  • Oracle Data Warehouse
+  /// Oracle Data Warehouse
   oracle,
   
-  • IBM Db2 Warehouse
+  /// IBM Db2 Warehouse
   db2,
   
-  • SAP HANA
+  /// SAP HANA
   hana,
   
-  • Vertica
+  /// Vertica
   vertica,
   
-  • Greenplum
+  /// Greenplum
   greenplum,
   
-  • ClickHouse
+  /// ClickHouse
   clickhouse,
   
-  • Apache Druid
+  /// Apache Druid
   druid,
   
-  • Apache Pinot
+  /// Apache Pinot
   pinot,
 }
 
 /// 数据湖枚举
 enum DataLake {
-  • Amazon S3
+  /// Amazon S3
   s3,
   
-  • Azure Data Lake
+  /// Azure Data Lake
   datalake,
   
-  • Google Cloud Storage
+  /// Google Cloud Storage
   gcs,
   
-  • Apache HDFS
+  /// Apache HDFS
   hdfs,
   
-  • Delta Lake
+  /// Delta Lake
   delta,
   
-  • Apache Iceberg
+  /// Apache Iceberg
   iceberg,
   
-  • Apache Hudi
+  /// Apache Hudi
   hudi,
   
-  • Apache Parquet
+  /// Apache Parquet
   parquet,
   
-  • Apache Avro
+  /// Apache Avro
   avro,
   
-  • Apache ORC
+  /// Apache ORC
   orc,
 }
 
 /// 机器学习框架枚举
 enum MachineLearningFramework {
-  • TensorFlow
+  /// TensorFlow
   tensorflow,
   
-  • PyTorch
+  /// PyTorch
   pytorch,
   
-  • scikit-learn
+  /// scikit-learn
   sklearn,
   
-  • Keras
+  /// Keras
   keras,
   
-  • MXNet
+  /// MXNet
   mxnet,
   
-  • Caffe
+  /// Caffe
   caffe,
   
-  • CNTK
+  /// CNTK
   cntk,
   
-  • XGBoost
+  /// XGBoost
   xgboost,
   
-  • LightGBM
+  /// LightGBM
   lightgbm,
   
-  • CatBoost
+  /// CatBoost
   catboost,
   
-  • H2O
+  /// H2O
   h2o,
   
-  • Spark MLlib
+  /// Spark MLlib
   mllib,
   
-  • Mahout
+  /// Mahout
   mahout,
   
-  • Weka
+  /// Weka
   weka,
   
-  • RapidMiner
+  /// RapidMiner
   rapidminer,
   
-  • R
+  /// R
   r,
   
-  • Julia
+  /// Julia
   julia,
 }
 
 /// 深度学习框架枚举
 enum DeepLearningFramework {
-  • TensorFlow
+  /// TensorFlow
   tensorflow,
   
-  • PyTorch
+  /// PyTorch
   pytorch,
   
-  • Keras
+  /// Keras
   keras,
   
-  • MXNet
+  /// MXNet
   mxnet,
   
-  • Caffe
+  /// Caffe
   caffe,
   
-  • CNTK
+  /// CNTK
   cntk,
   
-  • Chainer
+  /// Chainer
   chainer,
   
-  • Theano
+  /// Theano
   theano,
   
-  • TensorLayer
+  /// TensorLayer
   tensorlayer,
   
-  • DeepLearning4J
+  /// DeepLearning4J
   dl4j,
   
-  • Neon
+  /// Neon
   neon,
   
-  • Brainstorm
+  /// Brainstorm
   brainstorm,
   
-  • Lasagne
+  /// Lasagne
   lasagne,
   
-  • Blocks
+  /// Blocks
   blocks,
   
-  • TFLearn
+  /// TFLearn
   tflearn,
   
-  • Sonnet
+  /// Sonnet
   sonnet,
 }
 
 /// 自然语言处理框架枚举
 enum NLPFramework {
-  • spaCy
+  /// spaCy
   spacy,
   
-  • NLTK
+  /// NLTK
   nltk,
   
-  • Stanford CoreNLP
+  /// Stanford CoreNLP
   corenlp,
   
-  • OpenNLP
+  /// OpenNLP
   opennlp,
   
-  • Gensim
+  /// Gensim
   gensim,
   
-  • TextBlob
+  /// TextBlob
   textblob,
   
-  • Pattern
+  /// Pattern
   pattern,
   
-  • Polyglot
+  /// Polyglot
   polyglot,
   
-  • Word2Vec
+  /// Word2Vec
   word2vec,
   
-  • GloVe
+  /// GloVe
   glove,
   
-  • FastText
+  /// FastText
   fasttext,
   
-  • BERT
+  /// BERT
   bert,
   
-  • GPT
+  /// GPT
   gpt,
   
-  • Transformer
+  /// Transformer
   transformer,
   
-  • Hugging Face Transformers
+  /// Hugging Face Transformers
   transformers,
   
-  • AllenNLP
+  /// AllenNLP
   allennlp,
   
-  • Flair
+  /// Flair
   flair,
   
-  • Stanza
+  /// Stanza
   stanza,
 }
 
 /// 计算机视觉框架枚举
 enum ComputerVisionFramework {
-  • OpenCV
+  /// OpenCV
   opencv,
   
-  • PIL
+  /// PIL
   pil,
   
-  • scikit-image
+  /// scikit-image
   skimage,
   
-  • SimpleCV
+  /// SimpleCV
   simplecv,
   
-  • Mahotas
+  /// Mahotas
   mahotas,
   
-  • imutils
+  /// imutils
   imutils,
   
-  • Pillow
+  /// Pillow
   pillow,
   
-  • ImageIO
+  /// ImageIO
   imageio,
   
-  • image
+  /// image
   image,
   
-  • dlib
+  /// dlib
   dlib,
   
-  • face_recognition
+  /// face_recognition
   facerecognition,
   
-  • MediaPipe
+  /// MediaPipe
   mediapipe,
   
-  • YOLO
+  /// YOLO
   yolo,
   
-  • R-CNN
+  /// R-CNN
   rcnn,
   
-  • SSD
+  /// SSD
   ssd,
   
-  • Faster R-CNN
+  /// Faster R-CNN
   fasterrcnn,
   
-  • Mask R-CNN
+  /// Mask R-CNN
   maskrcnn,
   
-  • Detectron2
+  /// Detectron2
   detectron2,
   
-  • MMDetection
+  /// MMDetection
   mmdetection,
   
-  • OpenMMLab
+  /// OpenMMLab
   openmmlab,
 }
 
 /// 语音识别框架枚举
 enum SpeechRecognitionFramework {
-  • SpeechRecognition
+  /// SpeechRecognition
   speechrecognition,
   
-  • pocketsphinx
+  /// pocketsphinx
   pocketsphinx,
   
-  • deepspeech
+  /// deepspeech
   deepspeech,
   
-  • wav2letter
+  /// wav2letter
   wav2letter,
   
-  • wav2vec2
+  /// wav2vec2
   wav2vec2,
   
-  • SpeechRecognition
-  speechrecognition,
-  
-  • Mozilla DeepSpeech
-  deepspeech,
-  
-  • Facebook wav2vec
+  /// Facebook wav2vec
   wav2vec,
   
-  • OpenAI Whisper
+  /// OpenAI Whisper
   whisper,
   
-  • Google Speech-to-Text
+  /// Google Speech-to-Text
   speechtotext,
   
-  • Azure Speech Services
+  /// Azure Speech Services
   azure,
   
-  • Amazon Transcribe
+  /// Amazon Transcribe
   transcribe,
   
-  • IBM Watson Speech to Text
+  /// IBM Watson Speech to Text
   watson,
   
-  • CMU Sphinx
+  /// CMU Sphinx
   sphinx,
 }
 
 /// 推荐系统框架枚举
 enum RecommendationFramework {
-  • Surprise
+  /// Surprise
   surprise,
   
-  • LightFM
+  /// LightFM
   lightfm,
   
-  • implicit
+  /// implicit
   implicit,
   
-  • LensKit
+  /// LensKit
   lenskit,
   
-  • Crab
+  /// Crab
   crab,
   
-  • recsys
+  /// recsys
   recsys,
   
-  • Spotlight
+  /// Spotlight
   spotlight,
   
-  • Cornac
+  /// Cornac
   cornac,
   
-  • TensorRec
+  /// TensorRec
   tensorrec,
   
-  • PyRec
+  /// PyRec
   pyrec,
   
-  • scikit-recommender
+  /// scikit-recommender
   scikit,
   
-  • FastFM
+  /// FastFM
   fastfm,
   
-  • LightGBM
+  /// LightGBM
   lightgbm,
   
-  • XGBoost
+  /// XGBoost
   xgboost,
   
-  • LibFM
+  /// LibFM
   libfm,
   
-  • LibFFM
+  /// LibFFM
   libffm,
   
-  • Field-aware Factorization Machine
+  /// Field-aware Factorization Machine
   ffm,
 }
 
 /// 强化学习框架枚举
 enum ReinforcementLearningFramework {
-  • OpenAI Gym
+  /// OpenAI Gym
   gym,
   
-  • Stable Baselines3
+  /// Stable Baselines3
   sb3,
   
-  • Ray RLlib
+  /// Ray RLlib
   rllib,
   
-  • TensorFlow Agents
+  /// TensorFlow Agents
   tfagents,
   
-  • Keras-RL
+  /// Keras-RL
   kerasrl,
   
-  • Dopamine
+  /// Dopamine
   dopamine,
   
-  • Coach
+  /// Coach
   coach,
   
-  • ReAgent
+  /// ReAgent
   reagent,
   
-  • PettingZoo
+  /// PettingZoo
   pettingzoo,
   
-  • DeepMind Lab
+  /// DeepMind Lab
   lab,
   
-  • Malmo
+  /// Malmo
   malmo,
   
-  • Unity ML-Agents
+  /// Unity ML-Agents
   mlagents,
   
-  • OpenAI Retro
+  /// OpenAI Retro
   retro,
   
-  • VizDoom
+  /// VizDoom
   vizdoom,
   
-  • PyGame Learning Environment
+  /// PyGame Learning Environment
   pgle,
   
-  • MinPy
+  /// MinPy
   minpy,
   
-  • RLlib
+  /// RLlib
   rllib,
   
-  • ACME
+  /// ACME
   acme,
 }
 
 /// 时间序列分析框架枚举
 enum TimeSeriesFramework {
-  • statsmodels
+  /// statsmodels
   statsmodels,
   
-  • Prophet
+  /// Prophet
   prophet,
   
-  • Sktime
+  /// Sktime
   sktime,
   
-  • tslearn
+  /// tslearn
   tslearn,
   
-  • pyts
+  /// pyts
   pyts,
   
-  • cesium
+  /// cesium
   cesium,
   
-  • darts
+  /// darts
   darts,
   
-  • Kats
+  /// Kats
   kats,
   
-  • AutoTS
+  /// AutoTS
   autots,
   
-  • AutoKeras
+  /// AutoKeras
   autokeras,
   
-  • NeuralProphet
+  /// NeuralProphet
   neuralprophet,
   
-  • Orbit
+  /// Orbit
   orbit,
   
-  • pmdarima
+  /// pmdarima
   pmdarima,
   
-  • arch
+  /// arch
   arch,
   
-  • tbats
+  /// tbats
   tbats,
   
-  • seasonal
+  /// seasonal
   seasonal,
   
-  • stldecompose
+  /// stldecompose
   stldecompose,
   
-  • PyFlux
+  /// PyFlux
   pyflux,
   
-  • tsfresh
+  /// tsfresh
   tsfresh,
   
-  • featuretools
+  /// featuretools
   featuretools,
 }
 
 /// 异常检测框架枚举
 enum AnomalyDetectionFramework {
-  • scikit-learn
+  /// scikit-learn
   sklearn,
   
-  • PyOD
+  /// PyOD
   pyod,
   
-  • IsolationForest
+  /// IsolationForest
   isolationforest,
   
-  • LOF
+  /// LOF
   lof,
   
-  • One-Class SVM
+  /// One-Class SVM
   oneclasssvm,
   
-  • DBSCAN
+  /// DBSCAN
   dbscan,
   
-  • Local Outlier Factor
-  lof,
-  
-  • Autoencoder
+  /// Autoencoder
   autoencoder,
   
-  • LSTM
+  /// LSTM
   lstm,
   
-  • GAN
+  /// GAN
   gan,
   
-  • Prophet
+  /// Prophet
   prophet,
   
-  • STL
+  /// STL
   stl,
   
-  • ESD
+  /// ESD
   esd,
   
-  • Grubbs
+  /// Grubbs
   grubbs,
   
-  • Dixon
+  /// Dixon
   dixon,
   
-  • Hampel Filter
+  /// Hampel Filter
   hampel,
   
-  • IQR
+  /// IQR
   iqr,
   
-  • Z-Score
+  /// Z-Score
   zscore,
 }
 
 /// 图数据库枚举
 enum GraphDatabase {
-  • Neo4j
+  /// Neo4j
   neo4j,
   
-  • Amazon Neptune
+  /// Amazon Neptune
   neptune,
   
-  • JanusGraph
+  /// JanusGraph
   janusgraph,
   
-  • ArangoDB
+  /// ArangoDB
   arangodb,
   
-  • OrientDB
+  /// OrientDB
   orientdb,
   
-  • Cayley
+  /// Cayley
   cayley,
   
-  • Dgraph
+  /// Dgraph
   dgraph,
   
-  • Cayley
-  cayley,
-  
-  • Titan
+  /// Titan
   titan,
   
-  • InfiniteGraph
+  /// InfiniteGraph
   infinitegraph,
   
-  • GraphDB
+  /// GraphDB
   graphdb,
   
-  • Stardog
+  /// Stardog
   stardog,
   
-  • AllegroGraph
+  /// AllegroGraph
   allegrograph,
   
-  • Blazegraph
+  /// Blazegraph
   blazegraph,
   
-  • Apache Jena
+  /// Apache Jena
   jena,
   
-  • Apache TinkerPop
+  /// Apache TinkerPop
   tinkerpop,
   
-  • Gremlin
+  /// Gremlin
   gremlin,
   
-  • Cypher
+  /// Cypher
   cypher,
   
-  • SPARQL
+  /// SPARQL
   sparql,
 }
 
 /// 时序数据库枚举
 enum TimeSeriesDatabase {
-  • InfluxDB
+  /// InfluxDB
   influxdb,
   
-  • TimescaleDB
+  /// TimescaleDB
   timescale,
   
-  • Prometheus
+  /// Prometheus
   prometheus,
   
-  • OpenTSDB
+  /// OpenTSDB
   opentsdb,
   
-  • Druid
+  /// Druid
   druid,
   
-  • Pinot
+  /// Pinot
   pinot,
   
-  • ClickHouse
+  /// ClickHouse
   clickhouse,
   
-  • QuestDB
+  /// QuestDB
   questdb,
   
-  • TDengine
+  /// TDengine
   tdengine,
   
-  • IoTDB
+  /// IoTDB
   iotdb,
   
-  • Kdb+
+  /// Kdb+
   kdb,
   
-  • Tick
+  /// Tick
   tick,
   
-  • Beringei
+  /// Beringei
   beringei,
   
-  • Heroic
+  /// Heroic
   heroic,
   
-  • Blueflood
+  /// Blueflood
   blueflood,
   
-  • KairosDB
+  /// KairosDB
   kairos,
   
-  • Whisper
+  /// Whisper
   whisper,
   
-  • Graphite
+  /// Graphite
   graphite,
   
-  • StatsD
+  /// StatsD
   statsd,
 }
 
 /// 区块链平台枚举
 enum BlockchainPlatform {
-  • Ethereum
+  /// Ethereum
   ethereum,
   
-  • Bitcoin
+  /// Bitcoin
   bitcoin,
   
-  • Hyperledger Fabric
+  /// Hyperledger Fabric
   fabric,
   
-  • Corda
+  /// Corda
   corda,
   
-  • Ripple
+  /// Ripple
   ripple,
   
-  • Stellar
+  /// Stellar
   stellar,
   
-  • EOS
+  /// EOS
   eos,
   
-  • Cardano
+  /// Cardano
   cardano,
   
-  • Polkadot
+  /// Polkadot
   polkadot,
   
-  • Solana
+  /// Solana
   solana,
   
-  • Avalanche
+  /// Avalanche
   avalanche,
   
-  • Chainlink
+  /// Chainlink
   chainlink,
   
-  • Polygon
+  /// Polygon
   polygon,
   
-  • Binance Smart Chain
+  /// Binance Smart Chain
   bsc,
   
-  • Tezos
+  /// Tezos
   tezos,
   
-  • Algorand
+  /// Algorand
   algorand,
   
-  • Cosmos
+  /// Cosmos
   cosmos,
   
-  • Near Protocol
+  /// Near Protocol
   near,
   
-  • Terra
+  /// Terra
   terra,
   
-  • Fantom
+  /// Fantom
   fantom,
 }
 
 /// 物联网平台枚举
 enum IoTPlatform {
-  • AWS IoT Core
+  /// AWS IoT Core
   awsiot,
   
-  • Azure IoT Hub
+  /// Azure IoT Hub
   azureiot,
   
-  • Google Cloud IoT Core
+  /// Google Cloud IoT Core
   gcp,
   
-  • IBM Watson IoT
+  /// IBM Watson IoT
   watson,
   
-  • Oracle IoT
+  /// Oracle IoT
   oracle,
   
-  • SAP IoT
+  /// SAP IoT
   sap,
   
-  • Alibaba Cloud IoT
+  /// Alibaba Cloud IoT
   aliyun,
   
-  • Tencent Cloud IoT
+  /// Tencent Cloud IoT
   tencent,
   
-  • Baidu Cloud IoT
+  /// Baidu Cloud IoT
   baidu,
   
-  • Huawei Cloud IoT
+  /// Huawei Cloud IoT
   huawei,
   
-  • ThingWorx
+  /// ThingWorx
   thingworx,
   
-  • PTC Windchill
+  /// PTC Windchill
   windchill,
   
-  • GE Predix
+  /// GE Predix
   predix,
   
-  • Siemens MindSphere
+  /// Siemens MindSphere
   mindsphere,
   
-  • Schneider Electric EcoStruxure
+  /// Schneider Electric EcoStruxure
   ecostruxure,
   
-  • ABB Ability
+  /// ABB Ability
   ability,
   
-  • Cisco IoT
+  /// Cisco IoT
   cisco,
   
-  • Intel IoT
+  /// Intel IoT
   intel,
   
-  • Qualcomm IoT
+  /// Qualcomm IoT
   qualcomm,
   
-  • MediaTek IoT
+  /// MediaTek IoT
   mediatek,
   
-  • ARM IoT
+  /// ARM IoT
   arm,
   
-  • Raspberry Pi
+  /// Raspberry Pi
   raspberrypi,
   
-  • Arduino
+  /// Arduino
   arduino,
   
-  • ESP32
+  /// ESP32
   esp32,
   
-  • ESP8266
+  /// ESP8266
   esp8266,
   
-  • MicroPython
+  /// MicroPython
   micropython,
   
-  • CircuitPython
+  /// CircuitPython
   circuitpython,
   
-  • PlatformIO
+  /// PlatformIO
   platformio,
   
-  • Zephyr
+  /// Zephyr
   zephyr,
   
-  • FreeRTOS
+  /// FreeRTOS
   freertos,
   
-  • RIOT
+  /// RIOT
   riot,
   
-  • Mynewt
+  /// Mynewt
   mynewt,
   
-  • mbed OS
+  /// mbed OS
   mbed,
   
-  • Contiki
+  /// Contiki
   contiki,
   
-  • TinyOS
+  /// TinyOS
   tinyos,
   
-  • LiteOS
+  /// LiteOS
   liteos,
   
-  • AliOS Things
+  /// AliOS Things
   alios,
   
-  • TencentOS tiny
+  /// TencentOS tiny
   tenscentos,
   
-  • Huawei LiteOS
+  /// Huawei LiteOS
   huaweiliteos,
   
-  • Amazon FreeRTOS
+  /// Amazon FreeRTOS
   freertosaws,
+}

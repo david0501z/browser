@@ -1,0 +1,199 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_$ProxyConfigImpl _$$ProxyConfigImplFromJson(Map<String, dynamic> json) =>
+    _$ProxyConfigImpl(
+      enabled: json['enabled'] as bool? ?? false,
+      mode: json['mode'] as String? ?? 'auto',
+      port: (json['port'] as num?)?.toInt() ?? 7890,
+      listenAddress: json['listenAddress'] as String? ?? '127.0.0.1',
+      rules: (json['rules'] as List<dynamic>?)
+              ?.map((e) => ProxyRule.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      bypassChina: json['bypassChina'] as bool? ?? false,
+      bypassLAN: json['bypassLAN'] as bool? ?? false,
+      primaryDNS: json['primaryDNS'] as String? ?? '1.1.1.1',
+      secondaryDNS: json['secondaryDNS'] as String? ?? '8.8.8.8',
+      dnsOverHttps: json['dnsOverHttps'] as bool? ?? false,
+      allowInsecure: json['allowInsecure'] as bool? ?? false,
+      enableIPv6: json['enableIPv6'] as bool? ?? true,
+      enableMux: json['enableMux'] as bool? ?? true,
+      connectionTimeout: (json['connectionTimeout'] as num?)?.toInt() ?? 30,
+      readTimeout: (json['readTimeout'] as num?)?.toInt() ?? 60,
+      retryCount: (json['retryCount'] as num?)?.toInt() ?? 10,
+      enableLog: json['enableLog'] as bool? ?? false,
+      logLevel: json['logLevel'] as String? ?? 'info',
+      logPath: json['logPath'] as String? ?? '/tmp/proxy.log',
+      enableTrafficStats: json['enableTrafficStats'] as bool? ?? true,
+      enableSpeedTest: json['enableSpeedTest'] as bool? ?? true,
+      selectedNodeId: json['selectedNodeId'] as String? ?? '',
+      nodes: (json['nodes'] as List<dynamic>?)
+              ?.map((e) => ProxyNode.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      customSettings:
+          json['customSettings'] as Map<String, dynamic>? ?? const {},
+    );
+
+Map<String, dynamic> _$$ProxyConfigImplToJson(_$ProxyConfigImpl instance) =>
+    <String, dynamic>{
+      'enabled': instance.enabled,
+      'mode': instance.mode,
+      'port': instance.port,
+      'listenAddress': instance.listenAddress,
+      'rules': instance.rules,
+      'bypassChina': instance.bypassChina,
+      'bypassLAN': instance.bypassLAN,
+      'primaryDNS': instance.primaryDNS,
+      'secondaryDNS': instance.secondaryDNS,
+      'dnsOverHttps': instance.dnsOverHttps,
+      'allowInsecure': instance.allowInsecure,
+      'enableIPv6': instance.enableIPv6,
+      'enableMux': instance.enableMux,
+      'connectionTimeout': instance.connectionTimeout,
+      'readTimeout': instance.readTimeout,
+      'retryCount': instance.retryCount,
+      'enableLog': instance.enableLog,
+      'logLevel': instance.logLevel,
+      'logPath': instance.logPath,
+      'enableTrafficStats': instance.enableTrafficStats,
+      'enableSpeedTest': instance.enableSpeedTest,
+      'selectedNodeId': instance.selectedNodeId,
+      'nodes': instance.nodes,
+      'customSettings': instance.customSettings,
+    };
+
+_$ProxyRuleImpl _$$ProxyRuleImplFromJson(Map<String, dynamic> json) =>
+    _$ProxyRuleImpl(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      type: $enumDecode(_$ProxyRuleTypeEnumMap, json['type']),
+      matchType: $enumDecode(_$ProxyMatchTypeEnumMap, json['matchType']),
+      match: json['match'] as String,
+      action: $enumDecode(_$ProxyActionEnumMap, json['action']),
+      enabled: json['enabled'] as bool? ?? true,
+      priority: (json['priority'] as num?)?.toInt() ?? 0,
+    );
+
+Map<String, dynamic> _$$ProxyRuleImplToJson(_$ProxyRuleImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'type': _$ProxyRuleTypeEnumMap[instance.type]!,
+      'matchType': _$ProxyMatchTypeEnumMap[instance.matchType]!,
+      'match': instance.match,
+      'action': _$ProxyActionEnumMap[instance.action]!,
+      'enabled': instance.enabled,
+      'priority': instance.priority,
+    };
+
+const _$ProxyRuleTypeEnumMap = {
+  ProxyRuleType.domain: 'domain',
+  ProxyRuleType.ip: 'ip',
+  ProxyRuleType.port: 'port',
+  ProxyRuleType.process: 'process',
+  ProxyRuleType.url: 'url',
+};
+
+const _$ProxyMatchTypeEnumMap = {
+  ProxyMatchType.exact: 'exact',
+  ProxyMatchType.prefix: 'prefix',
+  ProxyMatchType.suffix: 'suffix',
+  ProxyMatchType.regex: 'regex',
+  ProxyMatchType.contains: 'contains',
+};
+
+const _$ProxyActionEnumMap = {
+  ProxyAction.direct: 'direct',
+  ProxyAction.proxy: 'proxy',
+  ProxyAction.reject: 'reject',
+  ProxyAction.redirect: 'redirect',
+};
+
+_$ProxyNodeImpl _$$ProxyNodeImplFromJson(Map<String, dynamic> json) =>
+    _$ProxyNodeImpl(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      type: $enumDecode(_$ProxyNodeTypeEnumMap, json['type']),
+      server: json['server'] as String,
+      port: (json['port'] as num).toInt(),
+      protocol: json['protocol'] as String? ?? 'http',
+      auth: json['auth'] as String? ?? '',
+      encryption: json['encryption'] as String? ?? '',
+      proxyId: json['proxyId'] as String? ?? '',
+      status: $enumDecodeNullable(_$NodeStatusEnumMap, json['status']) ??
+          NodeStatus.disconnected,
+      latency: (json['latency'] as num?)?.toInt() ?? 0,
+      bandwidth: (json['bandwidth'] as num?)?.toInt() ?? 0,
+      region: json['region'] as String? ?? '',
+      tags:
+          (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+              const [],
+      available: json['available'] as bool? ?? true,
+      config: json['config'] as Map<String, dynamic>? ?? const {},
+    );
+
+Map<String, dynamic> _$$ProxyNodeImplToJson(_$ProxyNodeImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'type': _$ProxyNodeTypeEnumMap[instance.type]!,
+      'server': instance.server,
+      'port': instance.port,
+      'protocol': instance.protocol,
+      'auth': instance.auth,
+      'encryption': instance.encryption,
+      'proxyId': instance.proxyId,
+      'status': _$NodeStatusEnumMap[instance.status]!,
+      'latency': instance.latency,
+      'bandwidth': instance.bandwidth,
+      'region': instance.region,
+      'tags': instance.tags,
+      'available': instance.available,
+      'config': instance.config,
+    };
+
+const _$ProxyNodeTypeEnumMap = {
+  ProxyNodeType.http: 'http',
+  ProxyNodeType.socks5: 'socks5',
+  ProxyNodeType.shadowsocks: 'shadowsocks',
+  ProxyNodeType.vmess: 'vmess',
+  ProxyNodeType.trojan: 'trojan',
+  ProxyNodeType.vless: 'vless',
+};
+
+const _$NodeStatusEnumMap = {
+  NodeStatus.disconnected: 'disconnected',
+  NodeStatus.connecting: 'connecting',
+  NodeStatus.connected: 'connected',
+  NodeStatus.error: 'error',
+};
+
+_$TrafficConfigImpl _$$TrafficConfigImplFromJson(Map<String, dynamic> json) =>
+    _$TrafficConfigImpl(
+      enableStats: json['enableStats'] as bool? ?? true,
+      statsInterval: (json['statsInterval'] as num?)?.toInt() ?? 60,
+      recordHistory: json['recordHistory'] as bool? ?? true,
+      historyRetentionDays:
+          (json['historyRetentionDays'] as num?)?.toInt() ?? 7,
+      enableSpeedLimit: json['enableSpeedLimit'] as bool? ?? false,
+      uploadLimit: (json['uploadLimit'] as num?)?.toInt() ?? 0,
+      downloadLimit: (json['downloadLimit'] as num?)?.toInt() ?? 0,
+      enableTrafficAlert: json['enableTrafficAlert'] as bool? ?? false,
+      alertThreshold: (json['alertThreshold'] as num?)?.toInt() ?? 1000,
+    );
+
+Map<String, dynamic> _$$TrafficConfigImplToJson(_$TrafficConfigImpl instance) =>
+    <String, dynamic>{
+      'enableStats': instance.enableStats,
+      'statsInterval': instance.statsInterval,
+      'recordHistory': instance.recordHistory,
+      'historyRetentionDays': instance.historyRetentionDays,
+      'enableSpeedLimit': instance.enableSpeedLimit,
+      'uploadLimit': instance.uploadLimit,
+      'downloadLimit': instance.downloadLimit,
+      'enableTrafficAlert': instance.enableTrafficAlert,
+      'alertThreshold': instance.alertThreshold,
+    };

@@ -427,6 +427,31 @@ class BrowserTheme {
     );
   }
   
+  /// 获取浏览器主题（根据参数动态生成）
+  /// 
+  /// [isDark] 是否使用深色主题
+  /// [primaryColor] 自定义主色调，为null时使用默认色
+  static ThemeData getTheme({
+    required bool isDark,
+    Color? primaryColor,
+  }) {
+    if (isDark) {
+      return darkTheme.copyWith(
+        colorScheme: darkTheme.colorScheme.copyWith(
+          primary: primaryColor ?? const Color(0xFF64B5F6),
+          primaryContainer: primaryColor?.withOpacity(0.3) ?? const Color(0xFF1A237E),
+        ),
+      );
+    } else {
+      return lightTheme.copyWith(
+        colorScheme: lightTheme.colorScheme.copyWith(
+          primary: primaryColor ?? const Color(0xFF2196F3),
+          primaryContainer: primaryColor?.withOpacity(0.3) ?? const Color(0xFFE3F2FD),
+        ),
+      );
+    }
+  }
+
   /// 浏览器专用扩展方法
   static ExtensionData get browserExtensions {
     return ExtensionData();
@@ -496,22 +521,5 @@ class ExtensionData {
       default:
         return theme.colorScheme.surface;
     }
-  }
-  
-  /// 获取主题数据
-  static ThemeData getTheme({bool isDark = false, Color? primaryColor}) {
-    final theme = isDark ? darkTheme : lightTheme;
-    
-    // 如果提供了自定义主色，返回修改后的主题
-    if (primaryColor != null) {
-      return theme.copyWith(
-        colorScheme: theme.colorScheme.copyWith(
-          primary: primaryColor,
-          primaryContainer: primaryColor.withOpacity(0.1),
-        ),
-      );
-    }
-    
-    return theme;
   }
 }

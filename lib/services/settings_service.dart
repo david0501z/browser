@@ -404,21 +404,6 @@ class SettingsService extends ChangeNotifier {
     
     return parts.join(' · ');
   }
-  
-  /// 初始化设置服务
-  static Future<void> initialize() async {
-    await instance.loadSettings();
-  }
-  
-  /// 检查是否为首次启动
-  static Future<bool> isFirstLaunch() async {
-    final settings = instance.currentSettings;
-    if (settings == null) return true;
-    
-    // 检查是否为首次启动的逻辑
-    // 这里可以根据需要实现具体的首次启动判断逻辑
-    return settings.version == '1.0.0' && settings.createdAt == null;
-  }
 }
 
 /// 设置变更监听器

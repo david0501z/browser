@@ -1,0 +1,347 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'BrowserSettings.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_$BrowserSettingsImpl _$$BrowserSettingsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$BrowserSettingsImpl(
+      userAgent: json['userAgent'] as String?,
+      javascriptEnabled: json['javascriptEnabled'] as bool? ?? true,
+      domStorageEnabled: json['domStorageEnabled'] as bool? ?? true,
+      mixedContentEnabled: json['mixedContentEnabled'] as bool? ?? false,
+      cacheMode: $enumDecodeNullable(_$CacheModeEnumMap, json['cacheMode']) ??
+          CacheMode.defaultCache,
+      incognito: json['incognito'] as bool? ?? false,
+      cookiesEnabled: json['cookiesEnabled'] as bool? ?? true,
+      imagesEnabled: json['imagesEnabled'] as bool? ?? true,
+      cssEnabled: json['cssEnabled'] as bool? ?? true,
+      pluginsEnabled: json['pluginsEnabled'] as bool? ?? false,
+      mediaAutoplayEnabled: json['mediaAutoplayEnabled'] as bool? ?? false,
+      geolocationEnabled: json['geolocationEnabled'] as bool? ?? false,
+      cameraEnabled: json['cameraEnabled'] as bool? ?? false,
+      microphoneEnabled: json['microphoneEnabled'] as bool? ?? false,
+      notificationsEnabled: json['notificationsEnabled'] as bool? ?? false,
+      webrtcEnabled: json['webrtcEnabled'] as bool? ?? true,
+      fileAccessEnabled: json['fileAccessEnabled'] as bool? ?? false,
+      downloadManagerEnabled: json['downloadManagerEnabled'] as bool? ?? true,
+      defaultDownloadPath: json['defaultDownloadPath'] as String?,
+      defaultEncoding: json['defaultEncoding'] as String? ?? 'UTF-8',
+      fontSize: $enumDecodeNullable(_$FontSizeEnumMap, json['fontSize']) ??
+          FontSize.medium,
+      zoomLevel: (json['zoomLevel'] as num?)?.toDouble() ?? 1.0,
+      darkMode: json['darkMode'] as bool? ?? false,
+      readerMode: json['readerMode'] as bool? ?? false,
+      adBlockEnabled: json['adBlockEnabled'] as bool? ?? false,
+      trackingProtectionEnabled:
+          json['trackingProtectionEnabled'] as bool? ?? false,
+      popupBlockerEnabled: json['popupBlockerEnabled'] as bool? ?? true,
+      autofillEnabled: json['autofillEnabled'] as bool? ?? false,
+      passwordSaveEnabled: json['passwordSaveEnabled'] as bool? ?? false,
+      formAutofillEnabled: json['formAutofillEnabled'] as bool? ?? false,
+      privacyMode:
+          $enumDecodeNullable(_$PrivacyModeEnumMap, json['privacyMode']) ??
+              PrivacyMode.standard,
+      defaultSearchEngine: $enumDecodeNullable(
+              _$SearchEngineEnumMap, json['defaultSearchEngine']) ??
+          SearchEngine.google,
+      homepage: json['homepage'] as String? ?? 'about:blank',
+      newTabPage:
+          $enumDecodeNullable(_$NewTabPageEnumMap, json['newTabPage']) ??
+              NewTabPage.homepage,
+      keyboardShortcutsEnabled:
+          json['keyboardShortcutsEnabled'] as bool? ?? true,
+      mouseGesturesEnabled: json['mouseGesturesEnabled'] as bool? ?? false,
+      developerToolsEnabled: json['developerToolsEnabled'] as bool? ?? false,
+      consoleLoggingEnabled: json['consoleLoggingEnabled'] as bool? ?? false,
+      debugMode: json['debugMode'] as bool? ?? false,
+      performanceMonitoring: json['performanceMonitoring'] as bool? ?? false,
+      networkLogging: json['networkLogging'] as bool? ?? false,
+      memoryMonitoring: json['memoryMonitoring'] as bool? ?? false,
+      networkTimeout: (json['networkTimeout'] as num?)?.toInt() ?? 30000,
+      pageLoadTimeout: (json['pageLoadTimeout'] as num?)?.toInt() ?? 60000,
+      maxConcurrentConnections:
+          (json['maxConcurrentConnections'] as num?)?.toInt() ?? 10,
+      cacheSizeLimit: (json['cacheSizeLimit'] as num?)?.toInt() ?? 100,
+      dataCompressionEnabled: json['dataCompressionEnabled'] as bool? ?? false,
+      offlineModeEnabled: json['offlineModeEnabled'] as bool? ?? false,
+      fontFamily:
+          $enumDecodeNullable(_$FontFamilyEnumMap, json['fontFamily']) ??
+              FontFamily.system,
+      hardwareAccelerationEnabled:
+          json['hardwareAccelerationEnabled'] as bool? ?? true,
+      multiprocessEnabled: json['multiprocessEnabled'] as bool? ?? true,
+      securityLevel: $enumDecodeNullable(
+              _$BrowserSecurityLevelEnumMap, json['securityLevel']) ??
+          BrowserSecurityLevel.medium,
+      sslVerification: $enumDecodeNullable(
+              _$SslVerificationEnumMap, json['sslVerification']) ??
+          SslVerification.strict,
+      certificatePinning: $enumDecodeNullable(
+              _$CertificatePinningEnumMap, json['certificatePinning']) ??
+          CertificatePinning.disabled,
+      contentFilterMode: $enumDecodeNullable(
+              _$ContentFilterModeEnumMap, json['contentFilterMode']) ??
+          ContentFilterMode.none,
+      proxySettings: json['proxySettings'] == null
+          ? null
+          : ProxySettings.fromJson(
+              json['proxySettings'] as Map<String, dynamic>),
+      customCSS: json['customCSS'] as String?,
+      customJavaScript: json['customJavaScript'] as String?,
+      extensionSettings: (json['extensionSettings'] as List<dynamic>?)
+              ?.map(
+                  (e) => ExtensionSettings.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      syncSettings: json['syncSettings'] == null
+          ? null
+          : SyncSettings.fromJson(json['syncSettings'] as Map<String, dynamic>),
+      advancedSettings: json['advancedSettings'] == null
+          ? null
+          : AdvancedSettings.fromJson(
+              json['advancedSettings'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$BrowserSettingsImplToJson(
+        _$BrowserSettingsImpl instance) =>
+    <String, dynamic>{
+      'userAgent': instance.userAgent,
+      'javascriptEnabled': instance.javascriptEnabled,
+      'domStorageEnabled': instance.domStorageEnabled,
+      'mixedContentEnabled': instance.mixedContentEnabled,
+      'cacheMode': _$CacheModeEnumMap[instance.cacheMode]!,
+      'incognito': instance.incognito,
+      'cookiesEnabled': instance.cookiesEnabled,
+      'imagesEnabled': instance.imagesEnabled,
+      'cssEnabled': instance.cssEnabled,
+      'pluginsEnabled': instance.pluginsEnabled,
+      'mediaAutoplayEnabled': instance.mediaAutoplayEnabled,
+      'geolocationEnabled': instance.geolocationEnabled,
+      'cameraEnabled': instance.cameraEnabled,
+      'microphoneEnabled': instance.microphoneEnabled,
+      'notificationsEnabled': instance.notificationsEnabled,
+      'webrtcEnabled': instance.webrtcEnabled,
+      'fileAccessEnabled': instance.fileAccessEnabled,
+      'downloadManagerEnabled': instance.downloadManagerEnabled,
+      'defaultDownloadPath': instance.defaultDownloadPath,
+      'defaultEncoding': instance.defaultEncoding,
+      'fontSize': _$FontSizeEnumMap[instance.fontSize]!,
+      'zoomLevel': instance.zoomLevel,
+      'darkMode': instance.darkMode,
+      'readerMode': instance.readerMode,
+      'adBlockEnabled': instance.adBlockEnabled,
+      'trackingProtectionEnabled': instance.trackingProtectionEnabled,
+      'popupBlockerEnabled': instance.popupBlockerEnabled,
+      'autofillEnabled': instance.autofillEnabled,
+      'passwordSaveEnabled': instance.passwordSaveEnabled,
+      'formAutofillEnabled': instance.formAutofillEnabled,
+      'privacyMode': _$PrivacyModeEnumMap[instance.privacyMode]!,
+      'defaultSearchEngine':
+          _$SearchEngineEnumMap[instance.defaultSearchEngine]!,
+      'homepage': instance.homepage,
+      'newTabPage': _$NewTabPageEnumMap[instance.newTabPage]!,
+      'keyboardShortcutsEnabled': instance.keyboardShortcutsEnabled,
+      'mouseGesturesEnabled': instance.mouseGesturesEnabled,
+      'developerToolsEnabled': instance.developerToolsEnabled,
+      'consoleLoggingEnabled': instance.consoleLoggingEnabled,
+      'debugMode': instance.debugMode,
+      'performanceMonitoring': instance.performanceMonitoring,
+      'networkLogging': instance.networkLogging,
+      'memoryMonitoring': instance.memoryMonitoring,
+      'networkTimeout': instance.networkTimeout,
+      'pageLoadTimeout': instance.pageLoadTimeout,
+      'maxConcurrentConnections': instance.maxConcurrentConnections,
+      'cacheSizeLimit': instance.cacheSizeLimit,
+      'dataCompressionEnabled': instance.dataCompressionEnabled,
+      'offlineModeEnabled': instance.offlineModeEnabled,
+      'fontFamily': _$FontFamilyEnumMap[instance.fontFamily]!,
+      'hardwareAccelerationEnabled': instance.hardwareAccelerationEnabled,
+      'multiprocessEnabled': instance.multiprocessEnabled,
+      'securityLevel': _$BrowserSecurityLevelEnumMap[instance.securityLevel]!,
+      'sslVerification': _$SslVerificationEnumMap[instance.sslVerification]!,
+      'certificatePinning':
+          _$CertificatePinningEnumMap[instance.certificatePinning]!,
+      'contentFilterMode':
+          _$ContentFilterModeEnumMap[instance.contentFilterMode]!,
+      'proxySettings': instance.proxySettings,
+      'customCSS': instance.customCSS,
+      'customJavaScript': instance.customJavaScript,
+      'extensionSettings': instance.extensionSettings,
+      'syncSettings': instance.syncSettings,
+      'advancedSettings': instance.advancedSettings,
+    };
+
+const _$CacheModeEnumMap = {
+  CacheMode.defaultCache: 'defaultCache',
+  CacheMode.noCache: 'noCache',
+  CacheMode.forceCache: 'forceCache',
+  CacheMode.networkOnly: 'networkOnly',
+  CacheMode.cacheOnly: 'cacheOnly',
+};
+
+const _$FontSizeEnumMap = {
+  FontSize.small: 'small',
+  FontSize.medium: 'medium',
+  FontSize.large: 'large',
+  FontSize.extraLarge: 'extraLarge',
+};
+
+const _$PrivacyModeEnumMap = {
+  PrivacyMode.standard: 'standard',
+  PrivacyMode.enhanced: 'enhanced',
+  PrivacyMode.strict: 'strict',
+};
+
+const _$SearchEngineEnumMap = {
+  SearchEngine.google: 'google',
+  SearchEngine.baidu: 'baidu',
+  SearchEngine.bing: 'bing',
+  SearchEngine.duckduckgo: 'duckduckgo',
+  SearchEngine.yahoo: 'yahoo',
+  SearchEngine.sogou: 'sogou',
+};
+
+const _$NewTabPageEnumMap = {
+  NewTabPage.homepage: 'homepage',
+  NewTabPage.blank: 'blank',
+  NewTabPage.bookmarks: 'bookmarks',
+  NewTabPage.history: 'history',
+  NewTabPage.speedDial: 'speedDial',
+};
+
+const _$FontFamilyEnumMap = {
+  FontFamily.system: 'system',
+  FontFamily.serif: 'serif',
+  FontFamily.sansSerif: 'sansSerif',
+  FontFamily.monospace: 'monospace',
+};
+
+const _$BrowserSecurityLevelEnumMap = {
+  BrowserSecurityLevel.low: 'low',
+  BrowserSecurityLevel.medium: 'medium',
+  BrowserSecurityLevel.high: 'high',
+};
+
+const _$SslVerificationEnumMap = {
+  SslVerification.strict: 'strict',
+  SslVerification.relaxed: 'relaxed',
+  SslVerification.disabled: 'disabled',
+};
+
+const _$CertificatePinningEnumMap = {
+  CertificatePinning.disabled: 'disabled',
+  CertificatePinning.enabled: 'enabled',
+  CertificatePinning.httpsOnly: 'httpsOnly',
+};
+
+const _$ContentFilterModeEnumMap = {
+  ContentFilterMode.none: 'none',
+  ContentFilterMode.basic: 'basic',
+  ContentFilterMode.strict: 'strict',
+};
+
+_$ProxySettingsImpl _$$ProxySettingsImplFromJson(Map<String, dynamic> json) =>
+    _$ProxySettingsImpl(
+      enabled: json['enabled'] as bool? ?? false,
+      type: $enumDecodeNullable(_$ProxyTypeEnumMap, json['type']) ??
+          ProxyType.direct,
+      host: json['host'] as String?,
+      port: (json['port'] as num?)?.toInt(),
+      username: json['username'] as String?,
+      password: json['password'] as String?,
+      bypassList: (json['bypassList'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$$ProxySettingsImplToJson(_$ProxySettingsImpl instance) =>
+    <String, dynamic>{
+      'enabled': instance.enabled,
+      'type': _$ProxyTypeEnumMap[instance.type]!,
+      'host': instance.host,
+      'port': instance.port,
+      'username': instance.username,
+      'password': instance.password,
+      'bypassList': instance.bypassList,
+    };
+
+const _$ProxyTypeEnumMap = {
+  ProxyType.direct: 'direct',
+  ProxyType.http: 'http',
+  ProxyType.https: 'https',
+  ProxyType.socks: 'socks',
+  ProxyType.socks5: 'socks5',
+};
+
+_$ExtensionSettingsImpl _$$ExtensionSettingsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ExtensionSettingsImpl(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      enabled: json['enabled'] as bool? ?? true,
+      config: json['config'] as Map<String, dynamic>?,
+    );
+
+Map<String, dynamic> _$$ExtensionSettingsImplToJson(
+        _$ExtensionSettingsImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'enabled': instance.enabled,
+      'config': instance.config,
+    };
+
+_$SyncSettingsImpl _$$SyncSettingsImplFromJson(Map<String, dynamic> json) =>
+    _$SyncSettingsImpl(
+      enabled: json['enabled'] as bool? ?? false,
+      serverUrl: json['serverUrl'] as String?,
+      syncInterval: (json['syncInterval'] as num?)?.toInt() ?? 60,
+      dataTypes: (json['dataTypes'] as List<dynamic>?)
+              ?.map((e) => $enumDecode(_$SyncDataTypeEnumMap, e))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$$SyncSettingsImplToJson(_$SyncSettingsImpl instance) =>
+    <String, dynamic>{
+      'enabled': instance.enabled,
+      'serverUrl': instance.serverUrl,
+      'syncInterval': instance.syncInterval,
+      'dataTypes':
+          instance.dataTypes.map((e) => _$SyncDataTypeEnumMap[e]!).toList(),
+    };
+
+const _$SyncDataTypeEnumMap = {
+  SyncDataType.bookmarks: 'bookmarks',
+  SyncDataType.history: 'history',
+  SyncDataType.passwords: 'passwords',
+  SyncDataType.formData: 'formData',
+  SyncDataType.settings: 'settings',
+};
+
+_$AdvancedSettingsImpl _$$AdvancedSettingsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AdvancedSettingsImpl(
+      debugMode: json['debugMode'] as bool? ?? false,
+      performanceMonitoring: json['performanceMonitoring'] as bool? ?? false,
+      networkLogging: json['networkLogging'] as bool? ?? false,
+      memoryMonitoring: json['memoryMonitoring'] as bool? ?? false,
+      webViewVersion: json['webViewVersion'] as String?,
+      customWebViewParams: json['customWebViewParams'] as Map<String, dynamic>?,
+    );
+
+Map<String, dynamic> _$$AdvancedSettingsImplToJson(
+        _$AdvancedSettingsImpl instance) =>
+    <String, dynamic>{
+      'debugMode': instance.debugMode,
+      'performanceMonitoring': instance.performanceMonitoring,
+      'networkLogging': instance.networkLogging,
+      'memoryMonitoring': instance.memoryMonitoring,
+      'webViewVersion': instance.webViewVersion,
+      'customWebViewParams': instance.customWebViewParams,
+    };

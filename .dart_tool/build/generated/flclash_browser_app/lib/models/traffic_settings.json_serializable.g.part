@@ -1,0 +1,21 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_$TrafficSettingsImpl _$$TrafficSettingsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TrafficSettingsImpl(
+      enableMonitoring: json['enableMonitoring'] as bool? ?? true,
+      historyLimit: (json['historyLimit'] as num?)?.toInt() ?? 1000,
+      enableLogging: json['enableLogging'] as bool? ?? true,
+      logLevel: (json['logLevel'] as num?)?.toInt() ?? 1,
+    );
+
+Map<String, dynamic> _$$TrafficSettingsImplToJson(
+        _$TrafficSettingsImpl instance) =>
+    <String, dynamic>{
+      'enableMonitoring': instance.enableMonitoring,
+      'historyLimit': instance.historyLimit,
+      'enableLogging': instance.enableLogging,
+      'logLevel': instance.logLevel,
+    };

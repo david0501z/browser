@@ -1,0 +1,258 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_$SubscriptionLinkImpl _$$SubscriptionLinkImplFromJson(
+        Map<String, dynamic> json) =>
+    _$SubscriptionLinkImpl(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      url: json['url'] as String,
+      type: $enumDecodeNullable(_$SubscriptionTypeEnumMap, json['type']) ??
+          SubscriptionType.unknown,
+      status:
+          $enumDecodeNullable(_$SubscriptionStatusEnumMap, json['status']) ??
+              SubscriptionStatus.active,
+      lastUpdated: json['lastUpdated'] == null
+          ? null
+          : DateTime.parse(json['lastUpdated'] as String),
+      nextUpdate: json['nextUpdate'] == null
+          ? null
+          : DateTime.parse(json['nextUpdate'] as String),
+      updateIntervalHours: (json['updateIntervalHours'] as num?)?.toInt() ?? 24,
+      autoUpdate: json['autoUpdate'] as bool? ?? true,
+      enabled: json['enabled'] as bool? ?? true,
+      nodes: (json['nodes'] as List<dynamic>?)
+              ?.map((e) => ProxyNode.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      description: json['description'] as String?,
+      groups:
+          (json['groups'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      source: json['source'] as String?,
+      createdAt: json['createdAt'] == null
+          ? DateTime.now
+          : DateTime.parse(json['createdAt'] as String),
+      updatedAt: json['updatedAt'] == null
+          ? null
+          : DateTime.parse(json['updatedAt'] as String),
+      errorMessage: json['errorMessage'] as String?,
+      parseStats: json['parseStats'] == null
+          ? _emptyStats
+          : ParseStats.fromJson(json['parseStats'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$SubscriptionLinkImplToJson(
+        _$SubscriptionLinkImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'url': instance.url,
+      'type': _$SubscriptionTypeEnumMap[instance.type]!,
+      'status': _$SubscriptionStatusEnumMap[instance.status]!,
+      'lastUpdated': instance.lastUpdated?.toIso8601String(),
+      'nextUpdate': instance.nextUpdate?.toIso8601String(),
+      'updateIntervalHours': instance.updateIntervalHours,
+      'autoUpdate': instance.autoUpdate,
+      'enabled': instance.enabled,
+      'nodes': instance.nodes,
+      'description': instance.description,
+      'groups': instance.groups,
+      'tags': instance.tags,
+      'source': instance.source,
+      'createdAt': instance.createdAt.toIso8601String(),
+      'updatedAt': instance.updatedAt?.toIso8601String(),
+      'errorMessage': instance.errorMessage,
+      'parseStats': instance.parseStats,
+    };
+
+const _$SubscriptionTypeEnumMap = {
+  SubscriptionType.v2ray: 'v2ray',
+  SubscriptionType.clash: 'clash',
+  SubscriptionType.clashMeta: 'clashMeta',
+  SubscriptionType.ss: 'ss',
+  SubscriptionType.trojan: 'trojan',
+  SubscriptionType.unknown: 'unknown',
+};
+
+const _$SubscriptionStatusEnumMap = {
+  SubscriptionStatus.active: 'active',
+  SubscriptionStatus.disabled: 'disabled',
+  SubscriptionStatus.updating: 'updating',
+  SubscriptionStatus.error: 'error',
+};
+
+_$ParseStatsImpl _$$ParseStatsImplFromJson(Map<String, dynamic> json) =>
+    _$ParseStatsImpl(
+      totalNodes: (json['totalNodes'] as num?)?.toInt() ?? 0,
+      validNodes: (json['validNodes'] as num?)?.toInt() ?? 0,
+      invalidNodes: (json['invalidNodes'] as num?)?.toInt() ?? 0,
+      skippedNodes: (json['skippedNodes'] as num?)?.toInt() ?? 0,
+      parseErrors: (json['parseErrors'] as num?)?.toInt() ?? 0,
+      parseTimeMs: (json['parseTimeMs'] as num?)?.toInt() ?? 0,
+      lastParsedAt: json['lastParsedAt'] == null
+          ? null
+          : DateTime.parse(json['lastParsedAt'] as String),
+    );
+
+Map<String, dynamic> _$$ParseStatsImplToJson(_$ParseStatsImpl instance) =>
+    <String, dynamic>{
+      'totalNodes': instance.totalNodes,
+      'validNodes': instance.validNodes,
+      'invalidNodes': instance.invalidNodes,
+      'skippedNodes': instance.skippedNodes,
+      'parseErrors': instance.parseErrors,
+      'parseTimeMs': instance.parseTimeMs,
+      'lastParsedAt': instance.lastParsedAt?.toIso8601String(),
+    };
+
+_$SubscriptionImpl _$$SubscriptionImplFromJson(Map<String, dynamic> json) =>
+    _$SubscriptionImpl(
+      activeSubscriptionId: json['activeSubscriptionId'] as String?,
+      subscriptions: (json['subscriptions'] as List<dynamic>?)
+              ?.map((e) => SubscriptionLink.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      isUpdating: json['isUpdating'] as bool? ?? false,
+      globalUpdateIntervalHours:
+          (json['globalUpdateIntervalHours'] as num?)?.toInt() ?? 24,
+      autoUpdateEnabled: json['autoUpdateEnabled'] as bool? ?? true,
+      concurrentUpdate: json['concurrentUpdate'] as bool? ?? true,
+      cacheStrategy:
+          $enumDecodeNullable(_$CacheStrategyEnumMap, json['cacheStrategy']) ??
+              CacheStrategy.memory,
+      defaultSettings: json['defaultSettings'] == null
+          ? null
+          : SubscriptionSettings.fromJson(
+              json['defaultSettings'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$SubscriptionImplToJson(_$SubscriptionImpl instance) =>
+    <String, dynamic>{
+      'activeSubscriptionId': instance.activeSubscriptionId,
+      'subscriptions': instance.subscriptions,
+      'isUpdating': instance.isUpdating,
+      'globalUpdateIntervalHours': instance.globalUpdateIntervalHours,
+      'autoUpdateEnabled': instance.autoUpdateEnabled,
+      'concurrentUpdate': instance.concurrentUpdate,
+      'cacheStrategy': _$CacheStrategyEnumMap[instance.cacheStrategy]!,
+      'defaultSettings': instance.defaultSettings,
+    };
+
+const _$CacheStrategyEnumMap = {
+  CacheStrategy.memory: 'memory',
+  CacheStrategy.persistent: 'persistent',
+  CacheStrategy.none: 'none',
+};
+
+_$SubscriptionSettingsImpl _$$SubscriptionSettingsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$SubscriptionSettingsImpl(
+      connectTimeoutSeconds:
+          (json['connectTimeoutSeconds'] as num?)?.toInt() ?? 30,
+      readTimeoutSeconds: (json['readTimeoutSeconds'] as num?)?.toInt() ?? 60,
+      maxRetries: (json['maxRetries'] as num?)?.toInt() ?? 3,
+      verifySSLCert: json['verifySSLCert'] as bool? ?? true,
+      useProxy: json['useProxy'] as bool? ?? false,
+      proxyUrl: json['proxyUrl'] as String?,
+      mergeDuplicateNodes: json['mergeDuplicateNodes'] as bool? ?? true,
+      filterDuplicateNodes: json['filterDuplicateNodes'] as bool? ?? true,
+      validationLevel: $enumDecodeNullable(
+              _$ValidationLevelEnumMap, json['validationLevel']) ??
+          ValidationLevel.medium,
+    );
+
+Map<String, dynamic> _$$SubscriptionSettingsImplToJson(
+        _$SubscriptionSettingsImpl instance) =>
+    <String, dynamic>{
+      'connectTimeoutSeconds': instance.connectTimeoutSeconds,
+      'readTimeoutSeconds': instance.readTimeoutSeconds,
+      'maxRetries': instance.maxRetries,
+      'verifySSLCert': instance.verifySSLCert,
+      'useProxy': instance.useProxy,
+      'proxyUrl': instance.proxyUrl,
+      'mergeDuplicateNodes': instance.mergeDuplicateNodes,
+      'filterDuplicateNodes': instance.filterDuplicateNodes,
+      'validationLevel': _$ValidationLevelEnumMap[instance.validationLevel]!,
+    };
+
+const _$ValidationLevelEnumMap = {
+  ValidationLevel.low: 'low',
+  ValidationLevel.medium: 'medium',
+  ValidationLevel.high: 'high',
+};
+
+_$UpdateResultImpl _$$UpdateResultImplFromJson(Map<String, dynamic> json) =>
+    _$UpdateResultImpl(
+      success: json['success'] as bool,
+      subscriptionId: json['subscriptionId'] as String,
+      addedNodes: (json['addedNodes'] as num?)?.toInt() ?? 0,
+      updatedNodes: (json['updatedNodes'] as num?)?.toInt() ?? 0,
+      removedNodes: (json['removedNodes'] as num?)?.toInt() ?? 0,
+      error: json['error'] as String?,
+      durationMs: (json['durationMs'] as num?)?.toInt() ?? 0,
+      startTime: DateTime.parse(json['startTime'] as String),
+      endTime: DateTime.parse(json['endTime'] as String),
+    );
+
+Map<String, dynamic> _$$UpdateResultImplToJson(_$UpdateResultImpl instance) =>
+    <String, dynamic>{
+      'success': instance.success,
+      'subscriptionId': instance.subscriptionId,
+      'addedNodes': instance.addedNodes,
+      'updatedNodes': instance.updatedNodes,
+      'removedNodes': instance.removedNodes,
+      'error': instance.error,
+      'durationMs': instance.durationMs,
+      'startTime': instance.startTime.toIso8601String(),
+      'endTime': instance.endTime.toIso8601String(),
+    };
+
+_$ImportResultImpl _$$ImportResultImplFromJson(Map<String, dynamic> json) =>
+    _$ImportResultImpl(
+      success: json['success'] as bool,
+      importedSubscriptions:
+          (json['importedSubscriptions'] as num?)?.toInt() ?? 0,
+      totalNodes: (json['totalNodes'] as num?)?.toInt() ?? 0,
+      validNodes: (json['validNodes'] as num?)?.toInt() ?? 0,
+      failedSubscriptions: (json['failedSubscriptions'] as num?)?.toInt() ?? 0,
+      errors: (json['errors'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      importStats: json['importStats'] == null
+          ? _emptyImportStats
+          : ImportStats.fromJson(json['importStats'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$ImportResultImplToJson(_$ImportResultImpl instance) =>
+    <String, dynamic>{
+      'success': instance.success,
+      'importedSubscriptions': instance.importedSubscriptions,
+      'totalNodes': instance.totalNodes,
+      'validNodes': instance.validNodes,
+      'failedSubscriptions': instance.failedSubscriptions,
+      'errors': instance.errors,
+      'importStats': instance.importStats,
+    };
+
+_$ImportStatsImpl _$$ImportStatsImplFromJson(Map<String, dynamic> json) =>
+    _$ImportStatsImpl(
+      v2rayCount: (json['v2rayCount'] as num?)?.toInt() ?? 0,
+      ssCount: (json['ssCount'] as num?)?.toInt() ?? 0,
+      ssrCount: (json['ssrCount'] as num?)?.toInt() ?? 0,
+      trojanCount: (json['trojanCount'] as num?)?.toInt() ?? 0,
+      errorCount: (json['errorCount'] as num?)?.toInt() ?? 0,
+      totalImportTimeMs: (json['totalImportTimeMs'] as num?)?.toInt() ?? 0,
+    );
+
+Map<String, dynamic> _$$ImportStatsImplToJson(_$ImportStatsImpl instance) =>
+    <String, dynamic>{
+      'v2rayCount': instance.v2rayCount,
+      'ssCount': instance.ssCount,
+      'ssrCount': instance.ssrCount,
+      'trojanCount': instance.trojanCount,
+      'errorCount': instance.errorCount,
+      'totalImportTimeMs': instance.totalImportTimeMs,
+    };

@@ -1,0 +1,128 @@
+# FlClash Go Core .gitignore
+
+# Build outputs
+build/
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+coverage.html
+
+# Dependency directories
+vendor/
+
+# Go workspace file
+go.work
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Configuration files with sensitive data
+config.yaml
+config.json
+config.yml
+secrets.yaml
+secrets.json
+
+# Test coverage
+coverage/
+
+# Protobuf generated files
+*.pb.go
+*_pb2.py
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# nyc test coverage
+.nyc_output
+
+# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Bower dependency directory (https://bower.io/)
+bower_components
+
+# Dump files
+*.dump
+
+# Lock files
+package-lock.json
+yarn.lock
+
+# Flutter specific
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Android specific
+*.apk
+*.ap_
+*.aab
+
+# iOS specific
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# FlClash specific
+clash/
+logs/
+configs/
+temp/

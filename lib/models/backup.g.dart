@@ -1,0 +1,36 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'backup.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_$BackupImpl _$$BackupImplFromJson(Map<String, dynamic> json) => _$BackupImpl(
+      autoBackup: json['autoBackup'] as bool? ?? false,
+      backupInterval: (json['backupInterval'] as num?)?.toInt() ?? 7,
+      cloudBackup: json['cloudBackup'] as bool? ?? false,
+      cloudService:
+          $enumDecodeNullable(_$CloudServiceEnumMap, json['cloudService']) ??
+              CloudService.aliyun,
+      backupEncryption: json['backupEncryption'] as bool? ?? true,
+      keepCount: (json['keepCount'] as num?)?.toInt() ?? 5,
+    );
+
+Map<String, dynamic> _$$BackupImplToJson(_$BackupImpl instance) =>
+    <String, dynamic>{
+      'autoBackup': instance.autoBackup,
+      'backupInterval': instance.backupInterval,
+      'cloudBackup': instance.cloudBackup,
+      'cloudService': _$CloudServiceEnumMap[instance.cloudService]!,
+      'backupEncryption': instance.backupEncryption,
+      'keepCount': instance.keepCount,
+    };
+
+const _$CloudServiceEnumMap = {
+  CloudService.aliyun: 'aliyun',
+  CloudService.tencent: 'tencent',
+  CloudService.baidu: 'baidu',
+  CloudService.huawei: 'huawei',
+  CloudService.aws: 'aws',
+};

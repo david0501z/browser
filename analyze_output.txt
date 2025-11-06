@@ -1,0 +1,50 @@
+   Woah! You appear to be trying to run flutter as root.
+   We strongly recommend running the flutter tool without superuser privileges.
+  /
+📎
+Analyzing flclash_browser_app...                                
+
+warning • Unused import: 'dart:convert' • custom_analyze.dart:3:8 • unused_import
+warning • The value of the local variable 'filePath' isn't used • custom_analyze.dart:30:11 • unused_local_variable
+warning • Unused import: 'package:yaml/yaml.dart' • lib/config/clash_config_generator.dart:5:8 • unused_import
+  error • Undefined class 'FlClashSettings' • lib/config/clash_config_generator.dart:35:5 • undefined_class
+  error • Undefined class 'ProxyMode' • lib/config/clash_config_generator.dart:52:64 • undefined_class
+  error • Undefined name 'ProxyMode' • lib/config/clash_config_generator.dart:52:81 • undefined_identifier
+  error • Undefined class 'FlClashSettings' • lib/config/clash_config_generator.dart:76:5 • undefined_class
+  error • Undefined class 'FlClashSettings' • lib/config/clash_config_generator.dart:107:44 • undefined_class
+  error • Undefined class 'PortSettings' • lib/config/clash_config_generator.dart:121:43 • undefined_class
+  error • Undefined class 'DNSSettings' • lib/config/clash_config_generator.dart:148:42 • undefined_class
+  error • Undefined class 'RuleSettings' • lib/config/clash_config_generator.dart:225:5 • undefined_class
+  error • Undefined class 'TrafficSettings' • lib/config/clash_config_generator.dart:255:46 • undefined_class
+  error • The body might complete normally, causing 'null' to be returned, but the return type, 'String', is a potentially non-nullable type • lib/config/clash_config_generator.dart:402:10 • body_might_complete_normally
+  error • Undefined class 'ProxyMode' • lib/config/clash_config_generator.dart:402:28 • undefined_class
+  error • Undefined name 'ProxyMode' • lib/config/clash_config_generator.dart:404:12 • undefined_identifier
+  error • Undefined name 'ProxyMode' • lib/config/clash_config_generator.dart:406:12 • undefined_identifier
+  error • Undefined name 'ProxyMode' • lib/config/clash_config_generator.dart:408:12 • undefined_identifier
+  error • The body might complete normally, causing 'null' to be returned, but the return type, 'String', is a potentially non-nullable type • lib/config/clash_config_generator.dart:414:10 • body_might_complete_normally
+  error • Undefined class 'LogLevel' • lib/config/clash_config_generator.dart:414:27 • undefined_class
+  error • Undefined name 'LogLevel' • lib/config/clash_config_generator.dart:416:12 • undefined_identifier
+  error • Undefined name 'LogLevel' • lib/config/clash_config_generator.dart:418:12 • undefined_identifier
+  error • Undefined name 'LogLevel' • lib/config/clash_config_generator.dart:420:12 • undefined_identifier
+  error • Undefined name 'LogLevel' • lib/config/clash_config_generator.dart:422:12 • undefined_identifier
+  error • The method 'dump' isn't defined for the type 'ClashConfigGenerator' • lib/config/clash_config_generator.dart:474:20 • undefined_method
+  error • Undefined class 'FlClashSettings' • lib/config/clash_config_generator.dart:506:32 • undefined_class
+  error • Target of URI doesn't exist: 'config/index.dart' • lib/config/config_example.dart:2:8 • uri_does_not_exist
+  error • Undefined name 'RuleManager' • lib/config/config_example.dart:12:25 • undefined_identifier
+  error • The method 'RuleConfig' isn't defined for the type 'ConfigExample' • lib/config/config_example.dart:15:24 • undefined_method
+  error • Undefined name 'RuleType' • lib/config/config_example.dart:18:13 • undefined_identifier
+  error • Undefined name 'RuleAction' • lib/config/config_example.dart:20:15 • undefined_identifier
+  error • Undefined name 'RulePriority' • lib/config/config_example.dart:21:17 • undefined_identifier
+  error • The method 'RuleGroup' isn't defined for the type 'ConfigExample' • lib/config/config_example.dart:29:23 • undefined_method
+  error • The method 'RuleConfig' isn't defined for the type 'ConfigExample' • lib/config/config_example.dart:44:24 • undefined_method
+  error • Undefined name 'RuleType' • lib/config/config_example.dart:47:13 • undefined_identifier
+  error • Undefined name 'RuleAction' • lib/config/config_example.dart:49:15 • undefined_identifier
+  error • Undefined name 'RulePriority' • lib/config/config_example.dart:50:17 • undefined_identifier
+  error • Undefined name 'DNSSettingsManager' • lib/config/config_example.dart:73:24 • undefined_identifier
+  error • The method 'DNSServerConfig' isn't defined for the type 'ConfigExample' • lib/config/config_example.dart:86:29 • undefined_method
+  error • Undefined name 'DNSServerType' • lib/config/config_example.dart:89:13 • undefined_identifier
+  error • Undefined name 'DNSProtocolType' • lib/config/config_example.dart:92:17 • undefined_identifier
+  error • Undefined name 'RuleValidator' • lib/config/config_example.dart:117:23 • undefined_identifier
+  error • The method 'RuleConfig' isn't defined for the type 'ConfigExample' • lib/config/config_example.dart:120:22 • undefined_method
+  error • Undefined name 'RuleType' • lib/config/config_example.dart:123:13 • undefined_identifier
+  error • Undefined name 'RuleAction' • lib/config/config_example.dart:125:15 • undefined_identifier

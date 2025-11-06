@@ -628,9 +628,4 @@ class DeviceInfoHelper {
     
     return report;
   }
-  
-  /// 检查是否为Android平台
-  static bool isAndroid() {
-    return Platform.isAndroid;
-  }
 }

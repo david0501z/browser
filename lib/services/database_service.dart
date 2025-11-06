@@ -10,12 +10,6 @@ class DatabaseService {
   DatabaseService._internal();
 
   Database? _database;
-  
-  /// 初始化数据库服务
-  static Future<void> initialize() async {
-    final instance = DatabaseService();
-    await instance.database;
-  }
 
   Future<Database> get database async {
     if (_database != null) return _database!;

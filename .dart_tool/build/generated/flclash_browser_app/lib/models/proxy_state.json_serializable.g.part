@@ -1,0 +1,184 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_$ProxyServerImpl _$$ProxyServerImplFromJson(Map<String, dynamic> json) =>
+    _$ProxyServerImpl(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      server: json['server'] as String,
+      port: (json['port'] as num).toInt(),
+      username: json['username'] as String?,
+      password: json['password'] as String?,
+      protocol: $enumDecode(_$ProxyProtocolEnumMap, json['protocol']),
+      enabled: json['enabled'] as bool,
+      createdAt: DateTime.parse(json['createdAt'] as String),
+      lastUsedAt: json['lastUsedAt'] == null
+          ? null
+          : DateTime.parse(json['lastUsedAt'] as String),
+      latency: (json['latency'] as num?)?.toInt(),
+    );
+
+Map<String, dynamic> _$$ProxyServerImplToJson(_$ProxyServerImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'server': instance.server,
+      'port': instance.port,
+      'username': instance.username,
+      'password': instance.password,
+      'protocol': _$ProxyProtocolEnumMap[instance.protocol]!,
+      'enabled': instance.enabled,
+      'createdAt': instance.createdAt.toIso8601String(),
+      'lastUsedAt': instance.lastUsedAt?.toIso8601String(),
+      'latency': instance.latency,
+    };
+
+const _$ProxyProtocolEnumMap = {
+  ProxyProtocol.http: 'HTTP',
+  ProxyProtocol.https: 'HTTPS',
+  ProxyProtocol.socks5: 'SOCKS5',
+};
+
+_$ProxyConnectionStateImpl _$$ProxyConnectionStateImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ProxyConnectionStateImpl(
+      isConnected: json['isConnected'] as bool,
+      currentServerId: json['currentServerId'] as String?,
+      connectedAt: json['connectedAt'] == null
+          ? null
+          : DateTime.parse(json['connectedAt'] as String),
+      disconnectedAt: json['disconnectedAt'] == null
+          ? null
+          : DateTime.parse(json['disconnectedAt'] as String),
+      errorMessage: json['errorMessage'] as String?,
+      uploadBytes: (json['uploadBytes'] as num).toInt(),
+      downloadBytes: (json['downloadBytes'] as num).toInt(),
+      uploadSpeed: (json['uploadSpeed'] as num).toInt(),
+      downloadSpeed: (json['downloadSpeed'] as num).toInt(),
+    );
+
+Map<String, dynamic> _$$ProxyConnectionStateImplToJson(
+        _$ProxyConnectionStateImpl instance) =>
+    <String, dynamic>{
+      'isConnected': instance.isConnected,
+      'currentServerId': instance.currentServerId,
+      'connectedAt': instance.connectedAt?.toIso8601String(),
+      'disconnectedAt': instance.disconnectedAt?.toIso8601String(),
+      'errorMessage': instance.errorMessage,
+      'uploadBytes': instance.uploadBytes,
+      'downloadBytes': instance.downloadBytes,
+      'uploadSpeed': instance.uploadSpeed,
+      'downloadSpeed': instance.downloadSpeed,
+    };
+
+_$ProxyRuleImpl _$$ProxyRuleImplFromJson(Map<String, dynamic> json) =>
+    _$ProxyRuleImpl(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      pattern: json['pattern'] as String,
+      type: $enumDecode(_$ProxyRuleTypeEnumMap, json['type']),
+      proxyServerId: json['proxyServerId'] as String,
+      enabled: json['enabled'] as bool,
+      createdAt: DateTime.parse(json['createdAt'] as String),
+    );
+
+Map<String, dynamic> _$$ProxyRuleImplToJson(_$ProxyRuleImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'pattern': instance.pattern,
+      'type': _$ProxyRuleTypeEnumMap[instance.type]!,
+      'proxyServerId': instance.proxyServerId,
+      'enabled': instance.enabled,
+      'createdAt': instance.createdAt.toIso8601String(),
+    };
+
+const _$ProxyRuleTypeEnumMap = {
+  ProxyRuleType.domain: 'DOMAIN',
+  ProxyRuleType.ip: 'IP',
+  ProxyRuleType.regex: 'REGEX',
+};
+
+_$GlobalProxyStateImpl _$$GlobalProxyStateImplFromJson(
+        Map<String, dynamic> json) =>
+    _$GlobalProxyStateImpl(
+      status: $enumDecode(_$ProxyStatusEnumMap, json['status']),
+      servers: (json['servers'] as List<dynamic>)
+          .map((e) => ProxyServer.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      connectionState: ProxyConnectionState.fromJson(
+          json['connectionState'] as Map<String, dynamic>),
+      rules: (json['rules'] as List<dynamic>)
+          .map((e) => ProxyRule.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      isGlobalProxy: json['isGlobalProxy'] as bool,
+      systemProxySettings: SystemProxySettings.fromJson(
+          json['systemProxySettings'] as Map<String, dynamic>),
+      autoConnectSettings: AutoConnectSettings.fromJson(
+          json['autoConnectSettings'] as Map<String, dynamic>),
+      lastUpdated: DateTime.parse(json['lastUpdated'] as String),
+    );
+
+Map<String, dynamic> _$$GlobalProxyStateImplToJson(
+        _$GlobalProxyStateImpl instance) =>
+    <String, dynamic>{
+      'status': _$ProxyStatusEnumMap[instance.status]!,
+      'servers': instance.servers,
+      'connectionState': instance.connectionState,
+      'rules': instance.rules,
+      'isGlobalProxy': instance.isGlobalProxy,
+      'systemProxySettings': instance.systemProxySettings,
+      'autoConnectSettings': instance.autoConnectSettings,
+      'lastUpdated': instance.lastUpdated.toIso8601String(),
+    };
+
+const _$ProxyStatusEnumMap = {
+  ProxyStatus.disconnected: 'DISCONNECTED',
+  ProxyStatus.connecting: 'CONNECTING',
+  ProxyStatus.connected: 'CONNECTED',
+  ProxyStatus.disconnecting: 'DISCONNECTING',
+  ProxyStatus.error: 'ERROR',
+};
+
+_$SystemProxySettingsImpl _$$SystemProxySettingsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$SystemProxySettingsImpl(
+      enabled: json['enabled'] as bool,
+      httpProxy: json['httpProxy'] as String?,
+      httpsProxy: json['httpsProxy'] as String?,
+      socksProxy: json['socksProxy'] as String?,
+      bypassList: (json['bypassList'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
+    );
+
+Map<String, dynamic> _$$SystemProxySettingsImplToJson(
+        _$SystemProxySettingsImpl instance) =>
+    <String, dynamic>{
+      'enabled': instance.enabled,
+      'httpProxy': instance.httpProxy,
+      'httpsProxy': instance.httpsProxy,
+      'socksProxy': instance.socksProxy,
+      'bypassList': instance.bypassList,
+    };
+
+_$AutoConnectSettingsImpl _$$AutoConnectSettingsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AutoConnectSettingsImpl(
+      enabled: json['enabled'] as bool,
+      autoConnectOnStartup: json['autoConnectOnStartup'] as bool,
+      autoReconnect: json['autoReconnect'] as bool,
+      reconnectInterval: (json['reconnectInterval'] as num).toInt(),
+      maxReconnectAttempts: (json['maxReconnectAttempts'] as num).toInt(),
+    );
+
+Map<String, dynamic> _$$AutoConnectSettingsImplToJson(
+        _$AutoConnectSettingsImpl instance) =>
+    <String, dynamic>{
+      'enabled': instance.enabled,
+      'autoConnectOnStartup': instance.autoConnectOnStartup,
+      'autoReconnect': instance.autoReconnect,
+      'reconnectInterval': instance.reconnectInterval,
+      'maxReconnectAttempts': instance.maxReconnectAttempts,
+    };
