@@ -7,6 +7,7 @@ library app_settings;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/material.dart';
 import 'browser_settings.dart';
+import 'enums.dart';
 
 part 'generated/app_settings.freezed.dart';
 part 'generated/app_settings.g.dart';
