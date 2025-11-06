@@ -49,7 +49,9 @@ jobs:
           /opt/hostedtoolcache/flutter
           ~/flutter
           /usr/local/bin/flutter
-        key: flutter-cache-${{ runner.os }}-${{ hashFiles('**/.flutter-version') }}
+        key: flutter-${{ runner.os }}-3.22.0
+        restore-keys: |
+          flutter-${{ runner.os }}-
 
     - name: 设置Flutter
       if: steps.flutter-cache.outputs.cache-hit != 'true'
