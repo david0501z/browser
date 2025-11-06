@@ -47,6 +47,7 @@ jobs:
       with:
         path: |
           /opt/hostedtoolcache/flutter
+          ~/flutter
           /usr/local/bin/flutter
         key: flutter-cache-${{ runner.os }}-${{ hashFiles('**/.flutter-version') }}
 
