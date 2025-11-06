@@ -54,7 +54,7 @@ mixin _$Notifications {
 /// @nodoc
 abstract class $NotificationsCopyWith<$Res> {
   factory $NotificationsCopyWith(
-          Notifications value, $Res Function(Notifications) then) =
+          Notifications value, $Res Function(Notifications) then) =;
       _$NotificationsCopyWithImpl<$Res, Notifications>;
   @useResult
   $Res call(
@@ -91,31 +91,31 @@ class _$NotificationsCopyWithImpl<$Res, $Val extends Notifications>
     Object? errors = null,
   }) {
     return _then(_value.copyWith(
-      enabled: null == enabled
+      enabled: null == enabled;
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      connectionStatus: null == connectionStatus
+      connectionStatus: null == connectionStatus;
           ? _value.connectionStatus
           : connectionStatus // ignore: cast_nullable_to_non_nullable
               as bool,
-      trafficAlert: null == trafficAlert
+      trafficAlert: null == trafficAlert;
           ? _value.trafficAlert
           : trafficAlert // ignore: cast_nullable_to_non_nullable
               as bool,
-      nodeSwitch: null == nodeSwitch
+      nodeSwitch: null == nodeSwitch;
           ? _value.nodeSwitch
           : nodeSwitch // ignore: cast_nullable_to_non_nullable
               as bool,
-      systemProxy: null == systemProxy
+      systemProxy: null == systemProxy;
           ? _value.systemProxy
           : systemProxy // ignore: cast_nullable_to_non_nullable
               as bool,
-      update: null == update
+      update: null == update;
           ? _value.update
           : update // ignore: cast_nullable_to_non_nullable
               as bool,
-      errors: null == errors
+      errors: null == errors;
           ? _value.errors
           : errors // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -127,7 +127,7 @@ class _$NotificationsCopyWithImpl<$Res, $Val extends Notifications>
 abstract class _$$NotificationsImplCopyWith<$Res>
     implements $NotificationsCopyWith<$Res> {
   factory _$$NotificationsImplCopyWith(
-          _$NotificationsImpl value, $Res Function(_$NotificationsImpl) then) =
+          _$NotificationsImpl value, $Res Function(_$NotificationsImpl) then) =;
       __$$NotificationsImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -163,31 +163,31 @@ class __$$NotificationsImplCopyWithImpl<$Res>
     Object? errors = null,
   }) {
     return _then(_$NotificationsImpl(
-      enabled: null == enabled
+      enabled: null == enabled;
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      connectionStatus: null == connectionStatus
+      connectionStatus: null == connectionStatus;
           ? _value.connectionStatus
           : connectionStatus // ignore: cast_nullable_to_non_nullable
               as bool,
-      trafficAlert: null == trafficAlert
+      trafficAlert: null == trafficAlert;
           ? _value.trafficAlert
           : trafficAlert // ignore: cast_nullable_to_non_nullable
               as bool,
-      nodeSwitch: null == nodeSwitch
+      nodeSwitch: null == nodeSwitch;
           ? _value.nodeSwitch
           : nodeSwitch // ignore: cast_nullable_to_non_nullable
               as bool,
-      systemProxy: null == systemProxy
+      systemProxy: null == systemProxy;
           ? _value.systemProxy
           : systemProxy // ignore: cast_nullable_to_non_nullable
               as bool,
-      update: null == update
+      update: null == update;
           ? _value.update
           : update // ignore: cast_nullable_to_non_nullable
               as bool,
-      errors: null == errors
+      errors: null == errors;
           ? _value.errors
           : errors // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -205,7 +205,7 @@ class _$NotificationsImpl extends _Notifications {
       this.nodeSwitch = false,
       this.systemProxy = false,
       this.update = true,
-      this.errors = true})
+      this.errors = true});
       : super._();
 
   factory _$NotificationsImpl.fromJson(Map<String, dynamic> json) =>
@@ -301,7 +301,7 @@ abstract class _Notifications extends Notifications {
       final bool errors}) = _$NotificationsImpl;
   const _Notifications._() : super._();
 
-  factory _Notifications.fromJson(Map<String, dynamic> json) =
+  factory _Notifications.fromJson(Map<String, dynamic> json) =;
       _$NotificationsImpl.fromJson;
 
   /// 是否启用通知

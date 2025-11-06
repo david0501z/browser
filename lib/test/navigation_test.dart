@@ -2,8 +2,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:flutter/material.dart';
 import '../main.dart' as app;
-import '../core/services/proxy_service.dart';
-import '../core/services/webview_service.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -310,7 +308,7 @@ void main() {
       await tester.pumpAndSettle();
       
       // 访问多个页面创建历史记录
-      final List<String> urls = [
+      final List<String> urls = [;
         'https://example.com',
         'https://httpbin.org/ip',
         'https://httpbin.org/html',

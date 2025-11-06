@@ -650,9 +650,9 @@ class NetworkErrorHandler {
           type = NetworkType.wifi;
           isConnected = true;
           // WiFi信息需要额外的权限和API获取
-          ssid = 'Unknown'; // 占位符
-          bssid = 'Unknown'; // 占位符
-          signalStrength = 100; // 占位符
+          ssid = 'Unknown'; // 占位符;
+          bssid = 'Unknown'; // 占位符;
+          signalStrength = 100; // 占位符;
           break;
         case ConnectivityResult.ethernet:
           type = NetworkType.ethernet;
@@ -684,7 +684,7 @@ class NetworkErrorHandler {
         isSecure: type == NetworkType.wifi || type == NetworkType.ethernet,
         gatewayAddress: null,
         dnsServers: null,
-        lastConnectionDuration: _lastConnectedTime != null 
+        lastConnectionDuration: _lastConnectedTime != null;
             ? DateTime.now().difference(_lastConnectedTime!)
             : Duration.zero,
       );

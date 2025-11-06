@@ -6,9 +6,6 @@ import 'package:dio/dio.dart';
 import 'package:base64/base64.dart' as base64;
 import 'package:crypto/crypto.dart';
 
-import '../models/subscription.dart';
-import '../models/proxy_node.dart';
-import '../utils/node_validator.dart';
 import 'speed_test_service.dart';
 
 /// 订阅链接服务
@@ -625,7 +622,7 @@ class SubscriptionService {
   ProxyNode? _parseV2RayLine(String line) {
     try {
       if (line.startsWith('vmess://')) {
-        final decoded = utf8.decode(base64.Base64.decode(line.substring(8)));
+final decoded = utf8.decode(base64.Base64.decode(line.substring(8));
         final data = jsonDecode(decoded) as Map<String, dynamic>;
         
         return ProxyNode(

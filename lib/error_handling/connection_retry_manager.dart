@@ -83,7 +83,7 @@ class RetryConfig {
     this.enableJitter = true,
     this.jitterFactor = 0.1,
     this.timeout = const Duration(seconds: 30),
-    this.retryableErrors = const [
+    this.retryableErrors = const [;
       RetryableError.networkTimeout,
       RetryableError.connectionRefused,
       RetryableError.networkUnreachable,
@@ -93,7 +93,7 @@ class RetryConfig {
       RetryableError.serverError,
       RetryableError.unknown,
     ],
-    this.retryableExceptionTypes = const [
+    this.retryableExceptionTypes = const [;
       SocketException,
       TimeoutException,
       HttpException,
@@ -206,7 +206,7 @@ class CircuitBreakerConfig {
     this.timeout = const Duration(seconds: 60),
     this.resetTimeout = const Duration(seconds: 30),
     this.successThreshold = 3,
-    this.failureTypes = const [
+    this.failureTypes = const [;
       SocketException,
       TimeoutException,
       ServiceUnavailableException,
@@ -629,7 +629,7 @@ class ConnectionRetryManager {
         
       case RetryStrategy.jitterBackoff:
         final baseDelay = config.initialDelay.inMilliseconds;
-        final delay = (baseDelay * (1 + _random.nextDouble())).round();
+final delay = (baseDelay * (1 + _random.nextDouble()).round();
         final finalDelay = delay.clamp(
           config.initialDelay.inMilliseconds,
           config.maxDelay.inMilliseconds,

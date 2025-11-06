@@ -43,7 +43,7 @@ class SecurityValidator {
     }
 
     // 小写字母检查 (15分)
-    if (password.contains(RegExp(r'[a-z]'))) {
+if (password.contains(RegExp(r'[a-z]')) {
       score += 15;
       criteria.add(PasswordStrength.lowercase);
     } else {
@@ -51,7 +51,7 @@ class SecurityValidator {
     }
 
     // 大写字母检查 (15分)
-    if (password.contains(RegExp(r'[A-Z]'))) {
+if (password.contains(RegExp(r'[A-Z]')) {
       score += 15;
       criteria.add(PasswordStrength.uppercase);
     } else {
@@ -59,7 +59,7 @@ class SecurityValidator {
     }
 
     // 数字检查 (15分)
-    if (password.contains(RegExp(r'[0-9]'))) {
+if (password.contains(RegExp(r'[0-9]')) {
       score += 15;
       criteria.add(PasswordStrength.number);
     } else {
@@ -67,7 +67,7 @@ class SecurityValidator {
     }
 
     // 特殊字符检查 (20分)
-    if (password.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
+if (password.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]')) {
       score += 20;
       criteria.add(PasswordStrength.specialChar);
     } else {
@@ -320,7 +320,7 @@ class SecurityValidator {
     // 检查敏感权限
     final sensitivePermissions = _getSensitivePermissions();
     final hasSensitivePermissions = sensitivePermissions.any(
-      (permission) => permissions.contains(permission)
+      (permission) => permissions.contains(permission);
     );
 
     if (hasSensitivePermissions) {
@@ -339,7 +339,7 @@ class SecurityValidator {
   // 私有辅助方法
 
   static bool _isCommonPasswordPattern(String password) {
-    final commonPatterns = [
+    final commonPatterns = [;
       'password', '123456', 'qwerty', 'admin', 'letmein',
       'welcome', 'monkey', 'dragon', 'master', 'hello',
     ];
@@ -606,7 +606,7 @@ class SecurityValidatorExample {
 
     // 加密强度验证示例
     print('\n5. 加密强度验证:');
-    final encryptionResults = [
+    final encryptionResults = [;
       SecurityValidator.validateEncryptionStrength('AES-256', 256),
       SecurityValidator.validateEncryptionStrength('AES-128', 128),
       SecurityValidator.validateEncryptionStrength('DES', 56),

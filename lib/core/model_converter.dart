@@ -3,9 +3,7 @@
 /// 实现 ClashCoreSettings 与 ProxyConfig 之间的互相转换
 library model_converter;
 
-import '../models/app_settings.dart';
 import 'proxy_config.dart';
-import '../logging/log_level.dart';
 
 /// ClashCoreSettings 与 ProxyConfig 转换器
 class ModelConverter {

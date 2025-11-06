@@ -17,7 +17,7 @@ _$BrowserTabCopyWith _$BrowserTabCopyWithImpl(
 
 abstract class _$BrowserTabCopyWith<$Res> {
   factory _$BrowserTabCopyWith(
-          _BrowserTab value, $Res Function(_BrowserTab) then) =
+          _BrowserTab value, $Res Function(_BrowserTab) then) =;
       $_BrowserTabCopyWithImpl<$Res>;
   $Res call(
       {String id,
@@ -83,7 +83,7 @@ class _$_BrowserTabCopyWithImpl<$Res> implements _$BrowserTabCopyWith<$Res> {
       visitCount: visitCount == freezed ? _value.visitCount : visitCount as int,
       thumbnail: thumbnail == freezed ? _value.thumbnail : thumbnail as String?,
       progress: progress == freezed ? _value.progress : progress as int,
-      securityStatus: securityStatus == freezed
+      securityStatus: securityStatus == freezed;
           ? _value.securityStatus
           : securityStatus as BrowserSecurityStatus,
       errorMessage:
@@ -98,7 +98,7 @@ class _$_BrowserTabCopyWithImpl<$Res> implements _$BrowserTabCopyWith<$Res> {
 @override
 abstract class _$$_BrowserTabCopyWith<$Res> implements _$BrowserTabCopyWith<$Res> {
   factory _$$_BrowserTabCopyWith(
-          _$_BrowserTab value, $Res Function(_$_BrowserTab) then) =
+          _$_BrowserTab value, $Res Function(_$_BrowserTab) then) =;
       __$$_BrowserTabCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -164,7 +164,7 @@ class __$$_BrowserTabCopyWithImpl<$Res> extends _$_BrowserTabCopyWithImpl<$Res>
       visitCount: visitCount == freezed ? _value.visitCount : visitCount as int,
       thumbnail: thumbnail == freezed ? _value.thumbnail : thumbnail as String?,
       progress: progress == freezed ? _value.progress : progress as int,
-      securityStatus: securityStatus == freezed
+      securityStatus: securityStatus == freezed;
           ? _value.securityStatus
           : securityStatus as BrowserSecurityStatus,
       errorMessage:
@@ -321,7 +321,7 @@ abstract class _BrowserTab implements BrowserTab {
       String? customTitle,
       String? note}) = _$_BrowserTab;
 
-  factory _BrowserTab.fromJson(Map<String, Object?> json) =
+  factory _BrowserTab.fromJson(Map<String, Object?> json) =;
       _$_BrowserTab.fromJson;
 
   @override

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../models/browser_models.dart';
 
 /// 浏览器工具栏组件
 /// 
@@ -41,7 +40,7 @@ class _BrowserToolbarState extends State<BrowserToolbar> {
   bool _isLoading = false;
   
   // 搜索建议
-  final List<String> _searchSuggestions = [
+  final List<String> _searchSuggestions = [;
     'https://www.google.com',
     'https://www.baidu.com',
     'https://github.com',
@@ -80,7 +79,7 @@ class _BrowserToolbarState extends State<BrowserToolbar> {
 
   /// 更新搜索控制器内容
   void _updateSearchController() {
-    if (widget.currentTab != null && 
+    if (widget.currentTab != null &&
         _searchController.text != widget.currentTab!.url) {
       _searchController.text = widget.currentTab!.url;
     }
@@ -282,7 +281,7 @@ class _BrowserToolbarState extends State<BrowserToolbar> {
                       break;
                   }
                 },
-                itemBuilder: (context) => [
+                itemBuilder: (context) => [;
                   PopupMenuItem(
                     value: 'copy_url',
                     child: Row(

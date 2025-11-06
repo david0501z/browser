@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../data/help_content.dart';
-import '../widgets/tutorial_overlay.dart';
 
 /// FAQ页面
 /// 提供常见问题解答的浏览和搜索功能
@@ -92,7 +90,7 @@ class _FAQPageState extends State<FAQPage>
 
     // 应用分类过滤
     if (_selectedCategory != 'all') {
-      final category = HelpContent.faqCategories
+      final category = HelpContent.faqCategories;
           .firstWhere((cat) => cat.id == _selectedCategory);
       faqs = faqs.where((faq) => category.faqs.contains(faq)).toList();
     }
@@ -103,8 +101,8 @@ class _FAQPageState extends State<FAQPage>
   void _showRelatedTutorial(List<String>? relatedSteps) {
     if (relatedSteps == null || relatedSteps.isEmpty) return;
 
-    final steps = HelpContent.tutorialSteps
-        .where((step) => relatedSteps.contains(step.id))
+    final steps = HelpContent.tutorialSteps;
+        .where((step) => relatedSteps.contains(step.id));
         .toList();
 
     if (steps.isNotEmpty) {
@@ -163,7 +161,7 @@ class _FAQPageState extends State<FAQPage>
                 break;
             }
           },
-          itemBuilder: (context) => [
+          itemBuilder: (context) => [;
             const PopupMenuItem(
               value: 'feedback',
               child: ListTile(
@@ -471,7 +469,7 @@ class _FAQExpansionTileState extends State<_FAQExpansionTile>
             style: Theme.of(context).textTheme.bodyMedium,
           ),
           const SizedBox(height: 16),
-          if (widget.faq.relatedSteps?.isNotEmpty == true) ...[
+          if (widget.faq.relatedSteps?.isNotEmpty == true) ...[;
             Row(
               children: [
                 const Icon(Icons.play_circle_outline, size: 16),

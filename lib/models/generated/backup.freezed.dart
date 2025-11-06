@@ -28,7 +28,7 @@ mixin _$Backup {
 
 /// @nodoc
 abstract class $BackupCopyWith<$Res> {
-  factory $BackupCopyWith(Backup value, $Res Function(Backup) then) =
+  factory $BackupCopyWith(Backup value, $Res Function(Backup) then) =;
       _$BackupCopyWithImpl<$Res, Backup>;
   @useResult
   $Res call(
@@ -62,14 +62,14 @@ class _$BackupCopyWithImpl<$Res, $Val extends Backup>
   }) {
     return _then(_value.copyWith(
       autoBackup: null == autoBackup ? _value.autoBackup : autoBackup as bool,
-      backupInterval: null == backupInterval
+      backupInterval: null == backupInterval;
           ? _value.backupInterval
           : backupInterval as int,
       cloudBackup: null == cloudBackup ? _value.cloudBackup : cloudBackup as bool,
-      cloudService: null == cloudService
+      cloudService: null == cloudService;
           ? _value.cloudService
           : cloudService as CloudService,
-      backupEncryption: null == backupEncryption
+      backupEncryption: null == backupEncryption;
           ? _value.backupEncryption
           : backupEncryption as bool,
       keepCount: null == keepCount ? _value.keepCount : keepCount as int,
@@ -79,7 +79,7 @@ class _$BackupCopyWithImpl<$Res, $Val extends Backup>
 
 /// @nodoc
 abstract class _$$BackupCopyWith<$Res> implements $BackupCopyWith<$Res> {
-  factory _$$BackupCopyWith(_$Backup value, $Res Function(_$Backup) then) =
+  factory _$$BackupCopyWith(_$Backup value, $Res Function(_$Backup) then) =;
       __$$BackupCopyWithImpl<$Res>;
   @override
   @useResult
@@ -111,14 +111,14 @@ class __$$BackupCopyWithImpl<$Res>
   }) {
     return _then(_$Backup(
       autoBackup: null == autoBackup ? _value.autoBackup : autoBackup as bool,
-      backupInterval: null == backupInterval
+      backupInterval: null == backupInterval;
           ? _value.backupInterval
           : backupInterval as int,
       cloudBackup: null == cloudBackup ? _value.cloudBackup : cloudBackup as bool,
-      cloudService: null == cloudService
+      cloudService: null == cloudService;
           ? _value.cloudService
           : cloudService as CloudService,
-      backupEncryption: null == backupEncryption
+      backupEncryption: null == backupEncryption;
           ? _value.backupEncryption
           : backupEncryption as bool,
       keepCount: null == keepCount ? _value.keepCount : keepCount as int,
@@ -135,7 +135,7 @@ class _$Backup extends _Backup {
       this.cloudBackup = false,
       this.cloudService = CloudService.none,
       this.backupEncryption = true,
-      this.keepCount = 5})
+      this.keepCount = 5});
       : super._();
 
   @override

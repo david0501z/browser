@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/proxy_state.dart';
-import '../providers/proxy_providers.dart';
 
 // ===== 实时状态监控提供者 =====
 

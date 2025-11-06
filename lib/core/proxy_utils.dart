@@ -324,7 +324,7 @@ class ProxyStatsUtils {
     if (speed < 100 * 1024) return SpeedLevel.slow; // < 100KB/s
     if (speed < 1024 * 1024) return SpeedLevel.normal; // < 1MB/s
     if (speed < 10 * 1024 * 1024) return SpeedLevel.fast; // < 10MB/s
-    return SpeedLevel.veryFast; // >= 10MB/s
+    return SpeedLevel.veryFast; // >= 10MB/s;
   }
   
   /// 计算连接成功率
@@ -414,7 +414,7 @@ class ProxyStringUtils {
   static String generateRandomString(int length) {
     const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     final random = math.Random();
-    return String.fromCharCodes(Iterable.generate(length, (_) => chars.codeUnitAt(random.nextInt(chars.length))));
+return String.fromCharCodes(Iterable.generate(length, (_) => chars.codeUnitAt(random.nextInt(chars.length));
   }
   
   /// 截断字符串

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../providers/proxy_providers.dart';
-import '../state/proxy_state_manager.dart';
 
 /// 代理状态管理使用示例
 /// 展示如何在Widget中使用Riverpod状态管理方案
@@ -118,7 +116,7 @@ class _ProxyManagementExampleState extends ConsumerState<ProxyManagementExample>
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      if (currentServer != null) ...[
+                      if (currentServer != null) ...[;
                         const SizedBox(height: 4),
                         Text(
                           '当前服务器: ${currentServer.name}',
@@ -284,7 +282,7 @@ class _ProxyManagementExampleState extends ConsumerState<ProxyManagementExample>
       trailing: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (server.latency != null)
+          if (server.latency != null);
             Text(
               '${server.latency}ms',
               style: TextStyle(
@@ -296,7 +294,7 @@ class _ProxyManagementExampleState extends ConsumerState<ProxyManagementExample>
           const SizedBox(width: 8),
           PopupMenuButton<String>(
             onSelected: (value) => _handleServerAction(value, server, operations),
-            itemBuilder: (context) => [
+            itemBuilder: (context) => [;
               const PopupMenuItem(
                 value: 'test',
                 child: Text('测试连接'),

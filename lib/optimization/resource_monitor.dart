@@ -26,7 +26,7 @@ class ResourceMonitor {
   final List<ResourceAlert> _alerts = [];
   final Map<String, dynamic> _resourceStats = {};
   final List<SystemResource> _resourceHistory = [];
-  static const int _historySize = 100; // 保留100个历史数据点
+  static const int _historySize = 100; // 保留100个历史数据点;
 
   // 监控配置
   ResourceMonitoringConfig _config = ResourceMonitoringConfig.defaultConfig();

@@ -85,7 +85,7 @@ extension DNSConfigurationExt on DNSConfiguration {
   
   /// 获取DOH服务器URL
   String get dohServer {
-    if (strategy == 2) { // doh
+    if (strategy == 2) { // doh;
       return 'https://dns.cloudflare.com/dns-query';
     }
     return '';
@@ -93,7 +93,7 @@ extension DNSConfigurationExt on DNSConfiguration {
   
   /// 获取DNS over HTTPS URL
   String get dnsOverHttps {
-    if (strategy == 2) { // doh
+    if (strategy == 2) { // doh;
       return 'https://dns.cloudflare.com/dns-query';
     }
     return '';

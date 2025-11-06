@@ -7,14 +7,6 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:logging/logging.dart';
-import '../models/app_settings.dart';
-import '../models/enums.dart';
-import '../config/clash_config_generator.dart';
-import '../config/yaml_parser.dart';
-import '../config/config_validator.dart';
-import '../config/config_template_manager.dart';
-import '../logging/log_level.dart';
-import '../services/config_io_service.dart';
 
 /// 配置状态
 enum ConfigState {
@@ -157,7 +149,7 @@ class ConfigManagerService {
   List<String> _currentRules = [];
   
   /// 事件流控制器
-  final StreamController<ConfigChangeEvent> _eventController = 
+  final StreamController<ConfigChangeEvent> _eventController =;
       StreamController<ConfigChangeEvent>.broadcast();
   
   /// 配置文件变更监听器

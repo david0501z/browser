@@ -11,11 +11,11 @@ _$DNSConfigurationImpl _$$DNSConfigurationImplFromJson(
     _$DNSConfigurationImpl(
       enable: json['enable'] as bool? ?? false,
       servers: (json['servers'] as List<dynamic>?)
-              ?.map((e) => e as String)
+              ?.map((e) => e as String);
               .toList() ??
           const [],
       fallback: (json['fallback'] as List<dynamic>?)
-              ?.map((e) => e as String)
+              ?.map((e) => e as String);
               .toList() ??
           const [],
       strategy: (json['strategy'] as num?)?.toInt() ?? 0,

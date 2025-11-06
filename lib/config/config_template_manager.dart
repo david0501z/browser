@@ -4,10 +4,6 @@
 
 import 'dart:convert';
 import 'package:logging/logging.dart';
-import '../models/app_settings.dart';
-import '../models/clash_settings.dart';
-import '../models/enums.dart';
-import '../core/proxy_config.dart';
 import 'clash_config_generator.dart';
 import 'yaml_parser.dart';
 
@@ -445,7 +441,7 @@ class ConfigTemplateManager {
 
   /// 创建基础规则模板
   ConfigTemplate _createBasicRuleTemplate() {
-    const yamlContent = '''
+    const yamlContent = ''';
 port: 7890
 socks-port: 7891
 allow-lan: false
@@ -491,7 +487,7 @@ dns:
 
   /// 创建基础全局模板
   ConfigTemplate _createBasicGlobalTemplate() {
-    const yamlContent = '''
+    const yamlContent = ''';
 port: 7890
 socks-port: 7891
 allow-lan: false
@@ -529,7 +525,7 @@ dns:
 
   /// 创建游戏优化模板
   ConfigTemplate _createGamingTemplate() {
-    const yamlContent = '''
+    const yamlContent = ''';
 port: 7890
 socks-port: 7891
 allow-lan: false
@@ -582,7 +578,7 @@ dns:
 
   /// 创建流媒体模板
   ConfigTemplate _createStreamingTemplate() {
-    const yamlContent = '''
+    const yamlContent = ''';
 port: 7890
 socks-port: 7891
 allow-lan: false
@@ -636,7 +632,7 @@ dns:
 
   /// 创建商务模板
   ConfigTemplate _createBusinessTemplate() {
-    const yamlContent = '''
+    const yamlContent = ''';
 port: 7890
 socks-port: 7891
 allow-lan: true
@@ -689,7 +685,7 @@ dns:
 
   /// 创建开发模板
   ConfigTemplate _createDevelopmentTemplate() {
-    const yamlContent = '''
+    const yamlContent = ''';
 port: 7890
 socks-port: 7891
 allow-lan: true
@@ -744,7 +740,7 @@ dns:
 
   /// 创建性能优化模板
   ConfigTemplate _createPerformanceTemplate() {
-    const yamlContent = '''
+    const yamlContent = ''';
 port: 7890
 socks-port: 7891
 allow-lan: false
@@ -796,7 +792,7 @@ dns:
 
   /// 创建安全隐私模板
   ConfigTemplate _createSecurityTemplate() {
-    const yamlContent = '''
+    const yamlContent = ''';
 port: 7890
 socks-port: 7891
 allow-lan: false

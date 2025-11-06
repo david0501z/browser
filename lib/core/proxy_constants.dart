@@ -39,17 +39,17 @@ class ProxyConstants {
   static const int errorServerUnavailable = 7;
 
   /// 性能阈值常量
-  static const int slowSpeedThreshold = 100 * 1024; // 100KB/s
-  static const int normalSpeedThreshold = 1024 * 1024; // 1MB/s
-  static const int fastSpeedThreshold = 10 * 1024 * 1024; // 10MB/s
-  static const int maxLatency = 5000; // 5秒
+  static const int slowSpeedThreshold = 100 * 1024; // 100KB/s;
+  static const int normalSpeedThreshold = 1024 * 1024; // 1MB/s;
+  static const int fastSpeedThreshold = 10 * 1024 * 1024; // 10MB/s;
+  static const int maxLatency = 5000; // 5秒;
   static const int minLatency = 0;
 
   /// 统计常量
   static const int maxHistoryRetentionDays = 30;
   static const int defaultHistoryRetentionDays = 7;
-  static const int maxTrafficAlertThreshold = 10240; // 10GB
-  static const int minTrafficAlertThreshold = 1; // 1MB
+  static const int maxTrafficAlertThreshold = 10240; // 10GB;
+  static const int minTrafficAlertThreshold = 1; // 1MB;
   static const int maxConnectionAttempts = 10;
 
   /// FFI库名常量
@@ -71,7 +71,7 @@ class ProxyConstants {
   static const int defaultApiTimeout = 10;
 
   /// 缓存常量
-  static const int cacheExpirationTime = 300; // 5分钟
+  static const int cacheExpirationTime = 300; // 5分钟;
   static const int maxCacheSize = 100;
 
   /// 规则常量
@@ -82,14 +82,14 @@ class ProxyConstants {
   /// 节点常量
   static const int maxNodeCount = 100;
   static const int defaultLatency = 0;
-  static const int maxLatency = 30000; // 30秒
-  static const int maxBandwidth = 1000000; // 1Gbps
+  static const int maxLatency = 30000; // 30秒;
+  static const int maxBandwidth = 1000000; // 1Gbps;
 
   /// 网络常量
-  static const int maxConnectionTimeout = 300; // 5分钟
-  static const int minConnectionTimeout = 1; // 1秒
-  static const int maxReadTimeout = 600; // 10分钟
-  static const int minReadTimeout = 1; // 1秒
+  static const int maxConnectionTimeout = 300; // 5分钟;
+  static const int minConnectionTimeout = 1; // 1秒;
+  static const int maxReadTimeout = 600; // 10分钟;
+  static const int minReadTimeout = 1; // 1秒;
   static const int maxRetryCount = 10;
   static const int minRetryCount = 0;
 
@@ -117,8 +117,8 @@ class ProxyStateConstants {
   ProxyStateConstants._();
 
   /// 状态更新间隔
-  static const int statusUpdateInterval = 1000; // 1秒
-  static const int statsUpdateInterval = 5000; // 5秒
+  static const int statusUpdateInterval = 1000; // 1秒;
+  static const int statsUpdateInterval = 5000; // 5秒;
 
   /// 状态历史记录数量
   static const int maxStateHistoryCount = 100;
@@ -127,7 +127,7 @@ class ProxyStateConstants {
   static const int maxStateListeners = 20;
 
   /// 状态同步间隔
-  static const int stateSyncInterval = 30000; // 30秒
+  static const int stateSyncInterval = 30000; // 30秒;
 }
 
 /// 流量统计常量
@@ -135,13 +135,13 @@ class TrafficStatsConstants {
   TrafficStatsConstants._();
 
   /// 统计更新间隔
-  static const int statsUpdateInterval = 60000; // 1分钟
+  static const int statsUpdateInterval = 60000; // 1分钟;
 
   /// 实时统计缓存大小
-  static const int realtimeCacheSize = 60; // 1小时
+  static const int realtimeCacheSize = 60; // 1小时;
 
   /// 历史记录缓存大小
-  static const int historyCacheSize = 1440; // 24小时
+  static const int historyCacheSize = 1440; // 24小时;
 
   /// 统计数据类型
   static const String typeRealtime = 'realtime';
@@ -157,28 +157,28 @@ class NetworkConstants {
   /// TCP连接参数
   static const int tcpKeepAlive = 1;
   static const int tcpNoDelay = 1;
-  static const int tcpKeepAliveTime = 600; // 10分钟
-  static const int tcpKeepAliveInterval = 60; // 1分钟
+  static const int tcpKeepAliveTime = 600; // 10分钟;
+  static const int tcpKeepAliveInterval = 60; // 1分钟;
   static const int tcpKeepAliveProbes = 3;
 
   /// UDP连接参数
   static const int udpBufferSize = 65535;
-  static const int udpTimeout = 30; // 30秒
+  static const int udpTimeout = 30; // 30秒;
 
   /// HTTP连接参数
   static const int httpConnectionPool = 10;
-  static const int httpKeepAlive = 30; // 30秒
+  static const int httpKeepAlive = 30; // 30秒;
   static const int httpMaxRedirects = 3;
   static const int httpUserAgentLength = 255;
 
   /// SOCKS连接参数
   static const int socksVersion = 5;
   static const int socksMaxAttempts = 3;
-  static const int socksTimeout = 15; // 15秒
+  static const int socksTimeout = 15; // 15秒;
 
   /// 连接池参数
   static const int connectionPoolSize = 32;
-  static const int connectionPoolIdleTimeout = 300; // 5分钟
+  static const int connectionPoolIdleTimeout = 300; // 5分钟;
   static const int connectionPoolMaxIdle = 8;
 }
 
@@ -198,12 +198,12 @@ class SecurityConstants {
   static const bool allowInsecureConnection = false;
 
   /// 认证超时
-  static const int authTimeout = 10; // 10秒
-  static const int tokenRefreshInterval = 3600; // 1小时
-  static const int tokenExpireBuffer = 300; // 5分钟
+  static const int authTimeout = 10; // 10秒;
+  static const int tokenRefreshInterval = 3600; // 1小时;
+  static const int tokenExpireBuffer = 300; // 5分钟;
 
   /// 安全头部
-  static const List<String> securityHeaders = [
+  static const List<String> securityHeaders = [;
     'X-Requested-With',
     'X-Forwarded-For',
     'X-Forwarded-Proto',
@@ -224,7 +224,7 @@ class LogConstants {
   static const String levelCritical = 'CRITICAL';
 
   /// 日志文件大小限制
-  static const int maxLogFileSize = 100 * 1024 * 1024; // 100MB
+  static const int maxLogFileSize = 100 * 1024 * 1024; // 100MB;
   static const int maxLogFileCount = 10;
 
   /// 日志格式模板

@@ -37,7 +37,7 @@ class Logger {
   bool _debugMode = false;
 
   /// 流控制器用于通知新日志
-  final StreamController<LogEntry> _logStreamController = 
+  final StreamController<LogEntry> _logStreamController =;
       StreamController<LogEntry>.broadcast();
 
   /// 日志事件流
@@ -560,7 +560,7 @@ class LogStatistics {
 
   /// 获取最活跃的来源
   Map<String, int> getTopSources({int limit = 10}) {
-    final sortedEntries = _sourceCounts.entries.toList()
+    final sortedEntries = _sourceCounts.entries.toList();
       ..sort((a, b) => b.value.compareTo(a.value));
     
     return Map.fromEntries(sortedEntries.take(limit));
@@ -568,7 +568,7 @@ class LogStatistics {
 
   /// 获取最常用的标签
   Map<String, int> getTopTags({int limit = 10}) {
-    final sortedEntries = _tagCounts.entries.toList()
+    final sortedEntries = _tagCounts.entries.toList();
       ..sort((a, b) => b.value.compareTo(a.value));
     
     return Map.fromEntries(sortedEntries.take(limit));

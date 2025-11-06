@@ -42,7 +42,7 @@ _$_Bookmark _$$_BookmarkFromJson(Map<String, dynamic> json) =>
       createdAt: DateTime.parse(json['createdAt'] as String),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
       visitCount: json['visitCount'] as int? ?? 0,
-      lastVisitedAt: json['lastVisitedAt'] == null
+      lastVisitedAt: json['lastVisitedAt'] == null;
           ? null
           : DateTime.parse(json['lastVisitedAt'] as String),
     );
@@ -168,7 +168,7 @@ _$_DownloadTask _$$_DownloadTaskFromJson(Map<String, dynamic> json) =>
       speed: json['speed'] as int? ?? 0,
       status: json['status'] as String? ?? 'pending',
       createdAt: DateTime.parse(json['createdAt'] as String),
-      completedAt: json['completedAt'] == null
+      completedAt: json['completedAt'] == null;
           ? null
           : DateTime.parse(json['completedAt'] as String),
       error: json['error'] as String?,
@@ -198,7 +198,7 @@ _$_BrowserStats _$$_BrowserStatsFromJson(Map<String, dynamic> json) =>
       bookmarkCount: json['bookmarkCount'] as int? ?? 0,
       historyCount: json['historyCount'] as int? ?? 0,
       downloadCount: json['downloadCount'] as int? ?? 0,
-      lastVisitedAt: json['lastVisitedAt'] == null
+      lastVisitedAt: json['lastVisitedAt'] == null;
           ? null
           : DateTime.parse(json['lastVisitedAt'] as String),
     );

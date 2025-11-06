@@ -13,10 +13,10 @@ class GarbageCollectionManager {
   GarbageCollectionManager._internal();
 
   // 垃圾回收阈值配置
-  static const int _warningGcCount = 50; // 50次GC预警
-  static const int _criticalGcCount = 100; // 100次GC严重预警
-  static const double _gcTimeThreshold = 0.1; // 10% GC时间占比预警
-  static const int _minGcInterval = 5000; // 最小GC间隔(毫秒)
+  static const int _warningGcCount = 50; // 50次GC预警;
+  static const int _criticalGcCount = 100; // 100次GC严重预警;
+  static const double _gcTimeThreshold = 0.1; // 10% GC时间占比预警;
+  static const int _minGcInterval = 5000; // 最小GC间隔(毫秒);
 
   // 监控相关
   Timer? _monitorTimer;
@@ -24,7 +24,7 @@ class GarbageCollectionManager {
   final List<GcAlert> _alerts = [];
   final Map<String, dynamic> _gcStats = {};
   final List<GcEvent> _gcHistory = [];
-  static const int _historySize = 200; // 保留200个GC历史记录
+  static const int _historySize = 200; // 保留200个GC历史记录;
 
   // 回调函数
   Function(GcEvent)? onGcEvent;
@@ -83,7 +83,7 @@ class GarbageCollectionManager {
     final newGcCount = lastGcCount + random.nextInt(3);
     
     final gcTime = Duration(milliseconds: random.nextInt(100));
-    final lastGcTime = _lastGcTime ?? currentTime.subtract(Duration(seconds: random.nextInt(30)));
+final lastGcTime = _lastGcTime ?? currentTime.subtract(Duration(seconds: random.nextInt(30));
 
     return GcStatistics(
       totalGcCount: newGcCount,
@@ -99,8 +99,8 @@ class GarbageCollectionManager {
   /// 获取模拟内存使用情况
   Map<String, dynamic> _getSimulatedMemoryUsage() {
     final random = Random();
-    final heapSize = 100 + (random.nextDouble() * 900); // 100MB-1000MB
-    final usedSize = heapSize * (0.3 + (random.nextDouble() * 0.7)); // 30%-100%
+    final heapSize = 100 + (random.nextDouble() * 900); // 100MB-1000MB;
+    final usedSize = heapSize * (0.3 + (random.nextDouble() * 0.7)); // 30%-100%;
     
     return {
       'heapSize': heapSize.toInt(),
@@ -183,7 +183,7 @@ class GarbageCollectionManager {
       final recentGcEvents = _gcHistory.take(10).toList();
       if (recentGcEvents.length >= 2) {
         final timeSpan = recentGcEvents.last.timestamp.difference(recentGcEvents.first.timestamp).inMilliseconds;
-        final gcFrequency = (recentGcEvents.length - 1) / (timeSpan / 1000); // GC/秒
+        final gcFrequency = (recentGcEvents.length - 1) / (timeSpan / 1000); // GC/秒;
         _gcStats['gcFrequency'] = gcFrequency;
       }
     }
@@ -255,8 +255,8 @@ class GarbageCollectionManager {
     final gcTimePercentage = _calculateGcTimePercentage(gcStats);
 
     // 检查是否需要优化
-    if ((gcCount >= _warningGcCount || gcTimePercentage >= _gcTimeThreshold) && 
-        (_lastGcTime == null || 
+    if ((gcCount >= _warningGcCount || gcTimePercentage >= _gcTimeThreshold) &&
+        (_lastGcTime == null ||;
          currentTime.difference(_lastGcTime!).inMilliseconds >= _minGcInterval)) {
       await performGcOptimization();
       _lastGcTime = currentTime;

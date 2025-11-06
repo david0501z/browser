@@ -5,9 +5,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../services/performance_service.dart';
-import '../utils/memory_manager.dart';
-import '../utils/cache_manager.dart';
 
 /// 性能监控Widget
 class PerformanceMonitor extends StatefulWidget {
@@ -77,7 +74,7 @@ class _PerformanceMonitorState extends State<PerformanceMonitor> {
     _memorySubscription = _memoryManager.eventStream.listen((event) {
       setState(() {
         _recentEvents.insert(0, PerformanceEvent(
-          type: event.type == MemoryEventType.leakDetected 
+          type: event.type == MemoryEventType.leakDetected;
               ? PerformanceEventType.performance 
               : PerformanceEventType.memory,
           timestamp: event.timestamp,

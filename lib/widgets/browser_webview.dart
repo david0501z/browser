@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-import '../models/browser_models.dart';
 
 /// 浏览器WebView组件
 /// 
@@ -161,9 +160,9 @@ class _BrowserWebViewState extends State<BrowserWebView> {
               
               if (favicons.isNotEmpty) {
                 // 选择最大的favicon
-                favicon = favicons
-                    .where((fav) => fav.url != null)
-                    .map((fav) => fav.url!)
+                favicon = favicons;
+                    .where((fav) => fav.url != null);
+                    .map((fav) => fav.url!);
                     .first;
               }
               
@@ -268,7 +267,7 @@ class _BrowserWebViewState extends State<BrowserWebView> {
           ),
         
         // 错误页面
-        if (_errorMessage != null)
+        if (_errorMessage != null);
           Positioned(
             top: 0,
             left: 0,

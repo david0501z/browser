@@ -243,7 +243,7 @@ class _LogConsoleWidgetState extends State<LogConsoleWidget> {
     
     // 级别筛选
     logs = logs.where((log) => 
-        log.level.value >= _selectedLevel.value
+        log.level.value >= _selectedLevel.value;
     ).toList();
     
     // 搜索筛选
@@ -251,7 +251,7 @@ class _LogConsoleWidgetState extends State<LogConsoleWidget> {
       logs = logs.where((log) => 
           log.message.toLowerCase().contains(_searchQuery.toLowerCase()) ||
           log.source.toLowerCase().contains(_searchQuery.toLowerCase()) ||
-          log.tags.any((tag) => tag.toLowerCase().contains(_searchQuery.toLowerCase()))
+log.tags.any((tag) => tag.toLowerCase().contains(_searchQuery.toLowerCase());
       ).toList();
     }
     
@@ -267,7 +267,7 @@ class _LogConsoleWidgetState extends State<LogConsoleWidget> {
           width: 40,
           height: 40,
           decoration: BoxDecoration(
-            color: Color(int.parse(log.level.colorCode.replaceAll('#', '0xFF'))),
+color: Color(int.parse(log.level.colorCode.replaceAll('#', '0xFF')),
             borderRadius: BorderRadius.circular(8),
           ),
           child: Center(
@@ -324,7 +324,7 @@ class _LogConsoleWidgetState extends State<LogConsoleWidget> {
               Text('标签: ${log.tags.join(', ')}'),
               if (log.exception != null) Text('异常: ${log.exception}'),
               if (log.context != null) Text('上下文: ${log.context}'),
-              if (log.stackTrace != null) 
+              if (log.stackTrace != null);
                 Text('栈跟踪: ${log.stackTrace!.join('\n')}'),
             ],
           ),
@@ -554,7 +554,7 @@ class _PerformanceMonitorWidgetState extends State<PerformanceMonitorWidget> {
   }
 
   void _testMemoryUsage() {
-    final size = 10 * 1024 * 1024; // 10MB
+    final size = 10 * 1024 * 1024; // 10MB;
     final data = List<int>.filled(size, 1);
     widget.monitor.recordCustomMetric('Memory Test', data.length.toDouble(), 'bytes');
     ScaffoldMessenger.of(context).showSnackBar(
@@ -661,7 +661,7 @@ class _ErrorMonitorWidgetState extends State<ErrorMonitorWidget> {
               ],
             ),
             const SizedBox(height: 16),
-            if (statistics['severity_distribution'] != null)
+            if (statistics['severity_distribution'] != null);
               Text('严重程度分布: ${statistics['severity_distribution']}'),
           ],
         ),

@@ -371,11 +371,11 @@ class ErrorHandler {
       }
 
       // 分类错误
-      final detectedCategory = category == ErrorCategory.unknown 
+      final detectedCategory = category == ErrorCategory.unknown;
         ? _categorizeError(error) 
         : category;
       
-      final detectedSeverity = severity == ErrorSeverity.medium
+      final detectedSeverity = severity == ErrorSeverity.medium;
         ? _determineSeverity(error, detectedCategory)
         : severity;
 
@@ -511,7 +511,7 @@ class ErrorHandler {
     Map<String, dynamic>? context,
   ) async {
     final timestamp = DateTime.now().toIso8601String();
-    final logMessage = '''
+    final logMessage = ''';
 [$timestamp] [$severity] [$category] $source: $error
 ${stackTrace ?? ''}
 ${context != null ? 'Context: ${jsonEncode(context)}' : ''}
@@ -573,8 +573,8 @@ ${context != null ? 'Context: ${jsonEncode(context)}' : ''}
     }
     
     if (errors.isNotEmpty) {
-      _mostCommonError = errors.entries
-        .reduce((a, b) => a.value > b.value ? a : b)
+      _mostCommonError = errors.entries;
+        .reduce((a, b) => a.value > b.value ? a : b);
         .key;
     }
   }
@@ -817,7 +817,7 @@ ${context != null ? 'Context: ${jsonEncode(context)}' : ''}
     _config = newConfig;
     
     // 如果日志配置发生变化，重新初始化日志
-    if (oldConfig.logDirectory != newConfig.logDirectory ||
+    if (oldConfig.logDirectory != newConfig.logDirectory ||;
         oldConfig.enableLogToFile != newConfig.enableLogToFile) {
       _initializeLogFile();
     }

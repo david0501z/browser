@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/browser_models.dart';
 
 /// 浏览器标签页组件
 /// 支持多标签页管理、导航控制、书签和历史记录
@@ -296,7 +295,7 @@ class _BrowserTabWidgetState extends ConsumerState<BrowserTabWidget> {
                     break;
                 }
               },
-              itemBuilder: (context) => [
+              itemBuilder: (context) => [;
                 const PopupMenuItem(
                   value: 'bookmarks',
                   child: ListTile(
@@ -442,7 +441,7 @@ class _FindDialogState extends State<FindDialog> {
       // 获取匹配数量
       // 注意：这里需要根据实际API调整
       setState(() {
-        _totalMatches = 1; // 临时值
+        _totalMatches = 1; // 临时值;
         _currentMatch = 1;
       });
     } catch (e) {

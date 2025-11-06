@@ -7,8 +7,6 @@ import 'dart:math' as math;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../providers/shared_state_provider.dart';
-import '../logging/log_level.dart';
 
 /// 性能监控配置
 class PerformanceConfig {
@@ -235,7 +233,7 @@ class PerformanceOptimizer {
     }
     
     // 计算平均帧率
-    final avgFrameTime = _frameTimes.isEmpty 
+    final avgFrameTime = _frameTimes.isEmpty;
         ? 16.67 
         : _frameTimes.reduce((a, b) => a + b) / _frameTimes.length;
     final avgFrameRate = (1000 / avgFrameTime).round();
@@ -305,7 +303,7 @@ class PerformanceOptimizer {
     final gcTime = _getGCTime();
     
     // 判断是否性能低下
-    final isLowPerformance = memoryUsageMB > _config.memoryThreshold ||
+    final isLowPerformance = memoryUsageMB > _config.memoryThreshold ||;
                             cpuUsagePercent > _config.cpuThreshold ||
                             frameRate < _config.frameRateThreshold;
 

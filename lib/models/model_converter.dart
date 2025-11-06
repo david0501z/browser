@@ -4,7 +4,6 @@
 library model_converter;
 
 import 'app_settings.dart';
-import '../core/proxy_config.dart';
 
 /// ClashCoreSettings 与 ProxyConfig 转换器
 class ModelConverter {

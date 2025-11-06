@@ -17,7 +17,7 @@ _$HistoryEntryCopyWith _$HistoryEntryCopyWithImpl(
 
 abstract class _$HistoryEntryCopyWith<$Res> {
   factory _$HistoryEntryCopyWith(
-          _HistoryEntry value, $Res Function(_HistoryEntry) then) =
+          _HistoryEntry value, $Res Function(_HistoryEntry) then) =;
       $_HistoryEntryCopyWithImpl<$Res>;
   $Res call(
       {String id,
@@ -86,17 +86,17 @@ class _$_HistoryEntryCopyWithImpl<$Res> implements _$HistoryEntryCopyWith<$Res> 
       exitAt: exitAt == freezed ? _value.exitAt : exitAt as DateTime?,
       duration: duration == freezed ? _value.duration : duration as int,
       referrer: referrer == freezed ? _value.referrer : referrer as String?,
-      deviceType: deviceType == freezed
+      deviceType: deviceType == freezed;
           ? _value.deviceType
           : deviceType as DeviceType,
       userAgent: userAgent == freezed ? _value.userAgent : userAgent as String?,
-      loadStatus: loadStatus == freezed
+      loadStatus: loadStatus == freezed;
           ? _value.loadStatus
           : loadStatus as PageLoadStatus,
       loadTime: loadTime == freezed ? _value.loadTime : loadTime as int?,
       dataTransferred:
           dataTransferred == freezed ? _value.dataTransferred : dataTransferred as int,
-      securityStatus: securityStatus == freezed
+      securityStatus: securityStatus == freezed;
           ? _value.securityStatus
           : securityStatus as BrowserSecurityStatus,
       httpStatusCode:
@@ -107,7 +107,7 @@ class _$_HistoryEntryCopyWithImpl<$Res> implements _$HistoryEntryCopyWith<$Res> 
       searchQuery:
           searchQuery == freezed ? _value.searchQuery : searchQuery as String?,
       isNewTab: isNewTab == freezed ? _value.isNewTab : isNewTab as bool,
-      isFromBookmark: isFromBookmark == freezed
+      isFromBookmark: isFromBookmark == freezed;
           ? _value.isFromBookmark
           : isFromBookmark as bool,
       thumbnail: thumbnail == freezed ? _value.thumbnail : thumbnail as String?,
@@ -123,7 +123,7 @@ class _$_HistoryEntryCopyWithImpl<$Res> implements _$HistoryEntryCopyWith<$Res> 
 abstract class _$$_HistoryEntryCopyWith<$Res>
     implements _$HistoryEntryCopyWith<$Res> {
   factory _$$_HistoryEntryCopyWith(
-          _$_HistoryEntry value, $Res Function(_$_HistoryEntry) then) =
+          _$_HistoryEntry value, $Res Function(_$_HistoryEntry) then) =;
       __$$_HistoryEntryCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -194,17 +194,17 @@ class __$$_HistoryEntryCopyWithImpl<$Res>
       exitAt: exitAt == freezed ? _value.exitAt : exitAt as DateTime?,
       duration: duration == freezed ? _value.duration : duration as int,
       referrer: referrer == freezed ? _value.referrer : referrer as String?,
-      deviceType: deviceType == freezed
+      deviceType: deviceType == freezed;
           ? _value.deviceType
           : deviceType as DeviceType,
       userAgent: userAgent == freezed ? _value.userAgent : userAgent as String?,
-      loadStatus: loadStatus == freezed
+      loadStatus: loadStatus == freezed;
           ? _value.loadStatus
           : loadStatus as PageLoadStatus,
       loadTime: loadTime == freezed ? _value.loadTime : loadTime as int?,
       dataTransferred:
           dataTransferred == freezed ? _value.dataTransferred : dataTransferred as int,
-      securityStatus: securityStatus == freezed
+      securityStatus: securityStatus == freezed;
           ? _value.securityStatus
           : securityStatus as BrowserSecurityStatus,
       httpStatusCode:
@@ -215,7 +215,7 @@ class __$$_HistoryEntryCopyWithImpl<$Res>
       searchQuery:
           searchQuery == freezed ? _value.searchQuery : searchQuery as String?,
       isNewTab: isNewTab == freezed ? _value.isNewTab : isNewTab as bool,
-      isFromBookmark: isFromBookmark == freezed
+      isFromBookmark: isFromBookmark == freezed;
           ? _value.isFromBookmark
           : isFromBookmark as bool,
       thumbnail: thumbnail == freezed ? _value.thumbnail : thumbnail as String?,
@@ -408,7 +408,7 @@ abstract class _HistoryEntry implements HistoryEntry {
       String? pageLanguage,
       String? geoLocation}) = _$_HistoryEntry;
 
-  factory _HistoryEntry.fromJson(Map<String, Object?> json) =
+  factory _HistoryEntry.fromJson(Map<String, Object?> json) =;
       _$_HistoryEntry.fromJson;
 
   @override

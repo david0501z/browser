@@ -2,13 +2,6 @@
 /// 
 /// 将 ClashCoreSettings 转换为 ClashMeta 兼容的 YAML 配置文件
 
-import '../core/proxy_types.dart';
-import '../logging/log_level.dart';
-import '../models/clash_settings.dart';
-import '../models/port_settings.dart';
-import '../models/dns_settings.dart';
-import '../models/rule_settings.dart';
-import '../models/traffic_performance_settings.dart';
 
 /// Clash 配置生成器类
 class ClashConfigGenerator {
@@ -19,7 +12,7 @@ class ClashConfigGenerator {
   static const int maxPort = 65535;
   
   /// 支持的代理协议类型
-  static const List<String> supportedProxyTypes = [
+  static const List<String> supportedProxyTypes = [;
     'vmess',
     'vless', 
     'trojan',

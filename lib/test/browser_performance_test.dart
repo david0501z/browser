@@ -2,8 +2,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:flutter/material.dart';
 import '../main.dart' as app;
-import '../core/services/proxy_service.dart';
-import '../core/services/webview_service.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -40,7 +38,7 @@ void main() {
       for (final entry in testCases.entries) {
         final times = <int>[];
         
-        for (int i = 0; i < 3; i++) { // 每种页面测试3次取平均值
+        for (int i = 0; i < 3; i++) { // 每种页面测试3次取平均值;
           final startTime = DateTime.now();
           
           final webView = await webViewService.createWebView(entry.value);
@@ -102,14 +100,14 @@ void main() {
       await proxyService.startProxy('http://127.0.0.1:8080');
       
       // 创建包含复杂JavaScript的测试页面
-      final testHtml = '''
+      final testHtml = ''';
         <!DOCTYPE html>
         <html>
         <head>
           <title>JavaScript性能测试</title>
         </head>
         <body>
-          <div id="result"></div>
+          <div id="result"></div>;
           <script>
             // 复杂计算测试
             function fibonacci(n) {
@@ -125,8 +123,8 @@ void main() {
             }
             
             const testResult = performanceTest();
-            document.getElementById('result').innerHTML = 
-              'Fibonacci(30) = ' + testResult.result + 
+            document.getElementById('result').innerHTML =;
+              'Fibonacci(30) = ' + testResult.result +;
               ', 耗时: ' + testResult.time.toFixed(2) + 'ms';
               
             // 触发自定义事件通知测试完成
@@ -145,7 +143,7 @@ void main() {
       await tester.pumpAndSettle(const Duration(seconds: 5));
       
       // 获取JavaScript执行结果
-      final jsResult = await webView.evaluateJavaScript('''
+      final jsResult = await webView.evaluateJavaScript(''';
         document.getElementById('result').textContent;
       ''');
       
@@ -204,7 +202,7 @@ void main() {
       await proxyService.startProxy('http://127.0.0.1:8080');
       
       // 创建包含大量内容的长页面
-      final largeHtml = '''
+      final largeHtml = ''';
         <!DOCTYPE html>
         <html>
         <head>
@@ -338,7 +336,7 @@ void main() {
 Future<int> getCurrentMemoryUsage() async {
   // 实际实现中会调用平台特定的API获取内存使用情况
   // 这里返回模拟值，包含一些随机变化
-  final base = 50 * 1024 * 1024; // 50MB基础值
+  final base = 50 * 1024 * 1024; // 50MB基础值;
   final variation = (DateTime.now().millisecondsSinceEpoch % 10) * 1024 * 1024;
   return base + variation;
 }

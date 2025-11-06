@@ -301,7 +301,7 @@ class _CustomTabBarState extends State<CustomTabBar>
           // 更多操作菜单
           PopupMenuButton<String>(
             onSelected: (value) => _handleMenuAction(value),
-            itemBuilder: (context) => [
+            itemBuilder: (context) => [;
               const PopupMenuItem(
                 value: 'close_all',
                 child: Text('关闭所有标签页'),

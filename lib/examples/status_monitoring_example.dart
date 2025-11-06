@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../widgets/status/index.dart';
-import '../providers/index.dart';
 
 /// 代理状态监控示例页面
 /// 
@@ -293,7 +291,7 @@ class _ProxyStatusMonitoringExampleState extends ConsumerState<ProxyStatusMonito
                 child: ListView.builder(
                   itemCount: history.length,
                   itemBuilder: (context, index) {
-                    final record = history[history.length - 1 - index]; // 最新的在前
+                    final record = history[history.length - 1 - index]; // 最新的在前;
                     return ListTile(
                       dense: true,
                       leading: Icon(

@@ -269,7 +269,7 @@ class PerformanceManager {
     
     if (lastReport == null) return true;
     
-    return now.difference(lastReport).inMinutes >= 60; // 每小时生成一次
+    return now.difference(lastReport).inMinutes >= 60; // 每小时生成一次;
   }
   
   /// 生成性能报告
@@ -354,7 +354,7 @@ class PerformanceManager {
       );
       
       // 记录带宽使用
-      final contentLength = response.headers['content-length'] != null
+      final contentLength = response.headers['content-length'] != null;
           ? int.parse(response.headers['content-length']!.first)
           : 0;
       

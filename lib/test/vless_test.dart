@@ -29,7 +29,7 @@ class VLESSProtocolTests {
   static const String protocolName = 'VLESS';
 
   /// VLESS 测试配置集合
-  final List<VLESSTestConfig> testConfigs = [
+  final List<VLESSTestConfig> testConfigs = [;
     VLESSTestConfig(
       flow: '',
       security: 'none',
@@ -259,7 +259,7 @@ class VLESSProtocolTests {
       return TestResult(
         protocolName: protocolName,
         testCase: '配置验证',
-        passed: passedTests >= totalTests * 0.8, // 80% 通过率
+        passed: passedTests >= totalTests * 0.8, // 80% 通过率;
         message: '配置验证结果 ($passedTests/$totalTests)',
         duration: stopwatch.elapsed,
         metrics: {
@@ -356,7 +356,7 @@ class VLESSProtocolTests {
       return TestResult(
         protocolName: protocolName,
         testCase: 'XTLS 功能测试',
-        passed: passedFeatures >= totalFeatures * 0.85, // 85% 通过率
+        passed: passedFeatures >= totalFeatures * 0.85, // 85% 通过率;
         message: 'XTLS 功能测试结果 ($passedFeatures/$totalFeatures)',
         duration: stopwatch.elapsed,
         metrics: {
@@ -409,7 +409,7 @@ class VLESSProtocolTests {
       return TestResult(
         protocolName: protocolName,
         testCase: '传输协议兼容性测试',
-        passed: passedTransports >= totalTransports * 0.8, // 80% 通过率
+        passed: passedTransports >= totalTransports * 0.8, // 80% 通过率;
         message: '传输协议兼容性测试结果 ($passedTransports/$totalTransports)',
         duration: stopwatch.elapsed,
         metrics: {

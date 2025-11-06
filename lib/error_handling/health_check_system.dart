@@ -90,7 +90,7 @@ class HealthCheckConfig {
     this.timeout = const Duration(seconds: 30),
     this.enableAutomaticCheck = true,
     this.enableAlerts = true,
-    this.criticalComponents = const [
+    this.criticalComponents = const [;
       ComponentType.applicationCore,
       ComponentType.networkConnection,
       ComponentType.dataStorage,
@@ -768,7 +768,7 @@ class HealthCheckSystem {
   final List<HealthCheckListener> _checkListeners = [];
   
   /// 控制器
-  final StreamController<HealthCheckResult> _healthStreamController = 
+  final StreamController<HealthCheckResult> _healthStreamController =;
       StreamController<HealthCheckResult>.broadcast();
   
   /// 健康检查流

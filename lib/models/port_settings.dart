@@ -46,7 +46,7 @@ abstract class PortConfiguration with _$PortConfiguration {
 /// 为PortConfiguration模型提供额外的功能方法。
 extension PortConfigurationExt on PortConfiguration {
   /// 获取所有端口的列表
-  List<int> get allPorts => [
+  List<int> get allPorts => [;
     socksPort,
     httpPort,
     apiPort,

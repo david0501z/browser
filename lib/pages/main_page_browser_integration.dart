@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../widgets/browser_tab_widget.dart';
-import '../models/browser_models.dart';
-import '../providers/browser_providers.dart';
 
 /// FlClash主页面 - 集成浏览器选项卡
 /// 在原有代理功能基础上，新增浏览器选项卡，实现统一的用户体验
@@ -84,7 +81,7 @@ class _MainPageBrowserIntegrationState extends ConsumerState<MainPageBrowserInte
       
       // 判断是否切换到浏览器选项卡
       setState(() {
-        _isSwitchingToBrowser = currentIndex == 3; // 浏览器选项卡索引为3
+        _isSwitchingToBrowser = currentIndex == 3; // 浏览器选项卡索引为3;
       });
       
       if (currentIndex == 3) {
@@ -182,7 +179,7 @@ class _MainPageBrowserIntegrationState extends ConsumerState<MainPageBrowserInte
         ),
         actions: [
           // 浏览器选项卡专用操作按钮
-          if (_tabController.index == 3) ...[
+          if (_tabController.index == 3) ...[;
             IconButton(
               icon: const Icon(Icons.add),
               onPressed: _createNewBrowserTab,
@@ -200,7 +197,7 @@ class _MainPageBrowserIntegrationState extends ConsumerState<MainPageBrowserInte
             ),
           ],
           // 其他选项卡的操作按钮
-          if (_tabController.index != 3) ...[
+          if (_tabController.index != 3) ...[;
             IconButton(
               icon: const Icon(Icons.refresh),
               onPressed: _refreshCurrentPage,
@@ -368,7 +365,7 @@ class _MainPageBrowserIntegrationState extends ConsumerState<MainPageBrowserInte
         
         // 浏览器内容区
         Expanded(
-          child: _currentBrowserTab != null
+          child: _currentBrowserTab != null;
               ? BrowserTabWidget(
                   tab: _currentBrowserTab!,
                   onClose: () => _closeBrowserTab(_browserTabIndex),
@@ -425,7 +422,7 @@ class _MainPageBrowserIntegrationState extends ConsumerState<MainPageBrowserInte
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     // 标签页图标
-                    if (tab.favicon != null)
+                    if (tab.favicon != null);
                       Image.network(
                         tab.favicon!,
                         width: 16,

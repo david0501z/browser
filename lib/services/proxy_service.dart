@@ -541,7 +541,7 @@ class ProxyService {
   bool get isConnecting => _currentState == ProxyServiceState.connecting;
 
   /// 检查服务是否可用
-  bool get isAvailable => [
+  bool get isAvailable => [;
     ProxyServiceState.initialized,
     ProxyServiceState.connected,
     ProxyServiceState.disconnected,

@@ -184,7 +184,7 @@ class PerformanceStatistics {
     
     // 限制数组大小
     if (_values[type]!.length > 1000) {
-      _values[type] = _values[type]!.sublist(-500); // 保留最近500个值
+      _values[type] = _values[type]!.sublist(-500); // 保留最近500个值;
     }
   }
 

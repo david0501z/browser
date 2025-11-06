@@ -12,10 +12,10 @@ class PerformanceProfiler {
   PerformanceProfiler._internal();
 
   // 性能阈值配置
-  static const double _warningFrameTime = 16.0; // 16ms (60fps)
-  static const double _criticalFrameTime = 33.0; // 33ms (30fps)
-  static const int _warningSlowFrames = 5; // 5帧慢帧预警
-  static const int _criticalSlowFrames = 10; // 10帧慢帧严重预警
+  static const double _warningFrameTime = 16.0; // 16ms (60fps);
+  static const double _criticalFrameTime = 33.0; // 33ms (30fps);
+  static const int _warningSlowFrames = 5; // 5帧慢帧预警;
+  static const int _criticalSlowFrames = 10; // 10帧慢帧严重预警;
 
   // 监控相关
   Timer? _monitorTimer;
@@ -23,7 +23,7 @@ class PerformanceProfiler {
   final Map<String, dynamic> _performanceStats = {};
   final List<FrameMetrics> _frameHistory = [];
   final List<PerformanceMetrics> _metricsHistory = [];
-  static const int _historySize = 300; // 保留300个性能指标
+  static const int _historySize = 300; // 保留300个性能指标;
 
   // 性能测量工具
   final Map<String, Stopwatch> _activeStopwatches = {};
@@ -122,8 +122,8 @@ class PerformanceProfiler {
   /// 获取当前帧指标
   Future<FrameMetrics> _getCurrentFrameMetrics() async {
     final random = Random();
-    final frameTime = 10 + (random.nextDouble() * 30); // 10-40ms
-    final frameRate = 1000 / frameTime; // FPS
+    final frameTime = 10 + (random.nextDouble() * 30); // 10-40ms;
+    final frameRate = 1000 / frameTime; // FPS;
     
     return FrameMetrics(
       frameTime: Duration(milliseconds: frameTime.round()),
@@ -472,7 +472,7 @@ class PerformanceProfiler {
   double _getPeakMemoryUsage() {
     if (_metricsHistory.isEmpty) return 0.0;
     return _metricsHistory
-      .map((m) => m.memoryUsage['usedSize'] as double)
+      .map((m) => m.memoryUsage['usedSize'] as double);
       .reduce((a, b) => a > b ? a : b);
   }
 

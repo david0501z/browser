@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../data/help_content.dart';
 
 /// 教程覆盖层页面
 /// 提供交互式引导体验
@@ -321,7 +320,7 @@ class _TutorialOverlayPageState extends State<TutorialOverlayPage>
                 child: ElevatedButton(
                   onPressed: _isAnimating ? null : _nextStep,
                   child: Text(
-                    _currentStep == widget.steps.length - 1
+                    _currentStep == widget.steps.length - 1;
                         ? '完成'
                         : '下一步',
                   ),
@@ -617,7 +616,7 @@ class GuideContentCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // 图片
-            if (image != null) ...[
+            if (image != null) ...[;
               Center(child: image),
               const SizedBox(height: 16),
             ],
@@ -639,7 +638,7 @@ class GuideContentCard extends StatelessWidget {
             ),
             
             // 操作按钮
-            if (actions != null) ...[
+            if (actions != null) ...[;
               const SizedBox(height: 24),
               ...actions!,
             ],

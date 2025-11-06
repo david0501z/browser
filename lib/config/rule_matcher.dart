@@ -284,7 +284,7 @@ class RuleMatcher extends ChangeNotifier {
     final results = <MatchResult>[];
     
     // 优先检查更具体的规则类型
-    final ruleTypes = [
+    final ruleTypes = [;
       RuleType.domain,
       RuleType.ip,
       RuleType.cidr,
@@ -402,7 +402,7 @@ class RuleMatcher extends ChangeNotifier {
 
   bool _matchWildcard(String input, String pattern) {
     // 转换通配符模式为正则表达式
-    final regexPattern = pattern
+    final regexPattern = pattern;
         .replaceAll('.', r'\.')
         .replaceAll('*', '.*')
         .replaceAll('?', '.');
@@ -624,13 +624,13 @@ class RuleMatcher extends ChangeNotifier {
         newMatchTypeStats[result.matchType] = (newMatchTypeStats[result.matchType] ?? 0) + 1;
         
         if (result.matchedRule != null) {
-          newRuleUsageStats[result.matchedRule!.id] = 
+          newRuleUsageStats[result.matchedRule!.id] =;
               (newRuleUsageStats[result.matchedRule!.id] ?? 0) + 1;
         }
       }
       
       // 计算新的平均匹配时间
-      final totalTime = newStats.averageMatchTime * newStats.totalMatches + 
+      final totalTime = newStats.averageMatchTime * newStats.totalMatches +;
                        result.matchTime.inMilliseconds;
       final newTotalMatches = newStats.totalMatches + 1;
       final newAverageTime = totalTime ~/ newTotalMatches;
@@ -688,7 +688,7 @@ class RuleMatcher extends ChangeNotifier {
     }
     
     // 最常用的规则
-    final sortedRules = _stats!.ruleUsageStats.entries.toList()
+    final sortedRules = _stats!.ruleUsageStats.entries.toList();
       ..sort((a, b) => b.value.compareTo(a.value));
     
     for (final entry in sortedRules.take(10)) {

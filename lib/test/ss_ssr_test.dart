@@ -31,7 +31,7 @@ class SS_SSRProtocolTests {
   static const String protocolName = 'Shadowsocks/SSR';
 
   /// Shadowsocks 测试配置集合
-  final List<SS_SSRTestConfig> testConfigs = [
+  final List<SS_SSRTestConfig> testConfigs = [;
     // Shadowsocks 基础配置
     SS_SSRTestConfig(
       protocol: 'ss',
@@ -224,7 +224,7 @@ class SS_SSRProtocolTests {
   ];
 
   /// 加密方法测试配置
-  final List<SS_SSRTestConfig> encryptionTestConfigs = [
+  final List<SS_SSRTestConfig> encryptionTestConfigs = [;
     SS_SSRTestConfig(
       protocol: 'ss',
       method: 'aes-128-ctr',
@@ -402,7 +402,7 @@ class SS_SSRProtocolTests {
       return TestResult(
         protocolName: protocolName,
         testCase: '配置验证',
-        passed: passedTests >= totalTests * 0.85, // 85% 通过率
+        passed: passedTests >= totalTests * 0.85, // 85% 通过率;
         message: '配置验证结果 ($passedTests/$totalTests)',
         duration: stopwatch.elapsed,
         metrics: {
@@ -646,7 +646,7 @@ class SS_SSRProtocolTests {
   }
 
   /// 支持的加密方法
-  static const _supportedMethods = [
+  static const _supportedMethods = [;
     'aes-128-ctr', 'aes-192-ctr', 'aes-256-ctr',
     'aes-128-cfb', 'aes-192-cfb', 'aes-256-cfb',
     'aes-128-cfb8', 'aes-192-cfb8', 'aes-256-cfb8',

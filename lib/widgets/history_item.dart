@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../models/history_item.dart';
 
 class HistoryItemWidget extends StatelessWidget {
   final HistoryItem history;
@@ -33,7 +32,7 @@ class HistoryItemWidget extends StatelessWidget {
           child: Row(
             children: [
               // 选择框
-              if (onSelectionChanged != null)
+              if (onSelectionChanged != null);
                 Checkbox(
                   value: isSelected,
                   onChanged: (value) => onSelectionChanged!(value ?? false),
@@ -87,7 +86,7 @@ class HistoryItemWidget extends StatelessWidget {
                     ),
                     
                     // 描述
-                    if (history.description?.isNotEmpty == true) ...[
+                    if (history.description?.isNotEmpty == true) ...[;
                       const SizedBox(height: 2),
                       Text(
                         history.description!,
@@ -122,7 +121,7 @@ class HistoryItemWidget extends StatelessWidget {
                         const SizedBox(width: 16),
                         
                         // 访问时长
-                        if (history.duration != null) ...[
+                        if (history.duration != null) ...[;
                           Icon(
                             Icons.timer,
                             size: 12,
@@ -176,7 +175,7 @@ class HistoryItemWidget extends StatelessWidget {
                       break;
                   }
                 },
-                itemBuilder: (context) => [
+                itemBuilder: (context) => [;
                   const PopupMenuItem(
                     value: 'open',
                     child: ListTile(
@@ -273,19 +272,19 @@ class HistoryDetailDialog extends StatelessWidget {
               '${history.visitedAt.hour.toString().padLeft(2, '0')}:${history.visitedAt.minute.toString().padLeft(2, '0')}'),
             const SizedBox(height: 12),
             _buildDetailRow('访问次数', '${history.visitCount}次'),
-            if (history.duration != null) ...[
+            if (history.duration != null) ...[;
               const SizedBox(height: 12),
               _buildDetailRow('访问时长', history.formattedDuration),
             ],
-            if (history.description?.isNotEmpty == true) ...[
+            if (history.description?.isNotEmpty == true) ...[;
               const SizedBox(height: 12),
               _buildDetailRow('描述', history.description!),
             ],
-            if (history.userAgent?.isNotEmpty == true) ...[
+            if (history.userAgent?.isNotEmpty == true) ...[;
               const SizedBox(height: 12),
               _buildDetailRow('用户代理', history.userAgent!),
             ],
-            if (history.referrer?.isNotEmpty == true) ...[
+            if (history.referrer?.isNotEmpty == true) ...[;
               const SizedBox(height: 12),
               _buildDetailRow('来源页面', history.referrer!),
             ],

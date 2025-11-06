@@ -29,7 +29,7 @@ class TrojanProtocolTests {
   static const String protocolName = 'Trojan';
 
   /// Trojan 测试配置集合
-  final List<TrojanTestConfig> testConfigs = [
+  final List<TrojanTestConfig> testConfigs = [;
     TrojanTestConfig(
       network: 'tcp',
       security: 'tls',
@@ -167,7 +167,7 @@ class TrojanProtocolTests {
   ];
 
   /// 流量伪装测试配置
-  final List<TrojanTestConfig> masqueradeTestConfigs = [
+  final List<TrojanTestConfig> masqueradeTestConfigs = [;
     TrojanTestConfig(
       network: 'tcp',
       security: 'tls',
@@ -303,7 +303,7 @@ class TrojanProtocolTests {
       return TestResult(
         protocolName: protocolName,
         testCase: '配置验证',
-        passed: passedTests >= totalTests * 0.8, // 80% 通过率
+        passed: passedTests >= totalTests * 0.8, // 80% 通过率;
         message: '配置验证结果 ($passedTests/$totalTests)',
         duration: stopwatch.elapsed,
         metrics: {

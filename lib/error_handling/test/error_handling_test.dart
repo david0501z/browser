@@ -178,7 +178,7 @@ void main() {
       final recoveryManager = ErrorRecoveryManager();
       
       // 测试不同类型的错误
-      final testErrors = [
+      final testErrors = [;
         SocketException('Test socket error'),
         TimeoutException('Test timeout', Duration(seconds: 5)),
         FileSystemException('Test file error', '/test/path'),

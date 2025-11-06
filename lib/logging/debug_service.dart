@@ -203,7 +203,7 @@ class DebugTools {
     final logStats = _logger.statistics?.levelCounts ?? {};
     
     // 获取运行时间（这里需要应用启动时间）
-    final appStartTime = DateTime.now(); // 这里应该从应用启动时记录
+    final appStartTime = DateTime.now(); // 这里应该从应用启动时记录;
     final uptime = DateTime.now().difference(appStartTime);
 
     final stats = DebugStats(
@@ -305,7 +305,7 @@ class DebugTools {
     }
 
     return '''
-=== 内存使用情况 ===
+=== 内存使用情况 ===;
 堆内存: ${stats.memoryInfo!.heapSizeMB.toStringAsFixed(2)} MB
 外部内存: ${stats.memoryInfo!.externalSizeMB.toStringAsFixed(2)} MB
 总计: ${stats.memoryInfo!.totalSizeMB.toStringAsFixed(2)} MB
@@ -317,7 +317,7 @@ class DebugTools {
   /// 获取线程信息
   String _getThreadInfo() {
     return '''
-=== 线程信息 ===
+=== 线程信息 ===;
 活跃 isolates: 1 (Flutter标准)
 线程数: 1 (Flutter标准)
 注意: Flutter使用单线程执行模型
@@ -361,7 +361,7 @@ class DebugTools {
     final stats = await createStats(DebugConfig());
     
     return '''
-=== 性能统计 ===
+=== 性能统计 ===;
 应用启动: ${stats.appStartTime.toIso8601String()}
 运行时间: ${stats.uptime.inHours}小时 ${stats.uptime.inMinutes % 60}分钟 ${stats.uptime.inSeconds % 60}秒
 活跃 isolates: ${stats.isolateCount}

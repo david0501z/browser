@@ -210,7 +210,7 @@ class SettingTile extends StatelessWidget {
             child: Row(
               children: [
                 // 图标
-                if (icon != null) ...[
+                if (icon != null) ...[;
                   Icon(
                     icon,
                     color: iconColor ?? theme.primaryColor,
@@ -254,7 +254,7 @@ class SettingTile extends StatelessWidget {
                       ),
                       
                       // 副标题
-                      if (subtitle != null) ...[
+                      if (subtitle != null) ...[;
                         const SizedBox(height: 2),
                         Text(
                           subtitle!,
@@ -267,7 +267,7 @@ class SettingTile extends StatelessWidget {
                       ],
                       
                       // 错误消息
-                      if (hasError && errorMessage != null) ...[
+                      if (hasError && errorMessage != null) ...[;
                         const SizedBox(height: 4),
                         Text(
                           errorMessage!,
@@ -278,7 +278,7 @@ class SettingTile extends StatelessWidget {
                       ],
                       
                       // 警告消息
-                      if (hasWarning && warningMessage != null) ...[
+                      if (hasWarning && warningMessage != null) ...[;
                         const SizedBox(height: 4),
                         Text(
                           warningMessage!,
@@ -292,7 +292,7 @@ class SettingTile extends StatelessWidget {
                 ),
                 
                 // 右侧控件
-                if (customChild != null)
+                if (customChild != null);
                   customChild!
                 else
                   _buildRightWidget(context),
@@ -350,7 +350,7 @@ class SettingTile extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        if (selectedOption != null)
+        if (selectedOption != null);
           Text(
             selectedOption.label,
             style: theme.textTheme.bodySmall?.copyWith(
@@ -450,7 +450,7 @@ class SettingTile extends StatelessWidget {
           color: iconColor,
           size: 16,
         ),
-        if (infoConfig!.showValue && value != null) ...[
+        if (infoConfig!.showValue && value != null) ...[;
           const SizedBox(width: 4),
           Text(
             value.toString(),

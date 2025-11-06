@@ -29,7 +29,7 @@ mixin _$PortSettings {
 /// @nodoc
 abstract class $PortSettingsCopyWith<$Res> {
   factory $PortSettingsCopyWith(
-          PortSettings value, $Res Function(PortSettings) then) =
+          PortSettings value, $Res Function(PortSettings) then) =;
       _$PortSettingsCopyWithImpl<$Res, PortSettings>;
   @useResult
   $Res call({int httpPort, int socksPort, int mixedPort, int apiPort});
@@ -66,7 +66,7 @@ class _$PortSettingsCopyWithImpl<$Res, $Val extends PortSettings>
 abstract class _$$PortSettingsCopyWith<$Res>
     implements $PortSettingsCopyWith<$Res> {
   factory _$$PortSettingsCopyWith(
-          _$PortSettings value, $Res Function(_$PortSettings) then) =
+          _$PortSettings value, $Res Function(_$PortSettings) then) =;
       __$$PortSettingsCopyWithImpl<$Res>;
   @override
   @useResult
@@ -105,7 +105,7 @@ class _$PortSettings extends _PortSettings {
       {this.httpPort = 7890,
       this.socksPort = 7891,
       this.mixedPort = 7892,
-      this.apiPort = 9090})
+      this.apiPort = 9090});
       : super._();
 
   @override

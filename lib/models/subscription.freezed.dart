@@ -90,7 +90,7 @@ mixin _$SubscriptionLink {
 /// @nodoc
 abstract class $SubscriptionLinkCopyWith<$Res> {
   factory $SubscriptionLinkCopyWith(
-          SubscriptionLink value, $Res Function(SubscriptionLink) then) =
+          SubscriptionLink value, $Res Function(SubscriptionLink) then) =;
       _$SubscriptionLinkCopyWithImpl<$Res, SubscriptionLink>;
   @useResult
   $Res call(
@@ -153,79 +153,79 @@ class _$SubscriptionLinkCopyWithImpl<$Res, $Val extends SubscriptionLink>
     Object? parseStats = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: null == id;
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
+      name: null == name;
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      url: null == url
+      url: null == url;
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      type: null == type
+      type: null == type;
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as SubscriptionType,
-      status: null == status
+      status: null == status;
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as SubscriptionStatus,
-      lastUpdated: freezed == lastUpdated
+      lastUpdated: freezed == lastUpdated;
           ? _value.lastUpdated
           : lastUpdated // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      nextUpdate: freezed == nextUpdate
+      nextUpdate: freezed == nextUpdate;
           ? _value.nextUpdate
           : nextUpdate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      updateIntervalHours: null == updateIntervalHours
+      updateIntervalHours: null == updateIntervalHours;
           ? _value.updateIntervalHours
           : updateIntervalHours // ignore: cast_nullable_to_non_nullable
               as int,
-      autoUpdate: null == autoUpdate
+      autoUpdate: null == autoUpdate;
           ? _value.autoUpdate
           : autoUpdate // ignore: cast_nullable_to_non_nullable
               as bool,
-      enabled: null == enabled
+      enabled: null == enabled;
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      nodes: null == nodes
+      nodes: null == nodes;
           ? _value.nodes
           : nodes // ignore: cast_nullable_to_non_nullable
               as List<ProxyNode>,
-      description: freezed == description
+      description: freezed == description;
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      groups: freezed == groups
+      groups: freezed == groups;
           ? _value.groups
           : groups // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      tags: freezed == tags
+      tags: freezed == tags;
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      source: freezed == source
+      source: freezed == source;
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdAt: null == createdAt
+      createdAt: null == createdAt;
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      updatedAt: freezed == updatedAt
+      updatedAt: freezed == updatedAt;
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      errorMessage: freezed == errorMessage
+      errorMessage: freezed == errorMessage;
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String?,
-      parseStats: null == parseStats
+      parseStats: null == parseStats;
           ? _value.parseStats
           : parseStats // ignore: cast_nullable_to_non_nullable
               as ParseStats,
@@ -247,7 +247,7 @@ class _$SubscriptionLinkCopyWithImpl<$Res, $Val extends SubscriptionLink>
 abstract class _$$SubscriptionLinkImplCopyWith<$Res>
     implements $SubscriptionLinkCopyWith<$Res> {
   factory _$$SubscriptionLinkImplCopyWith(_$SubscriptionLinkImpl value,
-          $Res Function(_$SubscriptionLinkImpl) then) =
+          $Res Function(_$SubscriptionLinkImpl) then) =;
       __$$SubscriptionLinkImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -310,79 +310,79 @@ class __$$SubscriptionLinkImplCopyWithImpl<$Res>
     Object? parseStats = null,
   }) {
     return _then(_$SubscriptionLinkImpl(
-      id: null == id
+      id: null == id;
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
+      name: null == name;
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      url: null == url
+      url: null == url;
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      type: null == type
+      type: null == type;
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as SubscriptionType,
-      status: null == status
+      status: null == status;
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as SubscriptionStatus,
-      lastUpdated: freezed == lastUpdated
+      lastUpdated: freezed == lastUpdated;
           ? _value.lastUpdated
           : lastUpdated // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      nextUpdate: freezed == nextUpdate
+      nextUpdate: freezed == nextUpdate;
           ? _value.nextUpdate
           : nextUpdate // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      updateIntervalHours: null == updateIntervalHours
+      updateIntervalHours: null == updateIntervalHours;
           ? _value.updateIntervalHours
           : updateIntervalHours // ignore: cast_nullable_to_non_nullable
               as int,
-      autoUpdate: null == autoUpdate
+      autoUpdate: null == autoUpdate;
           ? _value.autoUpdate
           : autoUpdate // ignore: cast_nullable_to_non_nullable
               as bool,
-      enabled: null == enabled
+      enabled: null == enabled;
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      nodes: null == nodes
+      nodes: null == nodes;
           ? _value._nodes
           : nodes // ignore: cast_nullable_to_non_nullable
               as List<ProxyNode>,
-      description: freezed == description
+      description: freezed == description;
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      groups: freezed == groups
+      groups: freezed == groups;
           ? _value._groups
           : groups // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      tags: freezed == tags
+      tags: freezed == tags;
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      source: freezed == source
+      source: freezed == source;
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdAt: null == createdAt
+      createdAt: null == createdAt;
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      updatedAt: freezed == updatedAt
+      updatedAt: freezed == updatedAt;
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      errorMessage: freezed == errorMessage
+      errorMessage: freezed == errorMessage;
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String?,
-      parseStats: null == parseStats
+      parseStats: null == parseStats;
           ? _value.parseStats
           : parseStats // ignore: cast_nullable_to_non_nullable
               as ParseStats,
@@ -412,7 +412,7 @@ class _$SubscriptionLinkImpl implements _SubscriptionLink {
       this.createdAt = DateTime.now,
       this.updatedAt,
       this.errorMessage,
-      this.parseStats = _emptyStats})
+      this.parseStats = _emptyStats});
       : _nodes = nodes,
         _groups = groups,
         _tags = tags;
@@ -571,7 +571,7 @@ class _$SubscriptionLinkImpl implements _SubscriptionLink {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hashAll([
+  int get hashCode => Object.hashAll([;
         runtimeType,
         id,
         name,
@@ -633,7 +633,7 @@ abstract class _SubscriptionLink implements SubscriptionLink {
       final String? errorMessage,
       final ParseStats parseStats}) = _$SubscriptionLinkImpl;
 
-  factory _SubscriptionLink.fromJson(Map<String, dynamic> json) =
+  factory _SubscriptionLink.fromJson(Map<String, dynamic> json) =;
       _$SubscriptionLinkImpl.fromJson;
 
   /// 订阅 ID
@@ -760,7 +760,7 @@ mixin _$ParseStats {
 /// @nodoc
 abstract class $ParseStatsCopyWith<$Res> {
   factory $ParseStatsCopyWith(
-          ParseStats value, $Res Function(ParseStats) then) =
+          ParseStats value, $Res Function(ParseStats) then) =;
       _$ParseStatsCopyWithImpl<$Res, ParseStats>;
   @useResult
   $Res call(
@@ -797,31 +797,31 @@ class _$ParseStatsCopyWithImpl<$Res, $Val extends ParseStats>
     Object? lastParsedAt = freezed,
   }) {
     return _then(_value.copyWith(
-      totalNodes: null == totalNodes
+      totalNodes: null == totalNodes;
           ? _value.totalNodes
           : totalNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      validNodes: null == validNodes
+      validNodes: null == validNodes;
           ? _value.validNodes
           : validNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      invalidNodes: null == invalidNodes
+      invalidNodes: null == invalidNodes;
           ? _value.invalidNodes
           : invalidNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      skippedNodes: null == skippedNodes
+      skippedNodes: null == skippedNodes;
           ? _value.skippedNodes
           : skippedNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      parseErrors: null == parseErrors
+      parseErrors: null == parseErrors;
           ? _value.parseErrors
           : parseErrors // ignore: cast_nullable_to_non_nullable
               as int,
-      parseTimeMs: null == parseTimeMs
+      parseTimeMs: null == parseTimeMs;
           ? _value.parseTimeMs
           : parseTimeMs // ignore: cast_nullable_to_non_nullable
               as int,
-      lastParsedAt: freezed == lastParsedAt
+      lastParsedAt: freezed == lastParsedAt;
           ? _value.lastParsedAt
           : lastParsedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
@@ -833,7 +833,7 @@ class _$ParseStatsCopyWithImpl<$Res, $Val extends ParseStats>
 abstract class _$$ParseStatsImplCopyWith<$Res>
     implements $ParseStatsCopyWith<$Res> {
   factory _$$ParseStatsImplCopyWith(
-          _$ParseStatsImpl value, $Res Function(_$ParseStatsImpl) then) =
+          _$ParseStatsImpl value, $Res Function(_$ParseStatsImpl) then) =;
       __$$ParseStatsImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -869,31 +869,31 @@ class __$$ParseStatsImplCopyWithImpl<$Res>
     Object? lastParsedAt = freezed,
   }) {
     return _then(_$ParseStatsImpl(
-      totalNodes: null == totalNodes
+      totalNodes: null == totalNodes;
           ? _value.totalNodes
           : totalNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      validNodes: null == validNodes
+      validNodes: null == validNodes;
           ? _value.validNodes
           : validNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      invalidNodes: null == invalidNodes
+      invalidNodes: null == invalidNodes;
           ? _value.invalidNodes
           : invalidNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      skippedNodes: null == skippedNodes
+      skippedNodes: null == skippedNodes;
           ? _value.skippedNodes
           : skippedNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      parseErrors: null == parseErrors
+      parseErrors: null == parseErrors;
           ? _value.parseErrors
           : parseErrors // ignore: cast_nullable_to_non_nullable
               as int,
-      parseTimeMs: null == parseTimeMs
+      parseTimeMs: null == parseTimeMs;
           ? _value.parseTimeMs
           : parseTimeMs // ignore: cast_nullable_to_non_nullable
               as int,
-      lastParsedAt: freezed == lastParsedAt
+      lastParsedAt: freezed == lastParsedAt;
           ? _value.lastParsedAt
           : lastParsedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
@@ -1007,7 +1007,7 @@ abstract class _ParseStats implements ParseStats {
       final int parseTimeMs,
       final DateTime? lastParsedAt}) = _$ParseStatsImpl;
 
-  factory _ParseStats.fromJson(Map<String, dynamic> json) =
+  factory _ParseStats.fromJson(Map<String, dynamic> json) =;
       _$ParseStatsImpl.fromJson;
 
   /// 总节点数
@@ -1091,7 +1091,7 @@ mixin _$Subscription {
 /// @nodoc
 abstract class $SubscriptionCopyWith<$Res> {
   factory $SubscriptionCopyWith(
-          Subscription value, $Res Function(Subscription) then) =
+          Subscription value, $Res Function(Subscription) then) =;
       _$SubscriptionCopyWithImpl<$Res, Subscription>;
   @useResult
   $Res call(
@@ -1132,35 +1132,35 @@ class _$SubscriptionCopyWithImpl<$Res, $Val extends Subscription>
     Object? defaultSettings = freezed,
   }) {
     return _then(_value.copyWith(
-      activeSubscriptionId: freezed == activeSubscriptionId
+      activeSubscriptionId: freezed == activeSubscriptionId;
           ? _value.activeSubscriptionId
           : activeSubscriptionId // ignore: cast_nullable_to_non_nullable
               as String?,
-      subscriptions: null == subscriptions
+      subscriptions: null == subscriptions;
           ? _value.subscriptions
           : subscriptions // ignore: cast_nullable_to_non_nullable
               as List<SubscriptionLink>,
-      isUpdating: null == isUpdating
+      isUpdating: null == isUpdating;
           ? _value.isUpdating
           : isUpdating // ignore: cast_nullable_to_non_nullable
               as bool,
-      globalUpdateIntervalHours: null == globalUpdateIntervalHours
+      globalUpdateIntervalHours: null == globalUpdateIntervalHours;
           ? _value.globalUpdateIntervalHours
           : globalUpdateIntervalHours // ignore: cast_nullable_to_non_nullable
               as int,
-      autoUpdateEnabled: null == autoUpdateEnabled
+      autoUpdateEnabled: null == autoUpdateEnabled;
           ? _value.autoUpdateEnabled
           : autoUpdateEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      concurrentUpdate: null == concurrentUpdate
+      concurrentUpdate: null == concurrentUpdate;
           ? _value.concurrentUpdate
           : concurrentUpdate // ignore: cast_nullable_to_non_nullable
               as bool,
-      cacheStrategy: null == cacheStrategy
+      cacheStrategy: null == cacheStrategy;
           ? _value.cacheStrategy
           : cacheStrategy // ignore: cast_nullable_to_non_nullable
               as CacheStrategy,
-      defaultSettings: freezed == defaultSettings
+      defaultSettings: freezed == defaultSettings;
           ? _value.defaultSettings
           : defaultSettings // ignore: cast_nullable_to_non_nullable
               as SubscriptionSettings?,
@@ -1187,7 +1187,7 @@ class _$SubscriptionCopyWithImpl<$Res, $Val extends Subscription>
 abstract class _$$SubscriptionImplCopyWith<$Res>
     implements $SubscriptionCopyWith<$Res> {
   factory _$$SubscriptionImplCopyWith(
-          _$SubscriptionImpl value, $Res Function(_$SubscriptionImpl) then) =
+          _$SubscriptionImpl value, $Res Function(_$SubscriptionImpl) then) =;
       __$$SubscriptionImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1228,35 +1228,35 @@ class __$$SubscriptionImplCopyWithImpl<$Res>
     Object? defaultSettings = freezed,
   }) {
     return _then(_$SubscriptionImpl(
-      activeSubscriptionId: freezed == activeSubscriptionId
+      activeSubscriptionId: freezed == activeSubscriptionId;
           ? _value.activeSubscriptionId
           : activeSubscriptionId // ignore: cast_nullable_to_non_nullable
               as String?,
-      subscriptions: null == subscriptions
+      subscriptions: null == subscriptions;
           ? _value._subscriptions
           : subscriptions // ignore: cast_nullable_to_non_nullable
               as List<SubscriptionLink>,
-      isUpdating: null == isUpdating
+      isUpdating: null == isUpdating;
           ? _value.isUpdating
           : isUpdating // ignore: cast_nullable_to_non_nullable
               as bool,
-      globalUpdateIntervalHours: null == globalUpdateIntervalHours
+      globalUpdateIntervalHours: null == globalUpdateIntervalHours;
           ? _value.globalUpdateIntervalHours
           : globalUpdateIntervalHours // ignore: cast_nullable_to_non_nullable
               as int,
-      autoUpdateEnabled: null == autoUpdateEnabled
+      autoUpdateEnabled: null == autoUpdateEnabled;
           ? _value.autoUpdateEnabled
           : autoUpdateEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      concurrentUpdate: null == concurrentUpdate
+      concurrentUpdate: null == concurrentUpdate;
           ? _value.concurrentUpdate
           : concurrentUpdate // ignore: cast_nullable_to_non_nullable
               as bool,
-      cacheStrategy: null == cacheStrategy
+      cacheStrategy: null == cacheStrategy;
           ? _value.cacheStrategy
           : cacheStrategy // ignore: cast_nullable_to_non_nullable
               as CacheStrategy,
-      defaultSettings: freezed == defaultSettings
+      defaultSettings: freezed == defaultSettings;
           ? _value.defaultSettings
           : defaultSettings // ignore: cast_nullable_to_non_nullable
               as SubscriptionSettings?,
@@ -1395,7 +1395,7 @@ abstract class _Subscription implements Subscription {
       final CacheStrategy cacheStrategy,
       final SubscriptionSettings? defaultSettings}) = _$SubscriptionImpl;
 
-  factory _Subscription.fromJson(Map<String, dynamic> json) =
+  factory _Subscription.fromJson(Map<String, dynamic> json) =;
       _$SubscriptionImpl.fromJson;
 
   /// 当前激活的订阅 ID
@@ -1484,7 +1484,7 @@ mixin _$SubscriptionSettings {
 /// @nodoc
 abstract class $SubscriptionSettingsCopyWith<$Res> {
   factory $SubscriptionSettingsCopyWith(SubscriptionSettings value,
-          $Res Function(SubscriptionSettings) then) =
+          $Res Function(SubscriptionSettings) then) =;
       _$SubscriptionSettingsCopyWithImpl<$Res, SubscriptionSettings>;
   @useResult
   $Res call(
@@ -1526,39 +1526,39 @@ class _$SubscriptionSettingsCopyWithImpl<$Res,
     Object? validationLevel = null,
   }) {
     return _then(_value.copyWith(
-      connectTimeoutSeconds: null == connectTimeoutSeconds
+      connectTimeoutSeconds: null == connectTimeoutSeconds;
           ? _value.connectTimeoutSeconds
           : connectTimeoutSeconds // ignore: cast_nullable_to_non_nullable
               as int,
-      readTimeoutSeconds: null == readTimeoutSeconds
+      readTimeoutSeconds: null == readTimeoutSeconds;
           ? _value.readTimeoutSeconds
           : readTimeoutSeconds // ignore: cast_nullable_to_non_nullable
               as int,
-      maxRetries: null == maxRetries
+      maxRetries: null == maxRetries;
           ? _value.maxRetries
           : maxRetries // ignore: cast_nullable_to_non_nullable
               as int,
-      verifySSLCert: null == verifySSLCert
+      verifySSLCert: null == verifySSLCert;
           ? _value.verifySSLCert
           : verifySSLCert // ignore: cast_nullable_to_non_nullable
               as bool,
-      useProxy: null == useProxy
+      useProxy: null == useProxy;
           ? _value.useProxy
           : useProxy // ignore: cast_nullable_to_non_nullable
               as bool,
-      proxyUrl: freezed == proxyUrl
+      proxyUrl: freezed == proxyUrl;
           ? _value.proxyUrl
           : proxyUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      mergeDuplicateNodes: null == mergeDuplicateNodes
+      mergeDuplicateNodes: null == mergeDuplicateNodes;
           ? _value.mergeDuplicateNodes
           : mergeDuplicateNodes // ignore: cast_nullable_to_non_nullable
               as bool,
-      filterDuplicateNodes: null == filterDuplicateNodes
+      filterDuplicateNodes: null == filterDuplicateNodes;
           ? _value.filterDuplicateNodes
           : filterDuplicateNodes // ignore: cast_nullable_to_non_nullable
               as bool,
-      validationLevel: null == validationLevel
+      validationLevel: null == validationLevel;
           ? _value.validationLevel
           : validationLevel // ignore: cast_nullable_to_non_nullable
               as ValidationLevel,
@@ -1570,7 +1570,7 @@ class _$SubscriptionSettingsCopyWithImpl<$Res,
 abstract class _$$SubscriptionSettingsImplCopyWith<$Res>
     implements $SubscriptionSettingsCopyWith<$Res> {
   factory _$$SubscriptionSettingsImplCopyWith(_$SubscriptionSettingsImpl value,
-          $Res Function(_$SubscriptionSettingsImpl) then) =
+          $Res Function(_$SubscriptionSettingsImpl) then) =;
       __$$SubscriptionSettingsImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1610,39 +1610,39 @@ class __$$SubscriptionSettingsImplCopyWithImpl<$Res>
     Object? validationLevel = null,
   }) {
     return _then(_$SubscriptionSettingsImpl(
-      connectTimeoutSeconds: null == connectTimeoutSeconds
+      connectTimeoutSeconds: null == connectTimeoutSeconds;
           ? _value.connectTimeoutSeconds
           : connectTimeoutSeconds // ignore: cast_nullable_to_non_nullable
               as int,
-      readTimeoutSeconds: null == readTimeoutSeconds
+      readTimeoutSeconds: null == readTimeoutSeconds;
           ? _value.readTimeoutSeconds
           : readTimeoutSeconds // ignore: cast_nullable_to_non_nullable
               as int,
-      maxRetries: null == maxRetries
+      maxRetries: null == maxRetries;
           ? _value.maxRetries
           : maxRetries // ignore: cast_nullable_to_non_nullable
               as int,
-      verifySSLCert: null == verifySSLCert
+      verifySSLCert: null == verifySSLCert;
           ? _value.verifySSLCert
           : verifySSLCert // ignore: cast_nullable_to_non_nullable
               as bool,
-      useProxy: null == useProxy
+      useProxy: null == useProxy;
           ? _value.useProxy
           : useProxy // ignore: cast_nullable_to_non_nullable
               as bool,
-      proxyUrl: freezed == proxyUrl
+      proxyUrl: freezed == proxyUrl;
           ? _value.proxyUrl
           : proxyUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      mergeDuplicateNodes: null == mergeDuplicateNodes
+      mergeDuplicateNodes: null == mergeDuplicateNodes;
           ? _value.mergeDuplicateNodes
           : mergeDuplicateNodes // ignore: cast_nullable_to_non_nullable
               as bool,
-      filterDuplicateNodes: null == filterDuplicateNodes
+      filterDuplicateNodes: null == filterDuplicateNodes;
           ? _value.filterDuplicateNodes
           : filterDuplicateNodes // ignore: cast_nullable_to_non_nullable
               as bool,
-      validationLevel: null == validationLevel
+      validationLevel: null == validationLevel;
           ? _value.validationLevel
           : validationLevel // ignore: cast_nullable_to_non_nullable
               as ValidationLevel,
@@ -1785,7 +1785,7 @@ abstract class _SubscriptionSettings implements SubscriptionSettings {
       final bool filterDuplicateNodes,
       final ValidationLevel validationLevel}) = _$SubscriptionSettingsImpl;
 
-  factory _SubscriptionSettings.fromJson(Map<String, dynamic> json) =
+  factory _SubscriptionSettings.fromJson(Map<String, dynamic> json) =;
       _$SubscriptionSettingsImpl.fromJson;
 
   /// 连接超时时间（秒）
@@ -1878,7 +1878,7 @@ mixin _$UpdateResult {
 /// @nodoc
 abstract class $UpdateResultCopyWith<$Res> {
   factory $UpdateResultCopyWith(
-          UpdateResult value, $Res Function(UpdateResult) then) =
+          UpdateResult value, $Res Function(UpdateResult) then) =;
       _$UpdateResultCopyWithImpl<$Res, UpdateResult>;
   @useResult
   $Res call(
@@ -1919,39 +1919,39 @@ class _$UpdateResultCopyWithImpl<$Res, $Val extends UpdateResult>
     Object? endTime = null,
   }) {
     return _then(_value.copyWith(
-      success: null == success
+      success: null == success;
           ? _value.success
           : success // ignore: cast_nullable_to_non_nullable
               as bool,
-      subscriptionId: null == subscriptionId
+      subscriptionId: null == subscriptionId;
           ? _value.subscriptionId
           : subscriptionId // ignore: cast_nullable_to_non_nullable
               as String,
-      addedNodes: null == addedNodes
+      addedNodes: null == addedNodes;
           ? _value.addedNodes
           : addedNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      updatedNodes: null == updatedNodes
+      updatedNodes: null == updatedNodes;
           ? _value.updatedNodes
           : updatedNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      removedNodes: null == removedNodes
+      removedNodes: null == removedNodes;
           ? _value.removedNodes
           : removedNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      error: freezed == error
+      error: freezed == error;
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String?,
-      durationMs: null == durationMs
+      durationMs: null == durationMs;
           ? _value.durationMs
           : durationMs // ignore: cast_nullable_to_non_nullable
               as int,
-      startTime: null == startTime
+      startTime: null == startTime;
           ? _value.startTime
           : startTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      endTime: null == endTime
+      endTime: null == endTime;
           ? _value.endTime
           : endTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
@@ -1963,7 +1963,7 @@ class _$UpdateResultCopyWithImpl<$Res, $Val extends UpdateResult>
 abstract class _$$UpdateResultImplCopyWith<$Res>
     implements $UpdateResultCopyWith<$Res> {
   factory _$$UpdateResultImplCopyWith(
-          _$UpdateResultImpl value, $Res Function(_$UpdateResultImpl) then) =
+          _$UpdateResultImpl value, $Res Function(_$UpdateResultImpl) then) =;
       __$$UpdateResultImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -2003,39 +2003,39 @@ class __$$UpdateResultImplCopyWithImpl<$Res>
     Object? endTime = null,
   }) {
     return _then(_$UpdateResultImpl(
-      success: null == success
+      success: null == success;
           ? _value.success
           : success // ignore: cast_nullable_to_non_nullable
               as bool,
-      subscriptionId: null == subscriptionId
+      subscriptionId: null == subscriptionId;
           ? _value.subscriptionId
           : subscriptionId // ignore: cast_nullable_to_non_nullable
               as String,
-      addedNodes: null == addedNodes
+      addedNodes: null == addedNodes;
           ? _value.addedNodes
           : addedNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      updatedNodes: null == updatedNodes
+      updatedNodes: null == updatedNodes;
           ? _value.updatedNodes
           : updatedNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      removedNodes: null == removedNodes
+      removedNodes: null == removedNodes;
           ? _value.removedNodes
           : removedNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      error: freezed == error
+      error: freezed == error;
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String?,
-      durationMs: null == durationMs
+      durationMs: null == durationMs;
           ? _value.durationMs
           : durationMs // ignore: cast_nullable_to_non_nullable
               as int,
-      startTime: null == startTime
+      startTime: null == startTime;
           ? _value.startTime
           : startTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      endTime: null == endTime
+      endTime: null == endTime;
           ? _value.endTime
           : endTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
@@ -2169,7 +2169,7 @@ abstract class _UpdateResult implements UpdateResult {
       required final DateTime startTime,
       required final DateTime endTime}) = _$UpdateResultImpl;
 
-  factory _UpdateResult.fromJson(Map<String, dynamic> json) =
+  factory _UpdateResult.fromJson(Map<String, dynamic> json) =;
       _$UpdateResultImpl.fromJson;
 
   /// 是否成功
@@ -2256,7 +2256,7 @@ mixin _$ImportResult {
 /// @nodoc
 abstract class $ImportResultCopyWith<$Res> {
   factory $ImportResultCopyWith(
-          ImportResult value, $Res Function(ImportResult) then) =
+          ImportResult value, $Res Function(ImportResult) then) =;
       _$ImportResultCopyWithImpl<$Res, ImportResult>;
   @useResult
   $Res call(
@@ -2295,31 +2295,31 @@ class _$ImportResultCopyWithImpl<$Res, $Val extends ImportResult>
     Object? importStats = null,
   }) {
     return _then(_value.copyWith(
-      success: null == success
+      success: null == success;
           ? _value.success
           : success // ignore: cast_nullable_to_non_nullable
               as bool,
-      importedSubscriptions: null == importedSubscriptions
+      importedSubscriptions: null == importedSubscriptions;
           ? _value.importedSubscriptions
           : importedSubscriptions // ignore: cast_nullable_to_non_nullable
               as int,
-      totalNodes: null == totalNodes
+      totalNodes: null == totalNodes;
           ? _value.totalNodes
           : totalNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      validNodes: null == validNodes
+      validNodes: null == validNodes;
           ? _value.validNodes
           : validNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      failedSubscriptions: null == failedSubscriptions
+      failedSubscriptions: null == failedSubscriptions;
           ? _value.failedSubscriptions
           : failedSubscriptions // ignore: cast_nullable_to_non_nullable
               as int,
-      errors: null == errors
+      errors: null == errors;
           ? _value.errors
           : errors // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      importStats: null == importStats
+      importStats: null == importStats;
           ? _value.importStats
           : importStats // ignore: cast_nullable_to_non_nullable
               as ImportStats,
@@ -2341,7 +2341,7 @@ class _$ImportResultCopyWithImpl<$Res, $Val extends ImportResult>
 abstract class _$$ImportResultImplCopyWith<$Res>
     implements $ImportResultCopyWith<$Res> {
   factory _$$ImportResultImplCopyWith(
-          _$ImportResultImpl value, $Res Function(_$ImportResultImpl) then) =
+          _$ImportResultImpl value, $Res Function(_$ImportResultImpl) then) =;
       __$$ImportResultImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -2380,31 +2380,31 @@ class __$$ImportResultImplCopyWithImpl<$Res>
     Object? importStats = null,
   }) {
     return _then(_$ImportResultImpl(
-      success: null == success
+      success: null == success;
           ? _value.success
           : success // ignore: cast_nullable_to_non_nullable
               as bool,
-      importedSubscriptions: null == importedSubscriptions
+      importedSubscriptions: null == importedSubscriptions;
           ? _value.importedSubscriptions
           : importedSubscriptions // ignore: cast_nullable_to_non_nullable
               as int,
-      totalNodes: null == totalNodes
+      totalNodes: null == totalNodes;
           ? _value.totalNodes
           : totalNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      validNodes: null == validNodes
+      validNodes: null == validNodes;
           ? _value.validNodes
           : validNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      failedSubscriptions: null == failedSubscriptions
+      failedSubscriptions: null == failedSubscriptions;
           ? _value.failedSubscriptions
           : failedSubscriptions // ignore: cast_nullable_to_non_nullable
               as int,
-      errors: null == errors
+      errors: null == errors;
           ? _value._errors
           : errors // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      importStats: null == importStats
+      importStats: null == importStats;
           ? _value.importStats
           : importStats // ignore: cast_nullable_to_non_nullable
               as ImportStats,
@@ -2422,7 +2422,7 @@ class _$ImportResultImpl implements _ImportResult {
       this.validNodes = 0,
       this.failedSubscriptions = 0,
       final List<String> errors = const [],
-      this.importStats = _emptyImportStats})
+      this.importStats = _emptyImportStats});
       : _errors = errors;
 
   factory _$ImportResultImpl.fromJson(Map<String, dynamic> json) =>
@@ -2531,7 +2531,7 @@ abstract class _ImportResult implements ImportResult {
       final List<String> errors,
       final ImportStats importStats}) = _$ImportResultImpl;
 
-  factory _ImportResult.fromJson(Map<String, dynamic> json) =
+  factory _ImportResult.fromJson(Map<String, dynamic> json) =;
       _$ImportResultImpl.fromJson;
 
   /// 是否成功
@@ -2607,7 +2607,7 @@ mixin _$ImportStats {
 /// @nodoc
 abstract class $ImportStatsCopyWith<$Res> {
   factory $ImportStatsCopyWith(
-          ImportStats value, $Res Function(ImportStats) then) =
+          ImportStats value, $Res Function(ImportStats) then) =;
       _$ImportStatsCopyWithImpl<$Res, ImportStats>;
   @useResult
   $Res call(
@@ -2642,27 +2642,27 @@ class _$ImportStatsCopyWithImpl<$Res, $Val extends ImportStats>
     Object? totalImportTimeMs = null,
   }) {
     return _then(_value.copyWith(
-      v2rayCount: null == v2rayCount
+      v2rayCount: null == v2rayCount;
           ? _value.v2rayCount
           : v2rayCount // ignore: cast_nullable_to_non_nullable
               as int,
-      ssCount: null == ssCount
+      ssCount: null == ssCount;
           ? _value.ssCount
           : ssCount // ignore: cast_nullable_to_non_nullable
               as int,
-      ssrCount: null == ssrCount
+      ssrCount: null == ssrCount;
           ? _value.ssrCount
           : ssrCount // ignore: cast_nullable_to_non_nullable
               as int,
-      trojanCount: null == trojanCount
+      trojanCount: null == trojanCount;
           ? _value.trojanCount
           : trojanCount // ignore: cast_nullable_to_non_nullable
               as int,
-      errorCount: null == errorCount
+      errorCount: null == errorCount;
           ? _value.errorCount
           : errorCount // ignore: cast_nullable_to_non_nullable
               as int,
-      totalImportTimeMs: null == totalImportTimeMs
+      totalImportTimeMs: null == totalImportTimeMs;
           ? _value.totalImportTimeMs
           : totalImportTimeMs // ignore: cast_nullable_to_non_nullable
               as int,
@@ -2674,7 +2674,7 @@ class _$ImportStatsCopyWithImpl<$Res, $Val extends ImportStats>
 abstract class _$$ImportStatsImplCopyWith<$Res>
     implements $ImportStatsCopyWith<$Res> {
   factory _$$ImportStatsImplCopyWith(
-          _$ImportStatsImpl value, $Res Function(_$ImportStatsImpl) then) =
+          _$ImportStatsImpl value, $Res Function(_$ImportStatsImpl) then) =;
       __$$ImportStatsImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -2708,27 +2708,27 @@ class __$$ImportStatsImplCopyWithImpl<$Res>
     Object? totalImportTimeMs = null,
   }) {
     return _then(_$ImportStatsImpl(
-      v2rayCount: null == v2rayCount
+      v2rayCount: null == v2rayCount;
           ? _value.v2rayCount
           : v2rayCount // ignore: cast_nullable_to_non_nullable
               as int,
-      ssCount: null == ssCount
+      ssCount: null == ssCount;
           ? _value.ssCount
           : ssCount // ignore: cast_nullable_to_non_nullable
               as int,
-      ssrCount: null == ssrCount
+      ssrCount: null == ssrCount;
           ? _value.ssrCount
           : ssrCount // ignore: cast_nullable_to_non_nullable
               as int,
-      trojanCount: null == trojanCount
+      trojanCount: null == trojanCount;
           ? _value.trojanCount
           : trojanCount // ignore: cast_nullable_to_non_nullable
               as int,
-      errorCount: null == errorCount
+      errorCount: null == errorCount;
           ? _value.errorCount
           : errorCount // ignore: cast_nullable_to_non_nullable
               as int,
-      totalImportTimeMs: null == totalImportTimeMs
+      totalImportTimeMs: null == totalImportTimeMs;
           ? _value.totalImportTimeMs
           : totalImportTimeMs // ignore: cast_nullable_to_non_nullable
               as int,
@@ -2833,7 +2833,7 @@ abstract class _ImportStats implements ImportStats {
       final int errorCount,
       final int totalImportTimeMs}) = _$ImportStatsImpl;
 
-  factory _ImportStats.fromJson(Map<String, dynamic> json) =
+  factory _ImportStats.fromJson(Map<String, dynamic> json) =;
       _$ImportStatsImpl.fromJson;
 
   /// V2Ray 节点数

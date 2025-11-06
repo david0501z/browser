@@ -80,7 +80,7 @@ mixin _$BrowserSettings {
 /// @nodoc
 abstract class $BrowserSettingsCopyWith<$Res> {
   factory $BrowserSettingsCopyWith(
-          BrowserSettings value, $Res Function(BrowserSettings) then) =
+          BrowserSettings value, $Res Function(BrowserSettings) then) =;
       _$BrowserSettingsCopyWithImpl<$Res, BrowserSettings>;
   @useResult
   $Res call({
@@ -216,231 +216,231 @@ class _$BrowserSettingsCopyWithImpl<$Res, $Val extends BrowserSettings>
     Object? advancedSettings = freezed,
   }) {
     return _then(_value.copyWith(
-      userAgent: freezed == userAgent
+      userAgent: freezed == userAgent;
           ? _value.userAgent
           : userAgent // ignore: cast_nullable_to_non_nullable
               as String?,
-      javascriptEnabled: null == javascriptEnabled
+      javascriptEnabled: null == javascriptEnabled;
           ? _value.javascriptEnabled
           : javascriptEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      domStorageEnabled: null == domStorageEnabled
+      domStorageEnabled: null == domStorageEnabled;
           ? _value.domStorageEnabled
           : domStorageEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      mixedContentEnabled: null == mixedContentEnabled
+      mixedContentEnabled: null == mixedContentEnabled;
           ? _value.mixedContentEnabled
           : mixedContentEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      cacheMode: null == cacheMode
+      cacheMode: null == cacheMode;
           ? _value.cacheMode
           : cacheMode // ignore: cast_nullable_to_non_nullable
               as CacheMode,
-      incognito: null == incognito
+      incognito: null == incognito;
           ? _value.incognito
           : incognito // ignore: cast_nullable_to_non_nullable
               as bool,
-      cookiesEnabled: null == cookiesEnabled
+      cookiesEnabled: null == cookiesEnabled;
           ? _value.cookiesEnabled
           : cookiesEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      imagesEnabled: null == imagesEnabled
+      imagesEnabled: null == imagesEnabled;
           ? _value.imagesEnabled
           : imagesEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      cssEnabled: null == cssEnabled
+      cssEnabled: null == cssEnabled;
           ? _value.cssEnabled
           : cssEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      pluginsEnabled: null == pluginsEnabled
+      pluginsEnabled: null == pluginsEnabled;
           ? _value.pluginsEnabled
           : pluginsEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      mediaAutoplayEnabled: null == mediaAutoplayEnabled
+      mediaAutoplayEnabled: null == mediaAutoplayEnabled;
           ? _value.mediaAutoplayEnabled
           : mediaAutoplayEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      geolocationEnabled: null == geolocationEnabled
+      geolocationEnabled: null == geolocationEnabled;
           ? _value.geolocationEnabled
           : geolocationEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      cameraEnabled: null == cameraEnabled
+      cameraEnabled: null == cameraEnabled;
           ? _value.cameraEnabled
           : cameraEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      microphoneEnabled: null == microphoneEnabled
+      microphoneEnabled: null == microphoneEnabled;
           ? _value.microphoneEnabled
           : microphoneEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      notificationsEnabled: null == notificationsEnabled
+      notificationsEnabled: null == notificationsEnabled;
           ? _value.notificationsEnabled
           : notificationsEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      webrtcEnabled: null == webrtcEnabled
+      webrtcEnabled: null == webrtcEnabled;
           ? _value.webrtcEnabled
           : webrtcEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      fileAccessEnabled: null == fileAccessEnabled
+      fileAccessEnabled: null == fileAccessEnabled;
           ? _value.fileAccessEnabled
           : fileAccessEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      downloadManagerEnabled: null == downloadManagerEnabled
+      downloadManagerEnabled: null == downloadManagerEnabled;
           ? _value.downloadManagerEnabled
           : downloadManagerEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      defaultDownloadPath: freezed == defaultDownloadPath
+      defaultDownloadPath: freezed == defaultDownloadPath;
           ? _value.defaultDownloadPath
           : defaultDownloadPath // ignore: cast_nullable_to_non_nullable
               as String?,
-      defaultEncoding: null == defaultEncoding
+      defaultEncoding: null == defaultEncoding;
           ? _value.defaultEncoding
           : defaultEncoding // ignore: cast_nullable_to_non_nullable
               as String,
-      fontSize: null == fontSize
+      fontSize: null == fontSize;
           ? _value.fontSize
           : fontSize // ignore: cast_nullable_to_non_nullable
               as FontSize,
-      zoomLevel: null == zoomLevel
+      zoomLevel: null == zoomLevel;
           ? _value.zoomLevel
           : zoomLevel // ignore: cast_nullable_to_non_nullable
               as double,
-      darkMode: null == darkMode
+      darkMode: null == darkMode;
           ? _value.darkMode
           : darkMode // ignore: cast_nullable_to_non_nullable
               as bool,
-      readerMode: null == readerMode
+      readerMode: null == readerMode;
           ? _value.readerMode
           : readerMode // ignore: cast_nullable_to_non_nullable
               as bool,
-      adBlockEnabled: null == adBlockEnabled
+      adBlockEnabled: null == adBlockEnabled;
           ? _value.adBlockEnabled
           : adBlockEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      trackingProtectionEnabled: null == trackingProtectionEnabled
+      trackingProtectionEnabled: null == trackingProtectionEnabled;
           ? _value.trackingProtectionEnabled
           : trackingProtectionEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      popupBlockerEnabled: null == popupBlockerEnabled
+      popupBlockerEnabled: null == popupBlockerEnabled;
           ? _value.popupBlockerEnabled
           : popupBlockerEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      autofillEnabled: null == autofillEnabled
+      autofillEnabled: null == autofillEnabled;
           ? _value.autofillEnabled
           : autofillEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      passwordSaveEnabled: null == passwordSaveEnabled
+      passwordSaveEnabled: null == passwordSaveEnabled;
           ? _value.passwordSaveEnabled
           : passwordSaveEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      formAutofillEnabled: null == formAutofillEnabled
+      formAutofillEnabled: null == formAutofillEnabled;
           ? _value.formAutofillEnabled
           : formAutofillEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      privacyMode: null == privacyMode
+      privacyMode: null == privacyMode;
           ? _value.privacyMode
           : privacyMode // ignore: cast_nullable_to_non_nullable
               as PrivacyMode,
-      defaultSearchEngine: null == defaultSearchEngine
+      defaultSearchEngine: null == defaultSearchEngine;
           ? _value.defaultSearchEngine
           : defaultSearchEngine // ignore: cast_nullable_to_non_nullable
               as SearchEngine,
-      homepage: null == homepage
+      homepage: null == homepage;
           ? _value.homepage
           : homepage // ignore: cast_nullable_to_non_nullable
               as String,
-      newTabPage: null == newTabPage
+      newTabPage: null == newTabPage;
           ? _value.newTabPage
           : newTabPage // ignore: cast_nullable_to_non_nullable
               as NewTabPage,
-      keyboardShortcutsEnabled: null == keyboardShortcutsEnabled
+      keyboardShortcutsEnabled: null == keyboardShortcutsEnabled;
           ? _value.keyboardShortcutsEnabled
           : keyboardShortcutsEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      mouseGesturesEnabled: null == mouseGesturesEnabled
+      mouseGesturesEnabled: null == mouseGesturesEnabled;
           ? _value.mouseGesturesEnabled
           : mouseGesturesEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      developerToolsEnabled: null == developerToolsEnabled
+      developerToolsEnabled: null == developerToolsEnabled;
           ? _value.developerToolsEnabled
           : developerToolsEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      consoleLoggingEnabled: null == consoleLoggingEnabled
+      consoleLoggingEnabled: null == consoleLoggingEnabled;
           ? _value.consoleLoggingEnabled
           : consoleLoggingEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      networkTimeout: null == networkTimeout
+      networkTimeout: null == networkTimeout;
           ? _value.networkTimeout
           : networkTimeout // ignore: cast_nullable_to_non_nullable
               as int,
-      pageLoadTimeout: null == pageLoadTimeout
+      pageLoadTimeout: null == pageLoadTimeout;
           ? _value.pageLoadTimeout
           : pageLoadTimeout // ignore: cast_nullable_to_non_nullable
               as int,
-      maxConcurrentConnections: null == maxConcurrentConnections
+      maxConcurrentConnections: null == maxConcurrentConnections;
           ? _value.maxConcurrentConnections
           : maxConcurrentConnections // ignore: cast_nullable_to_non_nullable
               as int,
-      cacheSizeLimit: null == cacheSizeLimit
+      cacheSizeLimit: null == cacheSizeLimit;
           ? _value.cacheSizeLimit
           : cacheSizeLimit // ignore: cast_nullable_to_non_nullable
               as int,
-      dataCompressionEnabled: null == dataCompressionEnabled
+      dataCompressionEnabled: null == dataCompressionEnabled;
           ? _value.dataCompressionEnabled
           : dataCompressionEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      offlineModeEnabled: null == offlineModeEnabled
+      offlineModeEnabled: null == offlineModeEnabled;
           ? _value.offlineModeEnabled
           : offlineModeEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      fontFamily: null == fontFamily
+      fontFamily: null == fontFamily;
           ? _value.fontFamily
           : fontFamily // ignore: cast_nullable_to_non_nullable
               as FontFamily,
-      hardwareAccelerationEnabled: null == hardwareAccelerationEnabled
+      hardwareAccelerationEnabled: null == hardwareAccelerationEnabled;
           ? _value.hardwareAccelerationEnabled
           : hardwareAccelerationEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      multiprocessEnabled: null == multiprocessEnabled
+      multiprocessEnabled: null == multiprocessEnabled;
           ? _value.multiprocessEnabled
           : multiprocessEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      securityLevel: null == securityLevel
+      securityLevel: null == securityLevel;
           ? _value.securityLevel
           : securityLevel // ignore: cast_nullable_to_non_nullable
               as BrowserSecurityLevel,
-      sslVerification: null == sslVerification
+      sslVerification: null == sslVerification;
           ? _value.sslVerification
           : sslVerification // ignore: cast_nullable_to_non_nullable
               as SslVerification,
-      certificatePinning: null == certificatePinning
+      certificatePinning: null == certificatePinning;
           ? _value.certificatePinning
           : certificatePinning // ignore: cast_nullable_to_non_nullable
               as CertificatePinning,
-      contentFilterMode: null == contentFilterMode
+      contentFilterMode: null == contentFilterMode;
           ? _value.contentFilterMode
           : contentFilterMode // ignore: cast_nullable_to_non_nullable
               as ContentFilterMode,
-      proxySettings: freezed == proxySettings
+      proxySettings: freezed == proxySettings;
           ? _value.proxySettings
           : proxySettings // ignore: cast_nullable_to_non_nullable
               as ProxySettings?,
-      customCSS: freezed == customCSS
+      customCSS: freezed == customCSS;
           ? _value.customCSS
           : customCSS // ignore: cast_nullable_to_non_nullable
               as String?,
-      customJavaScript: freezed == customJavaScript
+      customJavaScript: freezed == customJavaScript;
           ? _value.customJavaScript
           : customJavaScript // ignore: cast_nullable_to_non_nullable
               as String?,
-      extensionSettings: null == extensionSettings
+      extensionSettings: null == extensionSettings;
           ? _value.extensionSettings
           : extensionSettings // ignore: cast_nullable_to_non_nullable
               as List<ExtensionSettings>,
-      syncSettings: freezed == syncSettings
+      syncSettings: freezed == syncSettings;
           ? _value.syncSettings
           : syncSettings // ignore: cast_nullable_to_non_nullable
               as SyncSettings?,
-      advancedSettings: freezed == advancedSettings
+      advancedSettings: freezed == advancedSettings;
           ? _value.advancedSettings
           : advancedSettings // ignore: cast_nullable_to_non_nullable
               as AdvancedSettings?,
@@ -452,7 +452,7 @@ class _$BrowserSettingsCopyWithImpl<$Res, $Val extends BrowserSettings>
 abstract class _$$BrowserSettingsCopyWith<$Res>
     implements $BrowserSettingsCopyWith<$Res> {
   factory _$$BrowserSettingsCopyWith(
-          _BrowserSettings value, $Res Function(_BrowserSettings) then) =
+          _BrowserSettings value, $Res Function(_BrowserSettings) then) =;
       __$$BrowserSettingsCopyWithImpl<$Res>;
   @override
   @useResult
@@ -822,7 +822,7 @@ class _BrowserSettings implements BrowserSettings {
 
   @override
   int get hashCode {
-    var hashs = <Object?>[
+    var hashs = <Object?>[;
       runtimeType,
       userAgent,
       javascriptEnabled,

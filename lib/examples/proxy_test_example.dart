@@ -1,10 +1,4 @@
 import 'package:flutter/material.dart';
-import '../services/proxy_test_service.dart';
-import '../services/network_validator.dart';
-import '../services/proxy_performance_monitor.dart';
-import '../widgets/test/proxy_test_widget.dart';
-import '../core/proxy_types.dart';
-import '../core/proxy_config.dart';
 
 /// 代理测试功能使用示例
 class ProxyTestExample extends StatefulWidget {

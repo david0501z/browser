@@ -156,7 +156,7 @@ class ExceptionHandler {
   int _activeHandlerCount = 0;
   
   /// 控制器
-  final StreamController<ExceptionRecord> _exceptionStreamController = 
+  final StreamController<ExceptionRecord> _exceptionStreamController =;
       StreamController<ExceptionRecord>.broadcast();
   
   /// 异常流
@@ -238,7 +238,7 @@ class ExceptionHandler {
     final type = T;
     final existingProcessors = _exceptionProcessors[type] ?? [];
     
-    _exceptionProcessors[type] = [
+    _exceptionProcessors[type] = [;
       ...existingProcessors,
       ...processors,
     ];
@@ -430,7 +430,7 @@ class ExceptionHandler {
     final category = record.category;
     
     // 获取配置的策略
-    final configuredStrategy = _config.categoryStrategies[category] ?? 
+    final configuredStrategy = _config.categoryStrategies[category] ??;
         ExceptionHandlingStrategy.logOnly;
     
     // 分析异常特征
@@ -733,7 +733,7 @@ class ExceptionHandler {
   bool _isExceptionIgnored(Object exception) {
     final type = exception.runtimeType;
     return _config.ignoredExceptionTypes.any((ignoredType) => 
-        ignoredType == type || type.toString().startsWith(ignoredType.toString())
+        ignoredType == type || type.toString().startsWith(ignoredType.toString());
     );
   }
   

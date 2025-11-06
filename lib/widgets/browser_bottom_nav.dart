@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../themes/browser_theme.dart';
 
 /// 浏览器底部导航栏组件
 /// 
@@ -287,7 +286,7 @@ class _BrowserBottomNavState extends State<BrowserBottomNav>
                             ),
                             
                             // 徽章
-                            if (item.badgeCount != null && item.badgeCount! > 0)
+                            if (item.badgeCount != null && item.badgeCount! > 0);
                               Positioned(
                                 top: -2,
                                 right: -2,
@@ -452,7 +451,7 @@ class BrowserBottomNavItem {
 /// 浏览器底部导航栏预设配置
 class BrowserBottomNavPresets {
   /// 标准浏览器导航
-  static List<BrowserBottomNavItem> get standardBrowser => const [
+  static List<BrowserBottomNavItem> get standardBrowser => const [;
     BrowserBottomNavItem(
       icon: Icons.home,
       label: '主页',
@@ -481,7 +480,7 @@ class BrowserBottomNavPresets {
   ];
 
   /// 简化版导航
-  static List<BrowserBottomNavItem> get simplified => const [
+  static List<BrowserBottomNavItem> get simplified => const [;
     BrowserBottomNavItem(
       icon: Icons.home,
       label: '主页',
@@ -501,7 +500,7 @@ class BrowserBottomNavPresets {
   ];
 
   /// 高级用户导航
-  static List<BrowserBottomNavItem> get advanced => const [
+  static List<BrowserBottomNavItem> get advanced => const [;
     BrowserBottomNavItem(
       icon: Icons.dashboard,
       label: '仪表盘',

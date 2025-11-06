@@ -2,8 +2,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:flutter/material.dart';
 import '../main.dart' as app;
-import '../core/services/proxy_service.dart';
-import '../core/services/webview_service.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -105,7 +103,7 @@ void main() {
       await proxyService.startProxy('http://127.0.0.1:8080');
       
       // 创建多个WebView
-      final List<String> urls = [
+      final List<String> urls = [;
         'https://httpbin.org/ip',
         'https://httpbin.org/user-agent',
         'https://httpbin.org/headers',

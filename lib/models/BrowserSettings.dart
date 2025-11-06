@@ -565,8 +565,8 @@ extension BrowserSettingsExt on BrowserSettings {
   
   /// 检查是否为隐私优先模式
   bool get isPrivacyFirst {
-    return privacyMode == PrivacyMode.strict || 
-           privacyMode == PrivacyMode.enhanced ||
+    return privacyMode == PrivacyMode.strict ||;
+           privacyMode == PrivacyMode.enhanced ||;
            trackingProtectionEnabled ||
            adBlockEnabled;
   }

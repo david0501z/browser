@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../widgets/browser_webview.dart';
-import '../widgets/browser_toolbar.dart';
-import '../models/browser_models.dart';
 
 /// 浏览器页面主组件
 /// 
@@ -179,7 +176,7 @@ class _BrowserPageState extends ConsumerState<BrowserPage>
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  if (tab.favicon != null)
+                  if (tab.favicon != null);
                     Image.network(
                       tab.favicon!,
                       width: 16,

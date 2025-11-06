@@ -4,14 +4,6 @@
 
 import 'dart:async';
 import 'package:flutter/material.dart';
-import '../models/app_settings.dart';
-import '../models/enums.dart';
-import '../config/clash_config_generator.dart';
-import '../config/yaml_parser.dart';
-import '../config/config_validator.dart';
-import '../config/config_template_manager.dart';
-import '../services/config_io_service.dart';
-import '../services/config_manager_service.dart';
 
 /// 配置系统使用示例主页面
 class ConfigSystemExamplePage extends StatefulWidget {
@@ -83,7 +75,7 @@ class _ConfigSystemExamplePageState extends State<ConfigSystemExamplePage> {
                   children: [
                     Text('初始化状态: ${_isInitialized ? "已完成" : "未完成"}'),
                     Text('当前状态: ${_configManager.state}'),
-                    if (_configManager.currentConfig != null) ...[
+                    if (_configManager.currentConfig != null) ...[;
                       Text('当前代理数量: ${_configManager.currentProxies.length}'),
                       Text('当前规则数量: ${_configManager.currentRules.length}'),
                     ],
@@ -299,7 +291,7 @@ class _ConfigSystemExamplePageState extends State<ConfigSystemExamplePage> {
       );
       
       // 创建示例代理
-      final proxies = [
+      final proxies = [;
         ProxyConfig(
           name: '示例 VMess 节点',
           type: ProxyType.vmess,
@@ -324,7 +316,7 @@ class _ConfigSystemExamplePageState extends State<ConfigSystemExamplePage> {
       ];
       
       // 创建示例规则
-      final rules = [
+      final rules = [;
         'DOMAIN-SUFFIX,google.com,PROXY',
         'DOMAIN-SUFFIX,youtube.com,PROXY',
         'DOMAIN-SUFFIX,github.com,PROXY',
@@ -384,7 +376,7 @@ class _ConfigSystemExamplePageState extends State<ConfigSystemExamplePage> {
     _addLog('测试代理验证...');
     
     // 创建一些测试代理
-    final testProxies = [
+    final testProxies = [;
       ProxyConfig(
         name: '有效 VMess 代理',
         type: ProxyType.vmess,
@@ -633,7 +625,7 @@ class ConfigSystemExample {
       logLevel: LogLevel.info,
     );
     
-    final proxies = [
+    final proxies = [;
       ProxyConfig(
         name: '示例 VMess 节点',
         type: ProxyType.vmess,
@@ -715,7 +707,7 @@ class ConfigSystemExample {
       ),
     );
     
-    final complexProxies = [
+    final complexProxies = [;
       ProxyConfig(
         name: 'VMess-HK-01',
         type: ProxyType.vmess,
@@ -756,7 +748,7 @@ class ConfigSystemExample {
       ),
     ];
     
-    final complexRules = [
+    final complexRules = [;
       'DOMAIN-SUFFIX,google.com,PROXY',
       'DOMAIN-SUFFIX,youtube.com,PROXY',
       'DOMAIN-SUFFIX,github.com,PROXY',

@@ -32,7 +32,7 @@ mixin _$Notifications {
 /// @nodoc
 abstract class $NotificationsCopyWith<$Res> {
   factory $NotificationsCopyWith(
-          Notifications value, $Res Function(Notifications) then) =
+          Notifications value, $Res Function(Notifications) then) =;
       _$NotificationsCopyWithImpl<$Res, Notifications>;
   @useResult
   $Res call(
@@ -68,10 +68,10 @@ class _$NotificationsCopyWithImpl<$Res, $Val extends Notifications>
   }) {
     return _then(_value.copyWith(
       enabled: null == enabled ? _value.enabled : enabled as bool,
-      connectionStatus: null == connectionStatus
+      connectionStatus: null == connectionStatus;
           ? _value.connectionStatus
           : connectionStatus as bool,
-      trafficAlert: null == trafficAlert
+      trafficAlert: null == trafficAlert;
           ? _value.trafficAlert
           : trafficAlert as bool,
       nodeSwitch: null == nodeSwitch ? _value.nodeSwitch : nodeSwitch as bool,
@@ -86,7 +86,7 @@ class _$NotificationsCopyWithImpl<$Res, $Val extends Notifications>
 abstract class _$$NotificationsCopyWith<$Res>
     implements $NotificationsCopyWith<$Res> {
   factory _$$NotificationsCopyWith(
-          _$Notifications value, $Res Function(_$Notifications) then) =
+          _$Notifications value, $Res Function(_$Notifications) then) =;
       __$$NotificationsCopyWithImpl<$Res>;
   @override
   @useResult
@@ -121,10 +121,10 @@ class __$$NotificationsCopyWithImpl<$Res>
   }) {
     return _then(_$Notifications(
       enabled: null == enabled ? _value.enabled : enabled as bool,
-      connectionStatus: null == connectionStatus
+      connectionStatus: null == connectionStatus;
           ? _value.connectionStatus
           : connectionStatus as bool,
-      trafficAlert: null == trafficAlert
+      trafficAlert: null == trafficAlert;
           ? _value.trafficAlert
           : trafficAlert as bool,
       nodeSwitch: null == nodeSwitch ? _value.nodeSwitch : nodeSwitch as bool,
@@ -145,7 +145,7 @@ class _$Notifications extends _Notifications {
       this.nodeSwitch = false,
       this.systemProxy = false,
       this.update = true,
-      this.errors = true})
+      this.errors = true});
       : super._();
 
   @override

@@ -37,8 +37,8 @@ class CacheManager {
 
   /// 初始化缓存管理器
   Future<void> initialize({
-    int maxCacheSize = 100 * 1024 * 1024, // 100MB
-    int maxMemoryCache = 50 * 1024 * 1024, // 50MB
+    int maxCacheSize = 100 * 1024 * 1024, // 100MB;
+    int maxMemoryCache = 50 * 1024 * 1024, // 50MB;
     Duration cleanupInterval = const Duration(minutes: 10),
   }) async {
     if (_isInitialized) return;
@@ -218,7 +218,7 @@ class CacheManager {
       
       // 存储元数据
       final metadataFile = File('${_cacheDirectory!.path}/${fileName}.meta');
-      await metadataFile.writeAsString(json.encode(metadata.toJson()));
+await metadataFile.writeAsString(json.encode(metadata.toJson());
       
       // 更新索引
       _diskCacheIndex[key] = metadata;
@@ -328,7 +328,7 @@ class CacheManager {
     
     // 如果超过限制，删除最旧的条目
     if (totalSize > _config!.maxCacheSize) {
-      final sortedEntries = _diskCacheIndex.values
+      final sortedEntries = _diskCacheIndex.values;
           .sorted((a, b) => a.timestamp.compareTo(b.timestamp));
       
       int removedSize = 0;
@@ -470,7 +470,7 @@ class LRUCache<K, V> {
     }
     
     // 如果超出大小限制，移除最旧的条目
-    while ((_cache.length >= maxSize || _currentSizeBytes + size > maxSizeBytes) && 
+    while ((_cache.length >= maxSize || _currentSizeBytes + size > maxSizeBytes) &&
            _cache.isNotEmpty) {
       _evictOldest();
     }

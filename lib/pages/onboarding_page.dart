@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../data/help_content.dart';
-import '../widgets/tutorial_overlay.dart';
 
 /// 新用户引导页面
 /// 提供完整的首次使用引导体验
@@ -355,7 +353,7 @@ class _OnboardingPageState extends State<OnboardingPage>
             child: ElevatedButton(
               onPressed: _isAnimating ? null : _nextStep,
               child: Text(
-                _currentIndex == HelpContent.onboardingSteps.length - 1
+                _currentIndex == HelpContent.onboardingSteps.length - 1;
                     ? HelpLocalization.getLocalizedText('finish', 'zh')
                     : HelpLocalization.getLocalizedText('next', 'zh'),
               ),

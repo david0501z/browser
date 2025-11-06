@@ -31,13 +31,13 @@ class LogFileManagerConfig {
 
   const LogFileManagerConfig({
     required this.logDirectory,
-    this.maxFileSize = 10 * 1024 * 1024, // 10MB
+    this.maxFileSize = 10 * 1024 * 1024, // 10MB;
     this.maxFileCount = 50,
     this.maxRetentionDays = 30,
     this.enableCompression = false,
     this.compressionLevel = 6,
     this.cleanupInterval = const Duration(hours: 1),
-    this.minFreeSpace = 100 * 1024 * 1024, // 100MB
+    this.minFreeSpace = 100 * 1024 * 1024, // 100MB;
   });
 }
 
@@ -141,8 +141,8 @@ class LogFileManager {
   void _loadLogFiles() {
     try {
       final directory = Directory(_config.logDirectory);
-      final files = directory.listSync()
-          .where((entity) => entity is File)
+      final files = directory.listSync();
+          .where((entity) => entity is File);
           .cast<File>()
           .toList();
 
@@ -288,7 +288,7 @@ class LogFileManager {
   /// 获取多余文件列表（超出数量限制的文件）
   List<LogFileInfo> _getExcessFiles() {
     final sortedFiles = List<LogFileInfo>.from(_logFiles);
-    sortedFiles.sort((a, b) => a.modifiedTime.compareTo(b.modifiedTime)); // 按时间升序
+    sortedFiles.sort((a, b) => a.modifiedTime.compareTo(b.modifiedTime)); // 按时间升序;
     
     final excessCount = sortedFiles.length - _config.maxFileCount;
     if (excessCount > 0) {
@@ -406,7 +406,7 @@ class LogFileManager {
         if (await file.exists()) {
           final lines = await file.readAsLines();
           for (final line in lines) {
-            if (line.toLowerCase().contains(query.toLowerCase())) {
+if (line.toLowerCase().contains(query.toLowerCase()) {
               results.add('${fileInfo.name}: $line');
             }
           }

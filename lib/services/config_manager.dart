@@ -505,7 +505,7 @@ class ConfigManager {
         final key = entry.key;
         final value = entry.value;
         
-        if (_storageStrategy == ConfigStorageStrategy.memory ||
+        if (_storageStrategy == ConfigStorageStrategy.memory ||;
             _storageStrategy == ConfigStorageStrategy.cloud) {
           continue;
         }

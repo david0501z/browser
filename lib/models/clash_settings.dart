@@ -1,5 +1,4 @@
 /// 导入核心代理类型定义
-import '../core/proxy_types.dart';
 
 /// 日志级别枚举定义
 /// 注意：LogLevel定义已迁移到 logging/log_level.dart

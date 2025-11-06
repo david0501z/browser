@@ -19,7 +19,7 @@ class MemoryManager {
   
   // 内存监控
   final List<MemorySnapshot> _snapshots = [];
-  final StreamController<MemoryEvent> _eventController = 
+  final StreamController<MemoryEvent> _eventController =;
       StreamController<MemoryEvent>.broadcast();
   
   // 配置

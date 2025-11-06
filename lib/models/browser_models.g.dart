@@ -39,12 +39,12 @@ _$BookmarkImpl _$$BookmarkImplFromJson(Map<String, dynamic> json) =>
       url: json['url'] as String,
       favicon: json['favicon'] as String?,
       tags:
-          (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+          (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList() ??;
               const [],
       createdAt: DateTime.parse(json['createdAt'] as String),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
       visitCount: (json['visitCount'] as num?)?.toInt() ?? 0,
-      lastVisitedAt: json['lastVisitedAt'] == null
+      lastVisitedAt: json['lastVisitedAt'] == null;
           ? null
           : DateTime.parse(json['lastVisitedAt'] as String),
     );
@@ -184,7 +184,7 @@ _$DownloadTaskImpl _$$DownloadTaskImplFromJson(Map<String, dynamic> json) =>
       speed: (json['speed'] as num?)?.toInt() ?? 0,
       status: json['status'] as String? ?? 'pending',
       createdAt: DateTime.parse(json['createdAt'] as String),
-      completedAt: json['completedAt'] == null
+      completedAt: json['completedAt'] == null;
           ? null
           : DateTime.parse(json['completedAt'] as String),
       error: json['error'] as String?,
@@ -214,7 +214,7 @@ _$BrowserStatsImpl _$$BrowserStatsImplFromJson(Map<String, dynamic> json) =>
       bookmarkCount: (json['bookmarkCount'] as num?)?.toInt() ?? 0,
       historyCount: (json['historyCount'] as num?)?.toInt() ?? 0,
       downloadCount: (json['downloadCount'] as num?)?.toInt() ?? 0,
-      lastVisitedAt: json['lastVisitedAt'] == null
+      lastVisitedAt: json['lastVisitedAt'] == null;
           ? null
           : DateTime.parse(json['lastVisitedAt'] as String),
     );

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../models/proxy_state.dart';
-import '../../providers/proxy_providers.dart';
 
 /// 连接状态组件
 /// 用于显示和管理代理连接状态，包括连接、断开、切换服务器等操作
@@ -126,7 +124,7 @@ class _ConnectionStatusBadge extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (status == ProxyStatus.connecting)
+          if (status == ProxyStatus.connecting);
             SizedBox(
               width: 12,
               height: 12,
@@ -207,7 +205,7 @@ class _ConnectedStatePanel extends StatelessWidget {
               ),
             ],
           ),
-          if (currentServer != null) ...[
+          if (currentServer != null) ...[;
             const SizedBox(height: 12),
             _ServerConnectionInfo(server: currentServer!),
           ],
@@ -256,7 +254,7 @@ class _ServerConnectionInfo extends StatelessWidget {
             ],
           ),
         ),
-        if (server.latency != null) ...[
+        if (server.latency != null) ...[;
           const SizedBox(width: 8),
           _LatencyIndicator(latency: server.latency!),
         ],
@@ -521,7 +519,7 @@ class _ServerListItem extends StatelessWidget {
                         color: Colors.grey[600],
                       ),
                 ),
-                if (server.latency != null) ...[
+                if (server.latency != null) ...[;
                   const SizedBox(height: 4),
                   _LatencyIndicator(latency: server.latency!),
                 ],

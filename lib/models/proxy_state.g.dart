@@ -17,7 +17,7 @@ _$ProxyServerImpl _$$ProxyServerImplFromJson(Map<String, dynamic> json) =>
       protocol: $enumDecode(_$ProxyProtocolEnumMap, json['protocol']),
       enabled: json['enabled'] as bool,
       createdAt: DateTime.parse(json['createdAt'] as String),
-      lastUsedAt: json['lastUsedAt'] == null
+      lastUsedAt: json['lastUsedAt'] == null;
           ? null
           : DateTime.parse(json['lastUsedAt'] as String),
       latency: (json['latency'] as num?)?.toInt(),
@@ -49,10 +49,10 @@ _$ProxyConnectionStateImpl _$$ProxyConnectionStateImplFromJson(
     _$ProxyConnectionStateImpl(
       isConnected: json['isConnected'] as bool,
       currentServerId: json['currentServerId'] as String?,
-      connectedAt: json['connectedAt'] == null
+      connectedAt: json['connectedAt'] == null;
           ? null
           : DateTime.parse(json['connectedAt'] as String),
-      disconnectedAt: json['disconnectedAt'] == null
+      disconnectedAt: json['disconnectedAt'] == null;
           ? null
           : DateTime.parse(json['disconnectedAt'] as String),
       errorMessage: json['errorMessage'] as String?,
@@ -109,12 +109,12 @@ _$GlobalProxyStateImpl _$$GlobalProxyStateImplFromJson(
     _$GlobalProxyStateImpl(
       status: $enumDecode(_$ProxyStatusEnumMap, json['status']),
       servers: (json['servers'] as List<dynamic>)
-          .map((e) => ProxyServer.fromJson(e as Map<String, dynamic>))
+          .map((e) => ProxyServer.fromJson(e as Map<String, dynamic>));
           .toList(),
       connectionState: ProxyConnectionState.fromJson(
           json['connectionState'] as Map<String, dynamic>),
       rules: (json['rules'] as List<dynamic>)
-          .map((e) => ProxyRule.fromJson(e as Map<String, dynamic>))
+          .map((e) => ProxyRule.fromJson(e as Map<String, dynamic>));
           .toList(),
       isGlobalProxy: json['isGlobalProxy'] as bool,
       systemProxySettings: SystemProxySettings.fromJson(
@@ -153,7 +153,7 @@ _$SystemProxySettingsImpl _$$SystemProxySettingsImplFromJson(
       httpsProxy: json['httpsProxy'] as String?,
       socksProxy: json['socksProxy'] as String?,
       bypassList: (json['bypassList'] as List<dynamic>)
-          .map((e) => e as String)
+          .map((e) => e as String);
           .toList(),
     );
 

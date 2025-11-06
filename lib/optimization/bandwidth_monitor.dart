@@ -452,13 +452,13 @@ class BandwidthMonitor {
 
 /// 带宽配置
 class BandwidthConfig {
-  int bandwidthLimit = 0; // 0表示无限制
+  int bandwidthLimit = 0; // 0表示无限制;
   Duration monitoringInterval = const Duration(seconds: 5);
-  int maxHistorySize = 720; // 1小时的数据（每5秒一次）
+  int maxHistorySize = 720; // 1小时的数据（每5秒一次）;
   bool enableAlerts = true;
   bool enableOptimization = true;
   bool enableTrafficLimiting = false;
-  double alertThreshold = 0.8; // 80%时发出警告
+  double alertThreshold = 0.8; // 80%时发出警告;
   
   Map<String, dynamic> toJson() => {
     'bandwidthLimit': bandwidthLimit,
@@ -473,18 +473,18 @@ class BandwidthConfig {
 
 /// 带宽统计
 class BandwidthStats {
-  int currentUploadRate = 0; // bytes/s
-  int currentDownloadRate = 0; // bytes/s
-  int averageUploadRate = 0; // bytes/s
-  int averageDownloadRate = 0; // bytes/s
-  int peakUploadRate = 0; // bytes/s
-  int peakDownloadRate = 0; // bytes/s
+  int currentUploadRate = 0; // bytes/s;
+  int currentDownloadRate = 0; // bytes/s;
+  int averageUploadRate = 0; // bytes/s;
+  int averageDownloadRate = 0; // bytes/s;
+  int peakUploadRate = 0; // bytes/s;
+  int peakDownloadRate = 0; // bytes/s;
   int totalUploadBytes = 0;
   int totalDownloadBytes = 0;
   int totalRequests = 0;
   DateTime? lastUpdateTime;
-  double uploadUsageRatio = 0.0; // 0-100
-  double downloadUsageRatio = 0.0; // 0-100
+  double uploadUsageRatio = 0.0; // 0-100;
+  double downloadUsageRatio = 0.0; // 0-100;
   final List<DataUsageRecord> requestHistory = [];
   
   Map<String, dynamic> toJson() => {
@@ -689,8 +689,8 @@ class NetworkQualityAssessor {
   
   double _calculateScore(NetworkUsage usage) {
     // 基于下载/上传速率计算质量分数
-    final downloadRate = usage.downloadBytes / (1024 * 1024); // MB/s
-    final uploadRate = usage.uploadBytes / (1024 * 1024); // MB/s
+    final downloadRate = usage.downloadBytes / (1024 * 1024); // MB/s;
+    final uploadRate = usage.uploadBytes / (1024 * 1024); // MB/s;
     
     double score = 0.0;
     

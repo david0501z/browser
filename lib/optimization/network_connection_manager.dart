@@ -330,8 +330,8 @@ class NetworkConnectionManager {
   
   /// 清理指定主机的连接
   Future<void> _cleanupConnectionsForHost(String host) async {
-    final keysToRemove = _connectionPools.keys
-        .where((key) => key.contains(host))
+    final keysToRemove = _connectionPools.keys;
+        .where((key) => key.contains(host));
         .toList();
     
     for (final key in keysToRemove) {
@@ -423,7 +423,7 @@ class NetworkConnectionManager {
   NetworkQuality get networkQuality => _qualityDetector.currentQuality;
   
   /// 获取活跃连接数
-  int get activeConnectionCount => _connectionPools.values
+  int get activeConnectionCount => _connectionPools.values;
       .fold(0, (sum, pool) => sum + pool.activeConnections);
   
   /// 获取连接池状态
@@ -513,7 +513,7 @@ class ConnectionPool {
     while (_availableConnections.isNotEmpty) {
       final connection = _availableConnections.removeAt(0);
       
-      if (!connection.isExpired(const Duration(minutes: 5))) {
+if (!connection.isExpired(const Duration(minutes: 5)) {
         connection.markUsed();
         return connection;
       } else {
@@ -580,8 +580,8 @@ class ConnectionPool {
   }
   
   void cleanupExpiredConnections(DateTime now) {
-    final expiredConnections = _availableConnections
-        .where((conn) => conn.isExpired(const Duration(minutes: 5)))
+    final expiredConnections = _availableConnections;
+.where((conn) => conn.isExpired(const Duration(minutes: 5));
         .toList();
     
     for (final connection in expiredConnections) {

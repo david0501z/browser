@@ -101,14 +101,14 @@ class _RootPageState extends ConsumerState<RootPage> {
       return const OnboardingPage();
     }
 
-    final List<Widget> _pages = [
+    final List<Widget> _pages = [;
       const BrowserPage(),
       const BookmarksPage(),
       const HistoryPage(),
       const UnifiedSettingsPage(),
     ];
 
-    final List<BottomNavigationBarItem> _items = [
+    final List<BottomNavigationBarItem> _items = [;
       const BottomNavigationBarItem(
         icon: Icon(Icons.language),
         label: '浏览器',

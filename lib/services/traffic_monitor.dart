@@ -205,7 +205,7 @@ enum TrafficMonitorEventType {
 /// 流量监控服务
 class TrafficMonitorService {
   final TrafficMonitorConfig _config;
-  final StreamController<TrafficMonitorEvent> _eventController = 
+  final StreamController<TrafficMonitorEvent> _eventController =;
       StreamController<TrafficMonitorEvent>.broadcast();
   final List<TrafficData> _trafficData = [];
   final Map<String, List<TrafficData>> _domainData = {};
@@ -432,19 +432,19 @@ class TrafficMonitorService {
     }
 
     final totalDuration = end.difference(start);
-    final averageResponseTime = _responseTimes.isNotEmpty
-        ? _responseTimes.reduce((a, b) => a + b) / _responseTimes.length
+    final averageResponseTime = _responseTimes.isNotEmpty;
+        ? _responseTimes.reduce((a, b) => a + b) / _responseTimes.length;
         : 0.0;
     
-    final averageBandwidth = totalDuration.inMilliseconds > 0
+    final averageBandwidth = totalDuration.inMilliseconds > 0;
         ? (_totalBytes / (totalDuration.inMilliseconds / 1000)) / 1024 // KB/s
         : 0.0;
 
-    final topDomains = domainStats.entries
+    final topDomains = domainStats.entries;
         .toList()
-        ..sort((a, b) => b.value.compareTo(a.value))
+        ..sort((a, b) => b.value.compareTo(a.value));
         .take(10)
-        .map((e) => e.key)
+        .map((e) => e.key);
         .toList();
 
     return TrafficStatistics(
@@ -613,7 +613,7 @@ class TrafficMonitorService {
   void _updateConcurrentConnections(TrafficData data) {
     final connectionId = '${data.source}:${data.destination}';
     
-    if (data.type == TrafficDataType.proxyConnection ||
+    if (data.type == TrafficDataType.proxyConnection ||;
         data.type == TrafficDataType.tcpConnection) {
       _concurrentConnections[connectionId] = DateTime.now().millisecondsSinceEpoch;
       

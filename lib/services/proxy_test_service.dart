@@ -5,7 +5,6 @@ import 'dart:io' as io;
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
-import '../core/proxy_types.dart';
 
 /// 代理测试结果
 class ProxyTestResult {
@@ -67,20 +66,20 @@ class ProxyTestService {
   ProxyTestService._internal();
 
   // 测试结果流控制器
-  final StreamController<ProxyTestResult> _testResultController = 
+  final StreamController<ProxyTestResult> _testResultController =;
     StreamController<ProxyTestResult>.broadcast();
   
   Stream<ProxyTestResult> get testResults => _testResultController.stream;
 
   // 测试配置
   static const Duration _defaultTimeout = Duration(seconds: 30);
-  static const List<String> _speedTestUrls = [
+  static const List<String> _speedTestUrls = [;
     'https://www.google.com/favicon.ico',
     'https://httpbin.org/delay/1',
     'https://httpbin.org/bytes/102400',
   ];
   
-  static const List<String> _dnsTestServers = [
+  static const List<String> _dnsTestServers = [;
     '8.8.8.8',
     '8.8.4.4',
     '1.1.1.1',
@@ -124,7 +123,7 @@ class ProxyTestService {
   /// 执行完整测试套件
   Future<List<ProxyTestResult>> runFullTestSuite({
     ProxyConfig? proxy,
-    List<ProxyTestType> testTypes = const [
+    List<ProxyTestType> testTypes = const [;
       ProxyTestType.connectivity,
       ProxyTestType.latency,
       ProxyTestType.speed,
@@ -213,7 +212,7 @@ class ProxyTestService {
 
   /// 测试连通性
   Future<Map<String, dynamic>> _testConnectivity() async {
-    final targetUrls = [
+    final targetUrls = [;
       'https://www.google.com',
       'https://httpbin.org/get',
       'https://httpbin.org/status/200',
@@ -237,8 +236,8 @@ class ProxyTestService {
       }
     }
 
-    final successCount = results.values
-      .where((r) => r['success'] == true)
+    final successCount = results.values;
+      .where((r) => r['success'] == true);
       .length;
     
     return {
@@ -262,9 +261,9 @@ class ProxyTestService {
         stopwatch.stop();
 
         final bytes = response.bodyBytes.length;
-        final time = stopwatch.elapsedMilliseconds / 1000; // 秒
-        final speedBps = bytes / time; // 字节/秒
-        final speedMbps = (speedBps * 8) / (1024 * 1024); // Mbps
+        final time = stopwatch.elapsedMilliseconds / 1000; // 秒;
+        final speedBps = bytes / time; // 字节/秒;
+        final speedMbps = (speedBps * 8) / (1024 * 1024); // Mbps;
 
         speeds.add(speedMbps);
         results[url] = {
@@ -306,7 +305,7 @@ class ProxyTestService {
   /// 测试DNS
   Future<Map<String, dynamic>> _testDNS() async {
     final results = <String, dynamic>{};
-    final testDomains = [
+    final testDomains = [;
       'www.google.com',
       'github.com',
       'stackoverflow.com',
@@ -328,8 +327,8 @@ class ProxyTestService {
       }
     }
 
-    final successCount = results.values
-      .where((r) => r['success'] == true)
+    final successCount = results.values;
+      .where((r) => r['success'] == true);
       .length;
 
     return {
@@ -346,7 +345,7 @@ class ProxyTestService {
     // 这里可以实现DNS泄漏和IP泄漏检测
     // 通过请求特定的检测服务来判断是否有泄漏
     
-    final leakTestUrls = [
+    final leakTestUrls = [;
       'https://httpbin.org/ip',  // 检测IP
       'https://httpbin.org/dns', // 检测DNS
     ];
@@ -378,7 +377,7 @@ class ProxyTestService {
 
   /// 测试延迟
   Future<Map<String, dynamic>> _testLatency() async {
-    final targetUrls = [
+    final targetUrls = [;
       'https://www.google.com',
       'https://github.com',
       'https://stackoverflow.com',
@@ -394,7 +393,7 @@ class ProxyTestService {
         
         latencies[url] = stopwatch.elapsedMilliseconds.toDouble();
       } catch (e) {
-        latencies[url] = -1; // 错误标识
+        latencies[url] = -1; // 错误标识;
       }
     }
 
@@ -424,7 +423,7 @@ class ProxyTestService {
   /// 测试带宽
   Future<Map<String, dynamic>> _testBandwidth() async {
     // 简单的带宽测试，下载较大的文件测试速度
-    final testUrl = 'https://httpbin.org/bytes/1048576'; // 1MB
+    final testUrl = 'https://httpbin.org/bytes/1048576'; // 1MB;
     
     try {
       final stopwatch = Stopwatch()..start();

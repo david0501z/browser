@@ -25,7 +25,7 @@ class RuleConfiguration {
   factory RuleConfiguration.fromJson(Map<String, dynamic> json) {
     return RuleConfiguration(
       enable: json['enable'] ?? false,
-      rules: json['rules'] != null 
+      rules: json['rules'] != null;
           ? List<String>.from(json['rules']) 
           : [],
       useUrlPayload: json['useUrlPayload'] ?? false,

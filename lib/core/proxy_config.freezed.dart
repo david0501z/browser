@@ -75,7 +75,7 @@ mixin _$ProxyConfig {
 /// @nodoc
 abstract class $ProxyConfigCopyWith<$Res> {
   factory $ProxyConfigCopyWith(
-          ProxyConfig value, $Res Function(ProxyConfig) then) =
+          ProxyConfig value, $Res Function(ProxyConfig) then) =;
       _$ProxyConfigCopyWithImpl<$Res, ProxyConfig>;
   @useResult
   $Res call(
@@ -146,99 +146,99 @@ class _$ProxyConfigCopyWithImpl<$Res, $Val extends ProxyConfig>
     Object? customSettings = null,
   }) {
     return _then(_value.copyWith(
-      enabled: null == enabled
+      enabled: null == enabled;
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      mode: null == mode
+      mode: null == mode;
           ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as String,
-      port: null == port
+      port: null == port;
           ? _value.port
           : port // ignore: cast_nullable_to_non_nullable
               as int,
-      listenAddress: null == listenAddress
+      listenAddress: null == listenAddress;
           ? _value.listenAddress
           : listenAddress // ignore: cast_nullable_to_non_nullable
               as String,
-      rules: null == rules
+      rules: null == rules;
           ? _value.rules
           : rules // ignore: cast_nullable_to_non_nullable
               as List<ProxyRule>,
-      bypassChina: null == bypassChina
+      bypassChina: null == bypassChina;
           ? _value.bypassChina
           : bypassChina // ignore: cast_nullable_to_non_nullable
               as bool,
-      bypassLAN: null == bypassLAN
+      bypassLAN: null == bypassLAN;
           ? _value.bypassLAN
           : bypassLAN // ignore: cast_nullable_to_non_nullable
               as bool,
-      primaryDNS: null == primaryDNS
+      primaryDNS: null == primaryDNS;
           ? _value.primaryDNS
           : primaryDNS // ignore: cast_nullable_to_non_nullable
               as String,
-      secondaryDNS: null == secondaryDNS
+      secondaryDNS: null == secondaryDNS;
           ? _value.secondaryDNS
           : secondaryDNS // ignore: cast_nullable_to_non_nullable
               as String,
-      dnsOverHttps: null == dnsOverHttps
+      dnsOverHttps: null == dnsOverHttps;
           ? _value.dnsOverHttps
           : dnsOverHttps // ignore: cast_nullable_to_non_nullable
               as bool,
-      allowInsecure: null == allowInsecure
+      allowInsecure: null == allowInsecure;
           ? _value.allowInsecure
           : allowInsecure // ignore: cast_nullable_to_non_nullable
               as bool,
-      enableIPv6: null == enableIPv6
+      enableIPv6: null == enableIPv6;
           ? _value.enableIPv6
           : enableIPv6 // ignore: cast_nullable_to_non_nullable
               as bool,
-      enableMux: null == enableMux
+      enableMux: null == enableMux;
           ? _value.enableMux
           : enableMux // ignore: cast_nullable_to_non_nullable
               as bool,
-      connectionTimeout: null == connectionTimeout
+      connectionTimeout: null == connectionTimeout;
           ? _value.connectionTimeout
           : connectionTimeout // ignore: cast_nullable_to_non_nullable
               as int,
-      readTimeout: null == readTimeout
+      readTimeout: null == readTimeout;
           ? _value.readTimeout
           : readTimeout // ignore: cast_nullable_to_non_nullable
               as int,
-      retryCount: null == retryCount
+      retryCount: null == retryCount;
           ? _value.retryCount
           : retryCount // ignore: cast_nullable_to_non_nullable
               as int,
-      enableLog: null == enableLog
+      enableLog: null == enableLog;
           ? _value.enableLog
           : enableLog // ignore: cast_nullable_to_non_nullable
               as bool,
-      logLevel: null == logLevel
+      logLevel: null == logLevel;
           ? _value.logLevel
           : logLevel // ignore: cast_nullable_to_non_nullable
               as String,
-      logPath: null == logPath
+      logPath: null == logPath;
           ? _value.logPath
           : logPath // ignore: cast_nullable_to_non_nullable
               as String,
-      enableTrafficStats: null == enableTrafficStats
+      enableTrafficStats: null == enableTrafficStats;
           ? _value.enableTrafficStats
           : enableTrafficStats // ignore: cast_nullable_to_non_nullable
               as bool,
-      enableSpeedTest: null == enableSpeedTest
+      enableSpeedTest: null == enableSpeedTest;
           ? _value.enableSpeedTest
           : enableSpeedTest // ignore: cast_nullable_to_non_nullable
               as bool,
-      selectedNodeId: null == selectedNodeId
+      selectedNodeId: null == selectedNodeId;
           ? _value.selectedNodeId
           : selectedNodeId // ignore: cast_nullable_to_non_nullable
               as String,
-      nodes: null == nodes
+      nodes: null == nodes;
           ? _value.nodes
           : nodes // ignore: cast_nullable_to_non_nullable
               as List<ProxyNode>,
-      customSettings: null == customSettings
+      customSettings: null == customSettings;
           ? _value.customSettings
           : customSettings // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
@@ -250,7 +250,7 @@ class _$ProxyConfigCopyWithImpl<$Res, $Val extends ProxyConfig>
 abstract class _$$ProxyConfigImplCopyWith<$Res>
     implements $ProxyConfigCopyWith<$Res> {
   factory _$$ProxyConfigImplCopyWith(
-          _$ProxyConfigImpl value, $Res Function(_$ProxyConfigImpl) then) =
+          _$ProxyConfigImpl value, $Res Function(_$ProxyConfigImpl) then) =;
       __$$ProxyConfigImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -320,99 +320,99 @@ class __$$ProxyConfigImplCopyWithImpl<$Res>
     Object? customSettings = null,
   }) {
     return _then(_$ProxyConfigImpl(
-      enabled: null == enabled
+      enabled: null == enabled;
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      mode: null == mode
+      mode: null == mode;
           ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as String,
-      port: null == port
+      port: null == port;
           ? _value.port
           : port // ignore: cast_nullable_to_non_nullable
               as int,
-      listenAddress: null == listenAddress
+      listenAddress: null == listenAddress;
           ? _value.listenAddress
           : listenAddress // ignore: cast_nullable_to_non_nullable
               as String,
-      rules: null == rules
+      rules: null == rules;
           ? _value._rules
           : rules // ignore: cast_nullable_to_non_nullable
               as List<ProxyRule>,
-      bypassChina: null == bypassChina
+      bypassChina: null == bypassChina;
           ? _value.bypassChina
           : bypassChina // ignore: cast_nullable_to_non_nullable
               as bool,
-      bypassLAN: null == bypassLAN
+      bypassLAN: null == bypassLAN;
           ? _value.bypassLAN
           : bypassLAN // ignore: cast_nullable_to_non_nullable
               as bool,
-      primaryDNS: null == primaryDNS
+      primaryDNS: null == primaryDNS;
           ? _value.primaryDNS
           : primaryDNS // ignore: cast_nullable_to_non_nullable
               as String,
-      secondaryDNS: null == secondaryDNS
+      secondaryDNS: null == secondaryDNS;
           ? _value.secondaryDNS
           : secondaryDNS // ignore: cast_nullable_to_non_nullable
               as String,
-      dnsOverHttps: null == dnsOverHttps
+      dnsOverHttps: null == dnsOverHttps;
           ? _value.dnsOverHttps
           : dnsOverHttps // ignore: cast_nullable_to_non_nullable
               as bool,
-      allowInsecure: null == allowInsecure
+      allowInsecure: null == allowInsecure;
           ? _value.allowInsecure
           : allowInsecure // ignore: cast_nullable_to_non_nullable
               as bool,
-      enableIPv6: null == enableIPv6
+      enableIPv6: null == enableIPv6;
           ? _value.enableIPv6
           : enableIPv6 // ignore: cast_nullable_to_non_nullable
               as bool,
-      enableMux: null == enableMux
+      enableMux: null == enableMux;
           ? _value.enableMux
           : enableMux // ignore: cast_nullable_to_non_nullable
               as bool,
-      connectionTimeout: null == connectionTimeout
+      connectionTimeout: null == connectionTimeout;
           ? _value.connectionTimeout
           : connectionTimeout // ignore: cast_nullable_to_non_nullable
               as int,
-      readTimeout: null == readTimeout
+      readTimeout: null == readTimeout;
           ? _value.readTimeout
           : readTimeout // ignore: cast_nullable_to_non_nullable
               as int,
-      retryCount: null == retryCount
+      retryCount: null == retryCount;
           ? _value.retryCount
           : retryCount // ignore: cast_nullable_to_non_nullable
               as int,
-      enableLog: null == enableLog
+      enableLog: null == enableLog;
           ? _value.enableLog
           : enableLog // ignore: cast_nullable_to_non_nullable
               as bool,
-      logLevel: null == logLevel
+      logLevel: null == logLevel;
           ? _value.logLevel
           : logLevel // ignore: cast_nullable_to_non_nullable
               as String,
-      logPath: null == logPath
+      logPath: null == logPath;
           ? _value.logPath
           : logPath // ignore: cast_nullable_to_non_nullable
               as String,
-      enableTrafficStats: null == enableTrafficStats
+      enableTrafficStats: null == enableTrafficStats;
           ? _value.enableTrafficStats
           : enableTrafficStats // ignore: cast_nullable_to_non_nullable
               as bool,
-      enableSpeedTest: null == enableSpeedTest
+      enableSpeedTest: null == enableSpeedTest;
           ? _value.enableSpeedTest
           : enableSpeedTest // ignore: cast_nullable_to_non_nullable
               as bool,
-      selectedNodeId: null == selectedNodeId
+      selectedNodeId: null == selectedNodeId;
           ? _value.selectedNodeId
           : selectedNodeId // ignore: cast_nullable_to_non_nullable
               as String,
-      nodes: null == nodes
+      nodes: null == nodes;
           ? _value._nodes
           : nodes // ignore: cast_nullable_to_non_nullable
               as List<ProxyNode>,
-      customSettings: null == customSettings
+      customSettings: null == customSettings;
           ? _value._customSettings
           : customSettings // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
@@ -447,7 +447,7 @@ class _$ProxyConfigImpl implements _ProxyConfig {
       this.enableSpeedTest = true,
       this.selectedNodeId = '',
       final List<ProxyNode> nodes = const [],
-      final Map<String, dynamic> customSettings = const {}})
+      final Map<String, dynamic> customSettings = const {}});
       : _rules = rules,
         _nodes = nodes,
         _customSettings = customSettings;
@@ -621,7 +621,7 @@ class _$ProxyConfigImpl implements _ProxyConfig {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hashAll([
+  int get hashCode => Object.hashAll([;
         runtimeType,
         enabled,
         mode,
@@ -692,7 +692,7 @@ abstract class _ProxyConfig implements ProxyConfig {
       final List<ProxyNode> nodes,
       final Map<String, dynamic> customSettings}) = _$ProxyConfigImpl;
 
-  factory _ProxyConfig.fromJson(Map<String, dynamic> json) =
+  factory _ProxyConfig.fromJson(Map<String, dynamic> json) =;
       _$ProxyConfigImpl.fromJson;
 
   /// 基本配置
@@ -811,7 +811,7 @@ mixin _$ProxyRule {
 
 /// @nodoc
 abstract class $ProxyRuleCopyWith<$Res> {
-  factory $ProxyRuleCopyWith(ProxyRule value, $Res Function(ProxyRule) then) =
+  factory $ProxyRuleCopyWith(ProxyRule value, $Res Function(ProxyRule) then) =;
       _$ProxyRuleCopyWithImpl<$Res, ProxyRule>;
   @useResult
   $Res call(
@@ -850,35 +850,35 @@ class _$ProxyRuleCopyWithImpl<$Res, $Val extends ProxyRule>
     Object? priority = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: null == id;
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
+      name: null == name;
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      type: null == type
+      type: null == type;
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as ProxyRuleType,
-      matchType: null == matchType
+      matchType: null == matchType;
           ? _value.matchType
           : matchType // ignore: cast_nullable_to_non_nullable
               as ProxyMatchType,
-      match: null == match
+      match: null == match;
           ? _value.match
           : match // ignore: cast_nullable_to_non_nullable
               as String,
-      action: null == action
+      action: null == action;
           ? _value.action
           : action // ignore: cast_nullable_to_non_nullable
               as ProxyAction,
-      enabled: null == enabled
+      enabled: null == enabled;
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      priority: null == priority
+      priority: null == priority;
           ? _value.priority
           : priority // ignore: cast_nullable_to_non_nullable
               as int,
@@ -890,7 +890,7 @@ class _$ProxyRuleCopyWithImpl<$Res, $Val extends ProxyRule>
 abstract class _$$ProxyRuleImplCopyWith<$Res>
     implements $ProxyRuleCopyWith<$Res> {
   factory _$$ProxyRuleImplCopyWith(
-          _$ProxyRuleImpl value, $Res Function(_$ProxyRuleImpl) then) =
+          _$ProxyRuleImpl value, $Res Function(_$ProxyRuleImpl) then) =;
       __$$ProxyRuleImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -928,35 +928,35 @@ class __$$ProxyRuleImplCopyWithImpl<$Res>
     Object? priority = null,
   }) {
     return _then(_$ProxyRuleImpl(
-      id: null == id
+      id: null == id;
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
+      name: null == name;
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      type: null == type
+      type: null == type;
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as ProxyRuleType,
-      matchType: null == matchType
+      matchType: null == matchType;
           ? _value.matchType
           : matchType // ignore: cast_nullable_to_non_nullable
               as ProxyMatchType,
-      match: null == match
+      match: null == match;
           ? _value.match
           : match // ignore: cast_nullable_to_non_nullable
               as String,
-      action: null == action
+      action: null == action;
           ? _value.action
           : action // ignore: cast_nullable_to_non_nullable
               as ProxyAction,
-      enabled: null == enabled
+      enabled: null == enabled;
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      priority: null == priority
+      priority: null == priority;
           ? _value.priority
           : priority // ignore: cast_nullable_to_non_nullable
               as int,
@@ -1068,7 +1068,7 @@ abstract class _ProxyRule implements ProxyRule {
       final bool enabled,
       final int priority}) = _$ProxyRuleImpl;
 
-  factory _ProxyRule.fromJson(Map<String, dynamic> json) =
+  factory _ProxyRule.fromJson(Map<String, dynamic> json) =;
       _$ProxyRuleImpl.fromJson;
 
   /// 规则ID
@@ -1177,7 +1177,7 @@ mixin _$ProxyNode {
 
 /// @nodoc
 abstract class $ProxyNodeCopyWith<$Res> {
-  factory $ProxyNodeCopyWith(ProxyNode value, $Res Function(ProxyNode) then) =
+  factory $ProxyNodeCopyWith(ProxyNode value, $Res Function(ProxyNode) then) =;
       _$ProxyNodeCopyWithImpl<$Res, ProxyNode>;
   @useResult
   $Res call(
@@ -1232,67 +1232,67 @@ class _$ProxyNodeCopyWithImpl<$Res, $Val extends ProxyNode>
     Object? config = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: null == id;
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
+      name: null == name;
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      type: null == type
+      type: null == type;
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as ProxyNodeType,
-      server: null == server
+      server: null == server;
           ? _value.server
           : server // ignore: cast_nullable_to_non_nullable
               as String,
-      port: null == port
+      port: null == port;
           ? _value.port
           : port // ignore: cast_nullable_to_non_nullable
               as int,
-      protocol: null == protocol
+      protocol: null == protocol;
           ? _value.protocol
           : protocol // ignore: cast_nullable_to_non_nullable
               as String,
-      auth: null == auth
+      auth: null == auth;
           ? _value.auth
           : auth // ignore: cast_nullable_to_non_nullable
               as String,
-      encryption: null == encryption
+      encryption: null == encryption;
           ? _value.encryption
           : encryption // ignore: cast_nullable_to_non_nullable
               as String,
-      proxyId: null == proxyId
+      proxyId: null == proxyId;
           ? _value.proxyId
           : proxyId // ignore: cast_nullable_to_non_nullable
               as String,
-      status: null == status
+      status: null == status;
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as NodeStatus,
-      latency: null == latency
+      latency: null == latency;
           ? _value.latency
           : latency // ignore: cast_nullable_to_non_nullable
               as int,
-      bandwidth: null == bandwidth
+      bandwidth: null == bandwidth;
           ? _value.bandwidth
           : bandwidth // ignore: cast_nullable_to_non_nullable
               as int,
-      region: null == region
+      region: null == region;
           ? _value.region
           : region // ignore: cast_nullable_to_non_nullable
               as String,
-      tags: null == tags
+      tags: null == tags;
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      available: null == available
+      available: null == available;
           ? _value.available
           : available // ignore: cast_nullable_to_non_nullable
               as bool,
-      config: null == config
+      config: null == config;
           ? _value.config
           : config // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
@@ -1304,7 +1304,7 @@ class _$ProxyNodeCopyWithImpl<$Res, $Val extends ProxyNode>
 abstract class _$$ProxyNodeImplCopyWith<$Res>
     implements $ProxyNodeCopyWith<$Res> {
   factory _$$ProxyNodeImplCopyWith(
-          _$ProxyNodeImpl value, $Res Function(_$ProxyNodeImpl) then) =
+          _$ProxyNodeImpl value, $Res Function(_$ProxyNodeImpl) then) =;
       __$$ProxyNodeImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1358,67 +1358,67 @@ class __$$ProxyNodeImplCopyWithImpl<$Res>
     Object? config = null,
   }) {
     return _then(_$ProxyNodeImpl(
-      id: null == id
+      id: null == id;
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
+      name: null == name;
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      type: null == type
+      type: null == type;
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as ProxyNodeType,
-      server: null == server
+      server: null == server;
           ? _value.server
           : server // ignore: cast_nullable_to_non_nullable
               as String,
-      port: null == port
+      port: null == port;
           ? _value.port
           : port // ignore: cast_nullable_to_non_nullable
               as int,
-      protocol: null == protocol
+      protocol: null == protocol;
           ? _value.protocol
           : protocol // ignore: cast_nullable_to_non_nullable
               as String,
-      auth: null == auth
+      auth: null == auth;
           ? _value.auth
           : auth // ignore: cast_nullable_to_non_nullable
               as String,
-      encryption: null == encryption
+      encryption: null == encryption;
           ? _value.encryption
           : encryption // ignore: cast_nullable_to_non_nullable
               as String,
-      proxyId: null == proxyId
+      proxyId: null == proxyId;
           ? _value.proxyId
           : proxyId // ignore: cast_nullable_to_non_nullable
               as String,
-      status: null == status
+      status: null == status;
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as NodeStatus,
-      latency: null == latency
+      latency: null == latency;
           ? _value.latency
           : latency // ignore: cast_nullable_to_non_nullable
               as int,
-      bandwidth: null == bandwidth
+      bandwidth: null == bandwidth;
           ? _value.bandwidth
           : bandwidth // ignore: cast_nullable_to_non_nullable
               as int,
-      region: null == region
+      region: null == region;
           ? _value.region
           : region // ignore: cast_nullable_to_non_nullable
               as String,
-      tags: null == tags
+      tags: null == tags;
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      available: null == available
+      available: null == available;
           ? _value.available
           : available // ignore: cast_nullable_to_non_nullable
               as bool,
-      config: null == config
+      config: null == config;
           ? _value._config
           : config // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
@@ -1445,7 +1445,7 @@ class _$ProxyNodeImpl implements _ProxyNode {
       this.region = '',
       final List<String> tags = const [],
       this.available = true,
-      final Map<String, dynamic> config = const {}})
+      final Map<String, dynamic> config = const {}});
       : _tags = tags,
         _config = config;
 
@@ -1629,7 +1629,7 @@ abstract class _ProxyNode implements ProxyNode {
       final bool available,
       final Map<String, dynamic> config}) = _$ProxyNodeImpl;
 
-  factory _ProxyNode.fromJson(Map<String, dynamic> json) =
+  factory _ProxyNode.fromJson(Map<String, dynamic> json) =;
       _$ProxyNodeImpl.fromJson;
 
   /// 节点ID
@@ -1750,7 +1750,7 @@ mixin _$TrafficConfig {
 /// @nodoc
 abstract class $TrafficConfigCopyWith<$Res> {
   factory $TrafficConfigCopyWith(
-          TrafficConfig value, $Res Function(TrafficConfig) then) =
+          TrafficConfig value, $Res Function(TrafficConfig) then) =;
       _$TrafficConfigCopyWithImpl<$Res, TrafficConfig>;
   @useResult
   $Res call(
@@ -1791,39 +1791,39 @@ class _$TrafficConfigCopyWithImpl<$Res, $Val extends TrafficConfig>
     Object? alertThreshold = null,
   }) {
     return _then(_value.copyWith(
-      enableStats: null == enableStats
+      enableStats: null == enableStats;
           ? _value.enableStats
           : enableStats // ignore: cast_nullable_to_non_nullable
               as bool,
-      statsInterval: null == statsInterval
+      statsInterval: null == statsInterval;
           ? _value.statsInterval
           : statsInterval // ignore: cast_nullable_to_non_nullable
               as int,
-      recordHistory: null == recordHistory
+      recordHistory: null == recordHistory;
           ? _value.recordHistory
           : recordHistory // ignore: cast_nullable_to_non_nullable
               as bool,
-      historyRetentionDays: null == historyRetentionDays
+      historyRetentionDays: null == historyRetentionDays;
           ? _value.historyRetentionDays
           : historyRetentionDays // ignore: cast_nullable_to_non_nullable
               as int,
-      enableSpeedLimit: null == enableSpeedLimit
+      enableSpeedLimit: null == enableSpeedLimit;
           ? _value.enableSpeedLimit
           : enableSpeedLimit // ignore: cast_nullable_to_non_nullable
               as bool,
-      uploadLimit: null == uploadLimit
+      uploadLimit: null == uploadLimit;
           ? _value.uploadLimit
           : uploadLimit // ignore: cast_nullable_to_non_nullable
               as int,
-      downloadLimit: null == downloadLimit
+      downloadLimit: null == downloadLimit;
           ? _value.downloadLimit
           : downloadLimit // ignore: cast_nullable_to_non_nullable
               as int,
-      enableTrafficAlert: null == enableTrafficAlert
+      enableTrafficAlert: null == enableTrafficAlert;
           ? _value.enableTrafficAlert
           : enableTrafficAlert // ignore: cast_nullable_to_non_nullable
               as bool,
-      alertThreshold: null == alertThreshold
+      alertThreshold: null == alertThreshold;
           ? _value.alertThreshold
           : alertThreshold // ignore: cast_nullable_to_non_nullable
               as int,
@@ -1835,7 +1835,7 @@ class _$TrafficConfigCopyWithImpl<$Res, $Val extends TrafficConfig>
 abstract class _$$TrafficConfigImplCopyWith<$Res>
     implements $TrafficConfigCopyWith<$Res> {
   factory _$$TrafficConfigImplCopyWith(
-          _$TrafficConfigImpl value, $Res Function(_$TrafficConfigImpl) then) =
+          _$TrafficConfigImpl value, $Res Function(_$TrafficConfigImpl) then) =;
       __$$TrafficConfigImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1875,39 +1875,39 @@ class __$$TrafficConfigImplCopyWithImpl<$Res>
     Object? alertThreshold = null,
   }) {
     return _then(_$TrafficConfigImpl(
-      enableStats: null == enableStats
+      enableStats: null == enableStats;
           ? _value.enableStats
           : enableStats // ignore: cast_nullable_to_non_nullable
               as bool,
-      statsInterval: null == statsInterval
+      statsInterval: null == statsInterval;
           ? _value.statsInterval
           : statsInterval // ignore: cast_nullable_to_non_nullable
               as int,
-      recordHistory: null == recordHistory
+      recordHistory: null == recordHistory;
           ? _value.recordHistory
           : recordHistory // ignore: cast_nullable_to_non_nullable
               as bool,
-      historyRetentionDays: null == historyRetentionDays
+      historyRetentionDays: null == historyRetentionDays;
           ? _value.historyRetentionDays
           : historyRetentionDays // ignore: cast_nullable_to_non_nullable
               as int,
-      enableSpeedLimit: null == enableSpeedLimit
+      enableSpeedLimit: null == enableSpeedLimit;
           ? _value.enableSpeedLimit
           : enableSpeedLimit // ignore: cast_nullable_to_non_nullable
               as bool,
-      uploadLimit: null == uploadLimit
+      uploadLimit: null == uploadLimit;
           ? _value.uploadLimit
           : uploadLimit // ignore: cast_nullable_to_non_nullable
               as int,
-      downloadLimit: null == downloadLimit
+      downloadLimit: null == downloadLimit;
           ? _value.downloadLimit
           : downloadLimit // ignore: cast_nullable_to_non_nullable
               as int,
-      enableTrafficAlert: null == enableTrafficAlert
+      enableTrafficAlert: null == enableTrafficAlert;
           ? _value.enableTrafficAlert
           : enableTrafficAlert // ignore: cast_nullable_to_non_nullable
               as bool,
-      alertThreshold: null == alertThreshold
+      alertThreshold: null == alertThreshold;
           ? _value.alertThreshold
           : alertThreshold // ignore: cast_nullable_to_non_nullable
               as int,
@@ -2049,7 +2049,7 @@ abstract class _TrafficConfig implements TrafficConfig {
       final bool enableTrafficAlert,
       final int alertThreshold}) = _$TrafficConfigImpl;
 
-  factory _TrafficConfig.fromJson(Map<String, dynamic> json) =
+  factory _TrafficConfig.fromJson(Map<String, dynamic> json) =;
       _$TrafficConfigImpl.fromJson;
 
   /// 是否启用流量统计

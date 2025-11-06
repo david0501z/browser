@@ -59,18 +59,18 @@ _$_BrowserSettings _$$BrowserSettingsFromJson(Map<String, dynamic> json) =>
       sslVerification: SslVerification.values.byName(json['sslVerification'] as String),
       certificatePinning: CertificatePinning.values.byName(json['certificatePinning'] as String),
       contentFilterMode: ContentFilterMode.values.byName(json['contentFilterMode'] as String),
-      proxySettings: json['proxySettings'] == null
+      proxySettings: json['proxySettings'] == null;
           ? null
           : ProxySettings.fromJson(json['proxySettings'] as Map<String, dynamic>),
       customCSS: json['customCSS'] as String?,
       customJavaScript: json['customJavaScript'] as String?,
       extensionSettings: (json['extensionSettings'] as List<dynamic>)
-          .map((e) => ExtensionSettings.fromJson(e as Map<String, dynamic>))
+          .map((e) => ExtensionSettings.fromJson(e as Map<String, dynamic>));
           .toList(),
-      syncSettings: json['syncSettings'] == null
+      syncSettings: json['syncSettings'] == null;
           ? null
           : SyncSettings.fromJson(json['syncSettings'] as Map<String, dynamic>),
-      advancedSettings: json['advancedSettings'] == null
+      advancedSettings: json['advancedSettings'] == null;
           ? null
           : AdvancedSettings.fromJson(json['advancedSettings'] as Map<String, dynamic>),
     );
@@ -180,7 +180,7 @@ _$_SyncSettings _$$SyncSettingsFromJson(Map<String, dynamic> json) =>
       serverUrl: json['serverUrl'] as String?,
       syncInterval: json['syncInterval'] as int? ?? 60,
       dataTypes: (json['dataTypes'] as List<dynamic>)
-          .map((e) => SyncDataType.values.byName(e as String))
+          .map((e) => SyncDataType.values.byName(e as String));
           .toList(),
     );
 

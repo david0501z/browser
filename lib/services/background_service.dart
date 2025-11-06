@@ -29,7 +29,7 @@ class BackgroundService {
   final Set<String> _frozenTabs = {};
   
   // 事件流
-  final StreamController<BackgroundEvent> _eventController = 
+  final StreamController<BackgroundEvent> _eventController =;
       StreamController<BackgroundEvent>.broadcast();
   
   // 性能优化
@@ -132,7 +132,7 @@ class BackgroundService {
   void _freezeOldestTab() {
     if (_backgroundTabs.isEmpty) return;
     
-    final oldestTab = _backgroundTabs.values
+    final oldestTab = _backgroundTabs.values;
         .reduce((a, b) => a.lastAccessed.isBefore(b.lastAccessed) ? a : b);
     
     freezeTab(oldestTab.id);
@@ -189,7 +189,7 @@ class BackgroundService {
 
   /// 执行内存优化
   void _performMemoryOptimization(Timer timer) {
-    final totalMemoryUsage = _backgroundTabs.values
+    final totalMemoryUsage = _backgroundTabs.values;
         .fold(0.0, (sum, tab) => sum + tab.estimatedMemoryUsage);
     
     if (totalMemoryUsage > _config!.totalMemoryThreshold) {
@@ -214,7 +214,7 @@ class BackgroundService {
     // 按优先级排序
     _pendingOptimizations.sort((a, b) => b.priority.index.compareTo(a.priority.index));
     
-    final tasksToExecute = _pendingOptimizations.take(5); // 每次最多执行5个任务
+    final tasksToExecute = _pendingOptimizations.take(5); // 每次最多执行5个任务;
     _pendingOptimizations.removeRange(0, tasksToExecute.length);
     
     for (final task in tasksToExecute) {
@@ -248,8 +248,8 @@ class BackgroundService {
   /// 执行内存清理
   void _performMemoryCleanup() {
     // 冻结内存使用最高的标签页
-    final sortedTabs = _backgroundTabs.entries
-        .where((entry) => !_frozenTabs.contains(entry.key))
+    final sortedTabs = _backgroundTabs.entries;
+        .where((entry) => !_frozenTabs.contains(entry.key));
         .toList()
       ..sort((a, b) => b.value.estimatedMemoryUsage.compareTo(a.value.estimatedMemoryUsage));
     

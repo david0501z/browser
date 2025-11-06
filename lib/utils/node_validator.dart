@@ -156,7 +156,7 @@ class NodeValidator {
       
       // 检查是否为有效的域名
       final domainRegex = RegExp(
-        r'^(?=.{1,253}$)(?!-)[a-zA-Z0-9-]{1,63}(?<!-)\.(?=.{1,63}$)[a-zA-Z0-9-]{1,63}(?<!-)\.(?=.{1,63}$)[a-zA-Z0-9-]{1,63}$'
+        r'^(?=.{1,253}$)(?!-)[a-zA-Z0-9-]{1,63}(?<!-)\.(?=.{1,63}$)[a-zA-Z0-9-]{1,63}(?<!-)\.(?=.{1,63}$)[a-zA-Z0-9-]{1,63}$';
       );
       
       if (domainRegex.hasMatch(server)) {
@@ -199,19 +199,19 @@ class NodeValidator {
       warnings.add('建议使用至少 8 个字符的密码');
     }
 
-    if (!password.contains(RegExp(r'[A-Z]'))) {
+if (!password.contains(RegExp(r'[A-Z]')) {
       warnings.add('建议包含大写字母');
     }
 
-    if (!password.contains(RegExp(r'[a-z]'))) {
+if (!password.contains(RegExp(r'[a-z]')) {
       warnings.add('建议包含小写字母');
     }
 
-    if (!password.contains(RegExp(r'[0-9]'))) {
+if (!password.contains(RegExp(r'[0-9]')) {
       warnings.add('建议包含数字');
     }
 
-    if (!password.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
+if (!password.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]')) {
       warnings.add('建议包含特殊字符');
     }
 
@@ -357,7 +357,7 @@ class NodeValidator {
     }
 
     // 验证加密方法
-    final validMethods = [
+    final validMethods = [;
       'aes-128-gcm', 'aes-192-gcm', 'aes-256-gcm',
       'aes-128-ctr', 'aes-192-ctr', 'aes-256-ctr',
       'rc4-md5', 'salsa20', 'chacha20', 'chacha20-ietf'
@@ -450,7 +450,7 @@ class NodeValidator {
     // 检查节点名称是否包含敏感信息
     final sensitiveKeywords = ['中国', '国内', '直连', '高速'];
     final nameLower = node.name.toLowerCase();
-    if (sensitiveKeywords.any((keyword) => nameLower.contains(keyword))) {
+if (sensitiveKeywords.any((keyword) => nameLower.contains(keyword)) {
       warnings.add('节点名称可能包含误导信息');
     }
 
@@ -649,7 +649,7 @@ class NodeValidator {
 
   /// 检查是否为知名服务器
   bool _isWellKnownServer(String server) {
-    final knownServers = [
+    final knownServers = [;
       'amazonaws.com', 'cloudflare.com', 'google.com', 'microsoft.com',
       'github.com', 'stackoverflow.com', 'reddit.com'
     ];
@@ -659,7 +659,7 @@ class NodeValidator {
 
   /// 检查是否为知名代理服务
   bool _isWellKnownProxyService(String server) {
-    final knownProxyServices = [
+    final knownProxyServices = [;
       'expressvpn', 'nordvpn', 'surfshark', 'cyberGhost',
       'protonvpn', 'pia', 'ivacy'
     ];
@@ -673,7 +673,7 @@ class NodeValidator {
   bool _isResidentialIP(String server) {
     // 这是一个简化的检查，实际应用中可能需要使用 IP 数据库
     // 住宅 IP 通常不是常见的云服务提供商 IP
-    final cloudProviders = [
+    final cloudProviders = [;
       'amazonaws.com', 'googleusercontent.com', 'azure.com',
       'digitalocean.com', 'linode.com', 'vultr.com'
     ];

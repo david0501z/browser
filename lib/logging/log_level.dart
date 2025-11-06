@@ -150,7 +150,7 @@ class LogFilter {
 
     // 检查标签过滤
     if (enableTagFilter && allowedTags.isNotEmpty) {
-      if (!entry.tags.any((tag) => allowedTags.contains(tag))) {
+if (!entry.tags.any((tag) => allowedTags.contains(tag)) {
         return false;
       }
     }

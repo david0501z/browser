@@ -6,14 +6,6 @@ library proxy_settings_page;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../widgets/settings_section.dart';
-import '../../widgets/setting_tile.dart';
-import '../../widgets/proxy/index.dart';
-import '../../models/enums.dart';
-import '../../models/app_settings.dart';
-import '../../providers/proxy_providers.dart';
-import '../../services/settings_service.dart';
-import '../../themes/browser_theme.dart';
 
 /// 代理设置页面
 /// 
@@ -265,7 +257,7 @@ class _ProxySettingsPageState extends ConsumerState<ProxySettingsPage>
                   break;
               }
             },
-            itemBuilder: (context) => [
+            itemBuilder: (context) => [;
               const PopupMenuItem(
                 value: 'export',
                 child: ListTile(

@@ -2,9 +2,6 @@ import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../providers/shared_state_provider.dart';
-import '../providers/browser_providers.dart';
-import '../models/browser_models.dart';
 
 /// 导航服务 - 管理浏览器和代理功能之间的流畅切换
 class NavigationService {

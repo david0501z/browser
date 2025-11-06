@@ -245,8 +245,8 @@ class DeviceInfoHelper {
         info['cpu_abi'] = androidInfo['hardware'];
         info['processor'] = androidInfo['hardware'];
         info['cores'] = Platform.numberOfProcessors;
-        info['memory'] = 'Unknown'; // 需要额外权限
-        info['storage'] = 'Unknown'; // 需要额外权限
+        info['memory'] = 'Unknown'; // 需要额外权限;
+        info['storage'] = 'Unknown'; // 需要额外权限;
       } else if (Platform.isIOS) {
         final iosInfo = await getIOSInfo();
         info['processor'] = iosInfo['model'];
@@ -305,9 +305,9 @@ class DeviceInfoHelper {
         
         if (Platform.isAndroid) {
           // Android特殊权限
-          permissions['manage_external_storage'] = 
+          permissions['manage_external_storage'] =;
               await Permission.manageExternalStorage.status.toString();
-          permissions['system_alert_window'] = 
+          permissions['system_alert_window'] =;
               await Permission.systemAlertWindow.status.toString();
         }
       }
@@ -328,9 +328,9 @@ class DeviceInfoHelper {
         features['has_notch'] = _checkHasNotch(androidInfo);
         features['corner_radius'] = _getCornerRadius(androidInfo);
         features['safe_areas'] = _getSafeAreas(androidInfo);
-        features['supports_split_screen'] = 
+        features['supports_split_screen'] =;
             (androidInfo['apiLevel'] as int) >= 24;
-        features['supports_picture_in_picture'] = 
+        features['supports_picture_in_picture'] =;
             (androidInfo['apiLevel'] as int) >= 26;
       } else if (Platform.isIOS) {
         final iosInfo = await getIOSInfo();
@@ -358,7 +358,7 @@ class DeviceInfoHelper {
     final model = androidInfo['model']?.toLowerCase() ?? '';
     
     // 常见有刘海屏的设备
-    final notchDevices = [
+    final notchDevices = [;
       'xiaomi', 'huawei', 'oppo', 'vivo', 'oneplus', 'samsung', 'google'
     ];
     
@@ -534,7 +534,7 @@ class DeviceInfoHelper {
       compatibility['network_compatible'] = systemFeatures['supports_network'];
       
       // UI兼容性
-      compatibility['ui_adaptive'] = true; // Flutter默认支持
+      compatibility['ui_adaptive'] = true; // Flutter默认支持;
       compatibility['orientation_supported'] = true;
       compatibility['theme_support'] = true;
       
@@ -555,11 +555,11 @@ class DeviceInfoHelper {
   static bool _checkMinimumAPI(Map<String, dynamic> deviceInfo) {
     if (Platform.isAndroid) {
       final apiLevel = deviceInfo['apiLevel'] as int;
-      return apiLevel >= 21; // Android 5.0
+      return apiLevel >= 21; // Android 5.0;
     } else if (Platform.isIOS) {
       final systemVersion = deviceInfo['systemVersion'] ?? '';
       final version = int.tryParse(systemVersion.split('.').first) ?? 0;
-      return version >= 11; // iOS 11
+      return version >= 11; // iOS 11;
     }
     return true; // 其他平台默认支持
   }
@@ -567,13 +567,13 @@ class DeviceInfoHelper {
   /// 检查硬件要求
   static bool _checkHardwareRequirements(Map<String, dynamic> hardwareInfo) {
     final cores = hardwareInfo['cores'] as int? ?? 0;
-    return cores >= 2; // 至少2核CPU
+    return cores >= 2; // 至少2核CPU;
   }
 
   /// 检查性能是否可接受
   static bool _checkPerformanceAcceptable(Map<String, dynamic> hardwareInfo) {
     final cores = hardwareInfo['cores'] as int? ?? 0;
-    return cores >= 1; // 至少1核CPU
+    return cores >= 1; // 至少1核CPU;
   }
 
   /// 计算总体兼容性评分

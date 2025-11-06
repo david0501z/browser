@@ -57,7 +57,7 @@ mixin _$DNSConfiguration {
 /// @nodoc
 abstract class $DNSConfigurationCopyWith<$Res> {
   factory $DNSConfigurationCopyWith(
-          DNSConfiguration value, $Res Function(DNSConfiguration) then) =
+          DNSConfiguration value, $Res Function(DNSConfiguration) then) =;
       _$DNSConfigurationCopyWithImpl<$Res, DNSConfiguration>;
   @useResult
   $Res call(
@@ -96,35 +96,35 @@ class _$DNSConfigurationCopyWithImpl<$Res, $Val extends DNSConfiguration>
     Object? cacheTimeout = null,
   }) {
     return _then(_value.copyWith(
-      enable: null == enable
+      enable: null == enable;
           ? _value.enable
           : enable // ignore: cast_nullable_to_non_nullable
               as bool,
-      servers: null == servers
+      servers: null == servers;
           ? _value.servers
           : servers // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      fallback: null == fallback
+      fallback: null == fallback;
           ? _value.fallback
           : fallback // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      strategy: null == strategy
+      strategy: null == strategy;
           ? _value.strategy
           : strategy // ignore: cast_nullable_to_non_nullable
               as int,
-      port: null == port
+      port: null == port;
           ? _value.port
           : port // ignore: cast_nullable_to_non_nullable
               as int,
-      enableIPv6: null == enableIPv6
+      enableIPv6: null == enableIPv6;
           ? _value.enableIPv6
           : enableIPv6 // ignore: cast_nullable_to_non_nullable
               as bool,
-      enableCache: null == enableCache
+      enableCache: null == enableCache;
           ? _value.enableCache
           : enableCache // ignore: cast_nullable_to_non_nullable
               as bool,
-      cacheTimeout: null == cacheTimeout
+      cacheTimeout: null == cacheTimeout;
           ? _value.cacheTimeout
           : cacheTimeout // ignore: cast_nullable_to_non_nullable
               as int,
@@ -136,7 +136,7 @@ class _$DNSConfigurationCopyWithImpl<$Res, $Val extends DNSConfiguration>
 abstract class _$$DNSConfigurationImplCopyWith<$Res>
     implements $DNSConfigurationCopyWith<$Res> {
   factory _$$DNSConfigurationImplCopyWith(_$DNSConfigurationImpl value,
-          $Res Function(_$DNSConfigurationImpl) then) =
+          $Res Function(_$DNSConfigurationImpl) then) =;
       __$$DNSConfigurationImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -174,35 +174,35 @@ class __$$DNSConfigurationImplCopyWithImpl<$Res>
     Object? cacheTimeout = null,
   }) {
     return _then(_$DNSConfigurationImpl(
-      enable: null == enable
+      enable: null == enable;
           ? _value.enable
           : enable // ignore: cast_nullable_to_non_nullable
               as bool,
-      servers: null == servers
+      servers: null == servers;
           ? _value._servers
           : servers // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      fallback: null == fallback
+      fallback: null == fallback;
           ? _value._fallback
           : fallback // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      strategy: null == strategy
+      strategy: null == strategy;
           ? _value.strategy
           : strategy // ignore: cast_nullable_to_non_nullable
               as int,
-      port: null == port
+      port: null == port;
           ? _value.port
           : port // ignore: cast_nullable_to_non_nullable
               as int,
-      enableIPv6: null == enableIPv6
+      enableIPv6: null == enableIPv6;
           ? _value.enableIPv6
           : enableIPv6 // ignore: cast_nullable_to_non_nullable
               as bool,
-      enableCache: null == enableCache
+      enableCache: null == enableCache;
           ? _value.enableCache
           : enableCache // ignore: cast_nullable_to_non_nullable
               as bool,
-      cacheTimeout: null == cacheTimeout
+      cacheTimeout: null == cacheTimeout;
           ? _value.cacheTimeout
           : cacheTimeout // ignore: cast_nullable_to_non_nullable
               as int,
@@ -221,7 +221,7 @@ class _$DNSConfigurationImpl implements _DNSConfiguration {
       this.port = 53,
       this.enableIPv6 = false,
       this.enableCache = true,
-      this.cacheTimeout = 300})
+      this.cacheTimeout = 300});
       : _servers = servers,
         _fallback = fallback;
 
@@ -347,7 +347,7 @@ abstract class _DNSConfiguration implements DNSConfiguration {
       final bool enableCache,
       final int cacheTimeout}) = _$DNSConfigurationImpl;
 
-  factory _DNSConfiguration.fromJson(Map<String, dynamic> json) =
+  factory _DNSConfiguration.fromJson(Map<String, dynamic> json) =;
       _$DNSConfigurationImpl.fromJson;
 
   /// 是否启用DNS配置

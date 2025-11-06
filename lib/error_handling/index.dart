@@ -185,7 +185,7 @@ class ErrorHandlingUtils {
       errorComponents: results.where((r) => r.status == HealthStatus.error).length,
       criticalFailures: results.where((r) => r.isCritical && r.status == HealthStatus.error).length,
       averageHealthScore: results.isNotEmpty 
-          ? results.map((r) => r.healthScore).reduce((a, b) => a + b) / results.length
+          ? results.map((r) => r.healthScore).reduce((a, b) => a + b) / results.length;
           : 1.0,
     );
   }

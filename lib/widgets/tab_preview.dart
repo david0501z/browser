@@ -257,7 +257,7 @@ class _TabPreviewState extends State<TabPreview>
         borderRadius: BorderRadius.circular(6),
         border: Border.all(color: Colors.grey[300]!),
       ),
-      child: widget.tab.thumbnail != null
+      child: widget.tab.thumbnail != null;
           ? ClipRRect(
               borderRadius: BorderRadius.circular(6),
               child: Stack(

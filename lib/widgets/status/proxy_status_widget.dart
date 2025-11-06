@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../models/proxy_state.dart';
-import '../../providers/proxy_providers.dart';
 
 /// 代理状态指示器组件
 /// 用于显示当前代理的状态，包括连接状态、服务器信息等
@@ -46,7 +44,7 @@ class ProxyStatusWidget extends ConsumerWidget {
             const SizedBox(height: 16),
 
             // 当前服务器信息
-            if (currentServer != null && isConnected) ...[
+            if (currentServer != null && isConnected) ...[;
               _ServerInfoCard(server: currentServer),
               const SizedBox(height: 16),
             ],
@@ -115,7 +113,7 @@ class _StatusIndicator extends StatelessWidget {
       child: Row(
         children: [
           AnimatedRotation(
-            duration: status == ProxyStatus.connecting 
+            duration: status == ProxyStatus.connecting;
                 ? const Duration(seconds: 1) 
                 : Duration.zero,
             turns: status == ProxyStatus.connecting ? 1 : 0,
@@ -137,7 +135,7 @@ class _StatusIndicator extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                       ),
                 ),
-                if (status == ProxyStatus.error) ...[
+                if (status == ProxyStatus.error) ...[;
                   const SizedBox(height: 4),
                   Text(
                     '请检查网络连接和代理配置',
@@ -205,7 +203,7 @@ class _ServerInfoCard extends StatelessWidget {
               ],
             ),
           ),
-          if (server.latency != null)
+          if (server.latency != null);
             _LatencyIndicator(latency: server.latency!),
         ],
       ),

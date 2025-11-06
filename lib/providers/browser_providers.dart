@@ -1,6 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../models/browser_models.dart';
 
 /// 浏览器设置Provider
 final browserSettingsProvider = StateNotifierProvider<BrowserSettingsNotifier, BrowserSettings>(
@@ -115,7 +114,7 @@ class BrowserTabsNotifier extends StateNotifier<List<BrowserTab>> {
   /// 更新标签页
   void updateTab(String tabId, BrowserTab updatedTab) {
     state = state.map((tab) => 
-      tab.id == tabId ? updatedTab : tab
+      tab.id == tabId ? updatedTab : tab;
     ).toList();
   }
 
@@ -185,7 +184,7 @@ class BookmarkNotifier extends StateNotifier<List<Bookmark>> {
   /// 更新书签
   void updateBookmark(Bookmark updatedBookmark) {
     state = state.map((bookmark) => 
-      bookmark.id == updatedBookmark.id ? updatedBookmark : bookmark
+      bookmark.id == updatedBookmark.id ? updatedBookmark : bookmark;
     ).toList();
   }
 
@@ -197,7 +196,7 @@ class BookmarkNotifier extends StateNotifier<List<Bookmark>> {
     return state.where((bookmark) =>
       bookmark.title.toLowerCase().contains(lowercaseQuery) ||
       bookmark.url.toLowerCase().contains(lowercaseQuery) ||
-      bookmark.tags.any((tag) => tag.toLowerCase().contains(lowercaseQuery))
+      bookmark.tags.any((tag) => tag.toLowerCase().contains(lowercaseQuery));
     ).toList();
   }
 
@@ -218,7 +217,7 @@ class HistoryNotifier extends StateNotifier<List<History>> {
 
   /// 添加历史记录
   void addHistory(History history) {
-    state = [history, ...state.take(999)]; // 最多保留1000条记录
+    state = [history, ...state.take(999)]; // 最多保留1000条记录;
   }
 
   /// 删除历史记录
@@ -273,7 +272,7 @@ class DownloadTasksNotifier extends StateNotifier<List<DownloadTask>> {
   /// 更新下载任务
   void updateDownloadTask(String taskId, DownloadTask updatedTask) {
     state = state.map((task) => 
-      task.id == taskId ? updatedTask : task
+      task.id == taskId ? updatedTask : task;
     ).toList();
   }
 
@@ -285,7 +284,7 @@ class DownloadTasksNotifier extends StateNotifier<List<DownloadTask>> {
   /// 获取进行中的下载任务
   List<DownloadTask> getActiveDownloads() {
     return state.where((task) => 
-      task.status == 'downloading' || task.status == 'pending'
+      task.status == 'downloading' || task.status == 'pending';
     ).toList();
   }
 

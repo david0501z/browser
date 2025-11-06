@@ -20,9 +20,9 @@ class EncryptionService {
   // 加密配置常量
   static const String _keyAlias = 'encryption_key';
   static const String _saltAlias = 'encryption_salt';
-  static const int _keySize = 32; // 256位密钥
-  static const int _ivSize = 16; // 128位初始化向量
-  static const int _saltSize = 32; // 256位盐值
+  static const int _keySize = 32; // 256位密钥;
+  static const int _ivSize = 16; // 128位初始化向量;
+  static const int _saltSize = 32; // 256位盐值;
 
   /// 生成加密密钥
   /// 返回Base64编码的密钥字符串
@@ -30,10 +30,10 @@ class EncryptionService {
     final keyGenerator = KeyGenerator('AES');
     final secureRandom = SecureRandom('Fortuna');
     final seeds = List<int>.generate(32, (i) => Random.secure().nextInt(256));
-    secureRandom.seed(KeyParameter(Uint8List.fromList(seeds)));
+secureRandom.seed(KeyParameter(Uint8List.fromList(seeds));
 
     keyGenerator.init(ParametersWithRandom(
-      KeyParameter(Uint8List.fromList(List<int>.filled(_keySize, 0))),
+KeyParameter(Uint8List.fromList(List<int>.filled(_keySize, 0)),
       secureRandom,
     ));
 
@@ -73,14 +73,14 @@ class EncryptionService {
 
       // 创建加密器
       final encrypter = GCMBlockCipher(AESEngine());
-      encrypter.init(true, ParametersWithRandom(key, SecureRandom('Fortuna')..seed(KeyParameter(iv))));
+encrypter.init(true, ParametersWithRandom(key, SecureRandom('Fortuna')..seed(KeyParameter(iv));
 
       // 加密数据
       final plainBytes = utf8.encode(plainText);
       final cipherBytes = encrypter.process(plainBytes);
 
       // 组合IV + 认证标签 + 密文
-      final authTag = encrypter.tagLength ~/ 8; // 认证标签长度
+      final authTag = encrypter.tagLength ~/ 8; // 认证标签长度;
       final tag = encrypter.doFinal(Uint8List(0)).sublist(0, authTag);
       
       final result = Uint8List(iv.length + tag.length + cipherBytes.length);
@@ -114,7 +114,7 @@ class EncryptionService {
 
       // 创建解密器
       final decrypter = GCMBlockCipher(AESEngine());
-      decrypter.init(false, ParametersWithRandom(key, SecureRandom('Fortuna')..seed(KeyParameter(iv))));
+decrypter.init(false, ParametersWithRandom(key, SecureRandom('Fortuna')..seed(KeyParameter(iv));
 
       // 解密数据
       final plainBytes = decrypter.process(data);
@@ -149,7 +149,7 @@ class EncryptionService {
       final key = KeyParameter(derivedKey);
       
       final encrypter = CBCBlockCipher(AESEngine());
-      encrypter.init(true, ParametersWithRandom(key, SecureRandom('Fortuna')..seed(KeyParameter(iv))));
+encrypter.init(true, ParametersWithRandom(key, SecureRandom('Fortuna')..seed(KeyParameter(iv));
 
       final plainBytes = utf8.encode(plainText);
       final cipherBytes = encrypter.process(plainBytes);
@@ -194,7 +194,7 @@ class EncryptionService {
       
       // 使用AES-256-CBC解密
       final decrypter = CBCBlockCipher(AESEngine());
-      decrypter.init(false, ParametersWithRandom(key, SecureRandom('Fortuna')..seed(KeyParameter(iv))));
+decrypter.init(false, ParametersWithRandom(key, SecureRandom('Fortuna')..seed(KeyParameter(iv));
 
       final plainBytes = decrypter.process(data);
       
@@ -251,7 +251,7 @@ class EncryptionService {
 
     final random = Random.secure();
     return String.fromCharCodes(
-      Iterable.generate(length, (_) => chars.codeUnitAt(random.nextInt(chars.length))),
+Iterable.generate(length, (_) => chars.codeUnitAt(random.nextInt(chars.length)),
     );
   }
 
@@ -331,7 +331,7 @@ class EncryptionService {
   /// 生成安全随机字节
   static Uint8List _generateSecureRandomBytes(int length) {
     final random = Random.secure();
-    return Uint8List.fromList(List.generate(length, (_) => random.nextInt(256)));
+return Uint8List.fromList(List.generate(length, (_) => random.nextInt(256));
   }
 
   /// 使用PBKDF2派生密钥

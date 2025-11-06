@@ -1,8 +1,5 @@
 import 'dart:async';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/proxy_state.dart';
-import '../notifiers/proxy_notifier.dart';
-import '../providers/proxy_providers.dart';
 
 /// 代理状态管理器
 /// 提供状态管理的统一接口和高级功能
@@ -373,7 +370,7 @@ class ProxyStateManager {
 
   /// 获取可用的服务器列表（有延迟信息的）
   List<ProxyServer> get availableServers {
-    return enabledServers.where((s) => s.latency != null).toList()
+    return enabledServers.where((s) => s.latency != null).toList();
       ..sort((a, b) => a.latency!.compareTo(b.latency!));
   }
 

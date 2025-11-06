@@ -1,10 +1,3 @@
-import '../models/subscription.dart';
-import '../models/proxy_node.dart';
-import '../services/subscription_service.dart';
-import '../services/proxy_node_manager.dart';
-import '../services/import_export_service.dart';
-import '../services/speed_test_service.dart';
-import '../utils/node_validator.dart';
 
 /// 订阅链接和节点管理示例
 class SubscriptionAndNodeManagementExample {
@@ -76,7 +69,7 @@ class SubscriptionAndNodeManagementExample {
 
       // 4. 导入订阅
       print('4. 导入订阅链接...');
-      final subscriptionContent = '''
+      final subscriptionContent = ''';
 https://example.com/v2ray-subscription
 https://example.com/clash-subscription
 https://example.com/ss-subscription

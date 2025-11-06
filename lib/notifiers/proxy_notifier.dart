@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/proxy_state.dart';
-import '../services/proxy_service.dart';
 
 /// 代理状态通知器
 /// 负责管理代理状态的更新和通知
@@ -388,7 +386,7 @@ class ProxyNotifier extends StateNotifier<GlobalProxyState> {
     
     final settings = state.autoConnectSettings;
     _reconnectTimer = Timer(Duration(seconds: settings.reconnectInterval), () {
-      if (state.status == ProxyStatus.error || 
+      if (state.status == ProxyStatus.error ||;
           state.status == ProxyStatus.disconnected) {
         connect();
       }

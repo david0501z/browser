@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../models/bookmark.dart';
 
 class BookmarkSearchDelegate extends SearchDelegate<Bookmark?> {
   final List<Bookmark> bookmarks;
@@ -86,7 +85,7 @@ class BookmarkSearchDelegate extends SearchDelegate<Bookmark?> {
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
-              if (bookmark.tags?.isNotEmpty == true)
+              if (bookmark.tags?.isNotEmpty == true);
                 Text(
                   '标签: ${bookmark.tags}',
                   style: TextStyle(fontSize: 12, color: Colors.grey[600]),

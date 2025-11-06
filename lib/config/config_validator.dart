@@ -4,11 +4,6 @@
 
 import 'clash_config_generator.dart';
 import 'yaml_parser.dart';
-import '../core/proxy_config.dart';
-import '../core/proxy_types.dart';
-import '../logging/logger.dart';
-import '../models/app_settings.dart';
-import '../models/enums.dart';
 import 'dart:io';
 
 /// 配置验证结果

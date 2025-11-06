@@ -33,7 +33,7 @@ mixin _$AppSettings {
 /// @nodoc
 abstract class $AppSettingsCopyWith<$Res> {
   factory $AppSettingsCopyWith(
-          AppSettings value, $Res Function(AppSettings) then) =
+          AppSettings value, $Res Function(AppSettings) then) =;
       _$AppSettingsCopyWithImpl<$Res, AppSettings>;
   @useResult
   $Res call({
@@ -75,43 +75,43 @@ class _$AppSettingsCopyWithImpl<$Res, $Val extends AppSettings>
     Object? backup = null,
   }) {
     return _then(_value.copyWith(
-      version: null == version
+      version: null == version;
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAt: null == createdAt
+      createdAt: null == createdAt;
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as int,
-      updatedAt: null == updatedAt
+      updatedAt: null == updatedAt;
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as int,
-      mode: null == mode
+      mode: null == mode;
           ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as SettingsMode,
-      browserSettings: null == browserSettings
+      browserSettings: null == browserSettings;
           ? _value.browserSettings
           : browserSettings // ignore: cast_nullable_to_non_nullable
               as BrowserSettings,
-      flclashSettings: null == flclashSettings
+      flclashSettings: null == flclashSettings;
           ? _value.flclashSettings
           : flclashSettings // ignore: cast_nullable_to_non_nullable
               as ClashCoreSettings,
-      ui: null == ui
+      ui: null == ui;
           ? _value.ui
           : ui // ignore: cast_nullable_to_non_nullable
               as UI,
-      notifications: null == notifications
+      notifications: null == notifications;
           ? _value.notifications
           : notifications // ignore: cast_nullable_to_non_nullable
               as Notifications,
-      privacy: null == privacy
+      privacy: null == privacy;
           ? _value.privacy
           : privacy // ignore: cast_nullable_to_non_nullable
               as Privacy,
-      backup: null == backup
+      backup: null == backup;
           ? _value.backup
           : backup // ignore: cast_nullable_to_non_nullable
               as Backup,
@@ -123,7 +123,7 @@ class _$AppSettingsCopyWithImpl<$Res, $Val extends AppSettings>
 abstract class _$$AppSettingsCopyWith<$Res>
     implements $AppSettingsCopyWith<$Res> {
   factory _$$AppSettingsCopyWith(
-          _AppSettings value, $Res Function(_AppSettings) then) =
+          _AppSettings value, $Res Function(_AppSettings) then) =;
       __$$AppSettingsCopyWithImpl<$Res>;
   @override
   @useResult

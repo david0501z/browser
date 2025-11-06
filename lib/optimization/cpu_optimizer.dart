@@ -11,9 +11,9 @@ class CpuOptimizer {
   CpuOptimizer._internal();
 
   // CPU阈值配置
-  static const double _warningThreshold = 0.8; // 80% CPU使用率预警
-  static const double _criticalThreshold = 0.95; // 95% CPU使用率严重预警
-  static const int _minCpuCores = 2; // 最小CPU核心数
+  static const double _warningThreshold = 0.8; // 80% CPU使用率预警;
+  static const double _criticalThreshold = 0.95; // 95% CPU使用率严重预警;
+  static const int _minCpuCores = 2; // 最小CPU核心数;
 
   // 监控相关
   Timer? _monitorTimer;
@@ -21,7 +21,7 @@ class CpuOptimizer {
   final List<CpuAlert> _alerts = [];
   final Map<String, dynamic> _cpuStats = {};
   final List<double> _usageHistory = [];
-  static const int _historySize = 60; // 保留60个历史数据点
+  static const int _historySize = 60; // 保留60个历史数据点;
 
   // 回调函数
   Function(double)? onCpuUsageChanged;
@@ -69,8 +69,8 @@ class CpuOptimizer {
   /// 模拟负载平均值
   double _simulateLoadAverage() {
     final random = Random();
-    final baseLoad = 0.3; // 基础负载30%
-    final variation = 0.4; // 变化范围40%
+    final baseLoad = 0.3; // 基础负载30%;
+    final variation = 0.4; // 变化范围40%;
     return baseLoad + (random.nextDouble() * variation);
   }
 
@@ -270,8 +270,8 @@ class CpuOptimizer {
     final usagePercentage = cpuInfo.usagePercentage;
 
     // 检查是否需要优化
-    if (usagePercentage >= _warningThreshold && 
-        (_lastOptimizationTime == null || 
+    if (usagePercentage >= _warningThreshold &&
+        (_lastOptimizationTime == null ||;
          currentTime.difference(_lastOptimizationTime!).inMinutes >= 2)) {
       await performCpuOptimization();
       _lastOptimizationTime = currentTime;
@@ -323,7 +323,7 @@ class CpuOptimizer {
     try {
       // 根据CPU核心数调整线程池大小
       final processorCount = Platform.numberOfProcessors;
-      final optimalThreads = (processorCount * 0.75).round(); // 使用75%的核心
+      final optimalThreads = (processorCount * 0.75).round(); // 使用75%的核心;
       
       log('线程池已优化，当前CPU核心数: $processorCount，建议线程数: $optimalThreads');
     } catch (e) {

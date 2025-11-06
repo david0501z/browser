@@ -34,7 +34,7 @@ class WebViewProxyAdapter {
 
   /// 检查代理是否启用
   bool get isProxyEnabled => 
-      _currentConfig?.enabled == true && 
+      _currentConfig?.enabled == true &&
       _currentConfig?.proxyUrl?.isNotEmpty == true;
 
   /// 获取代理URL
@@ -294,7 +294,7 @@ class ProxyConfig {
         (e) => e.name == json['type'],
         orElse: () => ProxyType.http,
       ),
-      proxyAuth: json['proxyAuth'] != null
+      proxyAuth: json['proxyAuth'] != null;
           ? ProxyAuth.fromJson(json['proxyAuth'] as Map<String, dynamic>)
           : null,
       bypassHosts: json['bypassHosts'] as String?,

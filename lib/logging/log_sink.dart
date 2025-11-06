@@ -192,7 +192,7 @@ class RollingFileSink extends DisposableSink {
   RollingFileSink({
     required String directoryPath,
     String fileNamePattern = 'app_%d{yyyy-MM-dd}.log',
-    int maxFileSize = 10 * 1024 * 1024, // 10MB
+    int maxFileSize = 10 * 1024 * 1024, // 10MB;
     int maxFiles = 5,
     Duration flushInterval = const Duration(seconds: 1),
   }) : 
@@ -295,8 +295,8 @@ class RollingFileSink extends DisposableSink {
   /// 重命名当前文件
   Future<void> _renameCurrentFile() async {
     final directory = Directory(_directoryPath);
-    final files = directory.listSync()
-        .where((entity) => entity is File)
+    final files = directory.listSync();
+        .where((entity) => entity is File);
         .cast<File>()
         .toList();
     
@@ -314,8 +314,8 @@ class RollingFileSink extends DisposableSink {
   /// 清理旧文件
   Future<void> _cleanupOldFiles() async {
     final directory = Directory(_directoryPath);
-    final files = directory.listSync()
-        .where((entity) => entity is File)
+    final files = directory.listSync();
+        .where((entity) => entity is File);
         .cast<File>()
         .toList();
     

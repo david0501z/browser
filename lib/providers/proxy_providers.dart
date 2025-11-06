@@ -1,5 +1,4 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/proxy_state.dart';
 
 // ===== 核心状态提供者 =====
 

@@ -301,7 +301,7 @@ class DNSProtectionManager extends ChangeNotifier {
 
     try {
       // 检查各种DNS泄漏类型
-      final leakChecks = await Future.wait([
+      final leakChecks = await Future.wait([;
         _checkIPv6Leak(),
         _checkLocalDNSLeak(),
         _checkDirectDNSLeak(),
@@ -320,12 +320,12 @@ class DNSProtectionManager extends ChangeNotifier {
       final protectionScore = _calculateProtectionScore(leaks, _status?.level);
       
       // 根据保护级别添加额外检查
-      if (_status?.level == DNSProtectionLevel.enhanced || 
+      if (_status?.level == DNSProtectionLevel.enhanced ||;
           _status?.level == DNSProtectionLevel.maximum) {
         await _performAdvancedChecks(details);
       }
 
-      final result = leaks.isEmpty
+      final result = leaks.isEmpty;
           ? ProtectionResult.success(warnings: warnings)
           : ProtectionResult.failure(leaks, warnings: warnings, details: details);
 
@@ -530,7 +530,7 @@ class DNSProtectionManager extends ChangeNotifier {
 
   Future<void> _performTestQuery(DNSServerConfig server) async {
     // 模拟DNS查询
-    await Future.delayed(Duration(milliseconds: 50 + math.Random().nextInt(100)));
+await Future.delayed(Duration(milliseconds: 50 + math.Random().nextInt(100));
     
     if (math.Random().nextDouble() < 0.1) {
       throw Exception('模拟查询失败');
@@ -719,11 +719,11 @@ class DNSProtectionManager extends ChangeNotifier {
           level: DNSProtectionLevel.values.byName(statusData['level'] ?? 'standard'),
           isLeakDetected: statusData['isLeakDetected'] as bool? ?? false,
           activeLeaks: (statusData['activeLeaks'] as List?)
-              ?.map((leak) => DNSLeakType.values.byName(leak))
+              ?.map((leak) => DNSLeakType.values.byName(leak));
               .toList() ?? [],
           protectionScore: (statusData['protectionScore'] as num?)?.toDouble() ?? 100.0,
           lastCheck: DateTime.parse(statusData['lastCheck'] as String? ?? DateTime.now().toIso8601String()),
-          lastLeakTime: statusData['lastLeakTime'] != null 
+          lastLeakTime: statusData['lastLeakTime'] != null;
               ? DateTime.parse(statusData['lastLeakTime'] as String)
               : null,
         );

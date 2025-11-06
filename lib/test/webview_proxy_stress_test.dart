@@ -2,8 +2,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:flutter/material.dart';
 import '../main.dart' as app;
-import '../core/services/proxy_service.dart';
-import '../core/services/webview_service.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -65,7 +63,7 @@ void main() {
       }
       
       // 至少80%的WebView应该成功加载
-      expect(successfulLoads, greaterThanOrEqualTo((webViewIds.length * 0.8).round()));
+expect(successfulLoads, greaterThanOrEqualTo((webViewIds.length * 0.8).round());
       
       // 清理所有WebView
       for (final id in webViewIds) {
@@ -191,7 +189,7 @@ void main() {
       }
       
       // 模拟用户长时间使用场景
-      for (int minute = 0; minute < 2; minute++) { // 测试2分钟
+      for (int minute = 0; minute < 2; minute++) { // 测试2分钟;
         await tester.pumpAndSettle(const Duration(seconds: 30));
         
         // 检查WebView状态

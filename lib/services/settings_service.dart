@@ -8,8 +8,6 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:path_provider/path_provider.dart';
-import '../models/app_settings.dart';
-import '../models/browser_settings.dart';
 
 /// 设置服务类
 /// 

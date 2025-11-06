@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
-import '../models/enums.dart';
 import 'rule_manager.dart';
 
 /// 验证结果
@@ -698,7 +697,7 @@ class RuleValidator {
     if (parts[0] == 10) return true;
     if (parts[0] == 172 && parts[1] >= 16 && parts[1] <= 31) return true;
     if (parts[0] == 192 && parts[1] == 168) return true;
-    if (parts[0] == 127) return true; // 环回地址
+    if (parts[0] == 127) return true; // 环回地址;
     
     return false;
   }
@@ -725,7 +724,7 @@ class RuleValidator {
   }
 
   bool _isCriticalDomain(String domain) {
-    final criticalDomains = [
+    final criticalDomains = [;
       'google.com',
       'facebook.com',
       'amazon.com',

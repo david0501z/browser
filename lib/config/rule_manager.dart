@@ -168,7 +168,7 @@ class RuleGroup {
       id: json['id'] as String,
       name: json['name'] as String,
       rules: (json['rules'] as List)
-          .map((rule) => RuleConfig.fromJson(rule as Map<String, dynamic>))
+          .map((rule) => RuleConfig.fromJson(rule as Map<String, dynamic>));
           .toList(),
       enabled: json['enabled'] as bool? ?? true,
       description: json['description'] as String?,
@@ -340,7 +340,7 @@ class RuleManager extends ChangeNotifier {
     }
 
     final updatedRule = rule.copyWith(updatedAt: DateTime.now());
-    final updatedRules = List<RuleConfig>.from(group.rules)
+    final updatedRules = List<RuleConfig>.from(group.rules);
       ..[ruleIndex] = updatedRule;
 
     final updatedGroup = group.copyWith(
@@ -381,7 +381,7 @@ class RuleManager extends ChangeNotifier {
       updatedAt: DateTime.now(),
     );
 
-    final updatedRules = List<RuleConfig>.from(group.rules)
+    final updatedRules = List<RuleConfig>.from(group.rules);
       ..[ruleIndex] = updatedRule;
 
     final updatedGroup = group.copyWith(
@@ -396,7 +396,7 @@ class RuleManager extends ChangeNotifier {
   Future<void> moveRule(String groupId, String ruleId, int newIndex) async {
     final group = _groups.firstWhere((g) => g.id == groupId);
     final rule = group.rules.firstWhere((r) => r.id == ruleId);
-    final updatedRules = List<RuleConfig>.from(group.rules)
+    final updatedRules = List<RuleConfig>.from(group.rules);
       ..remove(rule);
 
     if (newIndex < 0 || newIndex >= updatedRules.length) {

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../themes/browser_theme.dart';
 
 /// 响应式浏览器布局组件
 /// 

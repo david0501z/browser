@@ -16,9 +16,9 @@ class MemoryManager {
   MemoryManager._internal();
 
   // 内存阈值配置
-  static const double _warningThreshold = 0.8; // 80% 内存使用率预警
-  static const double _criticalThreshold = 0.95; // 95% 内存使用率严重预警
-  static const int _minMemoryThreshold = 50; // 最小内存阈值(MB)
+  static const double _warningThreshold = 0.8; // 80% 内存使用率预警;
+  static const double _criticalThreshold = 0.95; // 95% 内存使用率严重预警;
+  static const int _minMemoryThreshold = 50; // 最小内存阈值(MB);
 
   // 监控相关
   Timer? _monitorTimer;
@@ -48,7 +48,7 @@ class MemoryManager {
   /// 获取Web内存信息
   Future<MemoryInfo> _getWebMemoryInfo() async {
     // 模拟内存信息（Web平台）
-    final totalMemory = Platform.numberOfProcessors * 1024; // 假设总内存
+    final totalMemory = Platform.numberOfProcessors * 1024; // 假设总内存;
     final usedMemory = (DateTime.now().millisecondsSinceEpoch % 100) / 100.0 * totalMemory;
     
     return MemoryInfo(
@@ -81,8 +81,8 @@ class MemoryManager {
       if (Platform.isAndroid || Platform.isIOS) {
         // 在移动平台上可以使用 vm_service
         // 这里返回模拟数据
-        final totalMemory = 1024; // MB
-        final usedMemory = 300; // MB
+        final totalMemory = 1024; // MB;
+        final usedMemory = 300; // MB;
         final usagePercentage = usedMemory / totalMemory;
         
         return MemoryInfo(
@@ -107,8 +107,8 @@ class MemoryManager {
     try {
       // 这里可以使用系统特定的方法获取真实内存信息
       // 暂时返回模拟数据
-      final totalMemory = 8192; // 8GB
-      final usedMemory = 2048; // 2GB
+      final totalMemory = 8192; // 8GB;
+      final usedMemory = 2048; // 2GB;
       final usagePercentage = usedMemory / totalMemory;
       
       return MemoryInfo(
@@ -201,8 +201,8 @@ class MemoryManager {
     final currentTime = DateTime.now();
 
     // 检查是否需要清理内存
-    if (usagePercentage >= _warningThreshold && 
-        (_lastCleanupTime == null || 
+    if (usagePercentage >= _warningThreshold &&
+        (_lastCleanupTime == null ||;
          currentTime.difference(_lastCleanupTime!).inMinutes >= 5)) {
       await performMemoryOptimization();
       _lastCleanupTime = currentTime;

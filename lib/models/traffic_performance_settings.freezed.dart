@@ -51,7 +51,7 @@ mixin _$TrafficPerformanceSettings {
 /// @nodoc
 abstract class $TrafficPerformanceSettingsCopyWith<$Res> {
   factory $TrafficPerformanceSettingsCopyWith(TrafficPerformanceSettings value,
-          $Res Function(TrafficPerformanceSettings) then) =
+          $Res Function(TrafficPerformanceSettings) then) =;
       _$TrafficPerformanceSettingsCopyWithImpl<$Res,
           TrafficPerformanceSettings>;
   @useResult
@@ -92,35 +92,35 @@ class _$TrafficPerformanceSettingsCopyWithImpl<$Res,
     Object? keepAlive = null,
   }) {
     return _then(_value.copyWith(
-      maxSpeed: null == maxSpeed
+      maxSpeed: null == maxSpeed;
           ? _value.maxSpeed
           : maxSpeed // ignore: cast_nullable_to_non_nullable
               as int,
-      bandwidthLimit: null == bandwidthLimit
+      bandwidthLimit: null == bandwidthLimit;
           ? _value.bandwidthLimit
           : bandwidthLimit // ignore: cast_nullable_to_non_nullable
               as int,
-      throttle: null == throttle
+      throttle: null == throttle;
           ? _value.throttle
           : throttle // ignore: cast_nullable_to_non_nullable
               as bool,
-      bufferSize: null == bufferSize
+      bufferSize: null == bufferSize;
           ? _value.bufferSize
           : bufferSize // ignore: cast_nullable_to_non_nullable
               as int,
-      downloadSpeed: null == downloadSpeed
+      downloadSpeed: null == downloadSpeed;
           ? _value.downloadSpeed
           : downloadSpeed // ignore: cast_nullable_to_non_nullable
               as int,
-      uploadSpeed: null == uploadSpeed
+      uploadSpeed: null == uploadSpeed;
           ? _value.uploadSpeed
           : uploadSpeed // ignore: cast_nullable_to_non_nullable
               as int,
-      connectionTimeout: null == connectionTimeout
+      connectionTimeout: null == connectionTimeout;
           ? _value.connectionTimeout
           : connectionTimeout // ignore: cast_nullable_to_non_nullable
               as int,
-      keepAlive: null == keepAlive
+      keepAlive: null == keepAlive;
           ? _value.keepAlive
           : keepAlive // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -133,7 +133,7 @@ abstract class _$$TrafficPerformanceSettingsImplCopyWith<$Res>
     implements $TrafficPerformanceSettingsCopyWith<$Res> {
   factory _$$TrafficPerformanceSettingsImplCopyWith(
           _$TrafficPerformanceSettingsImpl value,
-          $Res Function(_$TrafficPerformanceSettingsImpl) then) =
+          $Res Function(_$TrafficPerformanceSettingsImpl) then) =;
       __$$TrafficPerformanceSettingsImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -173,35 +173,35 @@ class __$$TrafficPerformanceSettingsImplCopyWithImpl<$Res>
     Object? keepAlive = null,
   }) {
     return _then(_$TrafficPerformanceSettingsImpl(
-      maxSpeed: null == maxSpeed
+      maxSpeed: null == maxSpeed;
           ? _value.maxSpeed
           : maxSpeed // ignore: cast_nullable_to_non_nullable
               as int,
-      bandwidthLimit: null == bandwidthLimit
+      bandwidthLimit: null == bandwidthLimit;
           ? _value.bandwidthLimit
           : bandwidthLimit // ignore: cast_nullable_to_non_nullable
               as int,
-      throttle: null == throttle
+      throttle: null == throttle;
           ? _value.throttle
           : throttle // ignore: cast_nullable_to_non_nullable
               as bool,
-      bufferSize: null == bufferSize
+      bufferSize: null == bufferSize;
           ? _value.bufferSize
           : bufferSize // ignore: cast_nullable_to_non_nullable
               as int,
-      downloadSpeed: null == downloadSpeed
+      downloadSpeed: null == downloadSpeed;
           ? _value.downloadSpeed
           : downloadSpeed // ignore: cast_nullable_to_non_nullable
               as int,
-      uploadSpeed: null == uploadSpeed
+      uploadSpeed: null == uploadSpeed;
           ? _value.uploadSpeed
           : uploadSpeed // ignore: cast_nullable_to_non_nullable
               as int,
-      connectionTimeout: null == connectionTimeout
+      connectionTimeout: null == connectionTimeout;
           ? _value.connectionTimeout
           : connectionTimeout // ignore: cast_nullable_to_non_nullable
               as int,
-      keepAlive: null == keepAlive
+      keepAlive: null == keepAlive;
           ? _value.keepAlive
           : keepAlive // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -298,7 +298,7 @@ class _$TrafficPerformanceSettingsImpl implements _TrafficPerformanceSettings {
   @override
   @pragma('vm:prefer-inline')
   _$$TrafficPerformanceSettingsImplCopyWith<_$TrafficPerformanceSettingsImpl>
-      get copyWith => __$$TrafficPerformanceSettingsImplCopyWithImpl<
+      get copyWith => __$$TrafficPerformanceSettingsImplCopyWithImpl<;
           _$TrafficPerformanceSettingsImpl>(this, _$identity);
 
   @override
@@ -319,10 +319,10 @@ abstract class _TrafficPerformanceSettings
           @JsonKey(name: 'download_speed') final int downloadSpeed,
           @JsonKey(name: 'upload_speed') final int uploadSpeed,
           @JsonKey(name: 'connection_timeout') final int connectionTimeout,
-          @JsonKey(name: 'keep_alive') final bool keepAlive}) =
+          @JsonKey(name: 'keep_alive') final bool keepAlive}) =;
       _$TrafficPerformanceSettingsImpl;
 
-  factory _TrafficPerformanceSettings.fromJson(Map<String, dynamic> json) =
+  factory _TrafficPerformanceSettings.fromJson(Map<String, dynamic> json) =;
       _$TrafficPerformanceSettingsImpl.fromJson;
 
   @override

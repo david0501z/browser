@@ -3,8 +3,6 @@ import 'package:integration_test/integration_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import '../main.dart' as app;
-import '../core/services/proxy_service.dart';
-import '../core/services/webview_service.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -233,7 +231,7 @@ void main() {
       final proxyUrlField = find.byKey(const Key('proxy_url_field'));
       
       // 测试不同代理协议的兼容性
-      final proxyProtocols = [
+      final proxyProtocols = [;
         'http://127.0.0.1:8080',
         'https://127.0.0.1:8080',
         'socks4://127.0.0.1:1080',
@@ -315,7 +313,7 @@ void main() {
       final addressBar = find.byKey(const Key('address_bar'));
       
       // 测试各种特殊字符输入
-      final testUrls = [
+      final testUrls = [;
         'https://example.com/path?param=value&test=123',
         'https://测试网站.com',
         'https://user:pass@网站.com:8080/path',
@@ -352,7 +350,7 @@ void main() {
       final addressBar = find.byKey(const Key('address_bar'));
       
       // 测试不同类型Web内容的兼容性
-      final testCases = [
+      final testCases = [;
         'https://httpbin.org/html',           // HTML内容
         'https://httpbin.org/image/png',      // 图片内容
         'https://httpbin.org/pdf',           // PDF内容
@@ -399,7 +397,7 @@ void main() {
       // 创建多个WebView测试低端设备性能
       final List<Future<void>> webViewPromises = [];
       
-      for (int i = 0; i < 3; i++) { // 限制WebView数量以适应低端设备
+      for (int i = 0; i < 3; i++) { // 限制WebView数量以适应低端设备;
         final promise = () async {
           final addressBar = find.byKey(const Key('address_bar'));
           await tester.enterText(addressBar, 'https://example.com');

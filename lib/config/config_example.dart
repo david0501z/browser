@@ -204,7 +204,7 @@ class ConfigExample {
     final matcher = RuleMatcher.instance;
     
     // 创建测试规则
-    final testRules = [
+    final testRules = [;
       RuleConfig(
         id: 'google_rule',
         name: 'Google规则',
@@ -242,7 +242,7 @@ class ConfigExample {
     );
     
     // 执行匹配测试
-    final testUrls = [
+    final testUrls = [;
       'mail.google.com',
       'ads.com',
       'github.com',
@@ -383,7 +383,7 @@ class ConfigExample {
     print('完整工作流程已完成');
     
     // 7. 执行性能测试
-    final testUrls = [
+    final testUrls = [;
       'myapp.com',
       'api.myapp.com',
       'github.com',

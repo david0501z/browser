@@ -8,11 +8,6 @@ import 'dart:typed_data';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:logging/logging.dart';
-import '../models/app_settings.dart';
-import '../config/clash_config_generator.dart';
-import '../config/yaml_parser.dart';
-import '../config/config_validator.dart';
-import '../config/config_template_manager.dart';
 
 /// 配置操作结果
 class ConfigOperationResult {
@@ -465,7 +460,7 @@ class ConfigIOService {
       }
       
       final configFiles = <ConfigFileInfo>[];
-      final fileList = recursive 
+      final fileList = recursive;
           ? await dir.list(recursive: true).toList()
           : await dir.list().toList();
       
@@ -529,7 +524,7 @@ class ConfigIOService {
       }
       
       final backupDir = await _getBackupDirectory();
-      final fileName = backupName ?? 
+      final fileName = backupName ??;
           '${DateTime.now().millisecondsSinceEpoch}_${sourceFile.uri.pathSegments.last}';
       final backupPath = '$backupDir/$fileName';
       
@@ -611,8 +606,8 @@ class ConfigIOService {
     
     try {
       final historyList = json.decode(historyJson) as List;
-      final entries = historyList
-          .map((entry) => ConfigHistoryEntry.fromJson(entry as Map<String, dynamic>))
+      final entries = historyList;
+          .map((entry) => ConfigHistoryEntry.fromJson(entry as Map<String, dynamic>));
           .toList();
       
       // 按时间倒序排列并限制数量
@@ -658,7 +653,7 @@ class ConfigIOService {
 
   /// 确保目录存在
   Future<void> _ensureDirectoriesExist() async {
-    final dirs = [
+    final dirs = [;
       await _getDefaultConfigDirectory(),
       await _getBackupDirectory(),
       await _getTempDirectory(),
@@ -773,8 +768,8 @@ class ConfigIOService {
       List<ConfigHistoryEntry> history = [];
       if (historyJson != null) {
         final historyList = json.decode(historyJson) as List;
-        history = historyList
-            .map((entry) => ConfigHistoryEntry.fromJson(entry as Map<String, dynamic>))
+        history = historyList;
+            .map((entry) => ConfigHistoryEntry.fromJson(entry as Map<String, dynamic>));
             .toList();
       }
       

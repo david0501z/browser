@@ -351,7 +351,7 @@ extension HistoryEntryExt on HistoryEntry {
     final lowerQuery = query.toLowerCase();
     return title.toLowerCase().contains(lowerQuery) ||
            url.toLowerCase().contains(lowerQuery) ||
-           searchQuery?.toLowerCase().contains(lowerQuery) == true ||
+           searchQuery?.toLowerCase().contains(lowerQuery) == true ||;
            referrer?.toLowerCase().contains(lowerQuery) == true;
   }
   
@@ -359,7 +359,7 @@ extension HistoryEntryExt on HistoryEntry {
   bool get isFromSearchEngine {
     if (referrer == null) return false;
     
-    const searchEngines = [
+    const searchEngines = [;
       'google.com',
       'bing.com',
       'baidu.com',

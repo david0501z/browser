@@ -427,10 +427,10 @@ class CrashRecoverySystem {
   /// 序列化偏好设置值
   dynamic _serializePreferenceValue(dynamic value) {
     if (value is List) {
-      return List<String>.from(value.map((e) => e.toString()));
+return List<String>.from(value.map((e) => e.toString());
     } else if (value is Map) {
       return Map<String, String>.fromEntries(
-        (value as Map).entries.map((e) => MapEntry(e.key.toString(), e.value.toString())),
+(value as Map).entries.map((e) => MapEntry(e.key.toString(), e.value.toString()),
       );
     }
     return value;

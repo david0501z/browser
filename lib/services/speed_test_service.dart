@@ -3,7 +3,6 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'package:dio/dio.dart';
 
-import '../models/proxy_node.dart';
 
 /// 速度测试服务
 class SpeedTestService {
@@ -74,7 +73,7 @@ class SpeedTestService {
   Future<SpeedTestResult> testNodeSpeed(
     ProxyNode node, {
     int timeoutSeconds = 30,
-    int testSize = 1024 * 1024, // 1MB
+    int testSize = 1024 * 1024, // 1MB;
     List<String>? testUrls,
   }) async {
     try {
@@ -331,7 +330,7 @@ class SpeedTestService {
 
       if (success && duration > 0) {
         final speedBytesPerSecond = downloadedBytes / duration;
-        final speedMbps = (speedBytesPerSecond * 8) / (1024 * 1024); // 转换为 Mbps
+        final speedMbps = (speedBytesPerSecond * 8) / (1024 * 1024); // 转换为 Mbps;
         
         return SpeedTestResult(
           downloadSpeed: speedMbps,
@@ -407,7 +406,7 @@ class SpeedTestService {
         default:
           // 对于 VMess, VLESS, SS, Trojan 等，需要通过 V2Ray 或其他代理工具
           // 这里需要根据具体的实现来处理
-          proxyUrl = 'http://localhost:1080'; // 默认代理地址
+          proxyUrl = 'http://localhost:1080'; // 默认代理地址;
           break;
       }
       
@@ -557,12 +556,12 @@ class ComprehensiveTestResult {
     // 延迟评分 (40%)
     if (latencyResult.latency != null) {
       final latency = latencyResult.latency!;
-      final latencyScore = (1000 - latency) / 10; // 延迟越低分数越高
+      final latencyScore = (1000 - latency) / 10; // 延迟越低分数越高;
       score += latencyScore * 0.4;
     }
     
     // 下载速度评分 (40%)
-    final downloadScore = min(speedResult.downloadSpeed, 100); // 限制最大分数
+    final downloadScore = min(speedResult.downloadSpeed, 100); // 限制最大分数;
     score += downloadScore * 0.4;
     
     // 稳定性评分 (20%) - 简化处理

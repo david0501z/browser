@@ -295,8 +295,8 @@ class PerformanceReporter {
     
     if (keyMetrics.isEmpty) return PerformanceRating.Fair;
     
-    final avgPerformance = keyMetrics
-        .map((m) => _getMetricPerformanceScore(m))
+    final avgPerformance = keyMetrics;
+        .map((m) => _getMetricPerformanceScore(m));
         .reduce((a, b) => a + b) / keyMetrics.length;
     
     if (avgPerformance >= 90) return PerformanceRating.Excellent;
@@ -307,7 +307,7 @@ class PerformanceReporter {
 
   /// 判断是否为关键指标
   bool _isKeyMetric(String metricName) {
-    final keyMetrics = [
+    final keyMetrics = [;
       '启动时间', 'startup_time',
       '帧时间', 'frame_time',
       '内存使用', 'memory_usage',
@@ -365,8 +365,8 @@ class PerformanceReporter {
     final meanX = x.reduce((a, b) => a + b) / n;
     final meanY = y.reduce((a, b) => a + b) / n;
     
-    final numerator = x.asMap().entries
-        .map((e) => (e.value - meanX) * (y[e.key] - meanY))
+    final numerator = x.asMap().entries;
+        .map((e) => (e.value - meanX) * (y[e.key] - meanY));
         .reduce((a, b) => a + b);
     
     final denominatorX = x.map((v) => math.pow(v - meanX, 2)).reduce((a, b) => a + b);
@@ -824,7 +824,7 @@ class PerformanceReporter {
     }
     
     return scores.isNotEmpty 
-      ? scores.reduce((a, b) => a + b) / scores.length 
+      ? scores.reduce((a, b) => a + b) / scores.length;
       : 0.0;
   }
 
@@ -959,8 +959,8 @@ class PerformanceReporter {
     final actions = <String>[];
     
     // 按优先级排序建议
-    final sortedRecommendations = report.recommendations
-        .where((r) => r.priority == RecommendationPriority.High || r.priority == RecommendationPriority.Critical)
+    final sortedRecommendations = report.recommendations;
+        .where((r) => r.priority == RecommendationPriority.High || r.priority == RecommendationPriority.Critical);
         .toList()
       ..sort((a, b) => a.priority.index.compareTo(b.priority.index));
     
@@ -1101,7 +1101,7 @@ class PerformanceReport {
     'overallScore': overallScore,
     'error': error,
     'analysis': analysis?.toJson(),
-    'metrics': metrics?.map((k, v) => MapEntry(k, v.toJson())),
+'metrics': metrics?.map((k, v) => MapEntry(k, v.toJson()),
     'baselineComparison': baselineComparison?.toJson(),
     'recommendations': recommendations.map((r) => r.toJson()).toList(),
     'chartData': chartData,
@@ -1135,7 +1135,7 @@ class TestAnalysis {
   String? error;
 
   Map<String, dynamic> toJson() => {
-    'testAnalyses': testAnalyses.map((k, v) => MapEntry(k, v.toJson())),
+'testAnalyses': testAnalyses.map((k, v) => MapEntry(k, v.toJson()),
     'overallStats': overallStats,
     'bottlenecks': bottlenecks.map((b) => b.toJson()).toList(),
     'outliers': outliers.map((o) => o.toJson()).toList(),
@@ -1310,7 +1310,7 @@ class BaselineComparison {
   final Map<String, TestBaselineComparison> testComparisons = {};
 
   Map<String, dynamic> toJson() => {
-    'testComparisons': testComparisons.map((k, v) => MapEntry(k, v.toJson())),
+'testComparisons': testComparisons.map((k, v) => MapEntry(k, v.toJson()),
   };
 }
 
@@ -1323,7 +1323,7 @@ class TestBaselineComparison {
 
   Map<String, dynamic> toJson() => {
     'testName': testName,
-    'metricChanges': metricChanges.map((k, v) => MapEntry(k, v.toJson())),
+'metricChanges': metricChanges.map((k, v) => MapEntry(k, v.toJson()),
   };
 }
 
@@ -1437,6 +1437,6 @@ class PerformanceBaseline {
   Map<String, dynamic> toJson() => {
     'name': name,
     'createdAt': createdAt.toIso8601String(),
-    'metrics': metrics.map((k, v) => MapEntry(k, v.toJson())),
+'metrics': metrics.map((k, v) => MapEntry(k, v.toJson()),
   };
 }

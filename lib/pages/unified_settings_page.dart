@@ -8,11 +8,6 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../models/app_settings.dart';
-import '../models/browser_settings.dart';
-import '../services/settings_service.dart';
-import '../widgets/settings_section.dart';
-import '../widgets/setting_tile.dart';
 
 /// 统一设置页面
 /// 
@@ -62,7 +57,7 @@ class _UnifiedSettingsPageState extends State<UnifiedSettingsPage>
   bool _isDirty = false;
   
   // 分类相关
-  final List<SettingCategory> _categories = [
+  final List<SettingCategory> _categories = [;
     SettingCategory(
       id: 'browser',
       name: '浏览器',
@@ -281,7 +276,7 @@ class _UnifiedSettingsPageState extends State<UnifiedSettingsPage>
                   break;
               }
             },
-            itemBuilder: (context) => [
+            itemBuilder: (context) => [;
               if (widget.showImportExport) ...[
                 const PopupMenuItem(
                   value: 'export',
@@ -348,7 +343,7 @@ class _UnifiedSettingsPageState extends State<UnifiedSettingsPage>
             ),
           
           // 设置模式切换
-          if (widget.showModeSwitch && _settings != null)
+          if (widget.showModeSwitch && _settings != null);
             _buildModeSwitch(),
           
           // 验证错误提示

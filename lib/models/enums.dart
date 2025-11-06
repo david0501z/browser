@@ -3,8 +3,6 @@
 /// 包含应用中使用的枚举类型定义。
 
 /// 导入核心代理类型定义
-import '../core/proxy_types.dart';
-import '../logging/log_level.dart';
 
 /// 日志级别枚举
 /// 注意：LogLevel定义已迁移到 logging/log_level.dart

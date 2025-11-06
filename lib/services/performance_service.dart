@@ -16,7 +16,7 @@ class PerformanceService {
   // 性能指标
   final Map<String, PerformanceMetric> _metrics = {};
   final List<PerformanceEvent> _events = [];
-  final StreamController<PerformanceEvent> _eventController = 
+  final StreamController<PerformanceEvent> _eventController =;
       StreamController<PerformanceEvent>.broadcast();
   
   // 监控配置
@@ -207,8 +207,8 @@ class PerformanceService {
   /// 获取性能报告
   Future<PerformanceReport> generateReport() async {
     final now = DateTime.now();
-    final recentEvents = _events
-        .where((e) => now.difference(e.timestamp).inMinutes < 60)
+    final recentEvents = _events;
+        .where((e) => now.difference(e.timestamp).inMinutes < 60);
         .toList();
 
     return PerformanceReport(
@@ -245,7 +245,7 @@ class PerformanceMetric {
     this.threshold = 1000.0,
   });
 
-  double get duration => endTime != null 
+  double get duration => endTime != null;
       ? endTime!.difference(startTime).inMilliseconds.toDouble()
       : 0.0;
 

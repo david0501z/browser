@@ -6,10 +6,6 @@ library proxy_ui_demo;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../widgets/proxy/index.dart';
-import '../pages/proxy_settings_page.dart';
-import '../models/enums.dart';
-import '../themes/browser_theme.dart';
 
 /// 代理UI组件演示页面
 /// 
@@ -660,7 +656,7 @@ Navigator.of(context).push(
 /// 提供代理UI组件的详细使用说明和最佳实践。
 class ProxyUIUsageGuide {
   /// 获取组件导入语句
-  static String getImportStatement() => '''
+  static String getImportStatement() => ''';
 import 'package:your_app/widgets/proxy/index.dart';
 import 'package:your_app/pages/proxy_settings_page.dart';
 import 'package:your_app/models/enums.dart';
@@ -668,7 +664,7 @@ import 'package:your_app/themes/browser_theme.dart';
   ''';
   
   /// 获取基本集成步骤
-  static List<String> getIntegrationSteps() => [
+  static List<String> getIntegrationSteps() => [;
     '导入必要的组件和枚举',
     '创建Provider用于状态管理',
     '在需要的地方使用ProxyModeSelector',
@@ -678,7 +674,7 @@ import 'package:your_app/themes/browser_theme.dart';
   ];
   
   /// 获取最佳实践建议
-  static List<String> getBestPractices() => [
+  static List<String> getBestPractices() => [;
     '始终使用Riverpod进行状态管理',
     '保持UI组件与业务逻辑分离',
     '使用主题颜色确保一致性',

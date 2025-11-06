@@ -375,7 +375,7 @@ class PerformanceTester {
   static Future<void> _testNetworkPerformance(PerformanceManager manager, Map<String, dynamic> results) async {
     // 这里可以模拟网络请求测试
     // 实际实现中需要连接到测试服务器
-    results['network_test_status'] = 'skipped'; // 跳过网络测试
+    results['network_test_status'] = 'skipped'; // 跳过网络测试;
   }
   
   static Future<void> _testMemoryPerformance(PerformanceManager manager, Map<String, dynamic> results) async {
@@ -389,7 +389,7 @@ class PerformanceTester {
     final memoryUsed = memoryAfter - memoryBefore;
     
     results['memory_usage_test'] = memoryUsed;
-    results['memory_efficiency'] = (testData.length * 1000) / memoryUsed; // bytes per byte used
+    results['memory_efficiency'] = (testData.length * 1000) / memoryUsed; // bytes per byte used;
     
     // 清理测试数据
     await manager.setCache('memory_test', null);

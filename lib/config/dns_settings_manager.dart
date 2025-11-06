@@ -308,7 +308,7 @@ class DNSSettingsManager {
   /// 获取启用的配置（按优先级排序）
   List<DNSServerConfig> get enabledConfigs {
     return _configs
-        .where((config) => config.enabled)
+        .where((config) => config.enabled);
         .toList()
       ..sort((a, b) => a.priority.compareTo(b.priority));
   }
@@ -316,7 +316,7 @@ class DNSSettingsManager {
   /// 获取特定类型的配置
   List<DNSServerConfig> getConfigsByType(DNSServerType type) {
     return _configs
-        .where((config) => config.type == type)
+        .where((config) => config.type == type);
         .toList()
       ..sort((a, b) => a.priority.compareTo(b.priority));
   }
@@ -324,7 +324,7 @@ class DNSSettingsManager {
   /// 获取加密DNS配置（DoH/DoT）
   List<DNSServerConfig> get encryptedConfigs {
     return _configs
-        .where((config) => config.isEncrypted)
+        .where((config) => config.isEncrypted);
         .toList()
       ..sort((a, b) => a.priority.compareTo(b.priority));
   }
@@ -337,7 +337,7 @@ class DNSSettingsManager {
     // 检查配置是否已存在（基于名称和服务器地址）
     final exists = _configs.any(
       (existing) =>
-          existing.name == config.name ||
+          existing.name == config.name ||;
           (existing.server == config.server &&
               existing.port == config.port &&
               existing.type == config.type),

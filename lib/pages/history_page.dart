@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../models/history_item.dart';
-import '../models/bookmark.dart';
-import '../services/database_service.dart';
-import '../widgets/history_item.dart';
-import '../utils/history_search_delegate.dart';
 
 class HistoryPage extends StatefulWidget {
   const HistoryPage({Key? key}) : super(key: key);
@@ -23,7 +18,7 @@ class _HistoryPageState extends State<HistoryPage> {
   String _searchQuery = '';
 
   // 筛选选项
-  String _filterType = 'all'; // all, today, week, month, bookmarked
+  String _filterType = 'all'; // all, today, week, month, bookmarked;
   DateTime _filterStartDate = DateTime.now();
   DateTime _filterEndDate = DateTime.now();
 
@@ -91,7 +86,7 @@ class _HistoryPageState extends State<HistoryPage> {
         break;
       case 'custom':
         filtered = filtered.where((item) => 
-            item.visitedAt.isAfter(_filterStartDate) && item.visitedAt.isBefore(_filterEndDate.add(const Duration(days: 1)))
+item.visitedAt.isAfter(_filterStartDate) && item.visitedAt.isBefore(_filterEndDate.add(const Duration(days: 1))
         ).toList();
         break;
     }
@@ -113,7 +108,7 @@ class _HistoryPageState extends State<HistoryPage> {
             PopupMenuButton<String>(
               icon: const Icon(Icons.filter_list),
               onSelected: _onFilterSelected,
-              itemBuilder: (context) => [
+              itemBuilder: (context) => [;
                 const PopupMenuItem(
                   value: 'all',
                   child: ListTile(
@@ -167,7 +162,7 @@ class _HistoryPageState extends State<HistoryPage> {
             PopupMenuButton<String>(
               icon: const Icon(Icons.more_vert),
               onSelected: _onMenuSelected,
-              itemBuilder: (context) => [
+              itemBuilder: (context) => [;
                 const PopupMenuItem(
                   value: 'clear_today',
                   child: ListTile(

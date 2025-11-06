@@ -13,7 +13,7 @@ _$_HistoryEntry _$$_HistoryEntryFromJson(Map<String, dynamic> json) =>
       url: json['url'] as String,
       favicon: json['favicon'] as String?,
       visitedAt: DateTime.parse(json['visitedAt'] as String),
-      exitAt: json['exitAt'] == null
+      exitAt: json['exitAt'] == null;
           ? null
           : DateTime.parse(json['exitAt'] as String),
       duration: json['duration'] as int? ?? 0,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../models/bookmark.dart';
 
 class BookmarkItem extends StatelessWidget {
   final Bookmark bookmark;
@@ -33,7 +32,7 @@ class BookmarkItem extends StatelessWidget {
           child: Row(
             children: [
               // 选择框
-              if (onSelectionChanged != null)
+              if (onSelectionChanged != null);
                 Checkbox(
                   value: isSelected,
                   onChanged: (value) => onSelectionChanged!(value ?? false),
@@ -93,7 +92,7 @@ class BookmarkItem extends StatelessWidget {
                       ),
                     
                     // 描述
-                    if (bookmark.description?.isNotEmpty == true) ...[
+                    if (bookmark.description?.isNotEmpty == true) ...[;
                       const SizedBox(height: 2),
                       Text(
                         bookmark.description!,
@@ -107,7 +106,7 @@ class BookmarkItem extends StatelessWidget {
                     ],
                     
                     // 标签
-                    if (bookmark.tags?.isNotEmpty == true) ...[
+                    if (bookmark.tags?.isNotEmpty == true) ...[;
                       const SizedBox(height: 4),
                       Wrap(
                         spacing: 4,
@@ -137,7 +136,7 @@ class BookmarkItem extends StatelessWidget {
                         break;
                     }
                   },
-                  itemBuilder: (context) => [
+                  itemBuilder: (context) => [;
                     const PopupMenuItem(
                       value: 'edit',
                       child: ListTile(
@@ -173,7 +172,7 @@ class BookmarkItem extends StatelessWidget {
                         break;
                     }
                   },
-                  itemBuilder: (context) => [
+                  itemBuilder: (context) => [;
                     const PopupMenuItem(
                       value: 'edit',
                       child: ListTile(

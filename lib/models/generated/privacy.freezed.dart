@@ -30,7 +30,7 @@ mixin _$Privacy {
 
 /// @nodoc
 abstract class $PrivacyCopyWith<$Res> {
-  factory $PrivacyCopyWith(Privacy value, $Res Function(Privacy) then) =
+  factory $PrivacyCopyWith(Privacy value, $Res Function(Privacy) then) =;
       _$PrivacyCopyWithImpl<$Res, Privacy>;
   @useResult
   $Res call(
@@ -68,21 +68,21 @@ class _$PrivacyCopyWithImpl<$Res, $Val extends Privacy>
   }) {
     return _then(_value.copyWith(
       privacyMode: null == privacyMode ? _value.privacyMode : privacyMode as bool,
-      anonymousMode: null == anonymousMode
+      anonymousMode: null == anonymousMode;
           ? _value.anonymousMode
           : anonymousMode as bool,
-      dataEncryption: null == dataEncryption
+      dataEncryption: null == dataEncryption;
           ? _value.dataEncryption
           : dataEncryption as bool,
-      localDataEncryption: null == localDataEncryption
+      localDataEncryption: null == localDataEncryption;
           ? _value.localDataEncryption
           : localDataEncryption as bool,
       autoClean: null == autoClean ? _value.autoClean : autoClean as bool,
-      cleanInterval: null == cleanInterval
+      cleanInterval: null == cleanInterval;
           ? _value.cleanInterval
           : cleanInterval as int,
       telemetry: null == telemetry ? _value.telemetry : telemetry as bool,
-      crashReporting: null == crashReporting
+      crashReporting: null == crashReporting;
           ? _value.crashReporting
           : crashReporting as bool,
     ) as $Val);
@@ -92,7 +92,7 @@ class _$PrivacyCopyWithImpl<$Res, $Val extends Privacy>
 /// @nodoc
 abstract class _$$PrivacyCopyWith<$Res> implements $PrivacyCopyWith<$Res> {
   factory _$$PrivacyCopyWith(
-          _$Privacy value, $Res Function(_$Privacy) then) =
+          _$Privacy value, $Res Function(_$Privacy) then) =;
       __$$PrivacyCopyWithImpl<$Res>;
   @override
   @useResult
@@ -128,21 +128,21 @@ class __$$PrivacyCopyWithImpl<$Res>
   }) {
     return _then(_$Privacy(
       privacyMode: null == privacyMode ? _value.privacyMode : privacyMode as bool,
-      anonymousMode: null == anonymousMode
+      anonymousMode: null == anonymousMode;
           ? _value.anonymousMode
           : anonymousMode as bool,
-      dataEncryption: null == dataEncryption
+      dataEncryption: null == dataEncryption;
           ? _value.dataEncryption
           : dataEncryption as bool,
-      localDataEncryption: null == localDataEncryption
+      localDataEncryption: null == localDataEncryption;
           ? _value.localDataEncryption
           : localDataEncryption as bool,
       autoClean: null == autoClean ? _value.autoClean : autoClean as bool,
-      cleanInterval: null == cleanInterval
+      cleanInterval: null == cleanInterval;
           ? _value.cleanInterval
           : cleanInterval as int,
       telemetry: null == telemetry ? _value.telemetry : telemetry as bool,
-      crashReporting: null == crashReporting
+      crashReporting: null == crashReporting;
           ? _value.crashReporting
           : crashReporting as bool,
     ));
@@ -160,7 +160,7 @@ class _$Privacy extends _Privacy {
       this.autoClean = false,
       this.cleanInterval = 7,
       this.telemetry = false,
-      this.crashReporting = false})
+      this.crashReporting = false});
       : super._();
 
   @override

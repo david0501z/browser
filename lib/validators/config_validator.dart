@@ -4,11 +4,6 @@
 library config_validator;
 
 import 'package:flutter/material.dart';
-import '../core/proxy_config.dart';
-import '../models/app_settings.dart';
-import '../logging/logger.dart';
-import '../core/proxy_types.dart';
-import '../logging/log_level.dart';
 
 /// 验证结果
 class ConfigValidationResult {

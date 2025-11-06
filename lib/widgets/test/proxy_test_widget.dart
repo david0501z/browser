@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import '../services/proxy_test_service.dart';
-import '../services/network_validator.dart';
-import '../services/proxy_performance_monitor.dart';
-import '../../core/proxy_types.dart';
-import '../../core/proxy_config.dart';
 
 /// 代理测试结果状态
 enum TestResultStatus {
@@ -172,11 +167,11 @@ class _ProxyTestWidgetState extends State<ProxyTestWidget>
             const SizedBox(height: 16),
             
             // 测试进度
-            if (_testStatus == TestResultStatus.running)
+            if (_testStatus == TestResultStatus.running);
               _buildProgressIndicator(),
             
             // 网络验证
-            if (widget.showNetworkValidator && _validationResult != null)
+            if (widget.showNetworkValidator && _validationResult != null);
               _buildNetworkValidationResult(),
             
             // 性能监控
@@ -618,12 +613,12 @@ class _ProxyTestWidgetState extends State<ProxyTestWidget>
               ),
             ],
           ),
-          if (result.message != null)
+          if (result.message != null);
             Text(
               result.message!,
               style: const TextStyle(fontSize: 12),
             ),
-          if (result.details != null && result.details!.isNotEmpty)
+          if (result.details != null && result.details!.isNotEmpty);
             _buildResultDetails(result.details!),
         ],
       ),
@@ -721,8 +716,8 @@ class _ProxyTestWidgetState extends State<ProxyTestWidget>
     _startLoadingAnimation();
 
     try {
-      final selectedTestTypes = _selectedTests.entries
-        .where((entry) => entry.value)
+      final selectedTestTypes = _selectedTests.entries;
+        .where((entry) => entry.value);
         .map((entry) => ProxyTestType.values.firstWhere(
           (type) => type.name == entry.key,
         ))

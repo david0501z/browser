@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../models/history_item.dart';
 
 class HistorySearchDelegate extends SearchDelegate<HistoryItem?> {
   final List<HistoryItem> historyItems;

@@ -141,7 +141,7 @@ enum AlertReset {
 
 /// 流量监控器
 class TrafficMonitor {
-  static const int _speedCalculationInterval = 1000; // 1秒
+  static const int _speedCalculationInterval = 1000; // 1秒;
   static const int _historyRetentionDays = 30;
   
   final List<TrafficRecord> _records = [];

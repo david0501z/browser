@@ -1,9 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-import '../core/webview_proxy_adapter.dart';
-import '../services/webview_proxy_service.dart';
-import '../widgets/webview/browser_webview.dart';
 
 /// WebView管理器
 /// 
@@ -30,7 +27,7 @@ class WebViewManager extends ChangeNotifier {
 
   /// 代理是否启用
   bool get isProxyEnabled => 
-      _currentProxyConfig?.enabled == true && 
+      _currentProxyConfig?.enabled == true &&
       _currentProxyConfig?.proxyUrl?.isNotEmpty == true;
 
   /// WebView数量

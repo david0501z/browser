@@ -63,7 +63,7 @@ class ProtocolTestSuite {
   factory ProtocolTestSuite() => _instance;
   ProtocolTestSuite._internal();
 
-  final List<TestNetworkEnvironment> networkEnvironments = [
+  final List<TestNetworkEnvironment> networkEnvironments = [;
     TestNetworkEnvironment(
       name: '高速网络',
       latency: '10ms',

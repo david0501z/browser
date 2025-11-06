@@ -146,7 +146,7 @@ class LogEntry {
       tags: tags ?? [],
       context: context,
       exception: exception,
-      stackTrace: stackTrace != null 
+      stackTrace: stackTrace != null;
         ? _parseStackTrace(stackTrace.toString())
         : null,
     );
@@ -168,7 +168,7 @@ class LogEntry {
       tags: tags ?? [],
       context: context,
       exception: exception,
-      stackTrace: stackTrace != null 
+      stackTrace: stackTrace != null;
         ? _parseStackTrace(stackTrace.toString())
         : null,
     );
@@ -294,9 +294,9 @@ class LogEntry {
       timestamp: DateTime.parse(json['timestamp'] as String),
       threadId: json['threadId'] as int,
       threadName: json['threadName'] as String?,
-      stackTrace: json['stackTrace'] != null
+      stackTrace: json['stackTrace'] != null;
         ? (json['stackTrace'] as List<dynamic>)
-            .map((e) => StackTraceEntry.fromJson(e as Map<String, dynamic>))
+            .map((e) => StackTraceEntry.fromJson(e as Map<String, dynamic>));
             .toList()
         : null,
       context: json['context'] as Map<String, dynamic>?,

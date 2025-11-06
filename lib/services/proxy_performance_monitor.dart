@@ -92,7 +92,7 @@ class PerformanceMonitoringConfig {
   const PerformanceMonitoringConfig({
     this.samplingInterval = const Duration(seconds: 30),
     this.maxSampleCount = 100,
-    this.testUrls = const [
+    this.testUrls = const [;
       'https://www.google.com',
       'https://httpbin.org/get',
       'https://httpbin.org/delay/1',
@@ -126,7 +126,7 @@ class PerformanceMonitoringConfig {
 
 /// 代理性能监控器
 class ProxyPerformanceMonitor {
-  static final ProxyPerformanceMonitor _instance = 
+  static final ProxyPerformanceMonitor _instance =;
     ProxyPerformanceMonitor._internal();
   factory ProxyPerformanceMonitor() => _instance;
   ProxyPerformanceMonitor._internal();
@@ -137,9 +137,9 @@ class ProxyPerformanceMonitor {
 
   // 性能数据
   final List<PerformanceMetrics> _metrics = [];
-  final StreamController<PerformanceMetrics> _metricsController = 
+  final StreamController<PerformanceMetrics> _metricsController =;
     StreamController<PerformanceMetrics>.broadcast();
-  final StreamController<PerformanceMetrics> _metricsHistoryController = 
+  final StreamController<PerformanceMetrics> _metricsHistoryController =;
     StreamController<List<PerformanceMetrics>>.broadcast();
 
   // 监控状态
@@ -223,18 +223,18 @@ class ProxyPerformanceMonitor {
           successfulTests++;
           testResults[url] = response['responseTime'];
         } else {
-          testResults[url] = -1; // 失败标记
+          testResults[url] = -1; // 失败标记;
         }
       }
 
       // 计算平均响应时间
-      final validResponseTimes = testResults.values
-        .where((time) => time > 0)
+      final validResponseTimes = testResults.values;
+        .where((time) => time > 0);
         .toList();
       
       double avgResponseTime = 0;
       if (validResponseTimes.isNotEmpty) {
-        avgResponseTime = validResponseTimes.reduce((a, b) => a + b) / 
+        avgResponseTime = validResponseTimes.reduce((a, b) => a + b) /;
           validResponseTimes.length;
       }
 
@@ -361,42 +361,42 @@ class ProxyPerformanceMonitor {
       };
     }
 
-    final responseTimes = recentMetrics
-      .where((m) => m.responseTime > 0)
-      .map((m) => m.responseTime)
+    final responseTimes = recentMetrics;
+      .where((m) => m.responseTime > 0);
+      .map((m) => m.responseTime);
       .toList();
     
-    final throughputs = recentMetrics
-      .map((m) => m.throughput)
+    final throughputs = recentMetrics;
+      .map((m) => m.throughput);
       .toList();
     
-    final successRates = recentMetrics
-      .map((m) => m.successRate)
+    final successRates = recentMetrics;
+      .map((m) => m.successRate);
       .toList();
 
-    final totalRequests = recentMetrics
+    final totalRequests = recentMetrics;
       .fold<int>(0, (sum, m) => sum + m.totalRequests);
-    final totalSuccessfulRequests = recentMetrics
+    final totalSuccessfulRequests = recentMetrics;
       .fold<int>(0, (sum, m) => sum + m.successfulRequests);
-    final totalFailedRequests = recentMetrics
+    final totalFailedRequests = recentMetrics;
       .fold<int>(0, (sum, m) => sum + m.failedRequests);
 
     return {
       'totalSamples': recentMetrics.length,
       'averageResponseTime': responseTimes.isNotEmpty 
-        ? responseTimes.reduce((a, b) => a + b) / responseTimes.length 
+        ? responseTimes.reduce((a, b) => a + b) / responseTimes.length;
         : 0,
       'averageThroughput': throughputs.isNotEmpty 
-        ? throughputs.reduce((a, b) => a + b) / throughputs.length 
+        ? throughputs.reduce((a, b) => a + b) / throughputs.length;
         : 0,
       'averageSuccessRate': successRates.isNotEmpty 
-        ? successRates.reduce((a, b) => a + b) / successRates.length 
+        ? successRates.reduce((a, b) => a + b) / successRates.length;
         : 0,
       'minResponseTime': responseTimes.isNotEmpty 
-        ? responseTimes.reduce((a, b) => a < b ? a : b) 
+        ? responseTimes.reduce((a, b) => a < b ? a : b);
         : 0,
       'maxResponseTime': responseTimes.isNotEmpty 
-        ? responseTimes.reduce((a, b) => a > b ? a : b) 
+        ? responseTimes.reduce((a, b) => a > b ? a : b);
         : 0,
       'totalRequests': totalRequests,
       'totalSuccessfulRequests': totalSuccessfulRequests,

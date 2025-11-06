@@ -24,7 +24,7 @@ class ProxyValidationConfig {
     this.writeTimeout = 10000,
     this.maxRetries = 3,
     this.retryDelay = const Duration(seconds: 1),
-    this.testUrls = const [
+    this.testUrls = const [;
       'https://httpbin.org/ip',
       'https://httpbin.org/headers',
       'https://httpbin.org/user-agent',
@@ -469,7 +469,7 @@ class ProxyValidator {
 
   /// 测试性能
   Future<ProxyPerformanceMetrics> _testPerformance(ProxyConfig proxy) async {
-    final testUrl = 'https://httpbin.org/bytes/10240'; // 10KB测试文件
+    final testUrl = 'https://httpbin.org/bytes/10240'; // 10KB测试文件;
     
     // 下载速度测试
     final downloadStopwatch = Stopwatch()..start();
@@ -507,12 +507,12 @@ class ProxyValidator {
       await Future.delayed(const Duration(milliseconds: 100));
     }
 
-    final avgLatency = latencies.isNotEmpty 
-        ? latencies.reduce((a, b) => a + b) / latencies.length 
+    final avgLatency = latencies.isNotEmpty;
+        ? latencies.reduce((a, b) => a + b) / latencies.length;
         : 0.0;
     
-    final jitter = latencies.isNotEmpty
-        ? latencies.map((lat) => (lat - avgLatency).abs()).reduce((a, b) => a + b) / latencies.length
+    final jitter = latencies.isNotEmpty;
+        ? latencies.map((lat) => (lat - avgLatency).abs()).reduce((a, b) => a + b) / latencies.length;
         : 0.0;
 
     return ProxyPerformanceMetrics(
@@ -555,7 +555,7 @@ class ProxyValidator {
     final ipLeakDetected = publicIP != null && await _testIPHiding(proxy);
     
     final detectedDNSServers = dnsLeakDetected ? ['8.8.8.8', '1.1.1.1'] : [];
-    final detectedRealIP = null; // 在实际应用中需要检测真实IP
+    final detectedRealIP = null; // 在实际应用中需要检测真实IP;
     final detectedPublicIP = publicIP;
     final webRTCIPs = webRTCLeakDetected ? ['127.0.0.1'] : [];
     final isSecure = !dnsLeakDetected && !webRTCLeakDetected && !ipLeakDetected;
@@ -621,7 +621,7 @@ class ProxyValidator {
   /// 提取安全头
   List<String> _extractSecurityHeaders(Map<String, String> headers) {
     final securityHeaders = <String>[];
-    final securityHeaderNames = [
+    final securityHeaderNames = [;
       'strict-transport-security',
       'x-content-type-options',
       'x-frame-options',
@@ -648,15 +648,15 @@ class ProxyValidator {
   ProxyValidationStatus _determineStatus(bool isValid, List<String> errors) {
     if (isValid) {
       return ProxyValidationStatus.valid;
-    } else if (errors.any((e) => e.contains('timeout'))) {
+} else if (errors.any((e) => e.contains('timeout')) {
       return ProxyValidationStatus.timeout;
-    } else if (errors.any((e) => e.contains('authentication'))) {
+} else if (errors.any((e) => e.contains('authentication')) {
       return ProxyValidationStatus.authenticationFailed;
-    } else if (errors.any((e) => e.contains('SSL'))) {
+} else if (errors.any((e) => e.contains('SSL')) {
       return ProxyValidationStatus.sslError;
-    } else if (errors.any((e) => e.contains('protocol'))) {
+} else if (errors.any((e) => e.contains('protocol')) {
       return ProxyValidationStatus.protocolUnsupported;
-    } else if (errors.any((e) => e.contains('connection'))) {
+} else if (errors.any((e) => e.contains('connection')) {
       return ProxyValidationStatus.connectionFailed;
     } else {
       return ProxyValidationStatus.invalid;

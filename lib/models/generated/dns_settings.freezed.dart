@@ -28,7 +28,7 @@ mixin _$DNSConfiguration {
 /// @nodoc
 abstract class $DNSConfigurationCopyWith<$Res> {
   factory $DNSConfigurationCopyWith(
-          DNSConfiguration value, $Res Function(DNSConfiguration) then) =
+          DNSConfiguration value, $Res Function(DNSConfiguration) then) =;
       _$DNSConfigurationCopyWithImpl<$Res, DNSConfiguration>;
   @useResult
   $Res call(
@@ -58,10 +58,10 @@ class _$DNSConfigurationCopyWithImpl<$Res, $Val extends DNSConfiguration>
   }) {
     return _then(_value.copyWith(
       customDNS: null == customDNS ? _value.customDNS : customDNS as bool,
-      dnsServers: null == dnsServers
+      dnsServers: null == dnsServers;
           ? _value.dnsServers
           : dnsServers as List<String>,
-      dnsOverHttps: null == dnsOverHttps
+      dnsOverHttps: null == dnsOverHttps;
           ? _value.dnsOverHttps
           : dnsOverHttps as bool,
       dohServer: freezed == dohServer ? _value.dohServer : dohServer as String?,
@@ -73,7 +73,7 @@ class _$DNSConfigurationCopyWithImpl<$Res, $Val extends DNSConfiguration>
 abstract class _$$DNSConfigurationCopyWith<$Res>
     implements $DNSConfigurationCopyWith<$Res> {
   factory _$$DNSConfigurationCopyWith(
-          _$DNSConfiguration value, $Res Function(_$DNSConfiguration) then) =
+          _$DNSConfiguration value, $Res Function(_$DNSConfiguration) then) =;
       __$$DNSConfigurationCopyWithImpl<$Res>;
   @override
   @useResult
@@ -102,10 +102,10 @@ class __$$DNSConfigurationCopyWithImpl<$Res>
   }) {
     return _then(_$DNSConfiguration(
       customDNS: null == customDNS ? _value.customDNS : customDNS as bool,
-      dnsServers: null == dnsServers
+      dnsServers: null == dnsServers;
           ? _value.dnsServers
           : dnsServers as List<String>,
-      dnsOverHttps: null == dnsOverHttps
+      dnsOverHttps: null == dnsOverHttps;
           ? _value.dnsOverHttps
           : dnsOverHttps as bool,
       dohServer: freezed == dohServer ? _value.dohServer : dohServer as String?,

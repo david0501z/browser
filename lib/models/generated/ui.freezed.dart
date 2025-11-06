@@ -32,7 +32,7 @@ mixin _$UI {
 
 /// @nodoc
 abstract class $UICopyWith<$Res> {
-  factory $UICopyWith(UI value, $Res Function(UI) then) =
+  factory $UICopyWith(UI value, $Res Function(UI) then) =;
       _$UICopyWithImpl<$Res, UI>;
   @useResult
   $Res call(
@@ -75,13 +75,13 @@ class _$UICopyWithImpl<$Res, $Val extends UI> implements $UICopyWith<$Res> {
       themeMode: null == themeMode ? _value.themeMode : themeMode as ThemeMode,
       language: null == language ? _value.language : language as String,
       animations: null == animations ? _value.animations : animations as bool,
-      immersiveStatusBar: null == immersiveStatusBar
+      immersiveStatusBar: null == immersiveStatusBar;
           ? _value.immersiveStatusBar
           : immersiveStatusBar as bool,
-      immersiveNavigationBar: null == immersiveNavigationBar
+      immersiveNavigationBar: null == immersiveNavigationBar;
           ? _value.immersiveNavigationBar
           : immersiveNavigationBar as bool,
-      safeAreaBottom: null == safeAreaBottom
+      safeAreaBottom: null == safeAreaBottom;
           ? _value.safeAreaBottom
           : safeAreaBottom as bool,
       fontSize: null == fontSize ? _value.fontSize : fontSize as FontSize,
@@ -94,7 +94,7 @@ class _$UICopyWithImpl<$Res, $Val extends UI> implements $UICopyWith<$Res> {
 
 /// @nodoc
 abstract class _$$UICopyWith<$Res> implements $UICopyWith<$Res> {
-  factory _$$UICopyWith(_$UI value, $Res Function(_$UI) then) =
+  factory _$$UICopyWith(_$UI value, $Res Function(_$UI) then) =;
       __$$UICopyWithImpl<$Res>;
   @override
   @useResult
@@ -135,13 +135,13 @@ class __$$UICopyWithImpl<$Res> extends _$UICopyWithImpl<$Res, _$UI>
       themeMode: null == themeMode ? _value.themeMode : themeMode as ThemeMode,
       language: null == language ? _value.language : language as String,
       animations: null == animations ? _value.animations : animations as bool,
-      immersiveStatusBar: null == immersiveStatusBar
+      immersiveStatusBar: null == immersiveStatusBar;
           ? _value.immersiveStatusBar
           : immersiveStatusBar as bool,
-      immersiveNavigationBar: null == immersiveNavigationBar
+      immersiveNavigationBar: null == immersiveNavigationBar;
           ? _value.immersiveNavigationBar
           : immersiveNavigationBar as bool,
-      safeAreaBottom: null == safeAreaBottom
+      safeAreaBottom: null == safeAreaBottom;
           ? _value.safeAreaBottom
           : safeAreaBottom as bool,
       fontSize: null == fontSize ? _value.fontSize : fontSize as FontSize,
@@ -165,7 +165,7 @@ class _$UI extends _UI {
       this.fontSize = FontSize.normal,
       this.fontWeight = FontWeight.normal,
       this.highContrast = false,
-      this.boldLabels = false})
+      this.boldLabels = false});
       : super._();
 
   @override

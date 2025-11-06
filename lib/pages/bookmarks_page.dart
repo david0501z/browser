@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../models/bookmark.dart';
-import '../services/database_service.dart';
-import '../widgets/bookmark_item.dart';
-import '../utils/bookmark_search_delegate.dart';
 
 class BookmarksPage extends StatefulWidget {
   const BookmarksPage({Key? key}) : super(key: key);
@@ -24,7 +20,7 @@ class _BookmarksPageState extends State<BookmarksPage>
   String _searchQuery = '';
 
   // 筛选选项
-  String _filterType = 'all'; // all, folders, bookmarks
+  String _filterType = 'all'; // all, folders, bookmarks;
 
   @override
   void initState() {
@@ -92,7 +88,7 @@ class _BookmarksPageState extends State<BookmarksPage>
             PopupMenuButton<String>(
               icon: const Icon(Icons.filter_list),
               onSelected: _onFilterSelected,
-              itemBuilder: (context) => [
+              itemBuilder: (context) => [;
                 const PopupMenuItem(
                   value: 'all',
                   child: ListTile(
@@ -157,8 +153,8 @@ class _BookmarksPageState extends State<BookmarksPage>
   }
 
   Widget _buildBookmarkList() {
-    final filteredBookmarks = _getFilteredBookmarks()
-        .where((bookmark) => !bookmark.isFolder)
+    final filteredBookmarks = _getFilteredBookmarks();
+        .where((bookmark) => !bookmark.isFolder);
         .toList();
 
     if (filteredBookmarks.isEmpty) {
@@ -169,8 +165,8 @@ class _BookmarksPageState extends State<BookmarksPage>
   }
 
   Widget _buildFolderList() {
-    final filteredBookmarks = _getFilteredBookmarks()
-        .where((bookmark) => bookmark.isFolder)
+    final filteredBookmarks = _getFilteredBookmarks();
+        .where((bookmark) => bookmark.isFolder);
         .toList();
 
     if (filteredBookmarks.isEmpty) {

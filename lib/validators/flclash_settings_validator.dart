@@ -2,7 +2,6 @@
 /// 
 /// 用于验证 FlClash 代理设置的完整性和有效性
 
-import '../models/app_settings.dart';
 
 class ClashCoreSettingsValidator {
   /// 验证 FlClash 设置

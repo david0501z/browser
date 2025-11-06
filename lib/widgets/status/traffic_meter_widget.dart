@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../providers/proxy_providers.dart';
 
 /// 流量统计组件
 /// 用于实时显示网络流量数据，包括上传/下载速度和总量

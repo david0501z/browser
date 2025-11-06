@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-import '../models/bookmark.dart';
-import '../models/history_item.dart';
 
 class DatabaseService {
   static final DatabaseService _instance = DatabaseService._internal();

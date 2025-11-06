@@ -2,10 +2,6 @@ import 'dart:async';
 import 'dart:math';
 import 'package:collection/collection.dart';
 
-import '../models/proxy_node.dart';
-import '../services/subscription_service.dart';
-import '../services/speed_test_service.dart';
-import '../utils/node_validator.dart';
 
 /// 代理节点管理器
 class ProxyNodeManager {
@@ -18,7 +14,7 @@ class ProxyNodeManager {
   final NodeValidator _validator = NodeValidator();
 
   /// 节点列表变更监听器
-  final StreamController<List<ProxyNode>> _nodesStreamController = 
+  final StreamController<List<ProxyNode>> _nodesStreamController =;
       StreamController<List<ProxyNode>>.broadcast();
   Stream<List<ProxyNode>> get nodesStream => _nodesStreamController.stream;
 
@@ -316,7 +312,7 @@ class ProxyNodeManager {
       }
 
       // 延迟过滤
-      if (filter.maxLatency != null && 
+      if (filter.maxLatency != null &&
           (node.latency == null || node.latency! > filter.maxLatency!)) {
         return false;
       }
@@ -461,8 +457,8 @@ class ProxyNodeManager {
     int timeoutSeconds = 10,
   }) async {
     try {
-      final testNodes = nodeIds != null 
-          ? _nodes.where((node) => nodeIds.contains(node.id)).toList()
+      final testNodes = nodeIds != null;
+          ? _nodes.where((node) => nodeIds.contains(node.id)).toList();
           : _nodes.where((node) => node.enabled).toList();
 
       if (testNodes.isEmpty) return {};
@@ -562,8 +558,8 @@ class ProxyNodeManager {
   /// 批量验证节点
   Future<Map<String, ValidationResult>> validateNodes({List<String>? nodeIds}) async {
     try {
-      final nodes = nodeIds != null
-          ? _nodes.where((node) => nodeIds.contains(node.id)).toList()
+      final nodes = nodeIds != null;
+          ? _nodes.where((node) => nodeIds.contains(node.id)).toList();
           : _nodes;
 
       final results = <String, ValidationResult>{};
@@ -613,14 +609,14 @@ class ProxyNodeManager {
 
     // 计算平均延迟
     final testedNodes = _nodes.where((n) => n.latency != null).toList();
-    final avgLatency = testedNodes.isNotEmpty
-        ? testedNodes.map((n) => n.latency!).reduce((a, b) => a + b) / testedNodes.length
+    final avgLatency = testedNodes.isNotEmpty;
+        ? testedNodes.map((n) => n.latency!).reduce((a, b) => a + b) / testedNodes.length;
         : null;
 
     // 计算成功率
     final performanceNodes = _nodes.where((n) => n.performance != null).toList();
-    final avgSuccessRate = performanceNodes.isNotEmpty
-        ? performanceNodes.map((n) => n.performance!.successRate).reduce((a, b) => a + b) / performanceNodes.length
+    final avgSuccessRate = performanceNodes.isNotEmpty;
+        ? performanceNodes.map((n) => n.performance!.successRate).reduce((a, b) => a + b) / performanceNodes.length;
         : 0.0;
 
     return NodeStatistics(

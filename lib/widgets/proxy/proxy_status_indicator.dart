@@ -7,9 +7,6 @@ library proxy_status_indicator;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:async';
-import '../../../models/enums.dart';
-import '../../../providers/proxy_providers.dart';
-import '../../../themes/browser_theme.dart';
 
 /// 代理状态指示器
 /// 
@@ -371,7 +368,7 @@ class _ProxyStatusIndicatorState extends ConsumerState<ProxyStatusIndicator>
                       ],
                     ),
                     
-                    if (widget.showDetailedStatus && statusInfo.description != null) ...[
+                    if (widget.showDetailedStatus && statusInfo.description != null) ...[;
                       const SizedBox(height: 4),
                       Text(
                         statusInfo.description!,

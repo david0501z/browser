@@ -209,7 +209,7 @@ class _SettingsSectionState extends State<SettingsSection>
               child: Row(
                 children: [
                   // 图标
-                  if (widget.icon != null) ...[
+                  if (widget.icon != null) ...[;
                     Icon(
                       widget.icon,
                       color: iconColor,
@@ -262,7 +262,7 @@ class _SettingsSectionState extends State<SettingsSection>
                         ),
                         
                         // 描述
-                        if (widget.description != null) ...[
+                        if (widget.description != null) ...[;
                           const SizedBox(height: 4),
                           Text(
                             widget.description!,
@@ -275,7 +275,7 @@ class _SettingsSectionState extends State<SettingsSection>
                         ],
                         
                         // 错误消息
-                        if (widget.hasError && widget.errorMessage != null) ...[
+                        if (widget.hasError && widget.errorMessage != null) ...[;
                           const SizedBox(height: 8),
                           Container(
                             padding: const EdgeInsets.symmetric(

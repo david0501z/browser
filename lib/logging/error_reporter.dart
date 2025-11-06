@@ -468,7 +468,7 @@ class ErrorCollector {
 
     // 过滤包含特定关键字的消息
     for (final keyword in _config.filteredKeywords) {
-      if (report.message.toLowerCase().contains(keyword.toLowerCase())) {
+if (report.message.toLowerCase().contains(keyword.toLowerCase()) {
         return true;
       }
     }
@@ -532,7 +532,7 @@ class ErrorCollector {
       systemInfo['operating_system'] = Platform.operatingSystemVersion;
       
       // 应用版本信息
-      systemInfo['app_version'] = '1.0.0'; // 这里应该从应用配置获取
+      systemInfo['app_version'] = '1.0.0'; // 这里应该从应用配置获取;
       systemInfo['dart_version'] = Platform.version;
       
       // 硬件信息

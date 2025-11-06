@@ -53,7 +53,7 @@ mixin _$PortConfiguration {
 /// @nodoc
 abstract class $PortConfigurationCopyWith<$Res> {
   factory $PortConfigurationCopyWith(
-          PortConfiguration value, $Res Function(PortConfiguration) then) =
+          PortConfiguration value, $Res Function(PortConfiguration) then) =;
       _$PortConfigurationCopyWithImpl<$Res, PortConfiguration>;
   @useResult
   $Res call({int socksPort, int httpPort, int apiPort, bool enableRedirect});
@@ -80,19 +80,19 @@ class _$PortConfigurationCopyWithImpl<$Res, $Val extends PortConfiguration>
     Object? enableRedirect = null,
   }) {
     return _then(_value.copyWith(
-      socksPort: null == socksPort
+      socksPort: null == socksPort;
           ? _value.socksPort
           : socksPort // ignore: cast_nullable_to_non_nullable
               as int,
-      httpPort: null == httpPort
+      httpPort: null == httpPort;
           ? _value.httpPort
           : httpPort // ignore: cast_nullable_to_non_nullable
               as int,
-      apiPort: null == apiPort
+      apiPort: null == apiPort;
           ? _value.apiPort
           : apiPort // ignore: cast_nullable_to_non_nullable
               as int,
-      enableRedirect: null == enableRedirect
+      enableRedirect: null == enableRedirect;
           ? _value.enableRedirect
           : enableRedirect // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -104,7 +104,7 @@ class _$PortConfigurationCopyWithImpl<$Res, $Val extends PortConfiguration>
 abstract class _$$PortConfigurationImplCopyWith<$Res>
     implements $PortConfigurationCopyWith<$Res> {
   factory _$$PortConfigurationImplCopyWith(_$PortConfigurationImpl value,
-          $Res Function(_$PortConfigurationImpl) then) =
+          $Res Function(_$PortConfigurationImpl) then) =;
       __$$PortConfigurationImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -130,19 +130,19 @@ class __$$PortConfigurationImplCopyWithImpl<$Res>
     Object? enableRedirect = null,
   }) {
     return _then(_$PortConfigurationImpl(
-      socksPort: null == socksPort
+      socksPort: null == socksPort;
           ? _value.socksPort
           : socksPort // ignore: cast_nullable_to_non_nullable
               as int,
-      httpPort: null == httpPort
+      httpPort: null == httpPort;
           ? _value.httpPort
           : httpPort // ignore: cast_nullable_to_non_nullable
               as int,
-      apiPort: null == apiPort
+      apiPort: null == apiPort;
           ? _value.apiPort
           : apiPort // ignore: cast_nullable_to_non_nullable
               as int,
-      enableRedirect: null == enableRedirect
+      enableRedirect: null == enableRedirect;
           ? _value.enableRedirect
           : enableRedirect // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -238,7 +238,7 @@ abstract class _PortConfiguration implements PortConfiguration {
       final int apiPort,
       final bool enableRedirect}) = _$PortConfigurationImpl;
 
-  factory _PortConfiguration.fromJson(Map<String, dynamic> json) =
+  factory _PortConfiguration.fromJson(Map<String, dynamic> json) =;
       _$PortConfigurationImpl.fromJson;
 
   /// SOCKS代理端口

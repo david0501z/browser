@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../providers/shared_state_provider.dart';
 
 /// 平滑过渡动画组件
 class SmoothTransition extends ConsumerStatefulWidget {
@@ -149,7 +148,7 @@ class _SmoothTransitionState extends ConsumerState<SmoothTransition>
   void _checkTransitionState() {
     final sharedState = ref.read(sharedStateProvider);
     final isTargetMode = sharedState.currentMode == widget.targetMode;
-    final shouldAnimate = sharedState.enableAnimations && 
+    final shouldAnimate = sharedState.enableAnimations &&
                          sharedState.transitionState == TransitionState.switching;
 
     if (shouldAnimate && !_controller.isAnimating) {

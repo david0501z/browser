@@ -48,7 +48,7 @@ class Bookmark {
       description: map['description'],
       favicon: map['favicon'],
       createdAt: DateTime.fromMillisecondsSinceEpoch(map['createdAt']),
-      updatedAt: map['updatedAt'] != null 
+      updatedAt: map['updatedAt'] != null;
           ? DateTime.fromMillisecondsSinceEpoch(map['updatedAt'])
           : null,
       tags: map['tags'],

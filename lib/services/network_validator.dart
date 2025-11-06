@@ -152,7 +152,7 @@ class NetworkValidator {
       }
 
       // 验证代理类型
-      if (!['http', 'https', 'socks4', 'socks5'].contains(proxyType.toLowerCase())) {
+if (!['http', 'https', 'socks4', 'socks5'].contains(proxyType.toLowerCase()) {
         errors.add('不支持的代理类型: $proxyType');
       }
 
@@ -235,7 +235,7 @@ class NetworkValidator {
 
     try {
       // 测试DNS服务器连通性
-      final dnsServers = [
+      final dnsServers = [;
         '8.8.8.8',
         '8.8.4.4',
         '1.1.1.1',
@@ -299,7 +299,7 @@ class NetworkValidator {
       final domains = ['www.google.com', 'github.com', 'stackoverflow.com'];
 
       for (final domain in domains) {
-        final addresses = await InternetAddress.lookup(domain)
+        final addresses = await InternetAddress.lookup(domain);
           .timeout(timeout);
         results[domain] = addresses.first.address;
       }
@@ -318,7 +318,7 @@ class NetworkValidator {
 
   Future<Map<String, dynamic>> _testConnectivity(Duration timeout) async {
     try {
-      final urls = [
+      final urls = [;
         'https://www.google.com',
         'https://httpbin.org/get',
         'https://httpbin.org/status/200',
@@ -349,7 +349,7 @@ class NetworkValidator {
 
   Future<Map<String, dynamic>> _testNetworkSpeed(Duration timeout) async {
     try {
-      final url = 'https://httpbin.org/bytes/102400'; // 100KB
+      final url = 'https://httpbin.org/bytes/102400'; // 100KB;
       final stopwatch = Stopwatch()..start();
       
       final response = await http.get(
@@ -417,7 +417,7 @@ class NetworkValidator {
     required String proxyType,
   }) async {
     try {
-      final url = 'https://httpbin.org/bytes/51200'; // 50KB
+      final url = 'https://httpbin.org/bytes/51200'; // 50KB;
       final stopwatch = Stopwatch()..start();
       
       final response = await http.get(
@@ -495,9 +495,9 @@ class NetworkValidator {
     final proxies = <Map<String, dynamic>>[];
     
     try {
-      final httpProxy = Platform.environment['HTTP_PROXY'] ?? 
+      final httpProxy = Platform.environment['HTTP_PROXY'] ??;
                         Platform.environment['http_proxy'];
-      final httpsProxy = Platform.environment['HTTPS_PROXY'] ?? 
+      final httpsProxy = Platform.environment['HTTPS_PROXY'] ??;
                         Platform.environment['https_proxy'];
       
       if (httpProxy != null) {
@@ -586,7 +586,7 @@ class NetworkValidator {
     timer = Timer.periodic(const Duration(seconds: 5), (timer) async {
       try {
         final result = await validateNetworkConnection();
-        final newState = result.isValid 
+        final newState = result.isValid;
           ? NetworkDetectionState.connected 
           : NetworkDetectionState.disconnected;
         

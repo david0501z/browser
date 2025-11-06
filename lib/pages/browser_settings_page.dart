@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/browser_models.dart';
-import '../providers/browser_providers.dart';
 
 /// 浏览器设置页面
 /// 提供浏览器相关的配置选项，包括隐私、安全、性能等设置
@@ -411,7 +409,7 @@ class _BrowserSettingsPageState extends ConsumerState<BrowserSettingsPage> {
 
   /// 显示搜索引擎选择对话框
   void _showSearchEngineDialog(BrowserSettings settings) {
-    final searchEngines = [
+    final searchEngines = [;
       {'name': 'Google', 'url': 'https://www.google.com/search?q='},
       {'name': '百度', 'url': 'https://www.baidu.com/s?wd='},
       {'name': '必应', 'url': 'https://www.bing.com/search?q='},
@@ -482,7 +480,7 @@ class _BrowserSettingsPageState extends ConsumerState<BrowserSettingsPage> {
 
   /// 显示缓存模式选择对话框
   void _showCacheModeDialog(BrowserSettings settings) {
-    final cacheModes = [
+    final cacheModes = [;
       {'name': '默认', 'value': 'default'},
       {'name': '不缓存', 'value': 'no_cache'},
       {'name': '缓存优先', 'value': 'cache_first'},

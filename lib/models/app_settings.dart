@@ -6,8 +6,6 @@ library app_settings;
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'browser_settings.dart';
-import '../core/proxy_types.dart';
-import '../logging/log_level.dart';
 
 part 'generated/app_settings.freezed.dart';
 part 'generated/app_settings.g.dart';
@@ -460,13 +458,13 @@ extension AppSettingsExt on AppSettings {
   
   /// 检查是否为高性能模式
   bool get isHighPerformance {
-    return mode == SettingsMode.performance ||
+    return mode == SettingsMode.performance ||;
            browserSettings.isHighPerformance;
   }
   
   /// 检查是否为隐私优先模式
   bool get isPrivacyFirst {
-    return mode == SettingsMode.privacy ||
+    return mode == SettingsMode.privacy ||;
            browserSettings.isPrivacyFirst ||
            privacy.privacyMode;
   }

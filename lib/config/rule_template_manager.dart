@@ -67,7 +67,7 @@ class RuleTemplate {
       TemplateType.values.byName(json['type']),
       TemplateComplexity.values.byName(json['complexity']),
       (json['rules'] as List)
-          .map((rule) => RuleConfig.fromJson(rule as Map<String, dynamic>))
+          .map((rule) => RuleConfig.fromJson(rule as Map<String, dynamic>));
           .toList(),
       Map<String, dynamic>.from(json['parameters'] as Map),
       List<String>.from(json['dependencies'] as List),
@@ -279,7 +279,7 @@ class RuleTemplateManager extends ChangeNotifier {
   RuleTemplateManager._();
 
   final Map<String, RuleTemplate> _templates = {};
-  final List<String> _templateCategories = [
+  final List<String> _templateCategories = [;
     '网络访问',
     '安全防护',
     '隐私保护',
@@ -347,7 +347,7 @@ class RuleTemplateManager extends ChangeNotifier {
 
   /// 创建内置模板
   Future<void> _createBuiltInTemplates(DateTime now) async {
-    final builtinTemplates = <RuleTemplate>[
+    final builtinTemplates = <RuleTemplate>[;
       // 基础网络访问模板
       RuleTemplate(
         id: 'basic_network_access',
@@ -442,7 +442,7 @@ class RuleTemplateManager extends ChangeNotifier {
 
   /// 创建网络模板
   Future<void> _createNetworkTemplates(DateTime now) async {
-    final networkTemplates = <RuleTemplate>[
+    final networkTemplates = <RuleTemplate>[;
       RuleTemplate(
         id: 'social_media',
         name: '社交媒体优化',
@@ -546,7 +546,7 @@ class RuleTemplateManager extends ChangeNotifier {
 
   /// 创建安全模板
   Future<void> _createSecurityTemplates(DateTime now) async {
-    final securityTemplates = <RuleTemplate>[
+    final securityTemplates = <RuleTemplate>[;
       RuleTemplate(
         id: 'malware_protection',
         name: '恶意软件防护',
@@ -598,7 +598,7 @@ class RuleTemplateManager extends ChangeNotifier {
 
   /// 创建隐私模板
   Future<void> _createPrivacyTemplates(DateTime now) async {
-    final privacyTemplates = <RuleTemplate>[
+    final privacyTemplates = <RuleTemplate>[;
       RuleTemplate(
         id: 'privacy_protection',
         name: '隐私保护',
@@ -649,7 +649,7 @@ class RuleTemplateManager extends ChangeNotifier {
 
   /// 创建性能模板
   Future<void> _createPerformanceTemplates(DateTime now) async {
-    final performanceTemplates = <RuleTemplate>[
+    final performanceTemplates = <RuleTemplate>[;
       RuleTemplate(
         id: 'performance_optimization',
         name: '性能优化',
@@ -795,8 +795,8 @@ class RuleTemplateManager extends ChangeNotifier {
     var priority = templateRule.priority;
     if (parameters.containsKey('customPriority')) {
       final customPriority = parameters['customPriority'] as int?;
-      if (customPriority != null && 
-          customPriority >= RulePriority.lowest && 
+      if (customPriority != null &&
+          customPriority >= RulePriority.lowest &&
           customPriority <= RulePriority.critical) {
         priority = customPriority;
         warnings['customPriority'] = '使用自定义优先级';
@@ -875,7 +875,7 @@ class RuleTemplateManager extends ChangeNotifier {
     // 规则数量分数
     final ruleCount = template.rules.length;
     if (ruleCount >= 5 && ruleCount <= 50) {
-      score += 5; // 适中的规则数量
+      score += 5; // 适中的规则数量;
     } else if (ruleCount > 0) {
       score += 2;
     }

@@ -248,7 +248,7 @@ class CacheManager {
   
   /// 获取缓存项数量
   Future<int> count() async {
-    final counts = await Future.wait([
+    final counts = await Future.wait([;
       _memoryCache.count(),
       _diskCache.count(),
       _networkCache.count(),
@@ -508,8 +508,8 @@ class CacheConfig {
     this.defaultExpiry = const Duration(hours: 24),
     this.cleanupInterval = const Duration(minutes: 30),
     this.preloadInterval = const Duration(minutes: 15),
-    this.maxMemorySize = 100 * 1024 * 1024, // 100MB
-    this.maxDiskSize = 500 * 1024 * 1024, // 500MB
+    this.maxMemorySize = 100 * 1024 * 1024, // 100MB;
+    this.maxDiskSize = 500 * 1024 * 1024, // 500MB;
     this.compressionThreshold = 0.8,
     this.defaultPolicy = CachePolicy.all,
   });
@@ -539,7 +539,7 @@ enum CacheSource {
 class MemoryCache {
   final Map<String, CacheEntry> _cache = {};
   final List<String> _accessOrder = [];
-  int _maxSize = 100 * 1024 * 1024; // 100MB
+  int _maxSize = 100 * 1024 * 1024; // 100MB;
   int _currentSize = 0;
   
   Future<void> initialize(CacheConfig config) async {
@@ -613,7 +613,7 @@ class MemoryCache {
     // 压缩缓存中的字符串数据
     for (final entry in _cache.values) {
       if (entry.value is String) {
-        final compressed = utf8.encode(utf8.decode(utf8.encode(entry.value)));
+final compressed = utf8.encode(utf8.decode(utf8.encode(entry.value));
         // 这里可以实现真正的压缩算法
         entry.size = compressed.length;
       }
@@ -622,9 +622,9 @@ class MemoryCache {
   }
   
   Future<void> cleanupExpired(DateTime now) async {
-    final expiredKeys = _cache.entries
-        .where((entry) => entry.value.isExpired(now))
-        .map((entry) => entry.key)
+    final expiredKeys = _cache.entries;
+        .where((entry) => entry.value.isExpired(now));
+        .map((entry) => entry.key);
         .toList();
     
     for (final key in expiredKeys) {
@@ -712,7 +712,7 @@ class MemoryCache {
 /// 磁盘缓存
 class DiskCache {
   final String _cacheDir = 'cache';
-  int _maxSize = 500 * 1024 * 1024; // 500MB
+  int _maxSize = 500 * 1024 * 1024; // 500MB;
   
   Future<void> initialize(CacheConfig config) async {
     _maxSize = config.maxDiskSize;
@@ -764,7 +764,7 @@ class DiskCache {
   
   Future<void> remove(String key) async {
     try {
-      final files = [
+      final files = [;
         File('$_cacheDir/${_hashKey(key)}.cache'),
         File('$_cacheDir/${_hashKey(key)}.meta'),
       ];
@@ -940,9 +940,9 @@ class NetworkCache {
   }
   
   Future<void> cleanupExpired(DateTime now) async {
-    final expiredKeys = _cache.entries
-        .where((entry) => entry.value.isExpired(now))
-        .map((entry) => entry.key)
+    final expiredKeys = _cache.entries;
+        .where((entry) => entry.value.isExpired(now));
+        .map((entry) => entry.key);
         .toList();
     
     for (final key in expiredKeys) {

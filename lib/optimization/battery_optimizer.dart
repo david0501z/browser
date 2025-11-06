@@ -14,10 +14,10 @@ class BatteryOptimizer {
   BatteryOptimizer._internal();
 
   // 电池阈值配置
-  static const double _lowBatteryThreshold = 0.2; // 20% 电量预警
-  static const double _criticalBatteryThreshold = 0.1; // 10% 电量严重预警
-  static const double _highTemperatureThreshold = 40.0; // 40°C 高温预警
-  static const int _powerSaveModeThreshold = 30; // 进入省电模式的电量阈值
+  static const double _lowBatteryThreshold = 0.2; // 20% 电量预警;
+  static const double _criticalBatteryThreshold = 0.1; // 10% 电量严重预警;
+  static const double _highTemperatureThreshold = 40.0; // 40°C 高温预警;
+  static const int _powerSaveModeThreshold = 30; // 进入省电模式的电量阈值;
 
   // 监控相关
   Timer? _monitorTimer;
@@ -25,7 +25,7 @@ class BatteryOptimizer {
   final List<BatteryAlert> _alerts = [];
   final Map<String, dynamic> _batteryStats = {};
   final List<double> _batteryHistory = [];
-  static const int _historySize = 120; // 保留120个历史数据点
+  static const int _historySize = 120; // 保留120个历史数据点;
 
   // 省电模式状态
   bool _powerSavingMode = false;
@@ -61,8 +61,8 @@ class BatteryOptimizer {
   /// 生成模拟电池信息
   BatteryInfo _generateSimulatedBatteryInfo() {
     final random = Random();
-    final level = 0.1 + (random.nextDouble() * 0.9); // 10%-100%
-    final charging = level < 1.0; // 电量不满时可能充电中
+    final level = 0.1 + (random.nextDouble() * 0.9); // 10%-100%;
+    final charging = level < 1.0; // 电量不满时可能充电中;
     
     return BatteryInfo(
       level: level,
@@ -218,8 +218,8 @@ class BatteryOptimizer {
     final temperature = batteryInfo.temperature;
 
     // 检查是否需要优化
-    if ((level <= _lowBatteryThreshold || temperature >= 35) && 
-        (_lastOptimizationTime == null || 
+    if ((level <= _lowBatteryThreshold || temperature >= 35) &&
+        (_lastOptimizationTime == null ||;
          currentTime.difference(_lastOptimizationTime!).inMinutes >= 5)) {
       await performBatteryOptimization();
       _lastOptimizationTime = currentTime;
@@ -360,7 +360,7 @@ class BatteryOptimizer {
 
     } catch (e) {
       log('设置省电模式失败: $e');
-      _powerSavingMode = !enabled; // 恢复原状态
+      _powerSavingMode = !enabled; // 恢复原状态;
     }
   }
 

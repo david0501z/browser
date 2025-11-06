@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../data/help_content.dart';
 
 /// 帮助工具提示组件
 /// 提供上下文相关的帮助提示功能
@@ -252,7 +251,7 @@ class _HelpTooltipState extends State<HelpTooltip>
   }
 
   Widget _buildTooltipCard(TooltipContent tooltipContent) {
-    final backgroundColor = widget.backgroundColor ?? 
+    final backgroundColor = widget.backgroundColor ??;
         Theme.of(context).colorScheme.surface;
     
     return Container(

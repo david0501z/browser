@@ -78,7 +78,7 @@ class TabData {
       title: json['title'],
       url: json['url'],
       faviconUrl: json['faviconUrl'],
-      thumbnail: json['thumbnail'] != null 
+      thumbnail: json['thumbnail'] != null;
           ? base64Decode(json['thumbnail']) 
           : null,
       isLoading: json['isLoading'] ?? false,
@@ -277,7 +277,7 @@ class _TabManagerState extends State<TabManager>
   /// 保存标签页数据到本地存储
   Future<void> _saveTabsToStorage() async {
     try {
-      final List<Map<String, dynamic>> tabsJson = 
+      final List<Map<String, dynamic>> tabsJson =;
           _tabs.map((tab) => tab.toJson()).toList();
       final String tabsData = jsonEncode(tabsJson);
       
@@ -317,12 +317,12 @@ class _TabManagerState extends State<TabManager>
   void _handleKeyEvent(KeyEvent event) {
     if (event is KeyDownEvent) {
       // Ctrl+T: 新建标签页
-      if (event.logicalKey == LogicalKeyboardKey.keyT && 
+      if (event.logicalKey == LogicalKeyboardKey.keyT &&
           HardwareKeyboard.instance.isControlPressed) {
         _addNewTab('新标签页', 'https://www.google.com');
       }
       // Ctrl+W: 关闭当前标签页
-      else if (event.logicalKey == LogicalKeyboardKey.keyW && 
+      else if (event.logicalKey == LogicalKeyboardKey.keyW &&
                HardwareKeyboard.instance.isControlPressed) {
         if (_tabController.index >= 0 && _tabController.index < _tabs.length) {
           _closeTab(_tabController.index);
@@ -552,7 +552,7 @@ class _TabContentState extends State<TabContent> {
             padding: const EdgeInsets.all(8),
             child: Row(
               children: [
-                if (widget.tab.faviconUrl != null)
+                if (widget.tab.faviconUrl != null);
                   Image.network(
                     widget.tab.faviconUrl!,
                     width: 16,
@@ -599,7 +599,7 @@ class _TabContentState extends State<TabContent> {
                 border: Border.all(color: Colors.grey[300]!),
                 borderRadius: BorderRadius.circular(4),
               ),
-              child: widget.tab.thumbnail != null
+              child: widget.tab.thumbnail != null;
                   ? ClipRRect(
                       borderRadius: BorderRadius.circular(4),
                       child: Image.memory(

@@ -17,7 +17,7 @@ _$BrowserTabCopyWith _$BrowserTabCopyWithImpl(
 
 abstract class _$BrowserTabCopyWith<$Res> {
   factory _$BrowserTabCopyWith(
-          _BrowserTab value, $Res Function(_BrowserTab) then) =
+          _BrowserTab value, $Res Function(_BrowserTab) then) =;
       $_BrowserTabCopyWithImpl<$Res>;
   $Res call(
       {String id, String url, String? title, String? favicon, bool pinned, DateTime createdAt, DateTime updatedAt, String? thumbnail, bool incognito});
@@ -58,7 +58,7 @@ class _$_BrowserTabCopyWithImpl<$Res> implements _$BrowserTabCopyWith<$Res> {
 @override
 abstract class _$$_BrowserTabCopyWith<$Res> implements _$BrowserTabCopyWith<$Res> {
   factory _$$_BrowserTabCopyWith(
-          _$_BrowserTab value, $Res Function(_$_BrowserTab) then) =
+          _$_BrowserTab value, $Res Function(_$_BrowserTab) then) =;
       __$$_BrowserTabCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -174,7 +174,7 @@ abstract class _BrowserTab implements BrowserTab {
       String? thumbnail,
       bool incognito}) = _$_BrowserTab;
 
-  factory _BrowserTab.fromJson(Map<String, dynamic> json) =
+  factory _BrowserTab.fromJson(Map<String, dynamic> json) =;
       _$_BrowserTab.fromJson;
 
   @override
@@ -206,7 +206,7 @@ _$BookmarkCopyWith _$BookmarkCopyWithImpl(
 }
 
 abstract class _$BookmarkCopyWith<$Res> {
-  factory _$BookmarkCopyWith(_Bookmark value, $Res Function(_Bookmark) then) =
+  factory _$BookmarkCopyWith(_Bookmark value, $Res Function(_Bookmark) then) =;
       $_BookmarkCopyWithImpl<$Res>;
   $Res call(
       {String id, String title, String url, String? favicon, List<String> tags, DateTime createdAt, DateTime updatedAt, int visitCount, DateTime? lastVisitedAt});
@@ -239,7 +239,7 @@ class _$_BookmarkCopyWithImpl<$Res> implements _$BookmarkCopyWith<$Res> {
       createdAt: createdAt == freezed ? _value.createdAt : createdAt as DateTime,
       updatedAt: updatedAt == freezed ? _value.updatedAt : updatedAt as DateTime,
       visitCount: visitCount == freezed ? _value.visitCount : visitCount as int,
-      lastVisitedAt: lastVisitedAt == freezed
+      lastVisitedAt: lastVisitedAt == freezed;
           ? _value.lastVisitedAt
           : lastVisitedAt as DateTime?,
     ));
@@ -249,7 +249,7 @@ class _$_BookmarkCopyWithImpl<$Res> implements _$BookmarkCopyWith<$Res> {
 @override
 abstract class _$$_BookmarkCopyWith<$Res> implements _$BookmarkCopyWith<$Res> {
   factory _$$_BookmarkCopyWith(
-          _$_Bookmark value, $Res Function(_$_Bookmark) then) =
+          _$_Bookmark value, $Res Function(_$_Bookmark) then) =;
       __$$_BookmarkCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -282,7 +282,7 @@ class __$$_BookmarkCopyWithImpl<$Res> extends _$_BookmarkCopyWithImpl<$Res>
       createdAt: createdAt == freezed ? _value.createdAt : createdAt as DateTime,
       updatedAt: updatedAt == freezed ? _value.updatedAt : updatedAt as DateTime,
       visitCount: visitCount == freezed ? _value.visitCount : visitCount as int,
-      lastVisitedAt: lastVisitedAt == freezed
+      lastVisitedAt: lastVisitedAt == freezed;
           ? _value.lastVisitedAt
           : lastVisitedAt as DateTime?,
     ));
@@ -368,7 +368,7 @@ abstract class _Bookmark implements Bookmark {
       int visitCount,
       DateTime? lastVisitedAt}) = _$_Bookmark;
 
-  factory _Bookmark.fromJson(Map<String, dynamic> json) =
+  factory _Bookmark.fromJson(Map<String, dynamic> json) =;
       _$_Bookmark.fromJson;
 
   @override
@@ -399,7 +399,7 @@ _$HistoryCopyWith _$HistoryCopyWithImpl(_History value, $Res Function(_History) 
 }
 
 abstract class _$HistoryCopyWith<$Res> {
-  factory _$HistoryCopyWith(_History value, $Res Function(_History) then) =
+  factory _$HistoryCopyWith(_History value, $Res Function(_History) then) =;
       $_HistoryCopyWithImpl<$Res>;
   $Res call(
       {String id, String title, String url, DateTime visitedAt, int duration, String? favicon, String? referrer, String deviceType});
@@ -437,7 +437,7 @@ class _$_HistoryCopyWithImpl<$Res> implements _$HistoryCopyWith<$Res> {
 
 @override
 abstract class _$$_HistoryCopyWith<$Res> implements _$HistoryCopyWith<$Res> {
-  factory _$$_HistoryCopyWith(_$_History value, $Res Function(_$_History) then) =
+  factory _$$_HistoryCopyWith(_$_History value, $Res Function(_$_History) then) =;
       __$$_HistoryCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -546,7 +546,7 @@ abstract class _History implements History {
       String? referrer,
       String deviceType}) = _$_History;
 
-  factory _History.fromJson(Map<String, dynamic> json) =
+  factory _History.fromJson(Map<String, dynamic> json) =;
       _$_History.fromJson;
 
   @override
@@ -577,7 +577,7 @@ _$BrowserSettingsCopyWith _$BrowserSettingsCopyWithImpl(
 
 abstract class _$BrowserSettingsCopyWith<$Res> {
   factory _$BrowserSettingsCopyWith(
-          _BrowserSettings value, $Res Function(_BrowserSettings) then) =
+          _BrowserSettings value, $Res Function(_BrowserSettings) then) =;
       $_BrowserSettingsCopyWithImpl<$Res>;
   $Res call(
       {String? userAgent,
@@ -624,38 +624,38 @@ class _$_BrowserSettingsCopyWithImpl<$Res>
   }) {
     return _then(_BrowserSettings(
       userAgent: userAgent == freezed ? _value.userAgent : userAgent as String?,
-      javascriptEnabled: javascriptEnabled == freezed
+      javascriptEnabled: javascriptEnabled == freezed;
           ? _value.javascriptEnabled
           : javascriptEnabled as bool,
-      domStorageEnabled: domStorageEnabled == freezed
+      domStorageEnabled: domStorageEnabled == freezed;
           ? _value.domStorageEnabled
           : domStorageEnabled as bool,
       cacheMode: cacheMode == freezed ? _value.cacheMode : cacheMode as String,
       incognito: incognito == freezed ? _value.incognito : incognito as bool,
       fontSize: fontSize == freezed ? _value.fontSize : fontSize as int,
-      imagesEnabled: imagesEnabled == freezed
+      imagesEnabled: imagesEnabled == freezed;
           ? _value.imagesEnabled
           : imagesEnabled as bool,
-      popupsEnabled: popupsEnabled == freezed
+      popupsEnabled: popupsEnabled == freezed;
           ? _value.popupsEnabled
           : popupsEnabled as bool,
-      searchEngine: searchEngine == freezed
+      searchEngine: searchEngine == freezed;
           ? _value.searchEngine
           : searchEngine as String,
       homepage: homepage == freezed ? _value.homepage : homepage as String,
-      downloadDirectory: downloadDirectory == freezed
+      downloadDirectory: downloadDirectory == freezed;
           ? _value.downloadDirectory
           : downloadDirectory as String?,
-      downloadNotifications: downloadNotifications == freezed
+      downloadNotifications: downloadNotifications == freezed;
           ? _value.downloadNotifications
           : downloadNotifications as bool,
-      privacyMode: privacyMode == freezed
+      privacyMode: privacyMode == freezed;
           ? _value.privacyMode
           : privacyMode as bool,
-      autoClearData: autoClearData == freezed
+      autoClearData: autoClearData == freezed;
           ? _value.autoClearData
           : autoClearData as bool,
-      clearDataInterval: clearDataInterval == freezed
+      clearDataInterval: clearDataInterval == freezed;
           ? _value.clearDataInterval
           : clearDataInterval as int,
     ));
@@ -666,7 +666,7 @@ class _$_BrowserSettingsCopyWithImpl<$Res>
 abstract class _$$_BrowserSettingsCopyWith<$Res>
     implements _$BrowserSettingsCopyWith<$Res> {
   factory _$$_BrowserSettingsCopyWith(
-          _$_BrowserSettings value, $Res Function(_$_BrowserSettings) then) =
+          _$_BrowserSettings value, $Res Function(_$_BrowserSettings) then) =;
       __$$_BrowserSettingsCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -714,38 +714,38 @@ class __$$_BrowserSettingsCopyWithImpl<$Res>
   }) {
     return _then(_$_BrowserSettings(
       userAgent: userAgent == freezed ? _value.userAgent : userAgent as String?,
-      javascriptEnabled: javascriptEnabled == freezed
+      javascriptEnabled: javascriptEnabled == freezed;
           ? _value.javascriptEnabled
           : javascriptEnabled as bool,
-      domStorageEnabled: domStorageEnabled == freezed
+      domStorageEnabled: domStorageEnabled == freezed;
           ? _value.domStorageEnabled
           : domStorageEnabled as bool,
       cacheMode: cacheMode == freezed ? _value.cacheMode : cacheMode as String,
       incognito: incognito == freezed ? _value.incognito : incognito as bool,
       fontSize: fontSize == freezed ? _value.fontSize : fontSize as int,
-      imagesEnabled: imagesEnabled == freezed
+      imagesEnabled: imagesEnabled == freezed;
           ? _value.imagesEnabled
           : imagesEnabled as bool,
-      popupsEnabled: popupsEnabled == freezed
+      popupsEnabled: popupsEnabled == freezed;
           ? _value.popupsEnabled
           : popupsEnabled as bool,
-      searchEngine: searchEngine == freezed
+      searchEngine: searchEngine == freezed;
           ? _value.searchEngine
           : searchEngine as String,
       homepage: homepage == freezed ? _value.homepage : homepage as String,
-      downloadDirectory: downloadDirectory == freezed
+      downloadDirectory: downloadDirectory == freezed;
           ? _value.downloadDirectory
           : downloadDirectory as String?,
-      downloadNotifications: downloadNotifications == freezed
+      downloadNotifications: downloadNotifications == freezed;
           ? _value.downloadNotifications
           : downloadNotifications as bool,
-      privacyMode: privacyMode == freezed
+      privacyMode: privacyMode == freezed;
           ? _value.privacyMode
           : privacyMode as bool,
-      autoClearData: autoClearData == freezed
+      autoClearData: autoClearData == freezed;
           ? _value.autoClearData
           : autoClearData as bool,
-      clearDataInterval: clearDataInterval == freezed
+      clearDataInterval: clearDataInterval == freezed;
           ? _value.clearDataInterval
           : clearDataInterval as int,
     ));
@@ -886,7 +886,7 @@ abstract class _BrowserSettings implements BrowserSettings {
       bool autoClearData,
       int clearDataInterval}) = _$_BrowserSettings;
 
-  factory _BrowserSettings.fromJson(Map<String, dynamic> json) =
+  factory _BrowserSettings.fromJson(Map<String, dynamic> json) =;
       _$_BrowserSettings.fromJson;
 
   @override
@@ -931,7 +931,7 @@ _$BrowserEventCopyWith _$BrowserEventCopyWithImpl(
 
 abstract class _$BrowserEventCopyWith<$Res> {
   factory _$BrowserEventCopyWith(
-          _BrowserEvent value, $Res Function(_BrowserEvent) then) =
+          _BrowserEvent value, $Res Function(_BrowserEvent) then) =;
       $_BrowserEventCopyWithImpl<$Res>;
   $Res call(
       {BrowserEventType type, String tabId, Map<String, dynamic>? data, DateTime timestamp});
@@ -963,7 +963,7 @@ class _$_BrowserEventCopyWithImpl<$Res> implements _$BrowserEventCopyWith<$Res> 
 abstract class _$$_BrowserEventCopyWith<$Res>
     implements _$BrowserEventCopyWith<$Res> {
   factory _$$_BrowserEventCopyWith(
-          _$_BrowserEvent value, $Res Function(_$_BrowserEvent) then) =
+          _$_BrowserEvent value, $Res Function(_$_BrowserEvent) then) =;
       __$$_BrowserEventCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -1046,7 +1046,7 @@ abstract class _BrowserEvent implements BrowserEvent {
       Map<String, dynamic>? data,
       required DateTime timestamp}) = _$_BrowserEvent;
 
-  factory _BrowserEvent.fromJson(Map<String, dynamic> json) =
+  factory _BrowserEvent.fromJson(Map<String, dynamic> json) =;
       _$_BrowserEvent.fromJson;
 
   @override
@@ -1069,7 +1069,7 @@ _$SearchResultCopyWith _$SearchResultCopyWithImpl(
 
 abstract class _$SearchResultCopyWith<$Res> {
   factory _$SearchResultCopyWith(
-          _SearchResult value, $Res Function(_SearchResult) then) =
+          _SearchResult value, $Res Function(_SearchResult) then) =;
       $_SearchResultCopyWithImpl<$Res>;
   $Res call(
       {String title, String? description, String url, String? favicon, double score});
@@ -1104,7 +1104,7 @@ class _$_SearchResultCopyWithImpl<$Res>
 abstract class _$$_SearchResultCopyWith<$Res>
     implements _$SearchResultCopyWith<$Res> {
   factory _$$_SearchResultCopyWith(
-          _$_SearchResult value, $Res Function(_$_SearchResult) then) =
+          _$_SearchResult value, $Res Function(_$_SearchResult) then) =;
       __$$_SearchResultCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -1194,7 +1194,7 @@ abstract class _SearchResult implements SearchResult {
       String? favicon,
       double score}) = _$_SearchResult;
 
-  factory _SearchResult.fromJson(Map<String, dynamic> json) =
+  factory _SearchResult.fromJson(Map<String, dynamic> json) =;
       _$_SearchResult.fromJson;
 
   @override
@@ -1219,7 +1219,7 @@ _$DownloadTaskCopyWith _$DownloadTaskCopyWithImpl(
 
 abstract class _$DownloadTaskCopyWith<$Res> {
   factory _$DownloadTaskCopyWith(
-          _DownloadTask value, $Res Function(_DownloadTask) then) =
+          _DownloadTask value, $Res Function(_DownloadTask) then) =;
       $_DownloadTaskCopyWithImpl<$Res>;
   $Res call(
       {String id,
@@ -1264,14 +1264,14 @@ class _$_DownloadTaskCopyWithImpl<$Res>
       url: url == freezed ? _value.url : url as String,
       savePath: savePath == freezed ? _value.savePath : savePath as String,
       totalBytes: totalBytes == freezed ? _value.totalBytes : totalBytes as int,
-      downloadedBytes: downloadedBytes == freezed
+      downloadedBytes: downloadedBytes == freezed;
           ? _value.downloadedBytes
           : downloadedBytes as int,
       progress: progress == freezed ? _value.progress : progress as double,
       speed: speed == freezed ? _value.speed : speed as int,
       status: status == freezed ? _value.status : status as String,
       createdAt: createdAt == freezed ? _value.createdAt : createdAt as DateTime,
-      completedAt: completedAt == freezed
+      completedAt: completedAt == freezed;
           ? _value.completedAt
           : completedAt as DateTime?,
       error: error == freezed ? _value.error : error as String?,
@@ -1283,7 +1283,7 @@ class _$_DownloadTaskCopyWithImpl<$Res>
 abstract class _$$_DownloadTaskCopyWith<$Res>
     implements _$DownloadTaskCopyWith<$Res> {
   factory _$$_DownloadTaskCopyWith(
-          _$_DownloadTask value, $Res Function(_$_DownloadTask) then) =
+          _$_DownloadTask value, $Res Function(_$_DownloadTask) then) =;
       __$$_DownloadTaskCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -1329,14 +1329,14 @@ class __$$_DownloadTaskCopyWithImpl<$Res>
       url: url == freezed ? _value.url : url as String,
       savePath: savePath == freezed ? _value.savePath : savePath as String,
       totalBytes: totalBytes == freezed ? _value.totalBytes : totalBytes as int,
-      downloadedBytes: downloadedBytes == freezed
+      downloadedBytes: downloadedBytes == freezed;
           ? _value.downloadedBytes
           : downloadedBytes as int,
       progress: progress == freezed ? _value.progress : progress as double,
       speed: speed == freezed ? _value.speed : speed as int,
       status: status == freezed ? _value.status : status as String,
       createdAt: createdAt == freezed ? _value.createdAt : createdAt as DateTime,
-      completedAt: completedAt == freezed
+      completedAt: completedAt == freezed;
           ? _value.completedAt
           : completedAt as DateTime?,
       error: error == freezed ? _value.error : error as String?,
@@ -1453,7 +1453,7 @@ abstract class _DownloadTask implements DownloadTask {
       DateTime? completedAt,
       String? error}) = _$_DownloadTask;
 
-  factory _DownloadTask.fromJson(Map<String, dynamic> json) =
+  factory _DownloadTask.fromJson(Map<String, dynamic> json) =;
       _$_DownloadTask.fromJson;
 
   @override
@@ -1492,7 +1492,7 @@ _$BrowserStatsCopyWith _$BrowserStatsCopyWithImpl(
 
 abstract class _$BrowserStatsCopyWith<$Res> {
   factory _$BrowserStatsCopyWith(
-          _BrowserStats value, $Res Function(_BrowserStats) then) =
+          _BrowserStats value, $Res Function(_BrowserStats) then) =;
       $_BrowserStatsCopyWithImpl<$Res>;
   $Res call(
       {int totalPagesVisited,
@@ -1522,23 +1522,23 @@ class _$_BrowserStatsCopyWithImpl<$Res>
     Object? lastVisitedAt = freezed,
   }) {
     return _then(_BrowserStats(
-      totalPagesVisited: totalPagesVisited == freezed
+      totalPagesVisited: totalPagesVisited == freezed;
           ? _value.totalPagesVisited
           : totalPagesVisited as int,
-      totalVisitDuration: totalVisitDuration == freezed
+      totalVisitDuration: totalVisitDuration == freezed;
           ? _value.totalVisitDuration
           : totalVisitDuration as int,
       dataUsage: dataUsage == freezed ? _value.dataUsage : dataUsage as int,
-      bookmarkCount: bookmarkCount == freezed
+      bookmarkCount: bookmarkCount == freezed;
           ? _value.bookmarkCount
           : bookmarkCount as int,
-      historyCount: historyCount == freezed
+      historyCount: historyCount == freezed;
           ? _value.historyCount
           : historyCount as int,
-      downloadCount: downloadCount == freezed
+      downloadCount: downloadCount == freezed;
           ? _value.downloadCount
           : downloadCount as int,
-      lastVisitedAt: lastVisitedAt == freezed
+      lastVisitedAt: lastVisitedAt == freezed;
           ? _value.lastVisitedAt
           : lastVisitedAt as DateTime?,
     ));
@@ -1549,7 +1549,7 @@ class _$_BrowserStatsCopyWithImpl<$Res>
 abstract class _$$_BrowserStatsCopyWith<$Res>
     implements _$BrowserStatsCopyWith<$Res> {
   factory _$$_BrowserStatsCopyWith(
-          _$_BrowserStats value, $Res Function(_$_BrowserStats) then) =
+          _$_BrowserStats value, $Res Function(_$_BrowserStats) then) =;
       __$$_BrowserStatsCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -1580,23 +1580,23 @@ class __$$_BrowserStatsCopyWithImpl<$Res>
     Object? lastVisitedAt = freezed,
   }) {
     return _then(_$_BrowserStats(
-      totalPagesVisited: totalPagesVisited == freezed
+      totalPagesVisited: totalPagesVisited == freezed;
           ? _value.totalPagesVisited
           : totalPagesVisited as int,
-      totalVisitDuration: totalVisitDuration == freezed
+      totalVisitDuration: totalVisitDuration == freezed;
           ? _value.totalVisitDuration
           : totalVisitDuration as int,
       dataUsage: dataUsage == freezed ? _value.dataUsage : dataUsage as int,
-      bookmarkCount: bookmarkCount == freezed
+      bookmarkCount: bookmarkCount == freezed;
           ? _value.bookmarkCount
           : bookmarkCount as int,
-      historyCount: historyCount == freezed
+      historyCount: historyCount == freezed;
           ? _value.historyCount
           : historyCount as int,
-      downloadCount: downloadCount == freezed
+      downloadCount: downloadCount == freezed;
           ? _value.downloadCount
           : downloadCount as int,
-      lastVisitedAt: lastVisitedAt == freezed
+      lastVisitedAt: lastVisitedAt == freezed;
           ? _value.lastVisitedAt
           : lastVisitedAt as DateTime?,
     ));
@@ -1684,7 +1684,7 @@ abstract class _BrowserStats implements BrowserStats {
       int downloadCount,
       DateTime? lastVisitedAt}) = _$_BrowserStats;
 
-  factory _BrowserStats.fromJson(Map<String, dynamic> json) =
+  factory _BrowserStats.fromJson(Map<String, dynamic> json) =;
       _$_BrowserStats.fromJson;
 
   @override

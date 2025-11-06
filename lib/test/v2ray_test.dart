@@ -25,7 +25,7 @@ class V2RayProtocolTests {
   static const String protocolName = 'V2Ray';
 
   /// V2Ray 测试配置集合
-  final List<V2RayTestConfig> testConfigs = [
+  final List<V2RayTestConfig> testConfigs = [;
     V2RayTestConfig(
       protocol: 'vmess',
       transport: 'tcp',

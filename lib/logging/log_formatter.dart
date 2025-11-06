@@ -197,7 +197,7 @@ class JsonLogFormatter implements LogFormatter {
       } else if (value is List) {
         buffer.write(_encodeList(value));
       } else if (value is Map) {
-        buffer.write(_encodeJson(Map<String, dynamic>.from(value)));
+buffer.write(_encodeJson(Map<String, dynamic>.from(value));
       } else {
         buffer.write('"${_escapeString(value.toString())}"');
       }
@@ -227,7 +227,7 @@ class JsonLogFormatter implements LogFormatter {
       } else if (value is List) {
         buffer.write(_encodeList(value));
       } else if (value is Map) {
-        buffer.write(_encodeJson(Map<String, dynamic>.from(value)));
+buffer.write(_encodeJson(Map<String, dynamic>.from(value));
       } else {
         buffer.write('"${_escapeString(value.toString())}"');
       }

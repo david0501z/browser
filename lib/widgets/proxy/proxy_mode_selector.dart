@@ -6,8 +6,6 @@ library proxy_mode_selector;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../models/enums.dart';
-import '../../../themes/browser_theme.dart';
 
 /// 代理模式选择器
 /// 
@@ -95,7 +93,7 @@ class _ProxyModeSelectorState extends ConsumerState<ProxyModeSelector>
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final isDark = theme.colorScheme.brightness == Brightness.dark;
-    final primaryColor = widget.primaryColor ?? 
+    final primaryColor = widget.primaryColor ??;
         (isDark ? const Color(0xFF64B5F6) : const Color(0xFF2196F3));
     
     return Container(
@@ -294,7 +292,7 @@ class _ProxyModeSelectorState extends ConsumerState<ProxyModeSelector>
                                   ],
                                 ),
                                 
-                                if (widget.showDescriptions && mode.description != null) ...[
+                                if (widget.showDescriptions && mode.description != null) ...[;
                                   const SizedBox(height: 4),
                                   Text(
                                     mode.description!,
@@ -331,7 +329,7 @@ class _ProxyModeSelectorState extends ConsumerState<ProxyModeSelector>
 }
 
 /// 默认代理模式选项
-List<ProxyModeOption> get _defaultModes => [
+List<ProxyModeOption> get _defaultModes => [;
   ProxyModeOption(
     mode: ProxyMode.rule,
     label: '规则模式',

@@ -2,7 +2,7 @@
 /// 包含所有帮助文档、FAQ、快捷键等信息
 class HelpContent {
   // 引导步骤内容
-  static final onboardingSteps = [
+  static final onboardingSteps = [;
     OnboardingStep(
       id: 'welcome',
       title: '欢迎使用FlClash',
@@ -36,7 +36,7 @@ class HelpContent {
   ];
 
   // FAQ内容
-  static final faqCategories = [
+  static final faqCategories = [;
     FAQCategory(
       id: 'basic',
       title: '基础使用',
@@ -105,7 +105,7 @@ class HelpContent {
   ];
 
   // 快捷键和手势
-  static final shortcuts = [
+  static final shortcuts = [;
     ShortcutItem(
       id: 'quick_connect',
       description: '快速连接/断开',
@@ -157,7 +157,7 @@ class HelpContent {
   };
 
   // 教程覆盖层配置
-  static final tutorialSteps = [
+  static final tutorialSteps = [;
     TutorialStep(
       id: 'main_interface',
       title: '主界面介绍',

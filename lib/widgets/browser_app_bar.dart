@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../themes/browser_theme.dart';
 
 /// 浏览器应用栏组件
 /// 
@@ -117,7 +116,7 @@ class _BrowserAppBarState extends State<BrowserAppBar>
     super.didUpdateWidget(oldWidget);
     
     if (widget.showTabs && 
-        (widget.tabs.length != oldWidget.tabs.length ||
+        (widget.tabs.length != oldWidget.tabs.length ||;
          widget.currentTabIndex != oldWidget.currentTabIndex)) {
       _tabController.dispose();
       _tabController = TabController(
@@ -382,7 +381,7 @@ class _BrowserAppBarState extends State<BrowserAppBar>
         mainAxisSize: MainAxisSize.min,
         children: [
           // 主题切换按钮
-          if (widget.onThemeToggle != null)
+          if (widget.onThemeToggle != null);
             _buildActionButton(
               icon: Icons.brightness_6,
               onPressed: widget.onThemeToggle!,
@@ -390,7 +389,7 @@ class _BrowserAppBarState extends State<BrowserAppBar>
             ),
           
           // 菜单按钮
-          if (widget.onMenuPressed != null)
+          if (widget.onMenuPressed != null);
             _buildActionButton(
               icon: Icons.more_vert,
               onPressed: widget.onMenuPressed!,
@@ -490,7 +489,7 @@ class _BrowserAppBarState extends State<BrowserAppBar>
         mainAxisSize: MainAxisSize.min,
         children: [
           // 网站图标
-          if (tab.favicon != null)
+          if (tab.favicon != null);
             Image.network(
               tab.favicon!,
               width: 16,

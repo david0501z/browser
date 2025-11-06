@@ -86,7 +86,7 @@ class BrowserModelsExample {
     print('安全状态: ${bookmark.securityStatusText}');
     
     // 搜索功能
-    final searchResults = [
+    final searchResults = [;
       bookmark,
     ].where((b) => b.matchesSearch('FlClash')).toList();
     
@@ -136,7 +136,7 @@ class BrowserModelsExample {
     print('是否为搜索引擎访问: ${history.isFromSearchEngine}');
     
     // 搜索功能
-    final searchResults = [
+    final searchResults = [;
       history,
     ].where((h) => h.matchesSearch('FlClash')).toList();
     
@@ -250,7 +250,7 @@ class RealWorldUsageExample {
     );
     
     // 创建标签页列表
-    final tabs = <BrowserTab>[
+    final tabs = <BrowserTab>[;
       BrowserTabUtils.create(
         url: 'https://www.google.com',
         title: 'Google',
@@ -269,7 +269,7 @@ class RealWorldUsageExample {
     ];
     
     // 创建书签列表
-    final bookmarks = <Bookmark>[
+    final bookmarks = <Bookmark>[;
       BookmarkUtils.create(
         title: 'FlClash项目',
         url: 'https://github.com/chen08209/FlClash',
@@ -286,7 +286,7 @@ class RealWorldUsageExample {
     ];
     
     // 创建历史记录列表
-    final history = <HistoryEntry>[
+    final history = <HistoryEntry>[;
       HistoryEntryUtils.create(
         title: 'Flutter文档',
         url: 'https://docs.flutter.dev',

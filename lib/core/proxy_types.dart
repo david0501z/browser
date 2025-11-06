@@ -159,7 +159,7 @@ enum ProxyMode {
   static ProxyMode fromString(String value) {
     return ProxyMode.values.firstWhere(
       (mode) => mode.value == value,
-      orElse: () => ProxyMode.rule, // 默认返回规则模式
+      orElse: () => ProxyMode.rule, // 默认返回规则模式;
     );
   }
 

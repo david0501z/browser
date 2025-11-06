@@ -499,23 +499,23 @@ class ExtensionData {
     
     switch (colorType) {
       case 'toolbar':
-        return theme.brightness == Brightness.light 
+        return theme.brightness == Brightness.light;
             ? const Color(0xFFF8F9FA) 
             : const Color(0xFF1E1E1E);
       case 'tab':
-        return theme.brightness == Brightness.light 
+        return theme.brightness == Brightness.light;
             ? const Color(0xFFFFFFFF) 
             : const Color(0xFF2C2C2C);
       case 'search':
-        return theme.brightness == Brightness.light 
+        return theme.brightness == Brightness.light;
             ? const Color(0xFFF5F5F5) 
             : const Color(0xFF424242);
       case 'accent':
-        return theme.brightness == Brightness.light 
+        return theme.brightness == Brightness.light;
             ? const Color(0xFF2196F3) 
             : const Color(0xFF64B5F6);
       case 'safe':
-        return theme.brightness == Brightness.light 
+        return theme.brightness == Brightness.light;
             ? const Color(0xFFFAFAFA) 
             : const Color(0xFF121212);
       default:

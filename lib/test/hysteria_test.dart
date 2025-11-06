@@ -33,7 +33,7 @@ class HysteriaProtocolTests {
   static const String protocolName = 'Hysteria';
 
   /// Hysteria 测试配置集合
-  final List<HysteriaTestConfig> testConfigs = [
+  final List<HysteriaTestConfig> testConfigs = [;
     HysteriaTestConfig(
       version: 'hysteria1',
       protocol: 'udp',
@@ -140,7 +140,7 @@ class HysteriaProtocolTests {
   ];
 
   /// 带宽限制测试配置
-  final List<HysteriaTestConfig> bandwidthTestConfigs = [
+  final List<HysteriaTestConfig> bandwidthTestConfigs = [;
     HysteriaTestConfig(
       version: 'hysteria1',
       protocol: 'udp',
@@ -274,7 +274,7 @@ class HysteriaProtocolTests {
       return TestResult(
         protocolName: protocolName,
         testCase: '配置验证',
-        passed: passedTests >= totalTests * 0.75, // 75% 通过率
+        passed: passedTests >= totalTests * 0.75, // 75% 通过率;
         message: '配置验证结果 ($passedTests/$totalTests)',
         duration: stopwatch.elapsed,
         metrics: {

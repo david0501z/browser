@@ -1,6 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/foundation.dart';
-import '../models/browser_models.dart';
 
 /// 切换模式枚举
 enum SwitchMode {
@@ -78,12 +77,12 @@ class SharedState {
 
   /// 是否正在切换中
   bool get isSwitching => 
-      transitionState == TransitionState.switching || 
+      transitionState == TransitionState.switching ||;
       transitionState == TransitionState.preloading;
 
   /// 是否可以开始新的切换
   bool get canStartSwitch => 
-      transitionState == TransitionState.idle || 
+      transitionState == TransitionState.idle ||;
       transitionState == TransitionState.completed;
 
   @override
@@ -303,7 +302,7 @@ class PerformanceMonitorNotifier extends StateNotifier<List<PerformanceMetrics>>
 
   /// 添加性能指标
   void addMetrics(PerformanceMetrics metrics) {
-    state = [...state, metrics].take(100).toList(); // 保留最近100条记录
+    state = [...state, metrics].take(100).toList(); // 保留最近100条记录;
   }
 
   /// 获取平均性能指标
@@ -323,7 +322,7 @@ class PerformanceMonitorNotifier extends StateNotifier<List<PerformanceMetrics>>
     final avgMemory = state.fold<double>(0, (sum, m) => sum + m.memoryUsage) / state.length;
     final avgFrameRate = state.fold<int>(0, (sum, m) => sum + m.frameRate) / state.length;
     final avgLoadTime = Duration(
-      milliseconds: (state.fold<int>(0, (sum, m) => sum + m.loadTime.inMilliseconds) / state.length).round()
+      milliseconds: (state.fold<int>(0, (sum, m) => sum + m.loadTime.inMilliseconds) / state.length).round();
     );
     final avgCacheHit = state.fold<int>(0, (sum, m) => sum + m.cacheHitRate) / state.length;
 

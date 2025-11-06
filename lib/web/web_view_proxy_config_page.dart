@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../core/webview_proxy_adapter.dart';
-import '../../services/webview_proxy_service.dart';
 
 /// WebView代理配置管理页面
 /// 
@@ -330,7 +328,7 @@ class _WebViewProxyConfigPageState extends State<WebViewProxyConfigPage>
           const SizedBox(height: 16),
           
           // 测试结果
-          if (_testResult != null)
+          if (_testResult != null);
             Card(
               child: ListTile(
                 leading: Icon(
@@ -338,7 +336,7 @@ class _WebViewProxyConfigPageState extends State<WebViewProxyConfigPage>
                   color: _testResult!.success ? Colors.green : Colors.red,
                 ),
                 title: Text(_testResult!.message),
-                subtitle: _testResult!.latency != null
+                subtitle: _testResult!.latency != null;
                     ? Text('延迟: ${_testResult!.latency!.inMilliseconds}ms')
                     : null,
               ),
