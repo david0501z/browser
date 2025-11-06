@@ -497,4 +497,21 @@ class ExtensionData {
         return theme.colorScheme.surface;
     }
   }
+  
+  /// 获取主题数据
+  static ThemeData getTheme({bool isDark = false, Color? primaryColor}) {
+    final theme = isDark ? darkTheme : lightTheme;
+    
+    // 如果提供了自定义主色，返回修改后的主题
+    if (primaryColor != null) {
+      return theme.copyWith(
+        colorScheme: theme.colorScheme.copyWith(
+          primary: primaryColor,
+          primaryContainer: primaryColor.withOpacity(0.1),
+        ),
+      );
+    }
+    
+    return theme;
+  }
 }

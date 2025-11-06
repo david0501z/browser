@@ -294,3 +294,8 @@ class DownloadTasksNotifier extends StateNotifier<List<DownloadTask>> {
     return state.where((task) => task.status == 'completed').toList();
   }
 }
+
+/// 设置服务Provider
+final settingsServiceProvider = Provider<SettingsService>((ref) {
+  return SettingsService.instance;
+});
