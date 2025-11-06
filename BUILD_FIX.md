@@ -69,6 +69,12 @@
    - 在app_settings.dart中添加了`import 'package:flutter/material.dart'`
    - 修复了UI模型中ThemeMode的使用问题
 
+8. **Freezed生成代码导入语句修复**
+   - 为所有22个freezed生成文件添加了正确的导入语句
+   - 修复了`JsonKey`、`useResult`等注解的未定义问题
+   - 确保导入语句在part语句之前
+   - 创建了专门的验证脚本`verify_freezed_imports.sh`
+
 ## 🚀 快速构建步骤
 
 ### 1. 配置Flutter SDK路径
@@ -100,8 +106,11 @@ flutter build apk --release
 
 ### 4. 验证修复结果
 ```bash
-# 运行验证脚本检查所有修复
+# 运行主要验证脚本检查所有修复
 bash verify_fix.sh
+
+# 专门检查freezed生成文件的导入语句
+bash verify_freezed_imports.sh
 
 # 如果所有检查都显示 ✅，说明修复成功
 # 如果仍有 ❌，请检查对应的修复步骤

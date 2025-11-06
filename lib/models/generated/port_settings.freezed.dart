@@ -1,10 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of '../app_settings.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 // **************************************************************************
 // FreezedGenerator
 // **************************************************************************
+
+part of '../app_settings.dart';
 
 T _$identity<T>(T value) => value;
 
