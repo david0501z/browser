@@ -49,9 +49,9 @@ jobs:
           /opt/hostedtoolcache/flutter
           ~/flutter
           /usr/local/bin/flutter
-        key: flutter-${{ runner.os }}-3.22.0
+        key: flutter-linux-stable-3.22.0-x64-5dcb86f68f239346676ceb1ed1ea385bd215fba1
         restore-keys: |
-          flutter-${{ runner.os }}-
+          flutter-linux-stable-3.22.0-x64-
 
     - name: 设置Flutter
       if: steps.flutter-cache.outputs.cache-hit != 'true'
