@@ -52,6 +52,23 @@
    - 添加了`BrowserTheme.getTheme()`方法
    - 修复了main.dart中的导入和使用问题
 
+6. **完整Freezed模型生成代码修复**
+   - 创建了所有app_settings.dart中模型的完整生成代码：
+     - `flclash_settings.freezed.dart` 和 `flclash_settings.g.dart`
+     - `port_settings.freezed.dart` 和 `port_settings.g.dart`
+     - `dns_settings.freezed.dart` 和 `dns_settings.g.dart`
+     - `rule_settings.freezed.dart` 和 `rule_settings.g.dart`
+     - `node_settings.freezed.dart` 和 `node_settings.g.dart`
+     - `traffic_settings.freezed.dart` 和 `traffic_settings.g.dart`
+     - `ui.freezed.dart` 和 `ui.g.dart`
+     - `notifications.freezed.dart` 和 `notifications.g.dart`
+     - `privacy.freezed.dart` 和 `privacy.g.dart`
+     - `backup.freezed.dart` 和 `backup.g.dart`
+
+7. **导入修复**
+   - 在app_settings.dart中添加了`import 'package:flutter/material.dart'`
+   - 修复了UI模型中ThemeMode的使用问题
+
 ## 🚀 快速构建步骤
 
 ### 1. 配置Flutter SDK路径
@@ -79,6 +96,15 @@ flutter build apk --debug
 
 # Release版本（生产发布）
 flutter build apk --release
+```
+
+### 4. 验证修复结果
+```bash
+# 运行验证脚本检查所有修复
+bash verify_fix.sh
+
+# 如果所有检查都显示 ✅，说明修复成功
+# 如果仍有 ❌，请检查对应的修复步骤
 ```
 
 ## 🛠️ 故障排除
