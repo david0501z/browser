@@ -6,7 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 // FreezedGenerator
 // **************************************************************************
 
-part of '../app_settings.dart';
+part of '../port_settings.dart';
 
 T _$identity<T>(T value) => value;
 

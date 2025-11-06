@@ -6,8 +6,8 @@ library history_entry;
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'generated/history_entry.freezed.dart';
-part 'generated/history_entry.g.dart';
+part 'generated/HistoryEntry.freezed.dart';
+part 'generated/HistoryEntry.g.dart';
 
 /// 浏览器历史记录模型
 /// 

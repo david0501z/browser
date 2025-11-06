@@ -63,7 +63,7 @@ class ProxyConstants {
   static const String statsFileName = 'proxy_stats.json';
 
   /// 日志常量
-  static const List<String> validLogLevels = ['debug', 'info', 'warning', 'error', 'fatal'];
+  static const List<String> validLogLevels = ['verbose', 'debug', 'info', 'warning', 'error', 'critical'];
   static const String defaultLogFormat = '[{timestamp}] [{level}] {message}';
 
   /// API常量
@@ -216,11 +216,12 @@ class LogConstants {
   LogConstants._();
 
   /// 日志级别常量
+  static const String levelVerbose = 'VERBOSE';
   static const String levelDebug = 'DEBUG';
   static const String levelInfo = 'INFO';
   static const String levelWarning = 'WARNING';
   static const String levelError = 'ERROR';
-  static const String levelFatal = 'FATAL';
+  static const String levelCritical = 'CRITICAL';
 
   /// 日志文件大小限制
   static const int maxLogFileSize = 100 * 1024 * 1024; // 100MB
@@ -301,5 +302,5 @@ class RegexPatterns {
   static const String configFile = r'^[\w\-]+(\.json)?$';
 
   /// 日志级别正则
-  static const String logLevel = r'^(DEBUG|INFO|WARNING|ERROR|FATAL)$';
+  static const String logLevel = r'^(VERBOSE|DEBUG|INFO|WARNING|ERROR|CRITICAL)$';
 }

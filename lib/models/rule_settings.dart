@@ -1,6 +1,6 @@
 /// 规则设置模型类
 /// 用于管理代理规则的配置参数
-class RuleSettings {
+class RuleConfiguration {
   /// 是否启用规则
   final bool enable;
 
@@ -14,16 +14,16 @@ class RuleSettings {
   final bool useDomainPayload;
 
   /// 构造函数
-  const RuleSettings({
+  const RuleConfiguration({
     this.enable = false,
     this.rules = const [],
     this.useUrlPayload = false,
     this.useDomainPayload = false,
   });
 
-  /// 从JSON创建RuleSettings实例
-  factory RuleSettings.fromJson(Map<String, dynamic> json) {
-    return RuleSettings(
+  /// 从JSON创建RuleConfiguration实例
+  factory RuleConfiguration.fromJson(Map<String, dynamic> json) {
+    return RuleConfiguration(
       enable: json['enable'] ?? false,
       rules: json['rules'] != null 
           ? List<String>.from(json['rules']) 
@@ -44,13 +44,13 @@ class RuleSettings {
   }
 
   /// 复制并修改字段值
-  RuleSettings copyWith({
+  RuleConfiguration copyWith({
     bool? enable,
     List<String>? rules,
     bool? useUrlPayload,
     bool? useDomainPayload,
   }) {
-    return RuleSettings(
+    return RuleConfiguration(
       enable: enable ?? this.enable,
       rules: rules ?? this.rules,
       useUrlPayload: useUrlPayload ?? this.useUrlPayload,
@@ -61,7 +61,7 @@ class RuleSettings {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-    return other is RuleSettings &&
+    return other is RuleConfiguration &&
         other.enable == enable &&
         other.useUrlPayload == useUrlPayload &&
         other.useDomainPayload == useDomainPayload &&
@@ -78,7 +78,7 @@ class RuleSettings {
 
   @override
   String toString() {
-    return 'RuleSettings{enable: $enable, rules: ${rules.length} items, useUrlPayload: $useUrlPayload, useDomainPayload: $useDomainPayload}';
+    return 'RuleConfiguration{enable: $enable, rules: ${rules.length} items, useUrlPayload: $useUrlPayload, useDomainPayload: $useDomainPayload}';
   }
 
   /// 辅助方法：比较两个列表是否相等

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of '../browser_tab.dart';
+part of '../BrowserTab.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

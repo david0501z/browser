@@ -19,7 +19,7 @@ mixin _$AppSettings {
   int get updatedAt => throw _privateConstructorUsedError;
   SettingsMode get mode => throw _privateConstructorUsedError;
   BrowserSettings get browserSettings => throw _privateConstructorUsedError;
-  FlClashSettings get flclashSettings => throw _privateConstructorUsedError;
+  ClashCoreSettings get flclashSettings => throw _privateConstructorUsedError;
   UI get ui => throw _privateConstructorUsedError;
   Notifications get notifications => throw _privateConstructorUsedError;
   Privacy get privacy => throw _privateConstructorUsedError;
@@ -42,7 +42,7 @@ abstract class $AppSettingsCopyWith<$Res> {
     int updatedAt,
     SettingsMode mode,
     BrowserSettings browserSettings,
-    FlClashSettings flclashSettings,
+    ClashCoreSettings flclashSettings,
     UI ui,
     Notifications notifications,
     Privacy privacy,
@@ -98,7 +98,7 @@ class _$AppSettingsCopyWithImpl<$Res, $Val extends AppSettings>
       flclashSettings: null == flclashSettings
           ? _value.flclashSettings
           : flclashSettings // ignore: cast_nullable_to_non_nullable
-              as FlClashSettings,
+              as ClashCoreSettings,
       ui: null == ui
           ? _value.ui
           : ui // ignore: cast_nullable_to_non_nullable
@@ -133,7 +133,7 @@ abstract class _$$AppSettingsCopyWith<$Res>
     int updatedAt,
     SettingsMode mode,
     BrowserSettings browserSettings,
-    FlClashSettings flclashSettings,
+    ClashCoreSettings flclashSettings,
     UI ui,
     Notifications notifications,
     Privacy privacy,
@@ -158,7 +158,7 @@ class _AppSettings implements AppSettings {
       this.updatedAt = 0,
       this.mode = SettingsMode.standard,
       this.browserSettings = const BrowserSettings(),
-      this.flclashSettings = const FlClashSettings(),
+      this.flclashSettings = const ClashCoreSettings(),
       this.ui = const UI(),
       this.notifications = const Notifications(),
       this.privacy = const Privacy(),
@@ -175,7 +175,7 @@ class _AppSettings implements AppSettings {
   @override
   final BrowserSettings browserSettings;
   @override
-  final FlClashSettings flclashSettings;
+  final ClashCoreSettings flclashSettings;
   @override
   final UI ui;
   @override

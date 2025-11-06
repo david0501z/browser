@@ -13,6 +13,7 @@ import '../config/clash_config_generator.dart';
 import '../config/yaml_parser.dart';
 import '../config/config_validator.dart';
 import '../config/config_template_manager.dart';
+import '../logging/log_level.dart';
 import '../services/config_io_service.dart';
 
 /// 配置状态
@@ -151,7 +152,7 @@ class ConfigManagerService {
   ConfigState _state = ConfigState.uninitialized;
   
   /// 当前配置
-  FlClashSettings? _currentConfig;
+  ClashCoreSettings? _currentConfig;
   List<ProxyConfig> _currentProxies = [];
   List<String> _currentRules = [];
   
@@ -172,7 +173,7 @@ class ConfigManagerService {
   ConfigState get state => _state;
   
   /// 当前配置
-  FlClashSettings? get currentConfig => _currentConfig;
+  ClashCoreSettings? get currentConfig => _currentConfig;
   
   /// 当前代理列表
   List<ProxyConfig> get currentProxies => List.unmodifiable(_currentProxies);
@@ -220,20 +221,20 @@ class ConfigManagerService {
     }
   }
 
-  /// 从 FlClashSettings 加载配置
+  /// 从 ClashCoreSettings 加载配置
   /// 
-  /// [settings] FlClashSettings 配置
+  /// [settings] ClashCoreSettings 配置
   /// [proxyList] 代理列表
   /// [rules] 规则列表
   Future<ConfigManagementResult> loadFromSettings(
-    FlClashSettings settings, {
+    ClashCoreSettings settings, {
     List<ProxyConfig>? proxyList,
     List<String>? rules,
   }) async {
     final stopwatch = Stopwatch()..start();
     
     try {
-      _logger.info('从 FlClashSettings 加载配置');
+      _logger.info('从 ClashCoreSettings 加载配置');
       _state = ConfigState.updating;
       
       // 生成配置内容
@@ -271,7 +272,7 @@ class ConfigManagerService {
       
       _emitEvent(changeEvent);
       
-      _logger.info('从 FlClashSettings 加载配置成功');
+      _logger.info('从 ClashCoreSettings 加载配置成功');
       
       return ConfigManagementResult.success(
         configContent: configContent,
@@ -283,7 +284,7 @@ class ConfigManagerService {
     } catch (e) {
       _state = ConfigState.error;
       stopwatch.stop();
-      _logger.warning('从 FlClashSettings 加载配置失败: $e');
+      _logger.warning('从 ClashCoreSettings 加载配置失败: $e');
       
       return ConfigManagementResult.failure('加载配置失败: $e');
     }
@@ -375,7 +376,7 @@ class ConfigManagerService {
       final parseResult = _parser.parseConfig(template.yamlContent);
       
       // 应用自定义选项
-      FlClashSettings customizedConfig = parseResult.config;
+      ClashCoreSettings customizedConfig = parseResult.config;
       if (customizations != null) {
         customizedConfig = _applyCustomizations(customizedConfig, customizations);
       }
@@ -577,7 +578,7 @@ class ConfigManagerService {
   /// [newSettings] 新的设置
   /// [immediateApply] 是否立即应用更改
   Future<ConfigManagementResult> realtimeUpdate(
-    FlClashSettings newSettings, {
+    ClashCoreSettings newSettings, {
     bool immediateApply = false,
   }) async {
     if (!immediateApply) {
@@ -739,8 +740,8 @@ class ConfigManagerService {
   }
 
   /// 应用自定义选项
-  FlClashSettings _applyCustomizations(
-    FlClashSettings config,
+  ClashCoreSettings _applyCustomizations(
+    ClashCoreSettings config,
     Map<String, dynamic> customizations,
   ) {
     var updatedConfig = config;
@@ -784,7 +785,7 @@ class ConfigManagerService {
   }
 
   /// 应用设置更新
-  Future<ConfigManagementResult> _applySettingsUpdate(FlClashSettings newSettings) async {
+  Future<ConfigManagementResult> _applySettingsUpdate(ClashCoreSettings newSettings) async {
     final stopwatch = Stopwatch()..start();
     
     try {
@@ -835,7 +836,7 @@ class ConfigManagerService {
   }
 
   /// 延迟更新调度
-  void _scheduleUpdate(FlClashSettings newSettings) {
+  void _scheduleUpdate(ClashCoreSettings newSettings) {
     // 清除之前的定时器
     Timer? previousTimer;
     

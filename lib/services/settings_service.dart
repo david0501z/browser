@@ -140,7 +140,7 @@ class SettingsService extends ChangeNotifier {
   }
   
   /// 更新FlClash设置
-  Future<bool> updateFlClashSettings(FlClashSettings flclashSettings) async {
+  Future<bool> updateClashCoreSettings(ClashCoreSettings flclashSettings) async {
     if (_currentSettings == null) return false;
     
     _currentSettings = _currentSettings!.copyWith(
@@ -422,7 +422,7 @@ abstract class SettingsChangeListener {
 
 /// 设置变更监听器管理器
 class SettingsChangeListeners {
-  static final _listeners = <SettingsChangeListener>{();
+  static final _listeners = <SettingsChangeListener>{
   
   /// 添加监听器
   static void addListener(SettingsChangeListener listener) {
@@ -433,6 +433,7 @@ class SettingsChangeListeners {
   static void removeListener(SettingsChangeListener listener) {
     _listeners.remove(listener);
   }
+}
   
   /// 通知所有监听器设置已变更
   static void notifySettingsChanged(AppSettings newSettings) {

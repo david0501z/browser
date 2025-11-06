@@ -6,8 +6,8 @@ library browser_settings;
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'generated/browser_settings.freezed.dart';
-part 'generated/browser_settings.g.dart';
+part 'generated/BrowserSettings.freezed.dart';
+part 'generated/BrowserSettings.g.dart';
 
 /// 浏览器设置模型
 /// 

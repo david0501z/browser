@@ -1,77 +1,20 @@
-/// 代理模式枚举定义
-/// 定义了 Clash 代理服务器的工作模式
-enum ProxyMode {
-  /// 全局模式：所有流量都通过代理服务器
-  global('global'),
-  
-  /// 规则模式：根据配置的规则决定哪些流量走代理
-  rule('rule'),
-  
-  /// 直连模式：所有流量都直接连接，不经过代理服务器
-  direct('direct');
-
-  const ProxyMode(this.value);
-
-  /// 枚举对应的字符串值
-  final String value;
-
-  /// 根据字符串值获取对应的枚举
-  static ProxyMode fromString(String value) {
-    return ProxyMode.values.firstWhere(
-      (mode) => mode.value == value,
-      orElse: () => ProxyMode.rule, // 默认返回规则模式
-    );
-  }
-
-  @override
-  String toString() => value;
-}
+/// 导入核心代理类型定义
+import '../core/proxy_types.dart';
 
 /// 日志级别枚举定义
-/// 定义了 Clash 日志记录的详细程度
-enum LogLevel {
-  /// 静默模式：不记录任何日志信息
-  silent('silent'),
-  
-  /// 错误级别：只记录错误信息
-  error('error'),
-  
-  /// 警告级别：记录错误和警告信息
-  warning('warning'),
-  
-  /// 信息级别：记录错误、警告和一般信息
-  info('info'),
-  
-  /// 调试级别：记录所有日志信息，包括详细的调试信息
-  debug('debug');
-
-  const LogLevel(this.value);
-
-  /// 枚举对应的字符串值
-  final String value;
-
-  /// 根据字符串值获取对应的枚举
-  static LogLevel fromString(String value) {
-    return LogLevel.values.firstWhere(
-      (level) => level.value == value,
-      orElse: () => LogLevel.info, // 默认返回信息级别
-    );
-  }
-
-  @override
-  String toString() => value;
-}
+/// 注意：LogLevel定义已迁移到 logging/log_level.dart
+/// 请使用：import 'package:flclash_browser_app/logging/log_level.dart';
 
 import 'dns_settings.dart';
 import 'port_settings.dart';
 import 'rule_settings.dart';
-import 'traffic_settings.dart';
+import 'traffic_performance_settings.dart';
 
-/// FlClashSettings 类
-/// 用于存储和管理 Clash 配置设置
-class FlClashSettings {
+/// ClashCoreSettings 类
+/// 用于存储和管理 Clash 核心配置设置
+class ClashCoreSettings {
   /// 构造函数
-  const FlClashSettings({
+  const ClashCoreSettings({
     this.proxyMode = ProxyMode.rule,
     this.logLevel = LogLevel.info,
     this.port = 7890,
@@ -121,8 +64,8 @@ class FlClashSettings {
 
   /// 端口设置 getter
   /// 返回端口配置实例
-  PortSettings get ports {
-    return PortSettings(
+  PortConfiguration get ports {
+    return PortConfiguration(
       socksPort: socksPort,
       httpPort: port,
       apiPort: 9090, // 使用默认值
@@ -132,8 +75,8 @@ class FlClashSettings {
 
   /// DNS设置 getter
   /// 返回DNS配置实例
-  DNSSettings get dns {
-    return const DNSSettings(
+  DNSConfiguration get dns {
+    return const DNSConfiguration(
       enable: false,
       servers: [],
       fallback: [],
@@ -147,8 +90,8 @@ class FlClashSettings {
 
   /// 规则设置 getter
   /// 返回规则配置实例
-  RuleSettings get rules {
-    return const RuleSettings(
+  RuleConfiguration get rules {
+    return const RuleConfiguration(
       enable: false,
       rules: [],
       useUrlPayload: false,
@@ -158,8 +101,8 @@ class FlClashSettings {
 
   /// 流量设置 getter
   /// 返回流量配置实例
-  TrafficSettings get traffic {
-    return const TrafficSettings(
+  TrafficPerformanceSettings get traffic {
+    return const TrafficPerformanceSettings(
       maxSpeed: 0,
       bandwidthLimit: 0,
       throttle: false,
@@ -180,7 +123,7 @@ class FlClashSettings {
   ProxyMode get mode => proxyMode;
 
   /// 创建副本，允许部分字段更新
-  FlClashSettings copyWith({
+  ClashCoreSettings copyWith({
     ProxyMode? proxyMode,
     LogLevel? logLevel,
     int? port,
@@ -190,12 +133,12 @@ class FlClashSettings {
     String? secret,
     bool? ipv6,
     int? tproxyPort,
-    PortSettings? ports,
-    DNSSettings? dns,
-    RuleSettings? rules,
-    TrafficSettings? traffic,
+    PortConfiguration? ports,
+    DNSConfiguration? dns,
+    RuleConfiguration? rules,
+    TrafficPerformanceSettings? traffic,
   }) {
-    return FlClashSettings(
+    return ClashCoreSettings(
       proxyMode: proxyMode ?? this.proxyMode,
       logLevel: logLevel ?? this.logLevel,
       port: port ?? this.port,
@@ -228,10 +171,10 @@ class FlClashSettings {
     };
   }
 
-  /// 从 Map 数据创建 FlClashSettings 实例
+  /// 从 Map 数据创建 ClashCoreSettings 实例
   /// 用于 JSON 反序列化
-  factory FlClashSettings.fromMap(Map<String, dynamic> map) {
-    return FlClashSettings(
+  factory ClashCoreSettings.fromMap(Map<String, dynamic> map) {
+    return ClashCoreSettings(
       proxyMode: ProxyMode.fromString(map['proxyMode'] ?? 'rule'),
       logLevel: LogLevel.fromString(map['logLevel'] ?? 'info'),
       port: map['port'] ?? 7890,
@@ -248,12 +191,12 @@ class FlClashSettings {
   String toJson() => toMap().toString();
 
   /// 从 JSON 字符串创建实例
-  factory FlClashSettings.fromJson(String source) =>
-      FlClashSettings.fromMap(source);
+  factory ClashCoreSettings.fromJson(String source) =>
+      ClashCoreSettings.fromMap(source);
 
   @override
   String toString() {
-    return 'FlClashSettings{'
+    return 'ClashCoreSettings{'
         'proxyMode: $proxyMode, '
         'logLevel: $logLevel, '
         'port: $port, '
@@ -273,7 +216,7 @@ class FlClashSettings {
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
     
-    return other is FlClashSettings &&
+    return other is ClashCoreSettings &&
         other.proxyMode == proxyMode &&
         other.logLevel == logLevel &&
         other.port == port &&

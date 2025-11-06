@@ -35,7 +35,7 @@ export 'dns_protection_manager.dart';
 
 // 主要管理类快捷导出
 export 'rule_manager.dart' show RuleManager, RuleConfig, RuleGroup, RuleStats;
-export 'dns_settings_manager.dart' show DNSSettingsManager, DNSSettings, DNSServerConfig, DNSPerformanceMetrics;
+export 'dns_settings_manager.dart' show DNSSettingsManager, DNSConfiguration, DNSServerConfig, DNSPerformanceMetrics;
 export 'rule_template_manager.dart' show RuleTemplateManager, RuleTemplate, TemplateInstantiationResult;
 export 'rule_matcher.dart' show RuleMatcher, MatchResult, MatchContext, MatchStats;
 export 'dns_protection_manager.dart' show DNSProtectionManager, ProtectionResult, DNSProtectionStatus, DNSOptimizationConfig;

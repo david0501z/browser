@@ -5,9 +5,9 @@ part 'dns_settings.g.dart';
 
 /// DNS设置模型
 @freezed
-class DNSSettings with _$DNSSettings {
+class DNSConfiguration with _$DNSConfiguration {
   /// 创建一个DNS设置实例
-  const factory DNSSettings({
+  const factory DNSConfiguration({
     /// 是否启用DNS配置
     @Default(false) bool enable,
     
@@ -31,15 +31,15 @@ class DNSSettings with _$DNSSettings {
     
     /// DNS缓存过期时间(秒)
     @Default(300) int cacheTimeout,
-  }) = _DNSSettings;
+  }) = _DNSConfiguration;
 
-  /// 从JSON创建DNSSettings实例
-  factory DNSSettings.fromJson(Map<String, dynamic> json) =>
-      _$DNSSettingsFromJson(json);
+  /// 从JSON创建DNSConfiguration实例
+  factory DNSConfiguration.fromJson(Map<String, dynamic> json) =>
+      _$DNSConfigurationFromJson(json);
 }
 
 /// DNS设置扩展方法
-extension DNSSettingsExt on DNSSettings {
+extension DNSConfigurationExt on DNSConfiguration {
   /// 检查DNS配置是否有效
   bool get isValid {
     if (!enable) return true;
@@ -116,5 +116,4 @@ extension DNSSettingsExt on DNSSettings {
       }
     };
   }
-}
 }

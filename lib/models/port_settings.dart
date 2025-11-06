@@ -13,8 +13,8 @@ part 'port_settings.g.dart';
 /// 
 /// 包含代理服务中各种端口的配置信息，用于控制不同协议的监听端口。
 @freezed
-abstract class PortSettings with _$PortSettings {
-  const factory PortSettings({
+abstract class PortConfiguration with _$PortConfiguration {
+  const factory PortConfiguration({
     /// SOCKS代理端口
     /// 
     /// 用于SOCKS协议代理服务的监听端口，默认为1080
@@ -34,17 +34,17 @@ abstract class PortSettings with _$PortSettings {
     /// 
     /// 控制是否启用流量重定向功能，默认为false
     @Default(false) bool enableRedirect,
-  }) = _PortSettings;
+  }) = _PortConfiguration;
   
-  /// 从JSON创建PortSettings实例
-  factory PortSettings.fromJson(Map<String, Object?> json) =>
-      _$PortSettingsFromJson(json);
+  /// 从JSON创建PortConfiguration实例
+  factory PortConfiguration.fromJson(Map<String, Object?> json) =>
+      _$PortConfigurationFromJson(json);
 }
 
-/// PortSettings扩展方法
+/// PortConfiguration扩展方法
 /// 
-/// 为PortSettings模型提供额外的功能方法。
-extension PortSettingsExt on PortSettings {
+/// 为PortConfiguration模型提供额外的功能方法。
+extension PortConfigurationExt on PortConfiguration {
   /// 获取所有端口的列表
   List<int> get allPorts => [
     socksPort,
@@ -114,20 +114,20 @@ extension PortSettingsExt on PortSettings {
   }
 }
 
-/// PortSettings工具方法
+/// PortConfiguration工具方法
 /// 
-/// 提供PortSettings相关的工具函数。
-class PortSettingsUtils {
+/// 提供PortConfiguration相关的工具函数。
+class PortConfigurationUtils {
   /// 创建默认端口设置
-  static PortSettings createDefault() {
-    return const PortSettings();
+  static PortConfiguration createDefault() {
+    return const PortConfiguration();
   }
   
   /// 创建移动端优化端口设置
   /// 
   /// 为移动设备优化端口配置，避免常用端口冲突
-  static PortSettings createMobileOptimized() {
-    return const PortSettings(
+  static PortConfiguration createMobileOptimized() {
+    return const PortConfiguration(
       socksPort: 10808,
       httpPort: 18080,
       apiPort: 19090,
@@ -138,8 +138,8 @@ class PortSettingsUtils {
   /// 创建开发环境端口设置
   /// 
   /// 为开发环境配置易于记忆的端口号
-  static PortSettings createDevelopment() {
-    return const PortSettings(
+  static PortConfiguration createDevelopment() {
+    return const PortConfiguration(
       socksPort: 1080,
       httpPort: 8080,
       apiPort: 3000,
@@ -150,8 +150,8 @@ class PortSettingsUtils {
   /// 创建安全模式端口设置
   /// 
   /// 配置较为安全的端口范围，降低被扫描发现的风险
-  static PortSettings createSecureMode() {
-    return const PortSettings(
+  static PortConfiguration createSecureMode() {
+    return const PortConfiguration(
       socksPort: 49152,
       httpPort: 49153,
       apiPort: 49154,

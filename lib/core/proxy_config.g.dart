@@ -47,7 +47,7 @@ Map<String, dynamic> _$$ProxyConfigImplToJson(_$ProxyConfigImpl instance) =>
       'mode': instance.mode,
       'port': instance.port,
       'listenAddress': instance.listenAddress,
-      'rules': instance.rules,
+      'rules': instance.rules.map((e) => e.toJson()).toList(),
       'bypassChina': instance.bypassChina,
       'bypassLAN': instance.bypassLAN,
       'primaryDNS': instance.primaryDNS,
@@ -65,7 +65,7 @@ Map<String, dynamic> _$$ProxyConfigImplToJson(_$ProxyConfigImpl instance) =>
       'enableTrafficStats': instance.enableTrafficStats,
       'enableSpeedTest': instance.enableSpeedTest,
       'selectedNodeId': instance.selectedNodeId,
-      'nodes': instance.nodes,
+      'nodes': instance.nodes.map((e) => e.toJson()).toList(),
       'customSettings': instance.customSettings,
     };
 

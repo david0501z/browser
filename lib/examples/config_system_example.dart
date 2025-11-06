@@ -278,8 +278,8 @@ class _ConfigSystemExamplePageState extends State<ConfigSystemExamplePage> {
     _addLog('创建基础配置示例...');
     
     try {
-      // 创建 FlClashSettings
-      final settings = FlClashSettings(
+      // 创建 ClashCoreSettings
+      final settings = ClashCoreSettings(
         enabled: true,
         mode: ProxyMode.rule,
         logLevel: LogLevel.info,
@@ -585,7 +585,7 @@ class _ConfigSystemExamplePageState extends State<ConfigSystemExamplePage> {
     
     try {
       // 创建更新后的设置
-      final updatedSettings = FlClashSettings(
+      final updatedSettings = ClashCoreSettings(
         enabled: true,
         mode: ProxyMode.global, // 改为全局模式
         logLevel: LogLevel.debug, // 改为调试级别
@@ -627,7 +627,7 @@ class ConfigSystemExample {
     print('✅ 配置系统初始化完成');
     
     // 2. 创建示例配置
-    final settings = FlClashSettings(
+    final settings = ClashCoreSettings(
       enabled: true,
       mode: ProxyMode.rule,
       logLevel: LogLevel.info,
@@ -692,7 +692,7 @@ class ConfigSystemExample {
     print('✅ 所有组件初始化完成');
     
     // 1. 生成复杂配置
-    final complexSettings = FlClashSettings(
+    final complexSettings = ClashCoreSettings(
       enabled: true,
       mode: ProxyMode.rule,
       logLevel: LogLevel.debug,

@@ -60,7 +60,7 @@ Map<String, dynamic> _$$SubscriptionLinkImplToJson(
       'updateIntervalHours': instance.updateIntervalHours,
       'autoUpdate': instance.autoUpdate,
       'enabled': instance.enabled,
-      'nodes': instance.nodes,
+      'nodes': instance.nodes.map((e) => e.toJson()).toList(),
       'description': instance.description,
       'groups': instance.groups,
       'tags': instance.tags,
@@ -68,7 +68,7 @@ Map<String, dynamic> _$$SubscriptionLinkImplToJson(
       'createdAt': instance.createdAt.toIso8601String(),
       'updatedAt': instance.updatedAt?.toIso8601String(),
       'errorMessage': instance.errorMessage,
-      'parseStats': instance.parseStats,
+      'parseStats': instance.parseStats.toJson(),
     };
 
 const _$SubscriptionTypeEnumMap = {
@@ -135,13 +135,13 @@ _$SubscriptionImpl _$$SubscriptionImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$SubscriptionImplToJson(_$SubscriptionImpl instance) =>
     <String, dynamic>{
       'activeSubscriptionId': instance.activeSubscriptionId,
-      'subscriptions': instance.subscriptions,
+      'subscriptions': instance.subscriptions.map((e) => e.toJson()).toList(),
       'isUpdating': instance.isUpdating,
       'globalUpdateIntervalHours': instance.globalUpdateIntervalHours,
       'autoUpdateEnabled': instance.autoUpdateEnabled,
       'concurrentUpdate': instance.concurrentUpdate,
       'cacheStrategy': _$CacheStrategyEnumMap[instance.cacheStrategy]!,
-      'defaultSettings': instance.defaultSettings,
+      'defaultSettings': instance.defaultSettings?.toJson(),
     };
 
 const _$CacheStrategyEnumMap = {
@@ -238,7 +238,7 @@ Map<String, dynamic> _$$ImportResultImplToJson(_$ImportResultImpl instance) =>
       'validNodes': instance.validNodes,
       'failedSubscriptions': instance.failedSubscriptions,
       'errors': instance.errors,
-      'importStats': instance.importStats,
+      'importStats': instance.importStats.toJson(),
     };
 
 _$ImportStatsImpl _$$ImportStatsImplFromJson(Map<String, dynamic> json) =>

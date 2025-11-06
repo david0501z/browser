@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-part of '../app_settings.dart';
+part of '../dns_settings.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,22 +14,22 @@ final _privateConstructorUsedError = UnsupportedError(
     'Please use `MyClass()` constructor instead.');
 
 /// @nodoc
-mixin _$DNSSettings {
+mixin _$DNSConfiguration {
   bool get customDNS => throw _privateConstructorUsedError;
   List<String> get dnsServers => throw _privateConstructorUsedError;
   bool get dnsOverHttps => throw _privateConstructorUsedError;
   String? get dohServer => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $DNSSettingsCopyWith<DNSSettings> get copyWith =>
+  $DNSConfigurationCopyWith<DNSConfiguration> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DNSSettingsCopyWith<$Res> {
-  factory $DNSSettingsCopyWith(
-          DNSSettings value, $Res Function(DNSSettings) then) =
-      _$DNSSettingsCopyWithImpl<$Res, DNSSettings>;
+abstract class $DNSConfigurationCopyWith<$Res> {
+  factory $DNSConfigurationCopyWith(
+          DNSConfiguration value, $Res Function(DNSConfiguration) then) =
+      _$DNSConfigurationCopyWithImpl<$Res, DNSConfiguration>;
   @useResult
   $Res call(
       {bool customDNS,
@@ -39,9 +39,9 @@ abstract class $DNSSettingsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DNSSettingsCopyWithImpl<$Res, $Val extends DNSSettings>
-    implements $DNSSettingsCopyWith<$Res> {
-  _$DNSSettingsCopyWithImpl(this._value, this._then);
+class _$DNSConfigurationCopyWithImpl<$Res, $Val extends DNSConfiguration>
+    implements $DNSConfigurationCopyWith<$Res> {
+  _$DNSConfigurationCopyWithImpl(this._value, this._then);
 
   // ignore: unused_element
   final $Val _value;
@@ -70,11 +70,11 @@ class _$DNSSettingsCopyWithImpl<$Res, $Val extends DNSSettings>
 }
 
 /// @nodoc
-abstract class _$$DNSSettingsCopyWith<$Res>
-    implements $DNSSettingsCopyWith<$Res> {
-  factory _$$DNSSettingsCopyWith(
-          _$DNSSettings value, $Res Function(_$DNSSettings) then) =
-      __$$DNSSettingsCopyWithImpl<$Res>;
+abstract class _$$DNSConfigurationCopyWith<$Res>
+    implements $DNSConfigurationCopyWith<$Res> {
+  factory _$$DNSConfigurationCopyWith(
+          _$DNSConfiguration value, $Res Function(_$DNSConfiguration) then) =
+      __$$DNSConfigurationCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -85,11 +85,11 @@ abstract class _$$DNSSettingsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$DNSSettingsCopyWithImpl<$Res>
-    extends _$DNSSettingsCopyWithImpl<$Res, _$DNSSettings>
-    implements _$$DNSSettingsCopyWith<$Res> {
-  __$$DNSSettingsCopyWithImpl(
-      _$DNSSettings _value, $Res Function(_$DNSSettings) _then)
+class __$$DNSConfigurationCopyWithImpl<$Res>
+    extends _$DNSConfigurationCopyWithImpl<$Res, _$DNSConfiguration>
+    implements _$$DNSConfigurationCopyWith<$Res> {
+  __$$DNSConfigurationCopyWithImpl(
+      _$DNSConfiguration _value, $Res Function(_$DNSConfiguration) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -100,7 +100,7 @@ class __$$DNSSettingsCopyWithImpl<$Res>
     Object? dnsOverHttps = null,
     Object? dohServer = freezed,
   }) {
-    return _then(_$DNSSettings(
+    return _then(_$DNSConfiguration(
       customDNS: null == customDNS ? _value.customDNS : customDNS as bool,
       dnsServers: null == dnsServers
           ? _value.dnsServers
@@ -115,8 +115,8 @@ class __$$DNSSettingsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DNSSettings extends _DNSSettings {
-  const _$DNSSettings(
+class _$DNSConfiguration extends _DNSConfiguration {
+  const _$DNSConfiguration(
       {this.customDNS = false,
       this.dnsServers = const [],
       this.dnsOverHttps = false,
@@ -134,14 +134,14 @@ class _$DNSSettings extends _DNSSettings {
 
   @override
   String toString() {
-    return 'DNSSettings(customDNS: $customDNS, dnsServers: $dnsServers, dnsOverHttps: $dnsOverHttps, dohServer: $dohServer)';
+    return 'DNSConfiguration(customDNS: $customDNS, dnsServers: $dnsServers, dnsOverHttps: $dnsOverHttps, dohServer: $dohServer)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DNSSettings &&
+            other is _$DNSConfiguration &&
             (identical(other.customDNS, customDNS) ||
                 other.customDNS == customDNS) &&
             const DeepCollectionEquality()
@@ -163,17 +163,17 @@ class _$DNSSettings extends _DNSSettings {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DNSSettingsCopyWith<_$DNSSettings> get copyWith =>
-      __$$DNSSettingsCopyWithImpl<_$DNSSettings>(this, _$identity);
+  _$$DNSConfigurationCopyWith<_$DNSConfiguration> get copyWith =>
+      __$$DNSConfigurationCopyWithImpl<_$DNSConfiguration>(this, _$identity);
 }
 
-abstract class _DNSSettings extends DNSSettings {
-  const factory _DNSSettings(
+abstract class _DNSConfiguration extends DNSConfiguration {
+  const factory _DNSConfiguration(
       {final bool customDNS,
       final List<String> dnsServers,
       final bool dnsOverHttps,
-      final String? dohServer}) = _$DNSSettings;
-  const _DNSSettings._() : super._();
+      final String? dohServer}) = _$DNSConfiguration;
+  const _DNSConfiguration._() : super._();
 
   @override
   bool get customDNS;
@@ -185,5 +185,5 @@ abstract class _DNSSettings extends DNSSettings {
   String? get dohServer;
   @override
   @JsonKey(ignore: true)
-  _$$DNSSettingsCopyWith<_$DNSSettings> get copyWith;
+  _$$DNSConfigurationCopyWith<_$DNSConfiguration> get copyWith;
 }

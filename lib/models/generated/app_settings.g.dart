@@ -14,7 +14,7 @@ _$_AppSettings _$$AppSettingsFromJson(Map<String, dynamic> json) =>
       mode: SettingsMode.values.byName(json['mode'] as String),
       browserSettings: BrowserSettings.fromJson(
           json['browserSettings'] as Map<String, dynamic>),
-      flclashSettings: FlClashSettings.fromJson(
+      flclashSettings: ClashCoreSettings.fromJson(
           json['flclashSettings'] as Map<String, dynamic>),
       ui: UI.fromJson(json['ui'] as Map<String, dynamic>),
       notifications: Notifications.fromJson(
@@ -37,8 +37,8 @@ Map<String, dynamic> _$$AppSettingsToJson(_$_AppSettings instance) =>
       'backup': instance.backup,
     };
 
-_$_FlClashSettings _$$FlClashSettingsFromJson(Map<String, dynamic> json) =>
-    _$_FlClashSettings(
+_$_ClashCoreSettings _$$ClashCoreSettingsFromJson(Map<String, dynamic> json) =>
+    _$_ClashCoreSettings(
       enabled: json['enabled'] as bool? ?? false,
       mode: ProxyMode.values.byName(json['mode'] as String),
       coreVersion: json['coreVersion'] as String? ?? '',
@@ -58,7 +58,7 @@ _$_FlClashSettings _$$FlClashSettingsFromJson(Map<String, dynamic> json) =>
       traffic: TrafficSettings.fromJson(json['traffic'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$FlClashSettingsToJson(_$_FlClashSettings instance) =>
+Map<String, dynamic> _$$ClashCoreSettingsToJson(_$_ClashCoreSettings instance) =>
     <String, dynamic>{
       'enabled': instance.enabled,
       'mode': instance.mode.name,

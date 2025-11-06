@@ -8,6 +8,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/shared_state_provider.dart';
+import '../logging/log_level.dart';
 
 /// 性能监控配置
 class PerformanceConfig {
@@ -554,14 +555,6 @@ abstract class PerformanceListener {
   
   /// 检测到低性能
   void onLowPerformanceDetected(int frameRate);
-}
-
-/// 日志级别
-enum LogLevel {
-  debug,
-  info,
-  warning,
-  error,
 }
 
 /// 性能优化提供者

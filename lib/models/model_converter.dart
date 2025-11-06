@@ -1,15 +1,15 @@
 /// 模型转换器
 /// 
-/// 实现 FlClashSettings 与 ProxyConfig 之间的互相转换
+/// 实现 ClashCoreSettings 与 ProxyConfig 之间的互相转换
 library model_converter;
 
 import 'app_settings.dart';
 import '../core/proxy_config.dart';
 
-/// FlClashSettings 与 ProxyConfig 转换器
+/// ClashCoreSettings 与 ProxyConfig 转换器
 class ModelConverter {
-  /// 将 FlClashSettings 转换为 ProxyConfig
-  static ProxyConfig flClashSettingsToProxyConfig(FlClashSettings flClashSettings) {
+  /// 将 ClashCoreSettings 转换为 ProxyConfig
+  static ProxyConfig flClashSettingsToProxyConfig(ClashCoreSettings flClashSettings) {
     return ProxyConfig(
       enabled: flClashSettings.enabled,
       mode: _convertProxyMode(flClashSettings.mode),
@@ -65,11 +65,11 @@ class ModelConverter {
     );
   }
   
-  /// 将 ProxyConfig 转换为 FlClashSettings
-  static FlClashSettings proxyConfigToFlClashSettings(ProxyConfig proxyConfig) {
+  /// 将 ProxyConfig 转换为 ClashCoreSettings
+  static ClashCoreSettings proxyConfigToClashCoreSettings(ProxyConfig proxyConfig) {
     final customSettings = proxyConfig.customSettings;
     
-    return FlClashSettings(
+    return ClashCoreSettings(
       enabled: proxyConfig.enabled,
       mode: _convertProxyModeFromString(proxyConfig.mode),
       coreVersion: customSettings['coreVersion'] as String? ?? '',
@@ -100,7 +100,7 @@ class ModelConverter {
         bypassChina: proxyConfig.bypassChina,
       ),
       
-      rules: RuleSettings(
+      rules: RuleConfiguration(
         bypassChina: proxyConfig.bypassChina,
         bypassLan: proxyConfig.bypassLAN,
         bypassPrivate: proxyConfig.bypassLAN,
@@ -116,7 +116,7 @@ class ModelConverter {
         sortMode: NodeSortMode.latency, // 默认值
       ),
       
-      traffic: _convertTrafficSettings(customSettings['trafficSettings'] as Map<String, dynamic>?),
+      traffic: _convertTrafficControlSettings(customSettings['trafficSettings'] as Map<String, dynamic>?),
       
       proxyCoreSettings: _convertProxyCoreSettings(customSettings['proxyCoreSettings'] as Map<String, dynamic>?),
     );
@@ -179,7 +179,7 @@ class ModelConverter {
   }
   
   /// 转换规则
-  static List<ProxyRule> _convertRules(RuleSettings ruleSettings) {
+  static List<ProxyRule> _convertRules(RuleConfiguration ruleConfiguration) {
     final rules = <ProxyRule>[];
     
     // 添加绕过中国大陆规则
@@ -251,19 +251,20 @@ class ModelConverter {
   }
   
   /// 转换流量设置
-  static TrafficSettings _convertTrafficSettings(Map<String, dynamic>? trafficSettings) {
+  static TrafficPerformanceSettings _convertTrafficControlSettings(Map<String, dynamic>? trafficSettings) {
     if (trafficSettings == null) {
-      return const TrafficSettings();
+      return const TrafficPerformanceSettings();
     }
     
-    return TrafficSettings(
-      enableStats: trafficSettings['enableStats'] as bool? ?? true,
-      enableSpeed: trafficSettings['enableSpeed'] as bool? ?? true,
-      enableLimit: trafficSettings['enableLimit'] as bool? ?? false,
-      uploadLimit: trafficSettings['uploadLimit'] as int? ?? 0,
-      downloadLimit: trafficSettings['downloadLimit'] as int? ?? 0,
-      unit: TrafficUnit.auto, // 默认值
-      historyRetention: trafficSettings['historyRetention'] as int? ?? 30,
+    return TrafficPerformanceSettings(
+      maxSpeed: trafficSettings['maxSpeed'] as int? ?? 0,
+      bandwidthLimit: trafficSettings['bandwidthLimit'] as int? ?? 0,
+      throttle: trafficSettings['throttle'] as bool? ?? false,
+      bufferSize: trafficSettings['bufferSize'] as int? ?? 64,
+      downloadSpeed: trafficSettings['downloadSpeed'] as int? ?? 0,
+      uploadSpeed: trafficSettings['uploadSpeed'] as int? ?? 0,
+      connectionTimeout: trafficSettings['connectionTimeout'] as int? ?? 5000,
+      keepAlive: trafficSettings['keepAlive'] as bool? ?? true,
     );
   }
   
@@ -290,7 +291,7 @@ class ModelConverter {
   }
   
   /// 验证转换结果的完整性
-  static bool validateConversion(FlClashSettings original, ProxyConfig converted) {
+  static bool validateConversion(ClashCoreSettings original, ProxyConfig converted) {
     // 检查基本字段是否正确转换
     if (original.enabled != converted.enabled) return false;
     if (_convertProxyMode(original.mode) != converted.mode) return false;
@@ -300,11 +301,11 @@ class ModelConverter {
   }
   
   /// 批量转换节点列表
-  static List<ProxyNode> convertNodesFromFlClashSettings(FlClashSettings flClashSettings) {
+  static List<ProxyNode> convertNodesFromClashCoreSettings(ClashCoreSettings flClashSettings) {
     return flClashSettings.nodes.nodes;
   }
   
-  /// 从 ProxyConfig 批量转换节点到 FlClashSettings
+  /// 从 ProxyConfig 批量转换节点到 ClashCoreSettings
   static List<ProxyNode> convertNodesFromProxyConfig(ProxyConfig proxyConfig) {
     return proxyConfig.nodes;
   }

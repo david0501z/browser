@@ -82,10 +82,10 @@ Map<String, dynamic> _$$ProxyNodeImplToJson(_$ProxyNodeImpl instance) =>
       'port': instance.port,
       'security': instance.security,
       'auth': instance.auth,
-      'vmessConfig': instance.vmessConfig,
-      'vlessConfig': instance.vlessConfig,
-      'ssConfig': instance.ssConfig,
-      'trojanConfig': instance.trojanConfig,
+      'vmessConfig': instance.vmessConfig?.toJson(),
+      'vlessConfig': instance.vlessConfig?.toJson(),
+      'ssConfig': instance.ssConfig?.toJson(),
+      'trojanConfig': instance.trojanConfig?.toJson(),
       'status': _$NodeStatusEnumMap[instance.status]!,
       'latency': instance.latency,
       'downloadSpeed': instance.downloadSpeed,
@@ -108,8 +108,8 @@ Map<String, dynamic> _$$ProxyNodeImplToJson(_$ProxyNodeImpl instance) =>
       'group': instance.group,
       'rawConfig': instance.rawConfig,
       'iconUrl': instance.iconUrl,
-      'geoInfo': instance.geoInfo,
-      'performance': instance.performance,
+      'geoInfo': instance.geoInfo?.toJson(),
+      'performance': instance.performance?.toJson(),
     };
 
 const _$ProxyTypeEnumMap = {
@@ -181,10 +181,10 @@ Map<String, dynamic> _$$VMessConfigImplToJson(_$VMessConfigImpl instance) =>
       'tlsKey': instance.tlsKey,
       'sni': instance.sni,
       'verifyCertificate': instance.verifyCertificate,
-      'wsConfig': instance.wsConfig,
-      'http2Config': instance.http2Config,
-      'tcpConfig': instance.tcpConfig,
-      'grpcConfig': instance.grpcConfig,
+      'wsConfig': instance.wsConfig?.toJson(),
+      'http2Config': instance.http2Config?.toJson(),
+      'tcpConfig': instance.tcpConfig?.toJson(),
+      'grpcConfig': instance.grpcConfig?.toJson(),
     };
 
 _$VLessConfigImpl _$$VLessConfigImplFromJson(Map<String, dynamic> json) =>
@@ -218,7 +218,7 @@ Map<String, dynamic> _$$VLessConfigImplToJson(_$VLessConfigImpl instance) =>
       'tlsCert': instance.tlsCert,
       'tlsKey': instance.tlsKey,
       'sni': instance.sni,
-      'wsConfig': instance.wsConfig,
+      'wsConfig': instance.wsConfig?.toJson(),
     };
 
 _$SSConfigImpl _$$SSConfigImplFromJson(Map<String, dynamic> json) =>
@@ -251,8 +251,8 @@ _$TrojanConfigImpl _$$TrojanConfigImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$TrojanConfigImplToJson(_$TrojanConfigImpl instance) =>
     <String, dynamic>{
       'password': instance.password,
-      'tlsConfig': instance.tlsConfig,
-      'wsConfig': instance.wsConfig,
+      'tlsConfig': instance.tlsConfig?.toJson(),
+      'wsConfig': instance.wsConfig?.toJson(),
     };
 
 _$WSConfigImpl _$$WSConfigImplFromJson(Map<String, dynamic> json) =>
@@ -481,8 +481,8 @@ Map<String, dynamic> _$$NodeImportResultImplToJson(
       'invalidNodes': instance.invalidNodes,
       'duplicateNodes': instance.duplicateNodes,
       'errors': instance.errors,
-      'nodes': instance.nodes,
-      'importStats': instance.importStats,
+      'nodes': instance.nodes.map((e) => e.toJson()).toList(),
+      'importStats': instance.importStats.toJson(),
     };
 
 _$NodeImportStatsImpl _$$NodeImportStatsImplFromJson(

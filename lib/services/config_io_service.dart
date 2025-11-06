@@ -126,12 +126,12 @@ class ConfigIOService {
 
   /// 保存配置到文件
   /// 
-  /// [config] FlClashSettings 配置
+  /// [config] ClashCoreSettings 配置
   /// [filePath] 可选的文件路径，为空则使用默认路径
   /// [proxyList] 代理列表
   /// [overwrite] 是否覆盖已存在的文件
   Future<ConfigOperationResult> saveConfig(
-    FlClashSettings config, {
+    ClashCoreSettings config, {
     String? filePath,
     List<ProxyConfig>? proxyList,
     bool overwrite = false,

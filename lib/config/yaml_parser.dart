@@ -304,7 +304,7 @@ class YamlParser {
   }
 
   /// 合并配置
-  FlClashSettings _mergeConfigs(
+  ClashCoreSettings _mergeConfigs(
     Map configMap,
     List<ProxyConfig> proxyList,
     List<ProxyGroup> proxyGroups,
@@ -345,7 +345,7 @@ class YamlParser {
     );
     
     // 创建合并的配置
-    return FlClashSettings(
+    return ClashCoreSettings(
       enabled: false,
       mode: mode,
       coreVersion: '',
@@ -360,9 +360,9 @@ class YamlParser {
       dnsForward: false,
       ports: portSettings,
       dns: dnsSettings,
-      rules: const RuleSettings(),
+      rules: const RuleConfiguration(),
       nodes: const NodeSettings(),
-      traffic: const TrafficSettings(),
+      traffic: const TrafficPerformanceSettings(),
     );
   }
 
@@ -563,7 +563,7 @@ class YamlParser {
 
 /// 解析结果类
 class ParseResult {
-  final FlClashSettings config;
+  final ClashCoreSettings config;
   final List<ProxyConfig> proxyList;
   final List<ProxyGroup> proxyGroups;
   final List<String> rules;

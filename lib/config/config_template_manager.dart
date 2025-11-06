@@ -5,7 +5,9 @@
 import 'dart:convert';
 import 'package:logging/logging.dart';
 import '../models/app_settings.dart';
+import '../models/clash_settings.dart';
 import '../models/enums.dart';
+import '../core/proxy_config.dart';
 import 'clash_config_generator.dart';
 import 'yaml_parser.dart';
 
@@ -384,13 +386,13 @@ class ConfigTemplateManager {
   /// 
   /// [name] 模板名称
   /// [description] 模板描述
-  /// [settings] FlClashSettings 配置
+  /// [settings] ClashCoreSettings 配置
   /// [proxyList] 代理列表
   /// [category] 模板分类
   String createTemplateFromConfig({
     required String name,
     required String description,
-    required FlClashSettings settings,
+    required ClashCoreSettings settings,
     List<ProxyConfig>? proxyList,
     TemplateCategory category = TemplateCategory.custom,
   }) {

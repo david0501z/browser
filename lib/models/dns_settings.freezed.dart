@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-DNSSettings _$DNSSettingsFromJson(Map<String, dynamic> json) {
-  return _DNSSettings.fromJson(json);
+DNSConfiguration _$DNSConfigurationFromJson(Map<String, dynamic> json) {
+  return _DNSConfiguration.fromJson(json);
 }
 
 /// @nodoc
-mixin _$DNSSettings {
+mixin _$DNSConfiguration {
   /// 是否启用DNS配置
   bool get enable => throw _privateConstructorUsedError;
 
@@ -32,37 +32,56 @@ mixin _$DNSSettings {
   /// DNS策略（整数参数）
   int get strategy => throw _privateConstructorUsedError;
 
-  /// Serializes this DNSSettings to a JSON map.
+  /// 自定义DNS端口
+  int get port => throw _privateConstructorUsedError;
+
+  /// 是否启用IPv6 DNS
+  bool get enableIPv6 => throw _privateConstructorUsedError;
+
+  /// 是否启用缓存
+  bool get enableCache => throw _privateConstructorUsedError;
+
+  /// DNS缓存过期时间(秒)
+  int get cacheTimeout => throw _privateConstructorUsedError;
+
+  /// Serializes this DNSConfiguration to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of DNSSettings
+  /// Create a copy of DNSConfiguration
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $DNSSettingsCopyWith<DNSSettings> get copyWith =>
+  $DNSConfigurationCopyWith<DNSConfiguration> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DNSSettingsCopyWith<$Res> {
-  factory $DNSSettingsCopyWith(
-          DNSSettings value, $Res Function(DNSSettings) then) =
-      _$DNSSettingsCopyWithImpl<$Res, DNSSettings>;
+abstract class $DNSConfigurationCopyWith<$Res> {
+  factory $DNSConfigurationCopyWith(
+          DNSConfiguration value, $Res Function(DNSConfiguration) then) =
+      _$DNSConfigurationCopyWithImpl<$Res, DNSConfiguration>;
   @useResult
   $Res call(
-      {bool enable, List<String> servers, List<String> fallback, int strategy});
+      {bool enable,
+      List<String> servers,
+      List<String> fallback,
+      int strategy,
+      int port,
+      bool enableIPv6,
+      bool enableCache,
+      int cacheTimeout});
 }
 
 /// @nodoc
-class _$DNSSettingsCopyWithImpl<$Res, $Val extends DNSSettings>
-    implements $DNSSettingsCopyWith<$Res> {
-  _$DNSSettingsCopyWithImpl(this._value, this._then);
+class _$DNSConfigurationCopyWithImpl<$Res, $Val extends DNSConfiguration>
+    implements $DNSConfigurationCopyWith<$Res> {
+  _$DNSConfigurationCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of DNSSettings
+  /// Create a copy of DNSConfiguration
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -71,6 +90,10 @@ class _$DNSSettingsCopyWithImpl<$Res, $Val extends DNSSettings>
     Object? servers = null,
     Object? fallback = null,
     Object? strategy = null,
+    Object? port = null,
+    Object? enableIPv6 = null,
+    Object? enableCache = null,
+    Object? cacheTimeout = null,
   }) {
     return _then(_value.copyWith(
       enable: null == enable
@@ -89,31 +112,54 @@ class _$DNSSettingsCopyWithImpl<$Res, $Val extends DNSSettings>
           ? _value.strategy
           : strategy // ignore: cast_nullable_to_non_nullable
               as int,
+      port: null == port
+          ? _value.port
+          : port // ignore: cast_nullable_to_non_nullable
+              as int,
+      enableIPv6: null == enableIPv6
+          ? _value.enableIPv6
+          : enableIPv6 // ignore: cast_nullable_to_non_nullable
+              as bool,
+      enableCache: null == enableCache
+          ? _value.enableCache
+          : enableCache // ignore: cast_nullable_to_non_nullable
+              as bool,
+      cacheTimeout: null == cacheTimeout
+          ? _value.cacheTimeout
+          : cacheTimeout // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$DNSSettingsImplCopyWith<$Res>
-    implements $DNSSettingsCopyWith<$Res> {
-  factory _$$DNSSettingsImplCopyWith(
-          _$DNSSettingsImpl value, $Res Function(_$DNSSettingsImpl) then) =
-      __$$DNSSettingsImplCopyWithImpl<$Res>;
+abstract class _$$DNSConfigurationImplCopyWith<$Res>
+    implements $DNSConfigurationCopyWith<$Res> {
+  factory _$$DNSConfigurationImplCopyWith(_$DNSConfigurationImpl value,
+          $Res Function(_$DNSConfigurationImpl) then) =
+      __$$DNSConfigurationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {bool enable, List<String> servers, List<String> fallback, int strategy});
+      {bool enable,
+      List<String> servers,
+      List<String> fallback,
+      int strategy,
+      int port,
+      bool enableIPv6,
+      bool enableCache,
+      int cacheTimeout});
 }
 
 /// @nodoc
-class __$$DNSSettingsImplCopyWithImpl<$Res>
-    extends _$DNSSettingsCopyWithImpl<$Res, _$DNSSettingsImpl>
-    implements _$$DNSSettingsImplCopyWith<$Res> {
-  __$$DNSSettingsImplCopyWithImpl(
-      _$DNSSettingsImpl _value, $Res Function(_$DNSSettingsImpl) _then)
+class __$$DNSConfigurationImplCopyWithImpl<$Res>
+    extends _$DNSConfigurationCopyWithImpl<$Res, _$DNSConfigurationImpl>
+    implements _$$DNSConfigurationImplCopyWith<$Res> {
+  __$$DNSConfigurationImplCopyWithImpl(_$DNSConfigurationImpl _value,
+      $Res Function(_$DNSConfigurationImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of DNSSettings
+  /// Create a copy of DNSConfiguration
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -122,8 +168,12 @@ class __$$DNSSettingsImplCopyWithImpl<$Res>
     Object? servers = null,
     Object? fallback = null,
     Object? strategy = null,
+    Object? port = null,
+    Object? enableIPv6 = null,
+    Object? enableCache = null,
+    Object? cacheTimeout = null,
   }) {
-    return _then(_$DNSSettingsImpl(
+    return _then(_$DNSConfigurationImpl(
       enable: null == enable
           ? _value.enable
           : enable // ignore: cast_nullable_to_non_nullable
@@ -140,23 +190,43 @@ class __$$DNSSettingsImplCopyWithImpl<$Res>
           ? _value.strategy
           : strategy // ignore: cast_nullable_to_non_nullable
               as int,
+      port: null == port
+          ? _value.port
+          : port // ignore: cast_nullable_to_non_nullable
+              as int,
+      enableIPv6: null == enableIPv6
+          ? _value.enableIPv6
+          : enableIPv6 // ignore: cast_nullable_to_non_nullable
+              as bool,
+      enableCache: null == enableCache
+          ? _value.enableCache
+          : enableCache // ignore: cast_nullable_to_non_nullable
+              as bool,
+      cacheTimeout: null == cacheTimeout
+          ? _value.cacheTimeout
+          : cacheTimeout // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$DNSSettingsImpl implements _DNSSettings {
-  const _$DNSSettingsImpl(
+class _$DNSConfigurationImpl implements _DNSConfiguration {
+  const _$DNSConfigurationImpl(
       {this.enable = false,
       final List<String> servers = const [],
       final List<String> fallback = const [],
-      this.strategy = 0})
+      this.strategy = 0,
+      this.port = 53,
+      this.enableIPv6 = false,
+      this.enableCache = true,
+      this.cacheTimeout = 300})
       : _servers = servers,
         _fallback = fallback;
 
-  factory _$DNSSettingsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$DNSSettingsImplFromJson(json);
+  factory _$DNSConfigurationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DNSConfigurationImplFromJson(json);
 
   /// 是否启用DNS配置
   @override
@@ -192,21 +262,48 @@ class _$DNSSettingsImpl implements _DNSSettings {
   @JsonKey()
   final int strategy;
 
+  /// 自定义DNS端口
+  @override
+  @JsonKey()
+  final int port;
+
+  /// 是否启用IPv6 DNS
+  @override
+  @JsonKey()
+  final bool enableIPv6;
+
+  /// 是否启用缓存
+  @override
+  @JsonKey()
+  final bool enableCache;
+
+  /// DNS缓存过期时间(秒)
+  @override
+  @JsonKey()
+  final int cacheTimeout;
+
   @override
   String toString() {
-    return 'DNSSettings(enable: $enable, servers: $servers, fallback: $fallback, strategy: $strategy)';
+    return 'DNSConfiguration(enable: $enable, servers: $servers, fallback: $fallback, strategy: $strategy, port: $port, enableIPv6: $enableIPv6, enableCache: $enableCache, cacheTimeout: $cacheTimeout)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DNSSettingsImpl &&
+            other is _$DNSConfigurationImpl &&
             (identical(other.enable, enable) || other.enable == enable) &&
             const DeepCollectionEquality().equals(other._servers, _servers) &&
             const DeepCollectionEquality().equals(other._fallback, _fallback) &&
             (identical(other.strategy, strategy) ||
-                other.strategy == strategy));
+                other.strategy == strategy) &&
+            (identical(other.port, port) || other.port == port) &&
+            (identical(other.enableIPv6, enableIPv6) ||
+                other.enableIPv6 == enableIPv6) &&
+            (identical(other.enableCache, enableCache) ||
+                other.enableCache == enableCache) &&
+            (identical(other.cacheTimeout, cacheTimeout) ||
+                other.cacheTimeout == cacheTimeout));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -216,33 +313,42 @@ class _$DNSSettingsImpl implements _DNSSettings {
       enable,
       const DeepCollectionEquality().hash(_servers),
       const DeepCollectionEquality().hash(_fallback),
-      strategy);
+      strategy,
+      port,
+      enableIPv6,
+      enableCache,
+      cacheTimeout);
 
-  /// Create a copy of DNSSettings
+  /// Create a copy of DNSConfiguration
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$DNSSettingsImplCopyWith<_$DNSSettingsImpl> get copyWith =>
-      __$$DNSSettingsImplCopyWithImpl<_$DNSSettingsImpl>(this, _$identity);
+  _$$DNSConfigurationImplCopyWith<_$DNSConfigurationImpl> get copyWith =>
+      __$$DNSConfigurationImplCopyWithImpl<_$DNSConfigurationImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$DNSSettingsImplToJson(
+    return _$$DNSConfigurationImplToJson(
       this,
     );
   }
 }
 
-abstract class _DNSSettings implements DNSSettings {
-  const factory _DNSSettings(
+abstract class _DNSConfiguration implements DNSConfiguration {
+  const factory _DNSConfiguration(
       {final bool enable,
       final List<String> servers,
       final List<String> fallback,
-      final int strategy}) = _$DNSSettingsImpl;
+      final int strategy,
+      final int port,
+      final bool enableIPv6,
+      final bool enableCache,
+      final int cacheTimeout}) = _$DNSConfigurationImpl;
 
-  factory _DNSSettings.fromJson(Map<String, dynamic> json) =
-      _$DNSSettingsImpl.fromJson;
+  factory _DNSConfiguration.fromJson(Map<String, dynamic> json) =
+      _$DNSConfigurationImpl.fromJson;
 
   /// 是否启用DNS配置
   @override
@@ -260,10 +366,26 @@ abstract class _DNSSettings implements DNSSettings {
   @override
   int get strategy;
 
-  /// Create a copy of DNSSettings
+  /// 自定义DNS端口
+  @override
+  int get port;
+
+  /// 是否启用IPv6 DNS
+  @override
+  bool get enableIPv6;
+
+  /// 是否启用缓存
+  @override
+  bool get enableCache;
+
+  /// DNS缓存过期时间(秒)
+  @override
+  int get cacheTimeout;
+
+  /// Create a copy of DNSConfiguration
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$DNSSettingsImplCopyWith<_$DNSSettingsImpl> get copyWith =>
+  _$$DNSConfigurationImplCopyWith<_$DNSConfigurationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

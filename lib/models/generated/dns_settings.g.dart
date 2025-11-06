@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of '../app_settings.dart';
+part of '../dns_settings.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************/
 
-_$DNSSettings _$$DNSSettingsFromJson(Map<String, dynamic> json) =>
-    _$DNSSettings(
+_$DNSConfiguration _$$DNSConfigurationFromJson(Map<String, dynamic> json) =>
+    _$DNSConfiguration(
       customDNS: json['customDNS'] as bool? ?? false,
       dnsServers: (json['dnsServers'] as List<dynamic>).map((e) => e as String).toList(),
       dnsOverHttps: json['dnsOverHttps'] as bool? ?? false,
       dohServer: json['dohServer'] as String?,
     );
 
-Map<String, dynamic> _$$DNSSettingsToJson(_$DNSSettings instance) =>
+Map<String, dynamic> _$$DNSConfigurationToJson(_$DNSConfiguration instance) =>
     <String, dynamic>{
       'customDNS': instance.customDNS,
       'dnsServers': instance.dnsServers,

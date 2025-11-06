@@ -4,11 +4,11 @@
 
 import '../models/app_settings.dart';
 
-class FlClashSettingsValidator {
+class ClashCoreSettingsValidator {
   /// 验证 FlClash 设置
   /// 
   /// 返回验证错误列表（如果为空则表示验证通过）
-  static List<String> validate(FlClashSettings settings) {
+  static List<String> validate(ClashCoreSettings settings) {
     final errors = <String>[];
     
     // 验证端口设置
@@ -58,7 +58,7 @@ class FlClashSettingsValidator {
   }
   
   /// 快速验证（返回布尔值）
-  static bool isValid(FlClashSettings settings) {
+  static bool isValid(ClashCoreSettings settings) {
     return validate(settings).isEmpty;
   }
   

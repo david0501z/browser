@@ -2,7 +2,7 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part of '../app_settings.dart';
+part of '../notifications.dart';
 
 // **************************************************************************
 // FreezedGenerator

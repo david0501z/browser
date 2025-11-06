@@ -2,32 +2,13 @@
 /// 
 /// 包含应用中使用的枚举类型定义。
 
-/// 代理模式枚举
-enum ProxyMode {
-  /// 规则模式
-  rule,
-  
-  /// 全局模式
-  global,
-  
-  /// 直连模式
-  direct,
-}
+/// 导入核心代理类型定义
+import '../core/proxy_types.dart';
+import '../logging/log_level.dart';
 
 /// 日志级别枚举
-enum LogLevel {
-  /// 调试级别
-  debug,
-  
-  /// 信息级别
-  info,
-  
-  /// 警告级别
-  warning,
-  
-  /// 错误级别
-  error,
-}
+/// 注意：LogLevel定义已迁移到 logging/log_level.dart
+/// 请使用：import 'package:flclash_browser_app/logging/log_level.dart';
 
 /// 云服务类型枚举
 enum CloudService {

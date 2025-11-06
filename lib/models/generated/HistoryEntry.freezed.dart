@@ -2,7 +2,7 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part of '../history_entry.dart';
+part of '../HistoryEntry.dart';
 
 // **************************************************************************
 // FreezedGenerator

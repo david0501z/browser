@@ -6,6 +6,8 @@ library app_settings;
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'browser_settings.dart';
+import '../core/proxy_types.dart';
+import '../logging/log_level.dart';
 
 part 'generated/app_settings.freezed.dart';
 part 'generated/app_settings.g.dart';
@@ -123,39 +125,18 @@ abstract class FlClashSettings with _$FlClashSettings {
     @Default(NodeSettings()) NodeSettings nodes,
     
     /// 流量统计设置
-    @Default(TrafficSettings()) TrafficSettings traffic,
+    @Default(TrafficStatsSettings()) TrafficStatsSettings traffic,
   }) = _FlClashSettings;
   
   factory FlClashSettings.fromJson(Map<String, Object?> json) =>
       _$FlClashSettingsFromJson(json);
 }
 
-/// 代理模式枚举
-enum ProxyMode {
-  /// 规则模式
-  rule,
-  
-  /// 全局模式
-  global,
-  
-  /// 直连模式
-  direct,
-}
+
 
 /// 日志级别枚举
-enum LogLevel {
-  /// 调试
-  debug,
-  
-  /// 信息
-  info,
-  
-  /// 警告
-  warn,
-  
-  /// 错误
-  error,
-}
+/// 注意：LogLevel定义已迁移到 logging/log_level.dart
+/// 请使用：import 'package:flclash_browser_app/logging/log_level.dart';
 
 /// 端口设置模型
 @freezed
@@ -264,8 +245,8 @@ abstract class NodeSettings with _$NodeSettings {
 
 /// 流量统计设置模型
 @freezed
-abstract class TrafficSettings with _$TrafficSettings {
-  const factory TrafficSettings({
+abstract class TrafficStatsSettings with _$TrafficStatsSettings {
+  const factory TrafficStatsSettings({
     /// 是否启用流量统计
     @Default(true) bool enabled,
     
@@ -280,10 +261,10 @@ abstract class TrafficSettings with _$TrafficSettings {
     
     /// 流量提醒阈值（GB）
     @Default(10) int alertThreshold,
-  }) = _TrafficSettings;
+  }) = _TrafficStatsSettings;
   
-  factory TrafficSettings.fromJson(Map<String, Object?> json) =>
-      _$TrafficSettingsFromJson(json);
+  factory TrafficStatsSettings.fromJson(Map<String, Object?> json) =>
+      _$TrafficStatsSettingsFromJson(json);
 }
 
 /// 统计周期枚举

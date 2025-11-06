@@ -18,13 +18,8 @@ enum AuthType {
 }
 
 /// 代理日志级别
-enum LogLevel {
-  debug,
-  info,
-  warning,
-  error,
-  fatal,
-}
+/// 注意：LogLevel定义已迁移到 logging/log_level.dart
+/// 请使用：import '../logging/log_level.dart';
 
 /// 连接状态
 enum ConnectionStatus {
@@ -147,13 +142,29 @@ enum CompressionType {
 /// 代理模式
 enum ProxyMode {
   /// 直连模式
-  direct,
+  direct('direct'),
   /// 全局代理
-  global,
+  global('global'),
   /// 规则代理
-  rules,
+  rule('rule'),
   /// 绕过大陆
-  bypassChina,
+  bypassChina('bypassChina');
+
+  const ProxyMode(this.value);
+
+  /// 枚举对应的字符串值
+  final String value;
+
+  /// 根据字符串值获取对应的枚举
+  static ProxyMode fromString(String value) {
+    return ProxyMode.values.firstWhere(
+      (mode) => mode.value == value,
+      orElse: () => ProxyMode.rule, // 默认返回规则模式
+    );
+  }
+
+  @override
+  String toString() => value;
 }
 
 /// 路由规则

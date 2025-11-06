@@ -6,8 +6,8 @@ library browser_tab;
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'generated/browser_tab.freezed.dart';
-part 'generated/browser_tab.g.dart';
+part 'generated/BrowserTab.freezed.dart';
+part 'generated/BrowserTab.g.dart';
 
 /// 浏览器标签页模型
 /// 

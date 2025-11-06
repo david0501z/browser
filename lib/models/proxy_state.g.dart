@@ -128,12 +128,12 @@ Map<String, dynamic> _$$GlobalProxyStateImplToJson(
         _$GlobalProxyStateImpl instance) =>
     <String, dynamic>{
       'status': _$ProxyStatusEnumMap[instance.status]!,
-      'servers': instance.servers,
-      'connectionState': instance.connectionState,
-      'rules': instance.rules,
+      'servers': instance.servers.map((e) => e.toJson()).toList(),
+      'connectionState': instance.connectionState.toJson(),
+      'rules': instance.rules.map((e) => e.toJson()).toList(),
       'isGlobalProxy': instance.isGlobalProxy,
-      'systemProxySettings': instance.systemProxySettings,
-      'autoConnectSettings': instance.autoConnectSettings,
+      'systemProxySettings': instance.systemProxySettings.toJson(),
+      'autoConnectSettings': instance.autoConnectSettings.toJson(),
       'lastUpdated': instance.lastUpdated.toIso8601String(),
     };
 

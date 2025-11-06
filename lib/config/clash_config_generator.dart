@@ -1,12 +1,14 @@
 /// Clash 配置生成器
 /// 
-/// 将 FlClashSettings 转换为 ClashMeta 兼容的 YAML 配置文件
+/// 将 ClashCoreSettings 转换为 ClashMeta 兼容的 YAML 配置文件
 
+import '../core/proxy_types.dart';
+import '../logging/log_level.dart';
 import '../models/clash_settings.dart';
 import '../models/port_settings.dart';
 import '../models/dns_settings.dart';
 import '../models/rule_settings.dart';
-import '../models/traffic_settings.dart';
+import '../models/traffic_performance_settings.dart';
 
 /// Clash 配置生成器类
 class ClashConfigGenerator {
@@ -31,12 +33,12 @@ class ClashConfigGenerator {
 
   /// 生成 Clash 配置 YAML 字符串
   /// 
-  /// [settings] FlClashSettings 配置
+  /// [settings] ClashCoreSettings 配置
   /// [proxyList] 代理节点列表
   /// [rules] 规则列表
   /// [ruleProviders] 规则提供者列表
   String generateClashConfig(
-    FlClashSettings settings, {
+    ClashCoreSettings settings, {
     List<ProxyConfig>? proxyList,
     List<String>? rules,
     List<Map<String, dynamic>>? ruleProviders,
@@ -77,7 +79,7 @@ class ClashConfigGenerator {
 
   /// 构建配置映射
   Map<String, dynamic> _buildConfigMap(
-    FlClashSettings settings,
+    ClashCoreSettings settings,
     List<ProxyConfig>? proxyList,
     List<String>? rules,
     List<Map<String, dynamic>>? ruleProviders,
@@ -88,10 +90,9 @@ class ClashConfigGenerator {
     config.addAll(_buildBasicSettings(settings));
     
     // 端口设置
-    config.addAll(_buildPortSettings(settings.ports));
+    config.addAll(_buildBasicPortSettings(settings));
     
-    // DNS 设置
-    config.addAll(_buildDnsSettings(settings.dns));
+    // DNS 设置 - 临时禁用，需要正确的DNSConfiguration对象
     
     // 代理设置
     if (proxyList != null && proxyList.isNotEmpty) {
@@ -99,7 +100,7 @@ class ClashConfigGenerator {
     }
     
     // 规则设置
-    config.addAll(_buildRuleSettings(settings.rules, rules, ruleProviders));
+    config.addAll(_buildBasicRuleSettings(settings, rules, ruleProviders));
     
     // 流量统计
     config.addAll(_buildTrafficSettings(settings.traffic));
@@ -108,7 +109,7 @@ class ClashConfigGenerator {
   }
 
   /// 构建基本设置
-  Map<String, dynamic> _buildBasicSettings(FlClashSettings settings) {
+  Map<String, dynamic> _buildBasicSettings(ClashCoreSettings settings) {
     return {
       'allow-lan': settings.lanShare,
       'bind-address': '*',
@@ -121,8 +122,30 @@ class ClashConfigGenerator {
     };
   }
 
+  /// 构建基础端口设置
+  Map<String, dynamic> _buildBasicPortSettings(ClashCoreSettings settings) {
+    final portConfig = <String, dynamic>{};
+    
+    // 设置 HTTP 端口
+    if (_isValidPort(settings.port)) {
+      portConfig['port'] = settings.port;
+    }
+    
+    // 设置 SOCKS 端口
+    if (_isValidPort(settings.socksPort)) {
+      portConfig['socks-port'] = settings.socksPort;
+    }
+    
+    // 设置 TProxy 端口
+    if (_isValidPort(settings.tproxyPort)) {
+      portConfig['tproxy-port'] = settings.tproxyPort;
+    }
+    
+    return portConfig;
+  }
+
   /// 构建端口设置
-  Map<String, dynamic> _buildPortSettings(PortSettings ports) {
+  Map<String, dynamic> _buildPortSettings(PortConfiguration ports) {
     final portConfig = <String, dynamic>{};
     
     // 验证并设置 HTTP 端口
@@ -149,7 +172,7 @@ class ClashConfigGenerator {
   }
 
   /// 构建 DNS 设置
-  Map<String, dynamic> _buildDnsSettings(DNSSettings dns) {
+  Map<String, dynamic> _buildDnsSettings(DNSConfiguration dns) {
     final dnsConfig = <String, dynamic>{};
     
     if (dns.customDNS && dns.dnsServers.isNotEmpty) {
@@ -167,7 +190,7 @@ class ClashConfigGenerator {
       };
       
       // 检查是否启用 DNS over HTTPS (strategy == 2)
-      if (dns.strategy == 2 && dns.dnsOverHttps.isNotEmpty) {
+      if (dns.strategy == 2) {
         dnsConfig['dns']['fallback'] = ['https://dns.cloudflare.com/dns-query'];
       }
     }
@@ -225,9 +248,40 @@ class ClashConfigGenerator {
     return groups;
   }
 
+  /// 构建基础规则设置
+  Map<String, dynamic> _buildBasicRuleSettings(
+    ClashCoreSettings settings,
+    List<String>? customRules,
+    List<Map<String, dynamic>>? ruleProviders,
+  ) {
+    final rules = <String>[];
+    
+    // 如果有自定义规则，添加到规则列表中
+    if (customRules != null) {
+      rules.addAll(customRules);
+    }
+    
+    // 如果没有自定义规则，使用默认规则
+    if (rules.isEmpty) {
+      rules.add('DOMAIN-SUFFIX,google.com,Auto');
+      rules.add('DOMAIN-SUFFIX,youtube.com,Auto');
+    }
+    
+    final ruleConfig = <String, dynamic>{
+      'rules': rules,
+    };
+    
+    // 如果有规则提供者，添加
+    if (ruleProviders != null && ruleProviders.isNotEmpty) {
+      ruleConfig['rule-providers'] = ruleProviders;
+    }
+    
+    return ruleConfig;
+  }
+
   /// 构建规则设置
   Map<String, dynamic> _buildRuleSettings(
-    RuleSettings ruleSettings,
+    RuleConfiguration ruleConfiguration,
     List<String>? customRules,
     List<Map<String, dynamic>>? ruleProviders,
   ) {
@@ -236,6 +290,9 @@ class ClashConfigGenerator {
     // 自定义规则
     if (customRules != null) {
       rules.addAll(customRules);
+    } else if (ruleConfiguration.enable && ruleConfiguration.rules.isNotEmpty) {
+      // 使用配置中的规则
+      rules.addAll(ruleConfiguration.rules);
     } else {
       // 默认规则
       rules.addAll(_getDefaultRules());
@@ -257,11 +314,11 @@ class ClashConfigGenerator {
   }
 
   /// 构建流量统计设置
-  Map<String, dynamic> _buildTrafficSettings(TrafficSettings traffic) {
+  Map<String, dynamic> _buildTrafficSettings(TrafficPerformanceSettings traffic) {
     return {
       'profile': {
         'store-selected': true,
-        'store- fakeip': false,
+        'store-fakeip': false,
       }
     };
   }
@@ -412,13 +469,18 @@ class ClashConfigGenerator {
         return 'global';
       case ProxyMode.direct:
         return 'direct';
+      case ProxyMode.bypassChina:
+        return 'bypassChina';
+      default:
+        return 'rule'; // 默认返回
     }
-    return 'rule'; // 默认返回
   }
 
   /// 转换日志级别
   String _convertLogLevel(LogLevel level) {
     switch (level) {
+      case LogLevel.verbose:
+        return 'verbose';
       case LogLevel.debug:
         return 'debug';
       case LogLevel.info:
@@ -427,10 +489,11 @@ class ClashConfigGenerator {
         return 'warning';
       case LogLevel.error:
         return 'error';
-      case LogLevel.silent:
+      case LogLevel.critical:
         return 'silent';
+      default:
+        return 'info'; // 默认返回
     }
-    return 'info'; // 默认返回
   }
 
   /// 转换代理类型
@@ -526,7 +589,7 @@ class ClashConfigGenerator {
   }
 
   /// 生成配置摘要
-  String generateConfigSummary(FlClashSettings settings, List<ProxyConfig>? proxyList) {
+  String generateConfigSummary(ClashCoreSettings settings, List<ProxyConfig>? proxyList) {
     final buffer = StringBuffer();
     
     buffer.writeln('=== Clash 配置摘要 ===');

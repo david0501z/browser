@@ -2,7 +2,7 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part of '../browser_tab.dart';
+part of '../BrowserTab.dart';
 
 // **************************************************************************
 // FreezedGenerator

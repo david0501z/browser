@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-PortSettings _$PortSettingsFromJson(Map<String, dynamic> json) {
-  return _PortSettings.fromJson(json);
+PortConfiguration _$PortConfigurationFromJson(Map<String, dynamic> json) {
+  return _PortConfiguration.fromJson(json);
 }
 
 /// @nodoc
-mixin _$PortSettings {
+mixin _$PortConfiguration {
   /// SOCKS代理端口
   ///
   /// 用于SOCKS协议代理服务的监听端口，默认为1080
@@ -40,36 +40,36 @@ mixin _$PortSettings {
   /// 控制是否启用流量重定向功能，默认为false
   bool get enableRedirect => throw _privateConstructorUsedError;
 
-  /// Serializes this PortSettings to a JSON map.
+  /// Serializes this PortConfiguration to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of PortSettings
+  /// Create a copy of PortConfiguration
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $PortSettingsCopyWith<PortSettings> get copyWith =>
+  $PortConfigurationCopyWith<PortConfiguration> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PortSettingsCopyWith<$Res> {
-  factory $PortSettingsCopyWith(
-          PortSettings value, $Res Function(PortSettings) then) =
-      _$PortSettingsCopyWithImpl<$Res, PortSettings>;
+abstract class $PortConfigurationCopyWith<$Res> {
+  factory $PortConfigurationCopyWith(
+          PortConfiguration value, $Res Function(PortConfiguration) then) =
+      _$PortConfigurationCopyWithImpl<$Res, PortConfiguration>;
   @useResult
   $Res call({int socksPort, int httpPort, int apiPort, bool enableRedirect});
 }
 
 /// @nodoc
-class _$PortSettingsCopyWithImpl<$Res, $Val extends PortSettings>
-    implements $PortSettingsCopyWith<$Res> {
-  _$PortSettingsCopyWithImpl(this._value, this._then);
+class _$PortConfigurationCopyWithImpl<$Res, $Val extends PortConfiguration>
+    implements $PortConfigurationCopyWith<$Res> {
+  _$PortConfigurationCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of PortSettings
+  /// Create a copy of PortConfiguration
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -101,25 +101,25 @@ class _$PortSettingsCopyWithImpl<$Res, $Val extends PortSettings>
 }
 
 /// @nodoc
-abstract class _$$PortSettingsImplCopyWith<$Res>
-    implements $PortSettingsCopyWith<$Res> {
-  factory _$$PortSettingsImplCopyWith(
-          _$PortSettingsImpl value, $Res Function(_$PortSettingsImpl) then) =
-      __$$PortSettingsImplCopyWithImpl<$Res>;
+abstract class _$$PortConfigurationImplCopyWith<$Res>
+    implements $PortConfigurationCopyWith<$Res> {
+  factory _$$PortConfigurationImplCopyWith(_$PortConfigurationImpl value,
+          $Res Function(_$PortConfigurationImpl) then) =
+      __$$PortConfigurationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int socksPort, int httpPort, int apiPort, bool enableRedirect});
 }
 
 /// @nodoc
-class __$$PortSettingsImplCopyWithImpl<$Res>
-    extends _$PortSettingsCopyWithImpl<$Res, _$PortSettingsImpl>
-    implements _$$PortSettingsImplCopyWith<$Res> {
-  __$$PortSettingsImplCopyWithImpl(
-      _$PortSettingsImpl _value, $Res Function(_$PortSettingsImpl) _then)
+class __$$PortConfigurationImplCopyWithImpl<$Res>
+    extends _$PortConfigurationCopyWithImpl<$Res, _$PortConfigurationImpl>
+    implements _$$PortConfigurationImplCopyWith<$Res> {
+  __$$PortConfigurationImplCopyWithImpl(_$PortConfigurationImpl _value,
+      $Res Function(_$PortConfigurationImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of PortSettings
+  /// Create a copy of PortConfiguration
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -129,7 +129,7 @@ class __$$PortSettingsImplCopyWithImpl<$Res>
     Object? apiPort = null,
     Object? enableRedirect = null,
   }) {
-    return _then(_$PortSettingsImpl(
+    return _then(_$PortConfigurationImpl(
       socksPort: null == socksPort
           ? _value.socksPort
           : socksPort // ignore: cast_nullable_to_non_nullable
@@ -152,15 +152,15 @@ class __$$PortSettingsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PortSettingsImpl implements _PortSettings {
-  const _$PortSettingsImpl(
+class _$PortConfigurationImpl implements _PortConfiguration {
+  const _$PortConfigurationImpl(
       {this.socksPort = 1080,
       this.httpPort = 8080,
       this.apiPort = 9090,
       this.enableRedirect = false});
 
-  factory _$PortSettingsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PortSettingsImplFromJson(json);
+  factory _$PortConfigurationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PortConfigurationImplFromJson(json);
 
   /// SOCKS代理端口
   ///
@@ -192,14 +192,14 @@ class _$PortSettingsImpl implements _PortSettings {
 
   @override
   String toString() {
-    return 'PortSettings(socksPort: $socksPort, httpPort: $httpPort, apiPort: $apiPort, enableRedirect: $enableRedirect)';
+    return 'PortConfiguration(socksPort: $socksPort, httpPort: $httpPort, apiPort: $apiPort, enableRedirect: $enableRedirect)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PortSettingsImpl &&
+            other is _$PortConfigurationImpl &&
             (identical(other.socksPort, socksPort) ||
                 other.socksPort == socksPort) &&
             (identical(other.httpPort, httpPort) ||
@@ -214,31 +214,32 @@ class _$PortSettingsImpl implements _PortSettings {
   int get hashCode =>
       Object.hash(runtimeType, socksPort, httpPort, apiPort, enableRedirect);
 
-  /// Create a copy of PortSettings
+  /// Create a copy of PortConfiguration
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$PortSettingsImplCopyWith<_$PortSettingsImpl> get copyWith =>
-      __$$PortSettingsImplCopyWithImpl<_$PortSettingsImpl>(this, _$identity);
+  _$$PortConfigurationImplCopyWith<_$PortConfigurationImpl> get copyWith =>
+      __$$PortConfigurationImplCopyWithImpl<_$PortConfigurationImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$PortSettingsImplToJson(
+    return _$$PortConfigurationImplToJson(
       this,
     );
   }
 }
 
-abstract class _PortSettings implements PortSettings {
-  const factory _PortSettings(
+abstract class _PortConfiguration implements PortConfiguration {
+  const factory _PortConfiguration(
       {final int socksPort,
       final int httpPort,
       final int apiPort,
-      final bool enableRedirect}) = _$PortSettingsImpl;
+      final bool enableRedirect}) = _$PortConfigurationImpl;
 
-  factory _PortSettings.fromJson(Map<String, dynamic> json) =
-      _$PortSettingsImpl.fromJson;
+  factory _PortConfiguration.fromJson(Map<String, dynamic> json) =
+      _$PortConfigurationImpl.fromJson;
 
   /// SOCKS代理端口
   ///
@@ -264,10 +265,10 @@ abstract class _PortSettings implements PortSettings {
   @override
   bool get enableRedirect;
 
-  /// Create a copy of PortSettings
+  /// Create a copy of PortConfiguration
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PortSettingsImplCopyWith<_$PortSettingsImpl> get copyWith =>
+  _$$PortConfigurationImplCopyWith<_$PortConfigurationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -676,7 +676,7 @@ class _UnifiedSettingsPageState extends State<UnifiedSettingsPage>
               title: '启用FlClash',
               subtitle: '启用代理服务',
               value: _settings!.flclashSettings.enabled,
-              onChanged: (value) => _updateFlClashSettings(
+              onChanged: (value) => _updateClashCoreSettings(
                 _settings!.flclashSettings.copyWith(enabled: value),
               ),
               icon: Icons.toggle_on,
@@ -691,7 +691,7 @@ class _UnifiedSettingsPageState extends State<UnifiedSettingsPage>
                 SettingOption(label: '全局模式', value: ProxyMode.global),
                 SettingOption(label: '直连模式', value: ProxyMode.direct),
               ],
-              onChanged: (value) => _updateFlClashSettings(
+              onChanged: (value) => _updateClashCoreSettings(
                 _settings!.flclashSettings.copyWith(mode: value),
               ),
               icon: Icons.route,
@@ -708,7 +708,7 @@ class _UnifiedSettingsPageState extends State<UnifiedSettingsPage>
               title: 'TUN模式',
               subtitle: '启用TUN接口模式',
               value: _settings!.flclashSettings.tunMode,
-              onChanged: (value) => _updateFlClashSettings(
+              onChanged: (value) => _updateClashCoreSettings(
                 _settings!.flclashSettings.copyWith(tunMode: value),
               ),
               icon: Icons.tungsten,
@@ -718,7 +718,7 @@ class _UnifiedSettingsPageState extends State<UnifiedSettingsPage>
               title: 'IPv6支持',
               subtitle: '启用IPv6网络支持',
               value: _settings!.flclashSettings.ipv6,
-              onChanged: (value) => _updateFlClashSettings(
+              onChanged: (value) => _updateClashCoreSettings(
                 _settings!.flclashSettings.copyWith(ipv6: value),
               ),
               icon: Icons.language,
@@ -728,7 +728,7 @@ class _UnifiedSettingsPageState extends State<UnifiedSettingsPage>
               title: '系统代理',
               subtitle: '将代理设置为系统代理',
               value: _settings!.flclashSettings.systemProxy,
-              onChanged: (value) => _updateFlClashSettings(
+              onChanged: (value) => _updateClashCoreSettings(
                 _settings!.flclashSettings.copyWith(systemProxy: value),
               ),
               icon: Icons.computer,
@@ -948,8 +948,8 @@ class _UnifiedSettingsPageState extends State<UnifiedSettingsPage>
   }
   
   /// 更新FlClash设置
-  Future<void> _updateFlClashSettings(FlClashSettings newFlClashSettings) async {
-    await _settingsService.updateFlClashSettings(newFlClashSettings);
+  Future<void> _updateClashCoreSettings(ClashCoreSettings newClashCoreSettings) async {
+    await _settingsService.updateClashCoreSettings(newClashCoreSettings);
     _onSettingsChanged();
   }
   

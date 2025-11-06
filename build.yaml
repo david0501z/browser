@@ -1,0 +1,29 @@
+# build_runner配置
+# 用于生成freezed和json_serializable代码
+
+targets:
+  $default:
+    builders:
+      # freezed代码生成配置
+      freezed:
+        options:
+          # 启用抽象方法
+          abstract: true
+          # 避免空值警告
+          avoid_positional_boolean_parameters: false
+          
+      # json_serializable配置
+      json_serializable:
+        options:
+          # 允许未处理null值
+          any_map: false
+          # 生成支持null safety的代码
+          checked: false
+          # 生成构造函数的参数处理
+          create_factory: true
+          # 为null字段生成默认值
+          explicit_to_json: true
+          # 生成字段的验证
+          field_rename: none
+          # 是否生成@JsonKey注释
+          include_if_null: true
