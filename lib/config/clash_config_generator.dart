@@ -122,17 +122,17 @@ class ClashConfigGenerator {
     final portConfig = <String, dynamic>{};
     
     // 设置 HTTP 端口
-    if (_isValidPort(settings.port)) {
+    if (_isValidPort(settings.port?? 7890)) {
       portConfig['port'] = settings.port;
     }
     
     // 设置 SOCKS 端口
-    if (_isValidPort(settings.socksPort)) {
+    if (_isValidPort(settings.socksPort?? 7891)) {
       portConfig['socks-port'] = settings.socksPort;
     }
     
     // 设置 TProxy 端口
-    if (_isValidPort(settings.tproxyPort)) {
+    if (_isValidPort(settings.tproxyPort?? 7893)) {
       portConfig['tproxy-port'] = settings.tproxyPort;
     }
     
