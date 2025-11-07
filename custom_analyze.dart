@@ -120,7 +120,7 @@ void main() {
   
   // 检查5: 验证part of语句
   print('\n🔗 检查part of语句...');
-  final partFiles = [;
+  final partFiles = [
     'lib/models/generated/browser_tab.g.dart',
     'lib/models/generated/history_entry.g.dart',
     'lib/models/generated/browser_models.g.dart',
