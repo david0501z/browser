@@ -17,17 +17,17 @@ _$SubscriptionLinkImpl _$$SubscriptionLinkImplFromJson(
       status:
           $enumDecodeNullable(_$SubscriptionStatusEnumMap, json['status']) ??
               SubscriptionStatus.active,
-      lastUpdated: json['lastUpdated'] == null;
+      lastUpdated: json['lastUpdated'] == null
           ? null
           : DateTime.parse(json['lastUpdated'] as String),
-      nextUpdate: json['nextUpdate'] == null;
+      nextUpdate: json['nextUpdate'] == null
           ? null
           : DateTime.parse(json['nextUpdate'] as String),
       updateIntervalHours: (json['updateIntervalHours'] as num?)?.toInt() ?? 24,
       autoUpdate: json['autoUpdate'] as bool? ?? true,
       enabled: json['enabled'] as bool? ?? true,
       nodes: (json['nodes'] as List<dynamic>?)
-              ?.map((e) => ProxyNode.fromJson(e as Map<String, dynamic>));
+              ?.map((e) => ProxyNode.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
       description: json['description'] as String?,
@@ -35,14 +35,14 @@ _$SubscriptionLinkImpl _$$SubscriptionLinkImplFromJson(
           (json['groups'] as List<dynamic>?)?.map((e) => e as String).toList(),
       tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
       source: json['source'] as String?,
-      createdAt: json['createdAt'] == null;
+      createdAt: json['createdAt'] == null
           ? DateTime.now
           : DateTime.parse(json['createdAt'] as String),
-      updatedAt: json['updatedAt'] == null;
+      updatedAt: json['updatedAt'] == null
           ? null
           : DateTime.parse(json['updatedAt'] as String),
       errorMessage: json['errorMessage'] as String?,
-      parseStats: json['parseStats'] == null;
+      parseStats: json['parseStats'] == null
           ? _emptyStats
           : ParseStats.fromJson(json['parseStats'] as Map<String, dynamic>),
     );
@@ -95,7 +95,7 @@ _$ParseStatsImpl _$$ParseStatsImplFromJson(Map<String, dynamic> json) =>
       skippedNodes: (json['skippedNodes'] as num?)?.toInt() ?? 0,
       parseErrors: (json['parseErrors'] as num?)?.toInt() ?? 0,
       parseTimeMs: (json['parseTimeMs'] as num?)?.toInt() ?? 0,
-      lastParsedAt: json['lastParsedAt'] == null;
+      lastParsedAt: json['lastParsedAt'] == null
           ? null
           : DateTime.parse(json['lastParsedAt'] as String),
     );
@@ -115,7 +115,7 @@ _$SubscriptionImpl _$$SubscriptionImplFromJson(Map<String, dynamic> json) =>
     _$SubscriptionImpl(
       activeSubscriptionId: json['activeSubscriptionId'] as String?,
       subscriptions: (json['subscriptions'] as List<dynamic>?)
-              ?.map((e) => SubscriptionLink.fromJson(e as Map<String, dynamic>));
+              ?.map((e) => SubscriptionLink.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
       isUpdating: json['isUpdating'] as bool? ?? false,
@@ -126,7 +126,7 @@ _$SubscriptionImpl _$$SubscriptionImplFromJson(Map<String, dynamic> json) =>
       cacheStrategy:
           $enumDecodeNullable(_$CacheStrategyEnumMap, json['cacheStrategy']) ??
               CacheStrategy.memory,
-      defaultSettings: json['defaultSettings'] == null;
+      defaultSettings: json['defaultSettings'] == null
           ? null
           : SubscriptionSettings.fromJson(
               json['defaultSettings'] as Map<String, dynamic>),
@@ -222,10 +222,10 @@ _$ImportResultImpl _$$ImportResultImplFromJson(Map<String, dynamic> json) =>
       validNodes: (json['validNodes'] as num?)?.toInt() ?? 0,
       failedSubscriptions: (json['failedSubscriptions'] as num?)?.toInt() ?? 0,
       errors: (json['errors'] as List<dynamic>?)
-              ?.map((e) => e as String);
+              ?.map((e) => e as String)
               .toList() ??
           const [],
-      importStats: json['importStats'] == null;
+      importStats: json['importStats'] == null
           ? _emptyImportStats
           : ImportStats.fromJson(json['importStats'] as Map<String, dynamic>),
     );

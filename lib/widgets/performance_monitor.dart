@@ -5,6 +5,85 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+/// 性能事件枚举
+enum PerformanceEvent {
+  frameTime('frameTime'),
+  memoryUsage('memoryUsage'),
+  cacheHit('cacheHit'),
+  cacheMiss('cacheMiss'),
+  cpuUsage('cpuUsage');
+
+  const PerformanceEvent(this.value);
+  final String value;
+}
+
+/// 内存事件类型枚举
+enum MemoryEventType {
+  allocation('allocation'),
+  deallocation('deallocation'),
+  garbageCollection('garbageCollection');
+
+  const MemoryEventType(this.value);
+  final String value;
+}
+
+/// 性能服务类
+class PerformanceService {
+  final List<PerformanceEvent> _events = [];
+  
+  void addEvent(PerformanceEvent event) {
+    _events.add(event);
+  }
+  
+  List<PerformanceEvent> get events => List.unmodifiable(_events);
+}
+
+/// 内存管理器类
+class MemoryManager {
+  int _allocatedBytes = 0;
+  
+  void allocate(int bytes) {
+    _allocatedBytes += bytes;
+  }
+  
+  void deallocate(int bytes) {
+    _allocatedBytes = (_allocatedBytes - bytes).clamp(0, _allocatedBytes);
+  }
+  
+  int get allocatedBytes => _allocatedBytes;
+}
+
+/// 缓存管理器类
+class CacheManager {
+  int _cacheHits = 0;
+  int _cacheMisses = 0;
+  
+  void recordHit() {
+    _cacheHits++;
+  }
+  
+  void recordMiss() {
+    _cacheMisses++;
+  }
+  
+  int get hitRate => _cacheHits + _cacheMisses > 0 
+    ? (_cacheHits / (_cacheHits + _cacheMisses) * 100).round() 
+    : 0;
+}
+
+/// 性能事件类型枚举
+enum PerformanceEventType {
+  startup('startup'),
+  navigation('navigation'),
+  rendering('rendering'),
+  network('network'),
+  storage('storage'),
+  userInteraction('userInteraction');
+
+  const PerformanceEventType(this.value);
+  final String value;
+}
+
 
 /// 性能监控Widget
 class PerformanceMonitor extends StatefulWidget {
@@ -357,7 +436,7 @@ class _PerformanceDetailsSheetState extends State<_PerformanceDetailsSheet>
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _buildMetricCard('FPS', '${widget.fps.toStringAsFixed(1)}', 
-            _getFPSColor(widget.fps), Icons.fps_select),
+            _getFPSColor(widget.fps), Icons.speed),
           const SizedBox(height: 12),
           _buildMetricCard('CPU使用率', '${widget.cpuUsage.toStringAsFixed(1)}%', 
             _getCPUColor(widget.cpuUsage), Icons.memory),
@@ -395,7 +474,7 @@ class _PerformanceDetailsSheetState extends State<_PerformanceDetailsSheet>
           const SizedBox(height: 12),
           _buildMetricCard('可用内存', 
             '${memoryStats.currentMemory.availableMB.toStringAsFixed(1)} MB', 
-            Colors.orange, Icons.available_storage),
+            Colors.orange, Icons.storage),
           const SizedBox(height: 12),
           _buildMetricCard('泄漏嫌疑', '${memoryStats.leakSuspects}', 
             memoryStats.leakSuspects > 0 ? Colors.red : Colors.green, 

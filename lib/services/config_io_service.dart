@@ -9,6 +9,8 @@ import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:logging/logging.dart';
 
+import '../config/index.dart';
+
 /// 配置操作结果
 class ConfigOperationResult {
   final bool success;

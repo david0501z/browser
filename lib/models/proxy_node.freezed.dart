@@ -140,7 +140,7 @@ mixin _$ProxyNode {
 
 /// @nodoc
 abstract class $ProxyNodeCopyWith<$Res> {
-  factory $ProxyNodeCopyWith(ProxyNode value, $Res Function(ProxyNode) then) =;
+  factory $ProxyNodeCopyWith(ProxyNode value, $Res Function(ProxyNode) then) =
       _$ProxyNodeCopyWithImpl<$Res, ProxyNode>;
   @useResult
   $Res call(
@@ -242,147 +242,147 @@ class _$ProxyNodeCopyWithImpl<$Res, $Val extends ProxyNode>
     Object? performance = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id;
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name;
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      type: null == type;
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as ProxyType,
-      version: null == version;
+      version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as ProxyVersion,
-      server: null == server;
+      server: null == server
           ? _value.server
           : server // ignore: cast_nullable_to_non_nullable
               as String,
-      port: null == port;
+      port: null == port
           ? _value.port
           : port // ignore: cast_nullable_to_non_nullable
               as int,
-      security: freezed == security;
+      security: freezed == security
           ? _value.security
           : security // ignore: cast_nullable_to_non_nullable
               as String?,
-      auth: freezed == auth;
+      auth: freezed == auth
           ? _value.auth
           : auth // ignore: cast_nullable_to_non_nullable
               as String?,
-      vmessConfig: freezed == vmessConfig;
+      vmessConfig: freezed == vmessConfig
           ? _value.vmessConfig
           : vmessConfig // ignore: cast_nullable_to_non_nullable
               as VMessConfig?,
-      vlessConfig: freezed == vlessConfig;
+      vlessConfig: freezed == vlessConfig
           ? _value.vlessConfig
           : vlessConfig // ignore: cast_nullable_to_non_nullable
               as VLessConfig?,
-      ssConfig: freezed == ssConfig;
+      ssConfig: freezed == ssConfig
           ? _value.ssConfig
           : ssConfig // ignore: cast_nullable_to_non_nullable
               as SSConfig?,
-      trojanConfig: freezed == trojanConfig;
+      trojanConfig: freezed == trojanConfig
           ? _value.trojanConfig
           : trojanConfig // ignore: cast_nullable_to_non_nullable
               as TrojanConfig?,
-      status: null == status;
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as NodeStatus,
-      latency: freezed == latency;
+      latency: freezed == latency
           ? _value.latency
           : latency // ignore: cast_nullable_to_non_nullable
               as int?,
-      downloadSpeed: freezed == downloadSpeed;
+      downloadSpeed: freezed == downloadSpeed
           ? _value.downloadSpeed
           : downloadSpeed // ignore: cast_nullable_to_non_nullable
               as double?,
-      uploadSpeed: freezed == uploadSpeed;
+      uploadSpeed: freezed == uploadSpeed
           ? _value.uploadSpeed
           : uploadSpeed // ignore: cast_nullable_to_non_nullable
               as double?,
-      lastTested: freezed == lastTested;
+      lastTested: freezed == lastTested
           ? _value.lastTested
           : lastTested // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      enabled: null == enabled;
+      enabled: null == enabled
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      autoSelect: null == autoSelect;
+      autoSelect: null == autoSelect
           ? _value.autoSelect
           : autoSelect // ignore: cast_nullable_to_non_nullable
               as bool,
-      favorite: null == favorite;
+      favorite: null == favorite
           ? _value.favorite
           : favorite // ignore: cast_nullable_to_non_nullable
               as bool,
-      tags: null == tags;
+      tags: null == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      remark: freezed == remark;
+      remark: freezed == remark
           ? _value.remark
           : remark // ignore: cast_nullable_to_non_nullable
               as String?,
-      country: freezed == country;
+      country: freezed == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
               as String?,
-      city: freezed == city;
+      city: freezed == city
           ? _value.city
           : city // ignore: cast_nullable_to_non_nullable
               as String?,
-      isp: freezed == isp;
+      isp: freezed == isp
           ? _value.isp
           : isp // ignore: cast_nullable_to_non_nullable
               as String?,
-      latencyHistory: null == latencyHistory;
+      latencyHistory: null == latencyHistory
           ? _value.latencyHistory
           : latencyHistory // ignore: cast_nullable_to_non_nullable
               as List<int>,
-      priority: null == priority;
+      priority: null == priority
           ? _value.priority
           : priority // ignore: cast_nullable_to_non_nullable
               as int,
-      errorMessage: freezed == errorMessage;
+      errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdAt: null == createdAt;
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      updatedAt: freezed == updatedAt;
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      subscriptionId: freezed == subscriptionId;
+      subscriptionId: freezed == subscriptionId
           ? _value.subscriptionId
           : subscriptionId // ignore: cast_nullable_to_non_nullable
               as String?,
-      group: freezed == group;
+      group: freezed == group
           ? _value.group
           : group // ignore: cast_nullable_to_non_nullable
               as String?,
-      rawConfig: freezed == rawConfig;
+      rawConfig: freezed == rawConfig
           ? _value.rawConfig
           : rawConfig // ignore: cast_nullable_to_non_nullable
               as String?,
-      iconUrl: freezed == iconUrl;
+      iconUrl: freezed == iconUrl
           ? _value.iconUrl
           : iconUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      geoInfo: freezed == geoInfo;
+      geoInfo: freezed == geoInfo
           ? _value.geoInfo
           : geoInfo // ignore: cast_nullable_to_non_nullable
               as GeoInfo?,
-      performance: freezed == performance;
+      performance: freezed == performance
           ? _value.performance
           : performance // ignore: cast_nullable_to_non_nullable
               as NodePerformance?,
@@ -478,7 +478,7 @@ class _$ProxyNodeCopyWithImpl<$Res, $Val extends ProxyNode>
 abstract class _$$ProxyNodeImplCopyWith<$Res>
     implements $ProxyNodeCopyWith<$Res> {
   factory _$$ProxyNodeImplCopyWith(
-          _$ProxyNodeImpl value, $Res Function(_$ProxyNodeImpl) then) =;
+          _$ProxyNodeImpl value, $Res Function(_$ProxyNodeImpl) then) =
       __$$ProxyNodeImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -585,147 +585,147 @@ class __$$ProxyNodeImplCopyWithImpl<$Res>
     Object? performance = freezed,
   }) {
     return _then(_$ProxyNodeImpl(
-      id: null == id;
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name;
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      type: null == type;
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as ProxyType,
-      version: null == version;
+      version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as ProxyVersion,
-      server: null == server;
+      server: null == server
           ? _value.server
           : server // ignore: cast_nullable_to_non_nullable
               as String,
-      port: null == port;
+      port: null == port
           ? _value.port
           : port // ignore: cast_nullable_to_non_nullable
               as int,
-      security: freezed == security;
+      security: freezed == security
           ? _value.security
           : security // ignore: cast_nullable_to_non_nullable
               as String?,
-      auth: freezed == auth;
+      auth: freezed == auth
           ? _value.auth
           : auth // ignore: cast_nullable_to_non_nullable
               as String?,
-      vmessConfig: freezed == vmessConfig;
+      vmessConfig: freezed == vmessConfig
           ? _value.vmessConfig
           : vmessConfig // ignore: cast_nullable_to_non_nullable
               as VMessConfig?,
-      vlessConfig: freezed == vlessConfig;
+      vlessConfig: freezed == vlessConfig
           ? _value.vlessConfig
           : vlessConfig // ignore: cast_nullable_to_non_nullable
               as VLessConfig?,
-      ssConfig: freezed == ssConfig;
+      ssConfig: freezed == ssConfig
           ? _value.ssConfig
           : ssConfig // ignore: cast_nullable_to_non_nullable
               as SSConfig?,
-      trojanConfig: freezed == trojanConfig;
+      trojanConfig: freezed == trojanConfig
           ? _value.trojanConfig
           : trojanConfig // ignore: cast_nullable_to_non_nullable
               as TrojanConfig?,
-      status: null == status;
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as NodeStatus,
-      latency: freezed == latency;
+      latency: freezed == latency
           ? _value.latency
           : latency // ignore: cast_nullable_to_non_nullable
               as int?,
-      downloadSpeed: freezed == downloadSpeed;
+      downloadSpeed: freezed == downloadSpeed
           ? _value.downloadSpeed
           : downloadSpeed // ignore: cast_nullable_to_non_nullable
               as double?,
-      uploadSpeed: freezed == uploadSpeed;
+      uploadSpeed: freezed == uploadSpeed
           ? _value.uploadSpeed
           : uploadSpeed // ignore: cast_nullable_to_non_nullable
               as double?,
-      lastTested: freezed == lastTested;
+      lastTested: freezed == lastTested
           ? _value.lastTested
           : lastTested // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      enabled: null == enabled;
+      enabled: null == enabled
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      autoSelect: null == autoSelect;
+      autoSelect: null == autoSelect
           ? _value.autoSelect
           : autoSelect // ignore: cast_nullable_to_non_nullable
               as bool,
-      favorite: null == favorite;
+      favorite: null == favorite
           ? _value.favorite
           : favorite // ignore: cast_nullable_to_non_nullable
               as bool,
-      tags: null == tags;
+      tags: null == tags
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      remark: freezed == remark;
+      remark: freezed == remark
           ? _value.remark
           : remark // ignore: cast_nullable_to_non_nullable
               as String?,
-      country: freezed == country;
+      country: freezed == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
               as String?,
-      city: freezed == city;
+      city: freezed == city
           ? _value.city
           : city // ignore: cast_nullable_to_non_nullable
               as String?,
-      isp: freezed == isp;
+      isp: freezed == isp
           ? _value.isp
           : isp // ignore: cast_nullable_to_non_nullable
               as String?,
-      latencyHistory: null == latencyHistory;
+      latencyHistory: null == latencyHistory
           ? _value._latencyHistory
           : latencyHistory // ignore: cast_nullable_to_non_nullable
               as List<int>,
-      priority: null == priority;
+      priority: null == priority
           ? _value.priority
           : priority // ignore: cast_nullable_to_non_nullable
               as int,
-      errorMessage: freezed == errorMessage;
+      errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdAt: null == createdAt;
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      updatedAt: freezed == updatedAt;
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      subscriptionId: freezed == subscriptionId;
+      subscriptionId: freezed == subscriptionId
           ? _value.subscriptionId
           : subscriptionId // ignore: cast_nullable_to_non_nullable
               as String?,
-      group: freezed == group;
+      group: freezed == group
           ? _value.group
           : group // ignore: cast_nullable_to_non_nullable
               as String?,
-      rawConfig: freezed == rawConfig;
+      rawConfig: freezed == rawConfig
           ? _value.rawConfig
           : rawConfig // ignore: cast_nullable_to_non_nullable
               as String?,
-      iconUrl: freezed == iconUrl;
+      iconUrl: freezed == iconUrl
           ? _value.iconUrl
           : iconUrl // ignore: cast_nullable_to_non_nullable
               as String?,
-      geoInfo: freezed == geoInfo;
+      geoInfo: freezed == geoInfo
           ? _value.geoInfo
           : geoInfo // ignore: cast_nullable_to_non_nullable
               as GeoInfo?,
-      performance: freezed == performance;
+      performance: freezed == performance
           ? _value.performance
           : performance // ignore: cast_nullable_to_non_nullable
               as NodePerformance?,
@@ -1014,7 +1014,7 @@ class _$ProxyNodeImpl implements _ProxyNode {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hashAll([;
+  int get hashCode => Object.hashAll([
         runtimeType,
         id,
         name,
@@ -1109,7 +1109,7 @@ abstract class _ProxyNode implements ProxyNode {
       final GeoInfo? geoInfo,
       final NodePerformance? performance}) = _$ProxyNodeImpl;
 
-  factory _ProxyNode.fromJson(Map<String, dynamic> json) =;
+  factory _ProxyNode.fromJson(Map<String, dynamic> json) =
       _$ProxyNodeImpl.fromJson;
 
   /// 节点唯一标识符
@@ -1328,7 +1328,7 @@ mixin _$VMessConfig {
 /// @nodoc
 abstract class $VMessConfigCopyWith<$Res> {
   factory $VMessConfigCopyWith(
-          VMessConfig value, $Res Function(VMessConfig) then) =;
+          VMessConfig value, $Res Function(VMessConfig) then) =
       _$VMessConfigCopyWithImpl<$Res, VMessConfig>;
   @useResult
   $Res call(
@@ -1386,63 +1386,63 @@ class _$VMessConfigCopyWithImpl<$Res, $Val extends VMessConfig>
     Object? grpcConfig = freezed,
   }) {
     return _then(_value.copyWith(
-      uuid: null == uuid;
+      uuid: null == uuid
           ? _value.uuid
           : uuid // ignore: cast_nullable_to_non_nullable
               as String,
-      encryption: null == encryption;
+      encryption: null == encryption
           ? _value.encryption
           : encryption // ignore: cast_nullable_to_non_nullable
               as String,
-      transport: null == transport;
+      transport: null == transport
           ? _value.transport
           : transport // ignore: cast_nullable_to_non_nullable
               as String,
-      streamSecurity: freezed == streamSecurity;
+      streamSecurity: freezed == streamSecurity
           ? _value.streamSecurity
           : streamSecurity // ignore: cast_nullable_to_non_nullable
               as String?,
-      path: freezed == path;
+      path: freezed == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String?,
-      host: freezed == host;
+      host: freezed == host
           ? _value.host
           : host // ignore: cast_nullable_to_non_nullable
               as String?,
-      tls: null == tls;
+      tls: null == tls
           ? _value.tls
           : tls // ignore: cast_nullable_to_non_nullable
               as bool,
-      tlsCert: freezed == tlsCert;
+      tlsCert: freezed == tlsCert
           ? _value.tlsCert
           : tlsCert // ignore: cast_nullable_to_non_nullable
               as String?,
-      tlsKey: freezed == tlsKey;
+      tlsKey: freezed == tlsKey
           ? _value.tlsKey
           : tlsKey // ignore: cast_nullable_to_non_nullable
               as String?,
-      sni: freezed == sni;
+      sni: freezed == sni
           ? _value.sni
           : sni // ignore: cast_nullable_to_non_nullable
               as String?,
-      verifyCertificate: null == verifyCertificate;
+      verifyCertificate: null == verifyCertificate
           ? _value.verifyCertificate
           : verifyCertificate // ignore: cast_nullable_to_non_nullable
               as bool,
-      wsConfig: freezed == wsConfig;
+      wsConfig: freezed == wsConfig
           ? _value.wsConfig
           : wsConfig // ignore: cast_nullable_to_non_nullable
               as WSConfig?,
-      http2Config: freezed == http2Config;
+      http2Config: freezed == http2Config
           ? _value.http2Config
           : http2Config // ignore: cast_nullable_to_non_nullable
               as HTTP2Config?,
-      tcpConfig: freezed == tcpConfig;
+      tcpConfig: freezed == tcpConfig
           ? _value.tcpConfig
           : tcpConfig // ignore: cast_nullable_to_non_nullable
               as TCPConfig?,
-      grpcConfig: freezed == grpcConfig;
+      grpcConfig: freezed == grpcConfig
           ? _value.grpcConfig
           : grpcConfig // ignore: cast_nullable_to_non_nullable
               as GRPCConfig?,
@@ -1510,7 +1510,7 @@ class _$VMessConfigCopyWithImpl<$Res, $Val extends VMessConfig>
 abstract class _$$VMessConfigImplCopyWith<$Res>
     implements $VMessConfigCopyWith<$Res> {
   factory _$$VMessConfigImplCopyWith(
-          _$VMessConfigImpl value, $Res Function(_$VMessConfigImpl) then) =;
+          _$VMessConfigImpl value, $Res Function(_$VMessConfigImpl) then) =
       __$$VMessConfigImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1571,63 +1571,63 @@ class __$$VMessConfigImplCopyWithImpl<$Res>
     Object? grpcConfig = freezed,
   }) {
     return _then(_$VMessConfigImpl(
-      uuid: null == uuid;
+      uuid: null == uuid
           ? _value.uuid
           : uuid // ignore: cast_nullable_to_non_nullable
               as String,
-      encryption: null == encryption;
+      encryption: null == encryption
           ? _value.encryption
           : encryption // ignore: cast_nullable_to_non_nullable
               as String,
-      transport: null == transport;
+      transport: null == transport
           ? _value.transport
           : transport // ignore: cast_nullable_to_non_nullable
               as String,
-      streamSecurity: freezed == streamSecurity;
+      streamSecurity: freezed == streamSecurity
           ? _value.streamSecurity
           : streamSecurity // ignore: cast_nullable_to_non_nullable
               as String?,
-      path: freezed == path;
+      path: freezed == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String?,
-      host: freezed == host;
+      host: freezed == host
           ? _value.host
           : host // ignore: cast_nullable_to_non_nullable
               as String?,
-      tls: null == tls;
+      tls: null == tls
           ? _value.tls
           : tls // ignore: cast_nullable_to_non_nullable
               as bool,
-      tlsCert: freezed == tlsCert;
+      tlsCert: freezed == tlsCert
           ? _value.tlsCert
           : tlsCert // ignore: cast_nullable_to_non_nullable
               as String?,
-      tlsKey: freezed == tlsKey;
+      tlsKey: freezed == tlsKey
           ? _value.tlsKey
           : tlsKey // ignore: cast_nullable_to_non_nullable
               as String?,
-      sni: freezed == sni;
+      sni: freezed == sni
           ? _value.sni
           : sni // ignore: cast_nullable_to_non_nullable
               as String?,
-      verifyCertificate: null == verifyCertificate;
+      verifyCertificate: null == verifyCertificate
           ? _value.verifyCertificate
           : verifyCertificate // ignore: cast_nullable_to_non_nullable
               as bool,
-      wsConfig: freezed == wsConfig;
+      wsConfig: freezed == wsConfig
           ? _value.wsConfig
           : wsConfig // ignore: cast_nullable_to_non_nullable
               as WSConfig?,
-      http2Config: freezed == http2Config;
+      http2Config: freezed == http2Config
           ? _value.http2Config
           : http2Config // ignore: cast_nullable_to_non_nullable
               as HTTP2Config?,
-      tcpConfig: freezed == tcpConfig;
+      tcpConfig: freezed == tcpConfig
           ? _value.tcpConfig
           : tcpConfig // ignore: cast_nullable_to_non_nullable
               as TCPConfig?,
-      grpcConfig: freezed == grpcConfig;
+      grpcConfig: freezed == grpcConfig
           ? _value.grpcConfig
           : grpcConfig // ignore: cast_nullable_to_non_nullable
               as GRPCConfig?,
@@ -1811,7 +1811,7 @@ abstract class _VMessConfig implements VMessConfig {
       final TCPConfig? tcpConfig,
       final GRPCConfig? grpcConfig}) = _$VMessConfigImpl;
 
-  factory _VMessConfig.fromJson(Map<String, dynamic> json) =;
+  factory _VMessConfig.fromJson(Map<String, dynamic> json) =
       _$VMessConfigImpl.fromJson;
 
   /// VMess 用户 ID
@@ -1937,7 +1937,7 @@ mixin _$VLessConfig {
 /// @nodoc
 abstract class $VLessConfigCopyWith<$Res> {
   factory $VLessConfigCopyWith(
-          VLessConfig value, $Res Function(VLessConfig) then) =;
+          VLessConfig value, $Res Function(VLessConfig) then) =
       _$VLessConfigCopyWithImpl<$Res, VLessConfig>;
   @useResult
   $Res call(
@@ -1986,51 +1986,51 @@ class _$VLessConfigCopyWithImpl<$Res, $Val extends VLessConfig>
     Object? wsConfig = freezed,
   }) {
     return _then(_value.copyWith(
-      uuid: null == uuid;
+      uuid: null == uuid
           ? _value.uuid
           : uuid // ignore: cast_nullable_to_non_nullable
               as String,
-      flow: null == flow;
+      flow: null == flow
           ? _value.flow
           : flow // ignore: cast_nullable_to_non_nullable
               as String,
-      transport: null == transport;
+      transport: null == transport
           ? _value.transport
           : transport // ignore: cast_nullable_to_non_nullable
               as String,
-      streamSecurity: freezed == streamSecurity;
+      streamSecurity: freezed == streamSecurity
           ? _value.streamSecurity
           : streamSecurity // ignore: cast_nullable_to_non_nullable
               as String?,
-      path: freezed == path;
+      path: freezed == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String?,
-      host: freezed == host;
+      host: freezed == host
           ? _value.host
           : host // ignore: cast_nullable_to_non_nullable
               as String?,
-      tls: null == tls;
+      tls: null == tls
           ? _value.tls
           : tls // ignore: cast_nullable_to_non_nullable
               as bool,
-      tlsType: null == tlsType;
+      tlsType: null == tlsType
           ? _value.tlsType
           : tlsType // ignore: cast_nullable_to_non_nullable
               as String,
-      tlsCert: freezed == tlsCert;
+      tlsCert: freezed == tlsCert
           ? _value.tlsCert
           : tlsCert // ignore: cast_nullable_to_non_nullable
               as String?,
-      tlsKey: freezed == tlsKey;
+      tlsKey: freezed == tlsKey
           ? _value.tlsKey
           : tlsKey // ignore: cast_nullable_to_non_nullable
               as String?,
-      sni: freezed == sni;
+      sni: freezed == sni
           ? _value.sni
           : sni // ignore: cast_nullable_to_non_nullable
               as String?,
-      wsConfig: freezed == wsConfig;
+      wsConfig: freezed == wsConfig
           ? _value.wsConfig
           : wsConfig // ignore: cast_nullable_to_non_nullable
               as WSConfig?,
@@ -2056,7 +2056,7 @@ class _$VLessConfigCopyWithImpl<$Res, $Val extends VLessConfig>
 abstract class _$$VLessConfigImplCopyWith<$Res>
     implements $VLessConfigCopyWith<$Res> {
   factory _$$VLessConfigImplCopyWith(
-          _$VLessConfigImpl value, $Res Function(_$VLessConfigImpl) then) =;
+          _$VLessConfigImpl value, $Res Function(_$VLessConfigImpl) then) =
       __$$VLessConfigImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -2105,51 +2105,51 @@ class __$$VLessConfigImplCopyWithImpl<$Res>
     Object? wsConfig = freezed,
   }) {
     return _then(_$VLessConfigImpl(
-      uuid: null == uuid;
+      uuid: null == uuid
           ? _value.uuid
           : uuid // ignore: cast_nullable_to_non_nullable
               as String,
-      flow: null == flow;
+      flow: null == flow
           ? _value.flow
           : flow // ignore: cast_nullable_to_non_nullable
               as String,
-      transport: null == transport;
+      transport: null == transport
           ? _value.transport
           : transport // ignore: cast_nullable_to_non_nullable
               as String,
-      streamSecurity: freezed == streamSecurity;
+      streamSecurity: freezed == streamSecurity
           ? _value.streamSecurity
           : streamSecurity // ignore: cast_nullable_to_non_nullable
               as String?,
-      path: freezed == path;
+      path: freezed == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String?,
-      host: freezed == host;
+      host: freezed == host
           ? _value.host
           : host // ignore: cast_nullable_to_non_nullable
               as String?,
-      tls: null == tls;
+      tls: null == tls
           ? _value.tls
           : tls // ignore: cast_nullable_to_non_nullable
               as bool,
-      tlsType: null == tlsType;
+      tlsType: null == tlsType
           ? _value.tlsType
           : tlsType // ignore: cast_nullable_to_non_nullable
               as String,
-      tlsCert: freezed == tlsCert;
+      tlsCert: freezed == tlsCert
           ? _value.tlsCert
           : tlsCert // ignore: cast_nullable_to_non_nullable
               as String?,
-      tlsKey: freezed == tlsKey;
+      tlsKey: freezed == tlsKey
           ? _value.tlsKey
           : tlsKey // ignore: cast_nullable_to_non_nullable
               as String?,
-      sni: freezed == sni;
+      sni: freezed == sni
           ? _value.sni
           : sni // ignore: cast_nullable_to_non_nullable
               as String?,
-      wsConfig: freezed == wsConfig;
+      wsConfig: freezed == wsConfig
           ? _value.wsConfig
           : wsConfig // ignore: cast_nullable_to_non_nullable
               as WSConfig?,
@@ -2292,7 +2292,7 @@ abstract class _VLessConfig implements VLessConfig {
       final String? sni,
       final WSConfig? wsConfig}) = _$VLessConfigImpl;
 
-  factory _VLessConfig.fromJson(Map<String, dynamic> json) =;
+  factory _VLessConfig.fromJson(Map<String, dynamic> json) =
       _$VLessConfigImpl.fromJson;
 
   /// VLESS 用户 ID
@@ -2381,7 +2381,7 @@ mixin _$SSConfig {
 
 /// @nodoc
 abstract class $SSConfigCopyWith<$Res> {
-  factory $SSConfigCopyWith(SSConfig value, $Res Function(SSConfig) then) =;
+  factory $SSConfigCopyWith(SSConfig value, $Res Function(SSConfig) then) =
       _$SSConfigCopyWithImpl<$Res, SSConfig>;
   @useResult
   $Res call(
@@ -2409,19 +2409,19 @@ class _$SSConfigCopyWithImpl<$Res, $Val extends SSConfig>
     Object? pluginOpts = freezed,
   }) {
     return _then(_value.copyWith(
-      password: null == password;
+      password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
-      method: null == method;
+      method: null == method
           ? _value.method
           : method // ignore: cast_nullable_to_non_nullable
               as String,
-      plugin: freezed == plugin;
+      plugin: freezed == plugin
           ? _value.plugin
           : plugin // ignore: cast_nullable_to_non_nullable
               as String?,
-      pluginOpts: freezed == pluginOpts;
+      pluginOpts: freezed == pluginOpts
           ? _value.pluginOpts
           : pluginOpts // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -2433,7 +2433,7 @@ class _$SSConfigCopyWithImpl<$Res, $Val extends SSConfig>
 abstract class _$$SSConfigImplCopyWith<$Res>
     implements $SSConfigCopyWith<$Res> {
   factory _$$SSConfigImplCopyWith(
-          _$SSConfigImpl value, $Res Function(_$SSConfigImpl) then) =;
+          _$SSConfigImpl value, $Res Function(_$SSConfigImpl) then) =
       __$$SSConfigImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -2460,19 +2460,19 @@ class __$$SSConfigImplCopyWithImpl<$Res>
     Object? pluginOpts = freezed,
   }) {
     return _then(_$SSConfigImpl(
-      password: null == password;
+      password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
-      method: null == method;
+      method: null == method
           ? _value.method
           : method // ignore: cast_nullable_to_non_nullable
               as String,
-      plugin: freezed == plugin;
+      plugin: freezed == plugin
           ? _value.plugin
           : plugin // ignore: cast_nullable_to_non_nullable
               as String?,
-      pluginOpts: freezed == pluginOpts;
+      pluginOpts: freezed == pluginOpts
           ? _value.pluginOpts
           : pluginOpts // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -2555,7 +2555,7 @@ abstract class _SSConfig implements SSConfig {
       final String? plugin,
       final String? pluginOpts}) = _$SSConfigImpl;
 
-  factory _SSConfig.fromJson(Map<String, dynamic> json) =;
+  factory _SSConfig.fromJson(Map<String, dynamic> json) =
       _$SSConfigImpl.fromJson;
 
   /// 密码
@@ -2610,7 +2610,7 @@ mixin _$TrojanConfig {
 /// @nodoc
 abstract class $TrojanConfigCopyWith<$Res> {
   factory $TrojanConfigCopyWith(
-          TrojanConfig value, $Res Function(TrojanConfig) then) =;
+          TrojanConfig value, $Res Function(TrojanConfig) then) =
       _$TrojanConfigCopyWithImpl<$Res, TrojanConfig>;
   @useResult
   $Res call({String password, TLSConfig? tlsConfig, WSConfig? wsConfig});
@@ -2639,15 +2639,15 @@ class _$TrojanConfigCopyWithImpl<$Res, $Val extends TrojanConfig>
     Object? wsConfig = freezed,
   }) {
     return _then(_value.copyWith(
-      password: null == password;
+      password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
-      tlsConfig: freezed == tlsConfig;
+      tlsConfig: freezed == tlsConfig
           ? _value.tlsConfig
           : tlsConfig // ignore: cast_nullable_to_non_nullable
               as TLSConfig?,
-      wsConfig: freezed == wsConfig;
+      wsConfig: freezed == wsConfig
           ? _value.wsConfig
           : wsConfig // ignore: cast_nullable_to_non_nullable
               as WSConfig?,
@@ -2687,7 +2687,7 @@ class _$TrojanConfigCopyWithImpl<$Res, $Val extends TrojanConfig>
 abstract class _$$TrojanConfigImplCopyWith<$Res>
     implements $TrojanConfigCopyWith<$Res> {
   factory _$$TrojanConfigImplCopyWith(
-          _$TrojanConfigImpl value, $Res Function(_$TrojanConfigImpl) then) =;
+          _$TrojanConfigImpl value, $Res Function(_$TrojanConfigImpl) then) =
       __$$TrojanConfigImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -2717,15 +2717,15 @@ class __$$TrojanConfigImplCopyWithImpl<$Res>
     Object? wsConfig = freezed,
   }) {
     return _then(_$TrojanConfigImpl(
-      password: null == password;
+      password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
-      tlsConfig: freezed == tlsConfig;
+      tlsConfig: freezed == tlsConfig
           ? _value.tlsConfig
           : tlsConfig // ignore: cast_nullable_to_non_nullable
               as TLSConfig?,
-      wsConfig: freezed == wsConfig;
+      wsConfig: freezed == wsConfig
           ? _value.wsConfig
           : wsConfig // ignore: cast_nullable_to_non_nullable
               as WSConfig?,
@@ -2798,7 +2798,7 @@ abstract class _TrojanConfig implements TrojanConfig {
       final TLSConfig? tlsConfig,
       final WSConfig? wsConfig}) = _$TrojanConfigImpl;
 
-  factory _TrojanConfig.fromJson(Map<String, dynamic> json) =;
+  factory _TrojanConfig.fromJson(Map<String, dynamic> json) =
       _$TrojanConfigImpl.fromJson;
 
   /// Trojan 密码
@@ -2848,7 +2848,7 @@ mixin _$WSConfig {
 
 /// @nodoc
 abstract class $WSConfigCopyWith<$Res> {
-  factory $WSConfigCopyWith(WSConfig value, $Res Function(WSConfig) then) =;
+  factory $WSConfigCopyWith(WSConfig value, $Res Function(WSConfig) then) =
       _$WSConfigCopyWithImpl<$Res, WSConfig>;
   @useResult
   $Res call({String path, String? headers, bool earlyDataHeaderName});
@@ -2874,15 +2874,15 @@ class _$WSConfigCopyWithImpl<$Res, $Val extends WSConfig>
     Object? earlyDataHeaderName = null,
   }) {
     return _then(_value.copyWith(
-      path: null == path;
+      path: null == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String,
-      headers: freezed == headers;
+      headers: freezed == headers
           ? _value.headers
           : headers // ignore: cast_nullable_to_non_nullable
               as String?,
-      earlyDataHeaderName: null == earlyDataHeaderName;
+      earlyDataHeaderName: null == earlyDataHeaderName
           ? _value.earlyDataHeaderName
           : earlyDataHeaderName // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -2894,7 +2894,7 @@ class _$WSConfigCopyWithImpl<$Res, $Val extends WSConfig>
 abstract class _$$WSConfigImplCopyWith<$Res>
     implements $WSConfigCopyWith<$Res> {
   factory _$$WSConfigImplCopyWith(
-          _$WSConfigImpl value, $Res Function(_$WSConfigImpl) then) =;
+          _$WSConfigImpl value, $Res Function(_$WSConfigImpl) then) =
       __$$WSConfigImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -2919,15 +2919,15 @@ class __$$WSConfigImplCopyWithImpl<$Res>
     Object? earlyDataHeaderName = null,
   }) {
     return _then(_$WSConfigImpl(
-      path: null == path;
+      path: null == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String,
-      headers: freezed == headers;
+      headers: freezed == headers
           ? _value.headers
           : headers // ignore: cast_nullable_to_non_nullable
               as String?,
-      earlyDataHeaderName: null == earlyDataHeaderName;
+      earlyDataHeaderName: null == earlyDataHeaderName
           ? _value.earlyDataHeaderName
           : earlyDataHeaderName // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -3000,7 +3000,7 @@ abstract class _WSConfig implements WSConfig {
       final String? headers,
       final bool earlyDataHeaderName}) = _$WSConfigImpl;
 
-  factory _WSConfig.fromJson(Map<String, dynamic> json) =;
+  factory _WSConfig.fromJson(Map<String, dynamic> json) =
       _$WSConfigImpl.fromJson;
 
   /// WebSocket 路径
@@ -3051,7 +3051,7 @@ mixin _$HTTP2Config {
 /// @nodoc
 abstract class $HTTP2ConfigCopyWith<$Res> {
   factory $HTTP2ConfigCopyWith(
-          HTTP2Config value, $Res Function(HTTP2Config) then) =;
+          HTTP2Config value, $Res Function(HTTP2Config) then) =
       _$HTTP2ConfigCopyWithImpl<$Res, HTTP2Config>;
   @useResult
   $Res call({String path, String sni, String? host});
@@ -3077,15 +3077,15 @@ class _$HTTP2ConfigCopyWithImpl<$Res, $Val extends HTTP2Config>
     Object? host = freezed,
   }) {
     return _then(_value.copyWith(
-      path: null == path;
+      path: null == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String,
-      sni: null == sni;
+      sni: null == sni
           ? _value.sni
           : sni // ignore: cast_nullable_to_non_nullable
               as String,
-      host: freezed == host;
+      host: freezed == host
           ? _value.host
           : host // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -3097,7 +3097,7 @@ class _$HTTP2ConfigCopyWithImpl<$Res, $Val extends HTTP2Config>
 abstract class _$$HTTP2ConfigImplCopyWith<$Res>
     implements $HTTP2ConfigCopyWith<$Res> {
   factory _$$HTTP2ConfigImplCopyWith(
-          _$HTTP2ConfigImpl value, $Res Function(_$HTTP2ConfigImpl) then) =;
+          _$HTTP2ConfigImpl value, $Res Function(_$HTTP2ConfigImpl) then) =
       __$$HTTP2ConfigImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -3122,15 +3122,15 @@ class __$$HTTP2ConfigImplCopyWithImpl<$Res>
     Object? host = freezed,
   }) {
     return _then(_$HTTP2ConfigImpl(
-      path: null == path;
+      path: null == path
           ? _value.path
           : path // ignore: cast_nullable_to_non_nullable
               as String,
-      sni: null == sni;
+      sni: null == sni
           ? _value.sni
           : sni // ignore: cast_nullable_to_non_nullable
               as String,
-      host: freezed == host;
+      host: freezed == host
           ? _value.host
           : host // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -3199,7 +3199,7 @@ abstract class _HTTP2Config implements HTTP2Config {
       required final String sni,
       final String? host}) = _$HTTP2ConfigImpl;
 
-  factory _HTTP2Config.fromJson(Map<String, dynamic> json) =;
+  factory _HTTP2Config.fromJson(Map<String, dynamic> json) =
       _$HTTP2ConfigImpl.fromJson;
 
   /// HTTP/2 路径
@@ -3249,7 +3249,7 @@ mixin _$TCPConfig {
 
 /// @nodoc
 abstract class $TCPConfigCopyWith<$Res> {
-  factory $TCPConfigCopyWith(TCPConfig value, $Res Function(TCPConfig) then) =;
+  factory $TCPConfigCopyWith(TCPConfig value, $Res Function(TCPConfig) then) =
       _$TCPConfigCopyWithImpl<$Res, TCPConfig>;
   @useResult
   $Res call({String acceptQueryProtocol, String? headerPath, int? headerPorts});
@@ -3275,15 +3275,15 @@ class _$TCPConfigCopyWithImpl<$Res, $Val extends TCPConfig>
     Object? headerPorts = freezed,
   }) {
     return _then(_value.copyWith(
-      acceptQueryProtocol: null == acceptQueryProtocol;
+      acceptQueryProtocol: null == acceptQueryProtocol
           ? _value.acceptQueryProtocol
           : acceptQueryProtocol // ignore: cast_nullable_to_non_nullable
               as String,
-      headerPath: freezed == headerPath;
+      headerPath: freezed == headerPath
           ? _value.headerPath
           : headerPath // ignore: cast_nullable_to_non_nullable
               as String?,
-      headerPorts: freezed == headerPorts;
+      headerPorts: freezed == headerPorts
           ? _value.headerPorts
           : headerPorts // ignore: cast_nullable_to_non_nullable
               as int?,
@@ -3295,7 +3295,7 @@ class _$TCPConfigCopyWithImpl<$Res, $Val extends TCPConfig>
 abstract class _$$TCPConfigImplCopyWith<$Res>
     implements $TCPConfigCopyWith<$Res> {
   factory _$$TCPConfigImplCopyWith(
-          _$TCPConfigImpl value, $Res Function(_$TCPConfigImpl) then) =;
+          _$TCPConfigImpl value, $Res Function(_$TCPConfigImpl) then) =
       __$$TCPConfigImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -3320,15 +3320,15 @@ class __$$TCPConfigImplCopyWithImpl<$Res>
     Object? headerPorts = freezed,
   }) {
     return _then(_$TCPConfigImpl(
-      acceptQueryProtocol: null == acceptQueryProtocol;
+      acceptQueryProtocol: null == acceptQueryProtocol
           ? _value.acceptQueryProtocol
           : acceptQueryProtocol // ignore: cast_nullable_to_non_nullable
               as String,
-      headerPath: freezed == headerPath;
+      headerPath: freezed == headerPath
           ? _value.headerPath
           : headerPath // ignore: cast_nullable_to_non_nullable
               as String?,
-      headerPorts: freezed == headerPorts;
+      headerPorts: freezed == headerPorts
           ? _value.headerPorts
           : headerPorts // ignore: cast_nullable_to_non_nullable
               as int?,
@@ -3403,7 +3403,7 @@ abstract class _TCPConfig implements TCPConfig {
       final String? headerPath,
       final int? headerPorts}) = _$TCPConfigImpl;
 
-  factory _TCPConfig.fromJson(Map<String, dynamic> json) =;
+  factory _TCPConfig.fromJson(Map<String, dynamic> json) =
       _$TCPConfigImpl.fromJson;
 
   /// TCP 伪装类型
@@ -3451,7 +3451,7 @@ mixin _$GRPCConfig {
 /// @nodoc
 abstract class $GRPCConfigCopyWith<$Res> {
   factory $GRPCConfigCopyWith(
-          GRPCConfig value, $Res Function(GRPCConfig) then) =;
+          GRPCConfig value, $Res Function(GRPCConfig) then) =
       _$GRPCConfigCopyWithImpl<$Res, GRPCConfig>;
   @useResult
   $Res call({String serviceName, String mode});
@@ -3476,11 +3476,11 @@ class _$GRPCConfigCopyWithImpl<$Res, $Val extends GRPCConfig>
     Object? mode = null,
   }) {
     return _then(_value.copyWith(
-      serviceName: null == serviceName;
+      serviceName: null == serviceName
           ? _value.serviceName
           : serviceName // ignore: cast_nullable_to_non_nullable
               as String,
-      mode: null == mode;
+      mode: null == mode
           ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as String,
@@ -3492,7 +3492,7 @@ class _$GRPCConfigCopyWithImpl<$Res, $Val extends GRPCConfig>
 abstract class _$$GRPCConfigImplCopyWith<$Res>
     implements $GRPCConfigCopyWith<$Res> {
   factory _$$GRPCConfigImplCopyWith(
-          _$GRPCConfigImpl value, $Res Function(_$GRPCConfigImpl) then) =;
+          _$GRPCConfigImpl value, $Res Function(_$GRPCConfigImpl) then) =
       __$$GRPCConfigImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -3516,11 +3516,11 @@ class __$$GRPCConfigImplCopyWithImpl<$Res>
     Object? mode = null,
   }) {
     return _then(_$GRPCConfigImpl(
-      serviceName: null == serviceName;
+      serviceName: null == serviceName
           ? _value.serviceName
           : serviceName // ignore: cast_nullable_to_non_nullable
               as String,
-      mode: null == mode;
+      mode: null == mode
           ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as String,
@@ -3585,7 +3585,7 @@ abstract class _GRPCConfig implements GRPCConfig {
       {required final String serviceName,
       final String mode}) = _$GRPCConfigImpl;
 
-  factory _GRPCConfig.fromJson(Map<String, dynamic> json) =;
+  factory _GRPCConfig.fromJson(Map<String, dynamic> json) =
       _$GRPCConfigImpl.fromJson;
 
   /// gRPC 服务名称
@@ -3634,7 +3634,7 @@ mixin _$TLSConfig {
 
 /// @nodoc
 abstract class $TLSConfigCopyWith<$Res> {
-  factory $TLSConfigCopyWith(TLSConfig value, $Res Function(TLSConfig) then) =;
+  factory $TLSConfigCopyWith(TLSConfig value, $Res Function(TLSConfig) then) =
       _$TLSConfigCopyWithImpl<$Res, TLSConfig>;
   @useResult
   $Res call({String sni, List<String> alpn, String? certPath, String? keyPath});
@@ -3661,19 +3661,19 @@ class _$TLSConfigCopyWithImpl<$Res, $Val extends TLSConfig>
     Object? keyPath = freezed,
   }) {
     return _then(_value.copyWith(
-      sni: null == sni;
+      sni: null == sni
           ? _value.sni
           : sni // ignore: cast_nullable_to_non_nullable
               as String,
-      alpn: null == alpn;
+      alpn: null == alpn
           ? _value.alpn
           : alpn // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      certPath: freezed == certPath;
+      certPath: freezed == certPath
           ? _value.certPath
           : certPath // ignore: cast_nullable_to_non_nullable
               as String?,
-      keyPath: freezed == keyPath;
+      keyPath: freezed == keyPath
           ? _value.keyPath
           : keyPath // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -3685,7 +3685,7 @@ class _$TLSConfigCopyWithImpl<$Res, $Val extends TLSConfig>
 abstract class _$$TLSConfigImplCopyWith<$Res>
     implements $TLSConfigCopyWith<$Res> {
   factory _$$TLSConfigImplCopyWith(
-          _$TLSConfigImpl value, $Res Function(_$TLSConfigImpl) then) =;
+          _$TLSConfigImpl value, $Res Function(_$TLSConfigImpl) then) =
       __$$TLSConfigImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -3711,19 +3711,19 @@ class __$$TLSConfigImplCopyWithImpl<$Res>
     Object? keyPath = freezed,
   }) {
     return _then(_$TLSConfigImpl(
-      sni: null == sni;
+      sni: null == sni
           ? _value.sni
           : sni // ignore: cast_nullable_to_non_nullable
               as String,
-      alpn: null == alpn;
+      alpn: null == alpn
           ? _value._alpn
           : alpn // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      certPath: freezed == certPath;
+      certPath: freezed == certPath
           ? _value.certPath
           : certPath // ignore: cast_nullable_to_non_nullable
               as String?,
-      keyPath: freezed == keyPath;
+      keyPath: freezed == keyPath
           ? _value.keyPath
           : keyPath // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -3813,7 +3813,7 @@ abstract class _TLSConfig implements TLSConfig {
       final String? certPath,
       final String? keyPath}) = _$TLSConfigImpl;
 
-  factory _TLSConfig.fromJson(Map<String, dynamic> json) =;
+  factory _TLSConfig.fromJson(Map<String, dynamic> json) =
       _$TLSConfigImpl.fromJson;
 
   /// SNI 域名
@@ -3884,7 +3884,7 @@ mixin _$GeoInfo {
 
 /// @nodoc
 abstract class $GeoInfoCopyWith<$Res> {
-  factory $GeoInfoCopyWith(GeoInfo value, $Res Function(GeoInfo) then) =;
+  factory $GeoInfoCopyWith(GeoInfo value, $Res Function(GeoInfo) then) =
       _$GeoInfoCopyWithImpl<$Res, GeoInfo>;
   @useResult
   $Res call(
@@ -3925,39 +3925,39 @@ class _$GeoInfoCopyWithImpl<$Res, $Val extends GeoInfo>
     Object? longitude = freezed,
   }) {
     return _then(_value.copyWith(
-      countryCode: freezed == countryCode;
+      countryCode: freezed == countryCode
           ? _value.countryCode
           : countryCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      country: freezed == country;
+      country: freezed == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
               as String?,
-      region: freezed == region;
+      region: freezed == region
           ? _value.region
           : region // ignore: cast_nullable_to_non_nullable
               as String?,
-      city: freezed == city;
+      city: freezed == city
           ? _value.city
           : city // ignore: cast_nullable_to_non_nullable
               as String?,
-      timezone: freezed == timezone;
+      timezone: freezed == timezone
           ? _value.timezone
           : timezone // ignore: cast_nullable_to_non_nullable
               as String?,
-      isp: freezed == isp;
+      isp: freezed == isp
           ? _value.isp
           : isp // ignore: cast_nullable_to_non_nullable
               as String?,
-      asn: freezed == asn;
+      asn: freezed == asn
           ? _value.asn
           : asn // ignore: cast_nullable_to_non_nullable
               as String?,
-      latitude: freezed == latitude;
+      latitude: freezed == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double?,
-      longitude: freezed == longitude;
+      longitude: freezed == longitude
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double?,
@@ -3968,7 +3968,7 @@ class _$GeoInfoCopyWithImpl<$Res, $Val extends GeoInfo>
 /// @nodoc
 abstract class _$$GeoInfoImplCopyWith<$Res> implements $GeoInfoCopyWith<$Res> {
   factory _$$GeoInfoImplCopyWith(
-          _$GeoInfoImpl value, $Res Function(_$GeoInfoImpl) then) =;
+          _$GeoInfoImpl value, $Res Function(_$GeoInfoImpl) then) =
       __$$GeoInfoImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -4008,39 +4008,39 @@ class __$$GeoInfoImplCopyWithImpl<$Res>
     Object? longitude = freezed,
   }) {
     return _then(_$GeoInfoImpl(
-      countryCode: freezed == countryCode;
+      countryCode: freezed == countryCode
           ? _value.countryCode
           : countryCode // ignore: cast_nullable_to_non_nullable
               as String?,
-      country: freezed == country;
+      country: freezed == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
               as String?,
-      region: freezed == region;
+      region: freezed == region
           ? _value.region
           : region // ignore: cast_nullable_to_non_nullable
               as String?,
-      city: freezed == city;
+      city: freezed == city
           ? _value.city
           : city // ignore: cast_nullable_to_non_nullable
               as String?,
-      timezone: freezed == timezone;
+      timezone: freezed == timezone
           ? _value.timezone
           : timezone // ignore: cast_nullable_to_non_nullable
               as String?,
-      isp: freezed == isp;
+      isp: freezed == isp
           ? _value.isp
           : isp // ignore: cast_nullable_to_non_nullable
               as String?,
-      asn: freezed == asn;
+      asn: freezed == asn
           ? _value.asn
           : asn // ignore: cast_nullable_to_non_nullable
               as String?,
-      latitude: freezed == latitude;
+      latitude: freezed == latitude
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double?,
-      longitude: freezed == longitude;
+      longitude: freezed == longitude
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double?,
@@ -4251,7 +4251,7 @@ mixin _$NodePerformance {
 /// @nodoc
 abstract class $NodePerformanceCopyWith<$Res> {
   factory $NodePerformanceCopyWith(
-          NodePerformance value, $Res Function(NodePerformance) then) =;
+          NodePerformance value, $Res Function(NodePerformance) then) =
       _$NodePerformanceCopyWithImpl<$Res, NodePerformance>;
   @useResult
   $Res call(
@@ -4292,39 +4292,39 @@ class _$NodePerformanceCopyWithImpl<$Res, $Val extends NodePerformance>
     Object? stabilityScore = null,
   }) {
     return _then(_value.copyWith(
-      avgLatency: freezed == avgLatency;
+      avgLatency: freezed == avgLatency
           ? _value.avgLatency
           : avgLatency // ignore: cast_nullable_to_non_nullable
               as int?,
-      minLatency: freezed == minLatency;
+      minLatency: freezed == minLatency
           ? _value.minLatency
           : minLatency // ignore: cast_nullable_to_non_nullable
               as int?,
-      maxLatency: freezed == maxLatency;
+      maxLatency: freezed == maxLatency
           ? _value.maxLatency
           : maxLatency // ignore: cast_nullable_to_non_nullable
               as int?,
-      successRate: null == successRate;
+      successRate: null == successRate
           ? _value.successRate
           : successRate // ignore: cast_nullable_to_non_nullable
               as double,
-      testCount: null == testCount;
+      testCount: null == testCount
           ? _value.testCount
           : testCount // ignore: cast_nullable_to_non_nullable
               as int,
-      lastSuccessTime: freezed == lastSuccessTime;
+      lastSuccessTime: freezed == lastSuccessTime
           ? _value.lastSuccessTime
           : lastSuccessTime // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      lastFailTime: freezed == lastFailTime;
+      lastFailTime: freezed == lastFailTime
           ? _value.lastFailTime
           : lastFailTime // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      consecutiveFailures: null == consecutiveFailures;
+      consecutiveFailures: null == consecutiveFailures
           ? _value.consecutiveFailures
           : consecutiveFailures // ignore: cast_nullable_to_non_nullable
               as int,
-      stabilityScore: null == stabilityScore;
+      stabilityScore: null == stabilityScore
           ? _value.stabilityScore
           : stabilityScore // ignore: cast_nullable_to_non_nullable
               as int,
@@ -4336,7 +4336,7 @@ class _$NodePerformanceCopyWithImpl<$Res, $Val extends NodePerformance>
 abstract class _$$NodePerformanceImplCopyWith<$Res>
     implements $NodePerformanceCopyWith<$Res> {
   factory _$$NodePerformanceImplCopyWith(_$NodePerformanceImpl value,
-          $Res Function(_$NodePerformanceImpl) then) =;
+          $Res Function(_$NodePerformanceImpl) then) =
       __$$NodePerformanceImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -4376,39 +4376,39 @@ class __$$NodePerformanceImplCopyWithImpl<$Res>
     Object? stabilityScore = null,
   }) {
     return _then(_$NodePerformanceImpl(
-      avgLatency: freezed == avgLatency;
+      avgLatency: freezed == avgLatency
           ? _value.avgLatency
           : avgLatency // ignore: cast_nullable_to_non_nullable
               as int?,
-      minLatency: freezed == minLatency;
+      minLatency: freezed == minLatency
           ? _value.minLatency
           : minLatency // ignore: cast_nullable_to_non_nullable
               as int?,
-      maxLatency: freezed == maxLatency;
+      maxLatency: freezed == maxLatency
           ? _value.maxLatency
           : maxLatency // ignore: cast_nullable_to_non_nullable
               as int?,
-      successRate: null == successRate;
+      successRate: null == successRate
           ? _value.successRate
           : successRate // ignore: cast_nullable_to_non_nullable
               as double,
-      testCount: null == testCount;
+      testCount: null == testCount
           ? _value.testCount
           : testCount // ignore: cast_nullable_to_non_nullable
               as int,
-      lastSuccessTime: freezed == lastSuccessTime;
+      lastSuccessTime: freezed == lastSuccessTime
           ? _value.lastSuccessTime
           : lastSuccessTime // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      lastFailTime: freezed == lastFailTime;
+      lastFailTime: freezed == lastFailTime
           ? _value.lastFailTime
           : lastFailTime // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      consecutiveFailures: null == consecutiveFailures;
+      consecutiveFailures: null == consecutiveFailures
           ? _value.consecutiveFailures
           : consecutiveFailures // ignore: cast_nullable_to_non_nullable
               as int,
-      stabilityScore: null == stabilityScore;
+      stabilityScore: null == stabilityScore
           ? _value.stabilityScore
           : stabilityScore // ignore: cast_nullable_to_non_nullable
               as int,
@@ -4546,7 +4546,7 @@ abstract class _NodePerformance implements NodePerformance {
       final int consecutiveFailures,
       final int stabilityScore}) = _$NodePerformanceImpl;
 
-  factory _NodePerformance.fromJson(Map<String, dynamic> json) =;
+  factory _NodePerformance.fromJson(Map<String, dynamic> json) =
       _$NodePerformanceImpl.fromJson;
 
   /// 平均延迟
@@ -4645,7 +4645,7 @@ mixin _$NodeFilter {
 /// @nodoc
 abstract class $NodeFilterCopyWith<$Res> {
   factory $NodeFilterCopyWith(
-          NodeFilter value, $Res Function(NodeFilter) then) =;
+          NodeFilter value, $Res Function(NodeFilter) then) =
       _$NodeFilterCopyWithImpl<$Res, NodeFilter>;
   @useResult
   $Res call(
@@ -4690,47 +4690,47 @@ class _$NodeFilterCopyWithImpl<$Res, $Val extends NodeFilter>
     Object? customFilter = freezed,
   }) {
     return _then(_value.copyWith(
-      types: freezed == types;
+      types: freezed == types
           ? _value.types
           : types // ignore: cast_nullable_to_non_nullable
               as List<ProxyType>?,
-      statuses: freezed == statuses;
+      statuses: freezed == statuses
           ? _value.statuses
           : statuses // ignore: cast_nullable_to_non_nullable
               as List<NodeStatus>?,
-      countries: freezed == countries;
+      countries: freezed == countries
           ? _value.countries
           : countries // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      isps: freezed == isps;
+      isps: freezed == isps
           ? _value.isps
           : isps // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      tags: freezed == tags;
+      tags: freezed == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      isFavorite: freezed == isFavorite;
+      isFavorite: freezed == isFavorite
           ? _value.isFavorite
           : isFavorite // ignore: cast_nullable_to_non_nullable
               as bool?,
-      isEnabled: freezed == isEnabled;
+      isEnabled: freezed == isEnabled
           ? _value.isEnabled
           : isEnabled // ignore: cast_nullable_to_non_nullable
               as bool?,
-      maxLatency: freezed == maxLatency;
+      maxLatency: freezed == maxLatency
           ? _value.maxLatency
           : maxLatency // ignore: cast_nullable_to_non_nullable
               as int?,
-      minSuccessRate: freezed == minSuccessRate;
+      minSuccessRate: freezed == minSuccessRate
           ? _value.minSuccessRate
           : minSuccessRate // ignore: cast_nullable_to_non_nullable
               as double?,
-      keyword: freezed == keyword;
+      keyword: freezed == keyword
           ? _value.keyword
           : keyword // ignore: cast_nullable_to_non_nullable
               as String?,
-      customFilter: freezed == customFilter;
+      customFilter: freezed == customFilter
           ? _value.customFilter
           : customFilter // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -4742,7 +4742,7 @@ class _$NodeFilterCopyWithImpl<$Res, $Val extends NodeFilter>
 abstract class _$$NodeFilterImplCopyWith<$Res>
     implements $NodeFilterCopyWith<$Res> {
   factory _$$NodeFilterImplCopyWith(
-          _$NodeFilterImpl value, $Res Function(_$NodeFilterImpl) then) =;
+          _$NodeFilterImpl value, $Res Function(_$NodeFilterImpl) then) =
       __$$NodeFilterImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -4786,47 +4786,47 @@ class __$$NodeFilterImplCopyWithImpl<$Res>
     Object? customFilter = freezed,
   }) {
     return _then(_$NodeFilterImpl(
-      types: freezed == types;
+      types: freezed == types
           ? _value._types
           : types // ignore: cast_nullable_to_non_nullable
               as List<ProxyType>?,
-      statuses: freezed == statuses;
+      statuses: freezed == statuses
           ? _value._statuses
           : statuses // ignore: cast_nullable_to_non_nullable
               as List<NodeStatus>?,
-      countries: freezed == countries;
+      countries: freezed == countries
           ? _value._countries
           : countries // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      isps: freezed == isps;
+      isps: freezed == isps
           ? _value._isps
           : isps // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      tags: freezed == tags;
+      tags: freezed == tags
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      isFavorite: freezed == isFavorite;
+      isFavorite: freezed == isFavorite
           ? _value.isFavorite
           : isFavorite // ignore: cast_nullable_to_non_nullable
               as bool?,
-      isEnabled: freezed == isEnabled;
+      isEnabled: freezed == isEnabled
           ? _value.isEnabled
           : isEnabled // ignore: cast_nullable_to_non_nullable
               as bool?,
-      maxLatency: freezed == maxLatency;
+      maxLatency: freezed == maxLatency
           ? _value.maxLatency
           : maxLatency // ignore: cast_nullable_to_non_nullable
               as int?,
-      minSuccessRate: freezed == minSuccessRate;
+      minSuccessRate: freezed == minSuccessRate
           ? _value.minSuccessRate
           : minSuccessRate // ignore: cast_nullable_to_non_nullable
               as double?,
-      keyword: freezed == keyword;
+      keyword: freezed == keyword
           ? _value.keyword
           : keyword // ignore: cast_nullable_to_non_nullable
               as String?,
-      customFilter: freezed == customFilter;
+      customFilter: freezed == customFilter
           ? _value.customFilter
           : customFilter // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -5022,7 +5022,7 @@ abstract class _NodeFilter implements NodeFilter {
       final String? keyword,
       final String? customFilter}) = _$NodeFilterImpl;
 
-  factory _NodeFilter.fromJson(Map<String, dynamic> json) =;
+  factory _NodeFilter.fromJson(Map<String, dynamic> json) =
       _$NodeFilterImpl.fromJson;
 
   /// 节点类型过滤
@@ -5101,7 +5101,7 @@ mixin _$NodeSort {
 
 /// @nodoc
 abstract class $NodeSortCopyWith<$Res> {
-  factory $NodeSortCopyWith(NodeSort value, $Res Function(NodeSort) then) =;
+  factory $NodeSortCopyWith(NodeSort value, $Res Function(NodeSort) then) =
       _$NodeSortCopyWithImpl<$Res, NodeSort>;
   @useResult
   $Res call({NodeSortField field, SortOrder order});
@@ -5126,11 +5126,11 @@ class _$NodeSortCopyWithImpl<$Res, $Val extends NodeSort>
     Object? order = null,
   }) {
     return _then(_value.copyWith(
-      field: null == field;
+      field: null == field
           ? _value.field
           : field // ignore: cast_nullable_to_non_nullable
               as NodeSortField,
-      order: null == order;
+      order: null == order
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as SortOrder,
@@ -5142,7 +5142,7 @@ class _$NodeSortCopyWithImpl<$Res, $Val extends NodeSort>
 abstract class _$$NodeSortImplCopyWith<$Res>
     implements $NodeSortCopyWith<$Res> {
   factory _$$NodeSortImplCopyWith(
-          _$NodeSortImpl value, $Res Function(_$NodeSortImpl) then) =;
+          _$NodeSortImpl value, $Res Function(_$NodeSortImpl) then) =
       __$$NodeSortImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -5166,11 +5166,11 @@ class __$$NodeSortImplCopyWithImpl<$Res>
     Object? order = null,
   }) {
     return _then(_$NodeSortImpl(
-      field: null == field;
+      field: null == field
           ? _value.field
           : field // ignore: cast_nullable_to_non_nullable
               as NodeSortField,
-      order: null == order;
+      order: null == order
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as SortOrder,
@@ -5232,10 +5232,10 @@ class _$NodeSortImpl implements _NodeSort {
 }
 
 abstract class _NodeSort implements NodeSort {
-  const factory _NodeSort({final NodeSortField field, final SortOrder order}) =;
+  const factory _NodeSort({final NodeSortField field, final SortOrder order}) =
       _$NodeSortImpl;
 
-  factory _NodeSort.fromJson(Map<String, dynamic> json) =;
+  factory _NodeSort.fromJson(Map<String, dynamic> json) =
       _$NodeSortImpl.fromJson;
 
   /// 排序字段
@@ -5297,7 +5297,7 @@ mixin _$NodeImportResult {
 /// @nodoc
 abstract class $NodeImportResultCopyWith<$Res> {
   factory $NodeImportResultCopyWith(
-          NodeImportResult value, $Res Function(NodeImportResult) then) =;
+          NodeImportResult value, $Res Function(NodeImportResult) then) =
       _$NodeImportResultCopyWithImpl<$Res, NodeImportResult>;
   @useResult
   $Res call(
@@ -5338,35 +5338,35 @@ class _$NodeImportResultCopyWithImpl<$Res, $Val extends NodeImportResult>
     Object? importStats = null,
   }) {
     return _then(_value.copyWith(
-      success: null == success;
+      success: null == success
           ? _value.success
           : success // ignore: cast_nullable_to_non_nullable
               as bool,
-      importedNodes: null == importedNodes;
+      importedNodes: null == importedNodes
           ? _value.importedNodes
           : importedNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      validNodes: null == validNodes;
+      validNodes: null == validNodes
           ? _value.validNodes
           : validNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      invalidNodes: null == invalidNodes;
+      invalidNodes: null == invalidNodes
           ? _value.invalidNodes
           : invalidNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      duplicateNodes: null == duplicateNodes;
+      duplicateNodes: null == duplicateNodes
           ? _value.duplicateNodes
           : duplicateNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      errors: null == errors;
+      errors: null == errors
           ? _value.errors
           : errors // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      nodes: null == nodes;
+      nodes: null == nodes
           ? _value.nodes
           : nodes // ignore: cast_nullable_to_non_nullable
               as List<ProxyNode>,
-      importStats: null == importStats;
+      importStats: null == importStats
           ? _value.importStats
           : importStats // ignore: cast_nullable_to_non_nullable
               as NodeImportStats,
@@ -5388,7 +5388,7 @@ class _$NodeImportResultCopyWithImpl<$Res, $Val extends NodeImportResult>
 abstract class _$$NodeImportResultImplCopyWith<$Res>
     implements $NodeImportResultCopyWith<$Res> {
   factory _$$NodeImportResultImplCopyWith(_$NodeImportResultImpl value,
-          $Res Function(_$NodeImportResultImpl) then) =;
+          $Res Function(_$NodeImportResultImpl) then) =
       __$$NodeImportResultImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -5429,35 +5429,35 @@ class __$$NodeImportResultImplCopyWithImpl<$Res>
     Object? importStats = null,
   }) {
     return _then(_$NodeImportResultImpl(
-      success: null == success;
+      success: null == success
           ? _value.success
           : success // ignore: cast_nullable_to_non_nullable
               as bool,
-      importedNodes: null == importedNodes;
+      importedNodes: null == importedNodes
           ? _value.importedNodes
           : importedNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      validNodes: null == validNodes;
+      validNodes: null == validNodes
           ? _value.validNodes
           : validNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      invalidNodes: null == invalidNodes;
+      invalidNodes: null == invalidNodes
           ? _value.invalidNodes
           : invalidNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      duplicateNodes: null == duplicateNodes;
+      duplicateNodes: null == duplicateNodes
           ? _value.duplicateNodes
           : duplicateNodes // ignore: cast_nullable_to_non_nullable
               as int,
-      errors: null == errors;
+      errors: null == errors
           ? _value._errors
           : errors // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      nodes: null == nodes;
+      nodes: null == nodes
           ? _value._nodes
           : nodes // ignore: cast_nullable_to_non_nullable
               as List<ProxyNode>,
-      importStats: null == importStats;
+      importStats: null == importStats
           ? _value.importStats
           : importStats // ignore: cast_nullable_to_non_nullable
               as NodeImportStats,
@@ -5476,7 +5476,7 @@ class _$NodeImportResultImpl implements _NodeImportResult {
       this.duplicateNodes = 0,
       final List<String> errors = const [],
       final List<ProxyNode> nodes = const [],
-      this.importStats = _emptyImportStats});
+      this.importStats = _emptyImportStats})
       : _errors = errors,
         _nodes = nodes;
 
@@ -5602,7 +5602,7 @@ abstract class _NodeImportResult implements NodeImportResult {
       final List<ProxyNode> nodes,
       final NodeImportStats importStats}) = _$NodeImportResultImpl;
 
-  factory _NodeImportResult.fromJson(Map<String, dynamic> json) =;
+  factory _NodeImportResult.fromJson(Map<String, dynamic> json) =
       _$NodeImportResultImpl.fromJson;
 
   /// 是否成功
@@ -5685,7 +5685,7 @@ mixin _$NodeImportStats {
 /// @nodoc
 abstract class $NodeImportStatsCopyWith<$Res> {
   factory $NodeImportStatsCopyWith(
-          NodeImportStats value, $Res Function(NodeImportStats) then) =;
+          NodeImportStats value, $Res Function(NodeImportStats) then) =
       _$NodeImportStatsCopyWithImpl<$Res, NodeImportStats>;
   @useResult
   $Res call(
@@ -5722,31 +5722,31 @@ class _$NodeImportStatsCopyWithImpl<$Res, $Val extends NodeImportStats>
     Object? totalTimeMs = null,
   }) {
     return _then(_value.copyWith(
-      vmessCount: null == vmessCount;
+      vmessCount: null == vmessCount
           ? _value.vmessCount
           : vmessCount // ignore: cast_nullable_to_non_nullable
               as int,
-      vlessCount: null == vlessCount;
+      vlessCount: null == vlessCount
           ? _value.vlessCount
           : vlessCount // ignore: cast_nullable_to_non_nullable
               as int,
-      ssCount: null == ssCount;
+      ssCount: null == ssCount
           ? _value.ssCount
           : ssCount // ignore: cast_nullable_to_non_nullable
               as int,
-      ssrCount: null == ssrCount;
+      ssrCount: null == ssrCount
           ? _value.ssrCount
           : ssrCount // ignore: cast_nullable_to_non_nullable
               as int,
-      trojanCount: null == trojanCount;
+      trojanCount: null == trojanCount
           ? _value.trojanCount
           : trojanCount // ignore: cast_nullable_to_non_nullable
               as int,
-      parseErrors: null == parseErrors;
+      parseErrors: null == parseErrors
           ? _value.parseErrors
           : parseErrors // ignore: cast_nullable_to_non_nullable
               as int,
-      totalTimeMs: null == totalTimeMs;
+      totalTimeMs: null == totalTimeMs
           ? _value.totalTimeMs
           : totalTimeMs // ignore: cast_nullable_to_non_nullable
               as int,
@@ -5758,7 +5758,7 @@ class _$NodeImportStatsCopyWithImpl<$Res, $Val extends NodeImportStats>
 abstract class _$$NodeImportStatsImplCopyWith<$Res>
     implements $NodeImportStatsCopyWith<$Res> {
   factory _$$NodeImportStatsImplCopyWith(_$NodeImportStatsImpl value,
-          $Res Function(_$NodeImportStatsImpl) then) =;
+          $Res Function(_$NodeImportStatsImpl) then) =
       __$$NodeImportStatsImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -5794,31 +5794,31 @@ class __$$NodeImportStatsImplCopyWithImpl<$Res>
     Object? totalTimeMs = null,
   }) {
     return _then(_$NodeImportStatsImpl(
-      vmessCount: null == vmessCount;
+      vmessCount: null == vmessCount
           ? _value.vmessCount
           : vmessCount // ignore: cast_nullable_to_non_nullable
               as int,
-      vlessCount: null == vlessCount;
+      vlessCount: null == vlessCount
           ? _value.vlessCount
           : vlessCount // ignore: cast_nullable_to_non_nullable
               as int,
-      ssCount: null == ssCount;
+      ssCount: null == ssCount
           ? _value.ssCount
           : ssCount // ignore: cast_nullable_to_non_nullable
               as int,
-      ssrCount: null == ssrCount;
+      ssrCount: null == ssrCount
           ? _value.ssrCount
           : ssrCount // ignore: cast_nullable_to_non_nullable
               as int,
-      trojanCount: null == trojanCount;
+      trojanCount: null == trojanCount
           ? _value.trojanCount
           : trojanCount // ignore: cast_nullable_to_non_nullable
               as int,
-      parseErrors: null == parseErrors;
+      parseErrors: null == parseErrors
           ? _value.parseErrors
           : parseErrors // ignore: cast_nullable_to_non_nullable
               as int,
-      totalTimeMs: null == totalTimeMs;
+      totalTimeMs: null == totalTimeMs
           ? _value.totalTimeMs
           : totalTimeMs // ignore: cast_nullable_to_non_nullable
               as int,
@@ -5933,7 +5933,7 @@ abstract class _NodeImportStats implements NodeImportStats {
       final int parseErrors,
       final int totalTimeMs}) = _$NodeImportStatsImpl;
 
-  factory _NodeImportStats.fromJson(Map<String, dynamic> json) =;
+  factory _NodeImportStats.fromJson(Map<String, dynamic> json) =
       _$NodeImportStatsImpl.fromJson;
 
   /// VMess 节点数量

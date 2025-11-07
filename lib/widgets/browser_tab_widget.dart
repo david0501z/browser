@@ -295,7 +295,7 @@ class _BrowserTabWidgetState extends ConsumerState<BrowserTabWidget> {
                     break;
                 }
               },
-              itemBuilder: (context) => [;
+              itemBuilder: (context) => [
                 const PopupMenuItem(
                   value: 'bookmarks',
                   child: ListTile(

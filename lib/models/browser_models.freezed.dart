@@ -60,7 +60,7 @@ mixin _$BrowserTab {
 /// @nodoc
 abstract class $BrowserTabCopyWith<$Res> {
   factory $BrowserTabCopyWith(
-          BrowserTab value, $Res Function(BrowserTab) then) =;
+          BrowserTab value, $Res Function(BrowserTab) then) =
       _$BrowserTabCopyWithImpl<$Res, BrowserTab>;
   @useResult
   $Res call(
@@ -101,39 +101,39 @@ class _$BrowserTabCopyWithImpl<$Res, $Val extends BrowserTab>
     Object? incognito = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id;
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      url: null == url;
+      url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      title: freezed == title;
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      favicon: freezed == favicon;
+      favicon: freezed == favicon
           ? _value.favicon
           : favicon // ignore: cast_nullable_to_non_nullable
               as String?,
-      pinned: null == pinned;
+      pinned: null == pinned
           ? _value.pinned
           : pinned // ignore: cast_nullable_to_non_nullable
               as bool,
-      createdAt: null == createdAt;
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      updatedAt: null == updatedAt;
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      thumbnail: freezed == thumbnail;
+      thumbnail: freezed == thumbnail
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
               as String?,
-      incognito: null == incognito;
+      incognito: null == incognito
           ? _value.incognito
           : incognito // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -145,7 +145,7 @@ class _$BrowserTabCopyWithImpl<$Res, $Val extends BrowserTab>
 abstract class _$$BrowserTabImplCopyWith<$Res>
     implements $BrowserTabCopyWith<$Res> {
   factory _$$BrowserTabImplCopyWith(
-          _$BrowserTabImpl value, $Res Function(_$BrowserTabImpl) then) =;
+          _$BrowserTabImpl value, $Res Function(_$BrowserTabImpl) then) =
       __$$BrowserTabImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -185,39 +185,39 @@ class __$$BrowserTabImplCopyWithImpl<$Res>
     Object? incognito = null,
   }) {
     return _then(_$BrowserTabImpl(
-      id: null == id;
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      url: null == url;
+      url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      title: freezed == title;
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      favicon: freezed == favicon;
+      favicon: freezed == favicon
           ? _value.favicon
           : favicon // ignore: cast_nullable_to_non_nullable
               as String?,
-      pinned: null == pinned;
+      pinned: null == pinned
           ? _value.pinned
           : pinned // ignore: cast_nullable_to_non_nullable
               as bool,
-      createdAt: null == createdAt;
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      updatedAt: null == updatedAt;
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      thumbnail: freezed == thumbnail;
+      thumbnail: freezed == thumbnail
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
               as String?,
-      incognito: null == incognito;
+      incognito: null == incognito
           ? _value.incognito
           : incognito // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -338,7 +338,7 @@ abstract class _BrowserTab implements BrowserTab {
       final String? thumbnail,
       final bool incognito}) = _$BrowserTabImpl;
 
-  factory _BrowserTab.fromJson(Map<String, dynamic> json) =;
+  factory _BrowserTab.fromJson(Map<String, dynamic> json) =
       _$BrowserTabImpl.fromJson;
 
   /// 标签页唯一标识
@@ -430,7 +430,7 @@ mixin _$Bookmark {
 
 /// @nodoc
 abstract class $BookmarkCopyWith<$Res> {
-  factory $BookmarkCopyWith(Bookmark value, $Res Function(Bookmark) then) =;
+  factory $BookmarkCopyWith(Bookmark value, $Res Function(Bookmark) then) =
       _$BookmarkCopyWithImpl<$Res, Bookmark>;
   @useResult
   $Res call(
@@ -471,39 +471,39 @@ class _$BookmarkCopyWithImpl<$Res, $Val extends Bookmark>
     Object? lastVisitedAt = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id;
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      title: null == title;
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      url: null == url;
+      url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      favicon: freezed == favicon;
+      favicon: freezed == favicon
           ? _value.favicon
           : favicon // ignore: cast_nullable_to_non_nullable
               as String?,
-      tags: null == tags;
+      tags: null == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      createdAt: null == createdAt;
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      updatedAt: null == updatedAt;
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      visitCount: null == visitCount;
+      visitCount: null == visitCount
           ? _value.visitCount
           : visitCount // ignore: cast_nullable_to_non_nullable
               as int,
-      lastVisitedAt: freezed == lastVisitedAt;
+      lastVisitedAt: freezed == lastVisitedAt
           ? _value.lastVisitedAt
           : lastVisitedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
@@ -515,7 +515,7 @@ class _$BookmarkCopyWithImpl<$Res, $Val extends Bookmark>
 abstract class _$$BookmarkImplCopyWith<$Res>
     implements $BookmarkCopyWith<$Res> {
   factory _$$BookmarkImplCopyWith(
-          _$BookmarkImpl value, $Res Function(_$BookmarkImpl) then) =;
+          _$BookmarkImpl value, $Res Function(_$BookmarkImpl) then) =
       __$$BookmarkImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -555,39 +555,39 @@ class __$$BookmarkImplCopyWithImpl<$Res>
     Object? lastVisitedAt = freezed,
   }) {
     return _then(_$BookmarkImpl(
-      id: null == id;
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      title: null == title;
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      url: null == url;
+      url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      favicon: freezed == favicon;
+      favicon: freezed == favicon
           ? _value.favicon
           : favicon // ignore: cast_nullable_to_non_nullable
               as String?,
-      tags: null == tags;
+      tags: null == tags
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      createdAt: null == createdAt;
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      updatedAt: null == updatedAt;
+      updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      visitCount: null == visitCount;
+      visitCount: null == visitCount
           ? _value.visitCount
           : visitCount // ignore: cast_nullable_to_non_nullable
               as int,
-      lastVisitedAt: freezed == lastVisitedAt;
+      lastVisitedAt: freezed == lastVisitedAt
           ? _value.lastVisitedAt
           : lastVisitedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
@@ -725,7 +725,7 @@ abstract class _Bookmark implements Bookmark {
       final int visitCount,
       final DateTime? lastVisitedAt}) = _$BookmarkImpl;
 
-  factory _Bookmark.fromJson(Map<String, dynamic> json) =;
+  factory _Bookmark.fromJson(Map<String, dynamic> json) =
       _$BookmarkImpl.fromJson;
 
   /// 唯一标识
@@ -813,7 +813,7 @@ mixin _$History {
 
 /// @nodoc
 abstract class $HistoryCopyWith<$Res> {
-  factory $HistoryCopyWith(History value, $Res Function(History) then) =;
+  factory $HistoryCopyWith(History value, $Res Function(History) then) =
       _$HistoryCopyWithImpl<$Res, History>;
   @useResult
   $Res call(
@@ -852,35 +852,35 @@ class _$HistoryCopyWithImpl<$Res, $Val extends History>
     Object? deviceType = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id;
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      title: null == title;
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      url: null == url;
+      url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      visitedAt: null == visitedAt;
+      visitedAt: null == visitedAt
           ? _value.visitedAt
           : visitedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      duration: null == duration;
+      duration: null == duration
           ? _value.duration
           : duration // ignore: cast_nullable_to_non_nullable
               as int,
-      favicon: freezed == favicon;
+      favicon: freezed == favicon
           ? _value.favicon
           : favicon // ignore: cast_nullable_to_non_nullable
               as String?,
-      referrer: freezed == referrer;
+      referrer: freezed == referrer
           ? _value.referrer
           : referrer // ignore: cast_nullable_to_non_nullable
               as String?,
-      deviceType: null == deviceType;
+      deviceType: null == deviceType
           ? _value.deviceType
           : deviceType // ignore: cast_nullable_to_non_nullable
               as String,
@@ -891,7 +891,7 @@ class _$HistoryCopyWithImpl<$Res, $Val extends History>
 /// @nodoc
 abstract class _$$HistoryImplCopyWith<$Res> implements $HistoryCopyWith<$Res> {
   factory _$$HistoryImplCopyWith(
-          _$HistoryImpl value, $Res Function(_$HistoryImpl) then) =;
+          _$HistoryImpl value, $Res Function(_$HistoryImpl) then) =
       __$$HistoryImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -929,35 +929,35 @@ class __$$HistoryImplCopyWithImpl<$Res>
     Object? deviceType = null,
   }) {
     return _then(_$HistoryImpl(
-      id: null == id;
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      title: null == title;
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      url: null == url;
+      url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      visitedAt: null == visitedAt;
+      visitedAt: null == visitedAt
           ? _value.visitedAt
           : visitedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      duration: null == duration;
+      duration: null == duration
           ? _value.duration
           : duration // ignore: cast_nullable_to_non_nullable
               as int,
-      favicon: freezed == favicon;
+      favicon: freezed == favicon
           ? _value.favicon
           : favicon // ignore: cast_nullable_to_non_nullable
               as String?,
-      referrer: freezed == referrer;
+      referrer: freezed == referrer
           ? _value.referrer
           : referrer // ignore: cast_nullable_to_non_nullable
               as String?,
-      deviceType: null == deviceType;
+      deviceType: null == deviceType
           ? _value.deviceType
           : deviceType // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1177,7 +1177,7 @@ mixin _$BrowserSettings {
 /// @nodoc
 abstract class $BrowserSettingsCopyWith<$Res> {
   factory $BrowserSettingsCopyWith(
-          BrowserSettings value, $Res Function(BrowserSettings) then) =;
+          BrowserSettings value, $Res Function(BrowserSettings) then) =
       _$BrowserSettingsCopyWithImpl<$Res, BrowserSettings>;
   @useResult
   $Res call(
@@ -1230,63 +1230,63 @@ class _$BrowserSettingsCopyWithImpl<$Res, $Val extends BrowserSettings>
     Object? clearDataInterval = null,
   }) {
     return _then(_value.copyWith(
-      userAgent: freezed == userAgent;
+      userAgent: freezed == userAgent
           ? _value.userAgent
           : userAgent // ignore: cast_nullable_to_non_nullable
               as String?,
-      javascriptEnabled: null == javascriptEnabled;
+      javascriptEnabled: null == javascriptEnabled
           ? _value.javascriptEnabled
           : javascriptEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      domStorageEnabled: null == domStorageEnabled;
+      domStorageEnabled: null == domStorageEnabled
           ? _value.domStorageEnabled
           : domStorageEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      cacheMode: null == cacheMode;
+      cacheMode: null == cacheMode
           ? _value.cacheMode
           : cacheMode // ignore: cast_nullable_to_non_nullable
               as String,
-      incognito: null == incognito;
+      incognito: null == incognito
           ? _value.incognito
           : incognito // ignore: cast_nullable_to_non_nullable
               as bool,
-      fontSize: null == fontSize;
+      fontSize: null == fontSize
           ? _value.fontSize
           : fontSize // ignore: cast_nullable_to_non_nullable
               as int,
-      imagesEnabled: null == imagesEnabled;
+      imagesEnabled: null == imagesEnabled
           ? _value.imagesEnabled
           : imagesEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      popupsEnabled: null == popupsEnabled;
+      popupsEnabled: null == popupsEnabled
           ? _value.popupsEnabled
           : popupsEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      searchEngine: null == searchEngine;
+      searchEngine: null == searchEngine
           ? _value.searchEngine
           : searchEngine // ignore: cast_nullable_to_non_nullable
               as String,
-      homepage: null == homepage;
+      homepage: null == homepage
           ? _value.homepage
           : homepage // ignore: cast_nullable_to_non_nullable
               as String,
-      downloadDirectory: freezed == downloadDirectory;
+      downloadDirectory: freezed == downloadDirectory
           ? _value.downloadDirectory
           : downloadDirectory // ignore: cast_nullable_to_non_nullable
               as String?,
-      downloadNotifications: null == downloadNotifications;
+      downloadNotifications: null == downloadNotifications
           ? _value.downloadNotifications
           : downloadNotifications // ignore: cast_nullable_to_non_nullable
               as bool,
-      privacyMode: null == privacyMode;
+      privacyMode: null == privacyMode
           ? _value.privacyMode
           : privacyMode // ignore: cast_nullable_to_non_nullable
               as bool,
-      autoClearData: null == autoClearData;
+      autoClearData: null == autoClearData
           ? _value.autoClearData
           : autoClearData // ignore: cast_nullable_to_non_nullable
               as bool,
-      clearDataInterval: null == clearDataInterval;
+      clearDataInterval: null == clearDataInterval
           ? _value.clearDataInterval
           : clearDataInterval // ignore: cast_nullable_to_non_nullable
               as int,
@@ -1298,7 +1298,7 @@ class _$BrowserSettingsCopyWithImpl<$Res, $Val extends BrowserSettings>
 abstract class _$$BrowserSettingsImplCopyWith<$Res>
     implements $BrowserSettingsCopyWith<$Res> {
   factory _$$BrowserSettingsImplCopyWith(_$BrowserSettingsImpl value,
-          $Res Function(_$BrowserSettingsImpl) then) =;
+          $Res Function(_$BrowserSettingsImpl) then) =
       __$$BrowserSettingsImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1350,63 +1350,63 @@ class __$$BrowserSettingsImplCopyWithImpl<$Res>
     Object? clearDataInterval = null,
   }) {
     return _then(_$BrowserSettingsImpl(
-      userAgent: freezed == userAgent;
+      userAgent: freezed == userAgent
           ? _value.userAgent
           : userAgent // ignore: cast_nullable_to_non_nullable
               as String?,
-      javascriptEnabled: null == javascriptEnabled;
+      javascriptEnabled: null == javascriptEnabled
           ? _value.javascriptEnabled
           : javascriptEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      domStorageEnabled: null == domStorageEnabled;
+      domStorageEnabled: null == domStorageEnabled
           ? _value.domStorageEnabled
           : domStorageEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      cacheMode: null == cacheMode;
+      cacheMode: null == cacheMode
           ? _value.cacheMode
           : cacheMode // ignore: cast_nullable_to_non_nullable
               as String,
-      incognito: null == incognito;
+      incognito: null == incognito
           ? _value.incognito
           : incognito // ignore: cast_nullable_to_non_nullable
               as bool,
-      fontSize: null == fontSize;
+      fontSize: null == fontSize
           ? _value.fontSize
           : fontSize // ignore: cast_nullable_to_non_nullable
               as int,
-      imagesEnabled: null == imagesEnabled;
+      imagesEnabled: null == imagesEnabled
           ? _value.imagesEnabled
           : imagesEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      popupsEnabled: null == popupsEnabled;
+      popupsEnabled: null == popupsEnabled
           ? _value.popupsEnabled
           : popupsEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      searchEngine: null == searchEngine;
+      searchEngine: null == searchEngine
           ? _value.searchEngine
           : searchEngine // ignore: cast_nullable_to_non_nullable
               as String,
-      homepage: null == homepage;
+      homepage: null == homepage
           ? _value.homepage
           : homepage // ignore: cast_nullable_to_non_nullable
               as String,
-      downloadDirectory: freezed == downloadDirectory;
+      downloadDirectory: freezed == downloadDirectory
           ? _value.downloadDirectory
           : downloadDirectory // ignore: cast_nullable_to_non_nullable
               as String?,
-      downloadNotifications: null == downloadNotifications;
+      downloadNotifications: null == downloadNotifications
           ? _value.downloadNotifications
           : downloadNotifications // ignore: cast_nullable_to_non_nullable
               as bool,
-      privacyMode: null == privacyMode;
+      privacyMode: null == privacyMode
           ? _value.privacyMode
           : privacyMode // ignore: cast_nullable_to_non_nullable
               as bool,
-      autoClearData: null == autoClearData;
+      autoClearData: null == autoClearData
           ? _value.autoClearData
           : autoClearData // ignore: cast_nullable_to_non_nullable
               as bool,
-      clearDataInterval: null == clearDataInterval;
+      clearDataInterval: null == clearDataInterval
           ? _value.clearDataInterval
           : clearDataInterval // ignore: cast_nullable_to_non_nullable
               as int,
@@ -1607,7 +1607,7 @@ abstract class _BrowserSettings implements BrowserSettings {
       final bool autoClearData,
       final int clearDataInterval}) = _$BrowserSettingsImpl;
 
-  factory _BrowserSettings.fromJson(Map<String, dynamic> json) =;
+  factory _BrowserSettings.fromJson(Map<String, dynamic> json) =
       _$BrowserSettingsImpl.fromJson;
 
   /// 用户代理
@@ -1709,7 +1709,7 @@ mixin _$BrowserEvent {
 /// @nodoc
 abstract class $BrowserEventCopyWith<$Res> {
   factory $BrowserEventCopyWith(
-          BrowserEvent value, $Res Function(BrowserEvent) then) =;
+          BrowserEvent value, $Res Function(BrowserEvent) then) =
       _$BrowserEventCopyWithImpl<$Res, BrowserEvent>;
   @useResult
   $Res call(
@@ -1740,19 +1740,19 @@ class _$BrowserEventCopyWithImpl<$Res, $Val extends BrowserEvent>
     Object? timestamp = null,
   }) {
     return _then(_value.copyWith(
-      type: null == type;
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as BrowserEventType,
-      tabId: null == tabId;
+      tabId: null == tabId
           ? _value.tabId
           : tabId // ignore: cast_nullable_to_non_nullable
               as String,
-      data: freezed == data;
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      timestamp: null == timestamp;
+      timestamp: null == timestamp
           ? _value.timestamp
           : timestamp // ignore: cast_nullable_to_non_nullable
               as DateTime,
@@ -1764,7 +1764,7 @@ class _$BrowserEventCopyWithImpl<$Res, $Val extends BrowserEvent>
 abstract class _$$BrowserEventImplCopyWith<$Res>
     implements $BrowserEventCopyWith<$Res> {
   factory _$$BrowserEventImplCopyWith(
-          _$BrowserEventImpl value, $Res Function(_$BrowserEventImpl) then) =;
+          _$BrowserEventImpl value, $Res Function(_$BrowserEventImpl) then) =
       __$$BrowserEventImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1794,19 +1794,19 @@ class __$$BrowserEventImplCopyWithImpl<$Res>
     Object? timestamp = null,
   }) {
     return _then(_$BrowserEventImpl(
-      type: null == type;
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as BrowserEventType,
-      tabId: null == tabId;
+      tabId: null == tabId
           ? _value.tabId
           : tabId // ignore: cast_nullable_to_non_nullable
               as String,
-      data: freezed == data;
+      data: freezed == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      timestamp: null == timestamp;
+      timestamp: null == timestamp
           ? _value.timestamp
           : timestamp // ignore: cast_nullable_to_non_nullable
               as DateTime,
@@ -1897,7 +1897,7 @@ abstract class _BrowserEvent implements BrowserEvent {
       final Map<String, dynamic>? data,
       required final DateTime timestamp}) = _$BrowserEventImpl;
 
-  factory _BrowserEvent.fromJson(Map<String, dynamic> json) =;
+  factory _BrowserEvent.fromJson(Map<String, dynamic> json) =
       _$BrowserEventImpl.fromJson;
 
   /// 事件类型
@@ -1958,7 +1958,7 @@ mixin _$SearchResult {
 /// @nodoc
 abstract class $SearchResultCopyWith<$Res> {
   factory $SearchResultCopyWith(
-          SearchResult value, $Res Function(SearchResult) then) =;
+          SearchResult value, $Res Function(SearchResult) then) =
       _$SearchResultCopyWithImpl<$Res, SearchResult>;
   @useResult
   $Res call(
@@ -1991,23 +1991,23 @@ class _$SearchResultCopyWithImpl<$Res, $Val extends SearchResult>
     Object? score = null,
   }) {
     return _then(_value.copyWith(
-      title: null == title;
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      description: freezed == description;
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      url: null == url;
+      url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      favicon: freezed == favicon;
+      favicon: freezed == favicon
           ? _value.favicon
           : favicon // ignore: cast_nullable_to_non_nullable
               as String?,
-      score: null == score;
+      score: null == score
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
               as double,
@@ -2019,7 +2019,7 @@ class _$SearchResultCopyWithImpl<$Res, $Val extends SearchResult>
 abstract class _$$SearchResultImplCopyWith<$Res>
     implements $SearchResultCopyWith<$Res> {
   factory _$$SearchResultImplCopyWith(
-          _$SearchResultImpl value, $Res Function(_$SearchResultImpl) then) =;
+          _$SearchResultImpl value, $Res Function(_$SearchResultImpl) then) =
       __$$SearchResultImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -2051,23 +2051,23 @@ class __$$SearchResultImplCopyWithImpl<$Res>
     Object? score = null,
   }) {
     return _then(_$SearchResultImpl(
-      title: null == title;
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      description: freezed == description;
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      url: null == url;
+      url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      favicon: freezed == favicon;
+      favicon: freezed == favicon
           ? _value.favicon
           : favicon // ignore: cast_nullable_to_non_nullable
               as String?,
-      score: null == score;
+      score: null == score
           ? _value.score
           : score // ignore: cast_nullable_to_non_nullable
               as double,
@@ -2156,7 +2156,7 @@ abstract class _SearchResult implements SearchResult {
       final String? favicon,
       final double score}) = _$SearchResultImpl;
 
-  factory _SearchResult.fromJson(Map<String, dynamic> json) =;
+  factory _SearchResult.fromJson(Map<String, dynamic> json) =
       _$SearchResultImpl.fromJson;
 
   /// 标题
@@ -2242,7 +2242,7 @@ mixin _$DownloadTask {
 /// @nodoc
 abstract class $DownloadTaskCopyWith<$Res> {
   factory $DownloadTaskCopyWith(
-          DownloadTask value, $Res Function(DownloadTask) then) =;
+          DownloadTask value, $Res Function(DownloadTask) then) =
       _$DownloadTaskCopyWithImpl<$Res, DownloadTask>;
   @useResult
   $Res call(
@@ -2289,51 +2289,51 @@ class _$DownloadTaskCopyWithImpl<$Res, $Val extends DownloadTask>
     Object? error = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id;
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      fileName: null == fileName;
+      fileName: null == fileName
           ? _value.fileName
           : fileName // ignore: cast_nullable_to_non_nullable
               as String,
-      url: null == url;
+      url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      savePath: null == savePath;
+      savePath: null == savePath
           ? _value.savePath
           : savePath // ignore: cast_nullable_to_non_nullable
               as String,
-      totalBytes: null == totalBytes;
+      totalBytes: null == totalBytes
           ? _value.totalBytes
           : totalBytes // ignore: cast_nullable_to_non_nullable
               as int,
-      downloadedBytes: null == downloadedBytes;
+      downloadedBytes: null == downloadedBytes
           ? _value.downloadedBytes
           : downloadedBytes // ignore: cast_nullable_to_non_nullable
               as int,
-      progress: null == progress;
+      progress: null == progress
           ? _value.progress
           : progress // ignore: cast_nullable_to_non_nullable
               as double,
-      speed: null == speed;
+      speed: null == speed
           ? _value.speed
           : speed // ignore: cast_nullable_to_non_nullable
               as int,
-      status: null == status;
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAt: null == createdAt;
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      completedAt: freezed == completedAt;
+      completedAt: freezed == completedAt
           ? _value.completedAt
           : completedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      error: freezed == error;
+      error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -2345,7 +2345,7 @@ class _$DownloadTaskCopyWithImpl<$Res, $Val extends DownloadTask>
 abstract class _$$DownloadTaskImplCopyWith<$Res>
     implements $DownloadTaskCopyWith<$Res> {
   factory _$$DownloadTaskImplCopyWith(
-          _$DownloadTaskImpl value, $Res Function(_$DownloadTaskImpl) then) =;
+          _$DownloadTaskImpl value, $Res Function(_$DownloadTaskImpl) then) =
       __$$DownloadTaskImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -2391,51 +2391,51 @@ class __$$DownloadTaskImplCopyWithImpl<$Res>
     Object? error = freezed,
   }) {
     return _then(_$DownloadTaskImpl(
-      id: null == id;
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      fileName: null == fileName;
+      fileName: null == fileName
           ? _value.fileName
           : fileName // ignore: cast_nullable_to_non_nullable
               as String,
-      url: null == url;
+      url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
-      savePath: null == savePath;
+      savePath: null == savePath
           ? _value.savePath
           : savePath // ignore: cast_nullable_to_non_nullable
               as String,
-      totalBytes: null == totalBytes;
+      totalBytes: null == totalBytes
           ? _value.totalBytes
           : totalBytes // ignore: cast_nullable_to_non_nullable
               as int,
-      downloadedBytes: null == downloadedBytes;
+      downloadedBytes: null == downloadedBytes
           ? _value.downloadedBytes
           : downloadedBytes // ignore: cast_nullable_to_non_nullable
               as int,
-      progress: null == progress;
+      progress: null == progress
           ? _value.progress
           : progress // ignore: cast_nullable_to_non_nullable
               as double,
-      speed: null == speed;
+      speed: null == speed
           ? _value.speed
           : speed // ignore: cast_nullable_to_non_nullable
               as int,
-      status: null == status;
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      createdAt: null == createdAt;
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      completedAt: freezed == completedAt;
+      completedAt: freezed == completedAt
           ? _value.completedAt
           : completedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      error: freezed == error;
+      error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -2595,7 +2595,7 @@ abstract class _DownloadTask implements DownloadTask {
       final DateTime? completedAt,
       final String? error}) = _$DownloadTaskImpl;
 
-  factory _DownloadTask.fromJson(Map<String, dynamic> json) =;
+  factory _DownloadTask.fromJson(Map<String, dynamic> json) =
       _$DownloadTaskImpl.fromJson;
 
   /// 任务ID
@@ -2694,7 +2694,7 @@ mixin _$BrowserStats {
 /// @nodoc
 abstract class $BrowserStatsCopyWith<$Res> {
   factory $BrowserStatsCopyWith(
-          BrowserStats value, $Res Function(BrowserStats) then) =;
+          BrowserStats value, $Res Function(BrowserStats) then) =
       _$BrowserStatsCopyWithImpl<$Res, BrowserStats>;
   @useResult
   $Res call(
@@ -2731,31 +2731,31 @@ class _$BrowserStatsCopyWithImpl<$Res, $Val extends BrowserStats>
     Object? lastVisitedAt = freezed,
   }) {
     return _then(_value.copyWith(
-      totalPagesVisited: null == totalPagesVisited;
+      totalPagesVisited: null == totalPagesVisited
           ? _value.totalPagesVisited
           : totalPagesVisited // ignore: cast_nullable_to_non_nullable
               as int,
-      totalVisitDuration: null == totalVisitDuration;
+      totalVisitDuration: null == totalVisitDuration
           ? _value.totalVisitDuration
           : totalVisitDuration // ignore: cast_nullable_to_non_nullable
               as int,
-      dataUsage: null == dataUsage;
+      dataUsage: null == dataUsage
           ? _value.dataUsage
           : dataUsage // ignore: cast_nullable_to_non_nullable
               as int,
-      bookmarkCount: null == bookmarkCount;
+      bookmarkCount: null == bookmarkCount
           ? _value.bookmarkCount
           : bookmarkCount // ignore: cast_nullable_to_non_nullable
               as int,
-      historyCount: null == historyCount;
+      historyCount: null == historyCount
           ? _value.historyCount
           : historyCount // ignore: cast_nullable_to_non_nullable
               as int,
-      downloadCount: null == downloadCount;
+      downloadCount: null == downloadCount
           ? _value.downloadCount
           : downloadCount // ignore: cast_nullable_to_non_nullable
               as int,
-      lastVisitedAt: freezed == lastVisitedAt;
+      lastVisitedAt: freezed == lastVisitedAt
           ? _value.lastVisitedAt
           : lastVisitedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
@@ -2767,7 +2767,7 @@ class _$BrowserStatsCopyWithImpl<$Res, $Val extends BrowserStats>
 abstract class _$$BrowserStatsImplCopyWith<$Res>
     implements $BrowserStatsCopyWith<$Res> {
   factory _$$BrowserStatsImplCopyWith(
-          _$BrowserStatsImpl value, $Res Function(_$BrowserStatsImpl) then) =;
+          _$BrowserStatsImpl value, $Res Function(_$BrowserStatsImpl) then) =
       __$$BrowserStatsImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -2803,31 +2803,31 @@ class __$$BrowserStatsImplCopyWithImpl<$Res>
     Object? lastVisitedAt = freezed,
   }) {
     return _then(_$BrowserStatsImpl(
-      totalPagesVisited: null == totalPagesVisited;
+      totalPagesVisited: null == totalPagesVisited
           ? _value.totalPagesVisited
           : totalPagesVisited // ignore: cast_nullable_to_non_nullable
               as int,
-      totalVisitDuration: null == totalVisitDuration;
+      totalVisitDuration: null == totalVisitDuration
           ? _value.totalVisitDuration
           : totalVisitDuration // ignore: cast_nullable_to_non_nullable
               as int,
-      dataUsage: null == dataUsage;
+      dataUsage: null == dataUsage
           ? _value.dataUsage
           : dataUsage // ignore: cast_nullable_to_non_nullable
               as int,
-      bookmarkCount: null == bookmarkCount;
+      bookmarkCount: null == bookmarkCount
           ? _value.bookmarkCount
           : bookmarkCount // ignore: cast_nullable_to_non_nullable
               as int,
-      historyCount: null == historyCount;
+      historyCount: null == historyCount
           ? _value.historyCount
           : historyCount // ignore: cast_nullable_to_non_nullable
               as int,
-      downloadCount: null == downloadCount;
+      downloadCount: null == downloadCount
           ? _value.downloadCount
           : downloadCount // ignore: cast_nullable_to_non_nullable
               as int,
-      lastVisitedAt: freezed == lastVisitedAt;
+      lastVisitedAt: freezed == lastVisitedAt
           ? _value.lastVisitedAt
           : lastVisitedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
@@ -2948,7 +2948,7 @@ abstract class _BrowserStats implements BrowserStats {
       final int downloadCount,
       final DateTime? lastVisitedAt}) = _$BrowserStatsImpl;
 
-  factory _BrowserStats.fromJson(Map<String, dynamic> json) =;
+  factory _BrowserStats.fromJson(Map<String, dynamic> json) =
       _$BrowserStatsImpl.fromJson;
 
   /// 总访问页面数

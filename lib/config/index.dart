@@ -9,6 +9,9 @@
 /// - Clash配置生成
 /// - 配置示例和模板
 
+// 核心模型类
+export 'models/models.dart';
+
 // 配置生成器
 export 'clash_config_generator.dart';
 
@@ -41,7 +44,7 @@ export 'rule_matcher.dart' show RuleMatcher, MatchResult, MatchContext, MatchSta
 export 'dns_protection_manager.dart' show DNSProtectionManager, ProtectionResult, DNSProtectionStatus, DNSOptimizationConfig;
 
 // 工具类和枚举
-export 'rule_manager.dart' show RuleType, RuleAction;
+export 'rule_manager.dart' show RuleType, RuleAction, RulePriority;
 export 'dns_settings_manager.dart' show DNSServerType, DNSProtocolType, DNSCacheStrategy, DNSResolutionStrategy;
 export 'rule_validator.dart' show ValidationResult, ValidationReport;
 export 'rule_template_manager.dart' show TemplateType, TemplateComplexity;

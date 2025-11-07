@@ -13,7 +13,7 @@ _$ProxyConfigImpl _$$ProxyConfigImplFromJson(Map<String, dynamic> json) =>
       port: (json['port'] as num?)?.toInt() ?? 7890,
       listenAddress: json['listenAddress'] as String? ?? '127.0.0.1',
       rules: (json['rules'] as List<dynamic>?)
-              ?.map((e) => ProxyRule.fromJson(e as Map<String, dynamic>));
+              ?.map((e) => ProxyRule.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
       bypassChina: json['bypassChina'] as bool? ?? false,
@@ -34,7 +34,7 @@ _$ProxyConfigImpl _$$ProxyConfigImplFromJson(Map<String, dynamic> json) =>
       enableSpeedTest: json['enableSpeedTest'] as bool? ?? true,
       selectedNodeId: json['selectedNodeId'] as String? ?? '',
       nodes: (json['nodes'] as List<dynamic>?)
-              ?.map((e) => ProxyNode.fromJson(e as Map<String, dynamic>));
+              ?.map((e) => ProxyNode.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
       customSettings:
@@ -133,7 +133,7 @@ _$ProxyNodeImpl _$$ProxyNodeImplFromJson(Map<String, dynamic> json) =>
       bandwidth: (json['bandwidth'] as num?)?.toInt() ?? 0,
       region: json['region'] as String? ?? '',
       tags:
-          (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList() ??;
+          (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList() ??
               const [],
       available: json['available'] as bool? ?? true,
       config: json['config'] as Map<String, dynamic>? ?? const {},

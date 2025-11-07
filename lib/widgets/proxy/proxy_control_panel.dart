@@ -7,6 +7,8 @@ library proxy_control_panel;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:async';
+import '../../models/proxy_state.dart';
+import '../../providers/proxy_widget_providers.dart';
 import 'proxy_status_indicator.dart';
 
 /// 代理控制面板
@@ -165,7 +167,7 @@ class _ProxyControlPanelState extends ConsumerState<ProxyControlPanel>
                 _buildTrafficStats(theme, trafficStats),
               ],
               
-              if (widget.showServerInfo && currentServer != null) ...[;
+              if (widget.showServerInfo && currentServer != null) ...[
                 const SizedBox(height: 16),
                 _buildServerInfo(theme, currentServer),
               ],
@@ -250,7 +252,7 @@ class _ProxyControlPanelState extends ConsumerState<ProxyControlPanel>
           // 正常状态
           return ElevatedButton.icon(
             onPressed: isConnected 
-                ? () => operations.disconnect();
+                ? () => operations.disconnect()
                 : () => operations.smartConnect(),
             style: widget.connectButtonStyle ?? ElevatedButton.styleFrom(
               backgroundColor: isConnected 
@@ -457,7 +459,7 @@ class _ProxyControlPanelState extends ConsumerState<ProxyControlPanel>
                 ),
               ),
               
-              if (server.latency != null) ...[;
+              if (server.latency != null) ...[
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   decoration: BoxDecoration(

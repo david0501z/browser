@@ -4,6 +4,7 @@
 /// 支持折叠/展开、搜索过滤和分组标题。
 library settings_section;
 
+import '../providers/proxy_widget_providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -209,8 +210,8 @@ class _SettingsSectionState extends State<SettingsSection>
               child: Row(
                 children: [
                   // 图标
-                  if (widget.icon != null) ...[;
-                    Icon(
+                  if (widget.icon != null) ...[
+                Icon(
                       widget.icon,
                       color: iconColor,
                       size: 20,
@@ -262,8 +263,8 @@ class _SettingsSectionState extends State<SettingsSection>
                         ),
                         
                         // 描述
-                        if (widget.description != null) ...[;
-                          const SizedBox(height: 4),
+                        if (widget.description != null) ...[
+                const SizedBox(height: 4),
                           Text(
                             widget.description!,
                             style: theme.textTheme.bodySmall?.copyWith(
@@ -275,8 +276,8 @@ class _SettingsSectionState extends State<SettingsSection>
                         ],
                         
                         // 错误消息
-                        if (widget.hasError && widget.errorMessage != null) ...[;
-                          const SizedBox(height: 8),
+                        if (widget.hasError && widget.errorMessage != null) ...[
+                const SizedBox(height: 8),
                           Container(
                             padding: const EdgeInsets.symmetric(
                               horizontal: 8,
@@ -444,6 +445,102 @@ class SettingsSectionStyles {
     iconColor: Colors.teal,
     backgroundColor: Colors.teal50,
   );
+}
+
+
+/// 书签类
+class Bookmark {
+  final String id;
+  final String title;
+  final String url;
+  final DateTime? createdAt;
+  final List<String>? tags;
+  
+  const Bookmark({
+    required this.id,
+    required this.title,
+    required this.url,
+    this.createdAt,
+    this.tags,
+  });
+}
+
+/// 历史记录项类  
+class HistoryItem {
+  final String id;
+  final String title;
+  final String url;
+  final DateTime? visitedAt;
+  final List<String>? tags;
+  
+  const HistoryItem({
+    required this.id,
+    required this.title,
+    required this.url,
+    this.visitedAt,
+    this.tags,
+  });
+}
+
+/// 教程步骤类
+class TutorialStep {
+  final String id;
+  final String title;
+  final String description;
+  final String targetWidget;
+  
+  const TutorialStep({
+    required this.id,
+    required this.title,
+    required this.description,
+    required this.targetWidget,
+  });
+}
+
+/// 教程动作类
+enum TutorialAction {
+  next,
+  previous,
+  skip,
+  complete;
+}
+
+/// 工具提示位置类
+enum TooltipPosition {
+  top,
+  bottom,
+  left,
+  right,
+  center;
+}
+
+/// 工具提示内容类
+class TooltipContent {
+  final String title;
+  final String description;
+  final Widget? icon;
+  
+  const TooltipContent({
+    required this.title,
+    required this.description,
+    this.icon,
+  });
+}
+
+/// 帮助内容类
+class HelpContent {
+  final String title;
+  final String content;
+  final String? link;
+  
+  const HelpContent({
+    required this.title,
+    required this.content,
+    this.link,
+  });
+}
+
+
 }
 
 /// 设置分组样式数据类

@@ -49,7 +49,7 @@ mixin _$Backup {
 
 /// @nodoc
 abstract class $BackupCopyWith<$Res> {
-  factory $BackupCopyWith(Backup value, $Res Function(Backup) then) =;
+  factory $BackupCopyWith(Backup value, $Res Function(Backup) then) =
       _$BackupCopyWithImpl<$Res, Backup>;
   @useResult
   $Res call(
@@ -84,27 +84,27 @@ class _$BackupCopyWithImpl<$Res, $Val extends Backup>
     Object? keepCount = null,
   }) {
     return _then(_value.copyWith(
-      autoBackup: null == autoBackup;
+      autoBackup: null == autoBackup
           ? _value.autoBackup
           : autoBackup // ignore: cast_nullable_to_non_nullable
               as bool,
-      backupInterval: null == backupInterval;
+      backupInterval: null == backupInterval
           ? _value.backupInterval
           : backupInterval // ignore: cast_nullable_to_non_nullable
               as int,
-      cloudBackup: null == cloudBackup;
+      cloudBackup: null == cloudBackup
           ? _value.cloudBackup
           : cloudBackup // ignore: cast_nullable_to_non_nullable
               as bool,
-      cloudService: null == cloudService;
+      cloudService: null == cloudService
           ? _value.cloudService
           : cloudService // ignore: cast_nullable_to_non_nullable
               as CloudService,
-      backupEncryption: null == backupEncryption;
+      backupEncryption: null == backupEncryption
           ? _value.backupEncryption
           : backupEncryption // ignore: cast_nullable_to_non_nullable
               as bool,
-      keepCount: null == keepCount;
+      keepCount: null == keepCount
           ? _value.keepCount
           : keepCount // ignore: cast_nullable_to_non_nullable
               as int,
@@ -115,7 +115,7 @@ class _$BackupCopyWithImpl<$Res, $Val extends Backup>
 /// @nodoc
 abstract class _$$BackupImplCopyWith<$Res> implements $BackupCopyWith<$Res> {
   factory _$$BackupImplCopyWith(
-          _$BackupImpl value, $Res Function(_$BackupImpl) then) =;
+          _$BackupImpl value, $Res Function(_$BackupImpl) then) =
       __$$BackupImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -149,27 +149,27 @@ class __$$BackupImplCopyWithImpl<$Res>
     Object? keepCount = null,
   }) {
     return _then(_$BackupImpl(
-      autoBackup: null == autoBackup;
+      autoBackup: null == autoBackup
           ? _value.autoBackup
           : autoBackup // ignore: cast_nullable_to_non_nullable
               as bool,
-      backupInterval: null == backupInterval;
+      backupInterval: null == backupInterval
           ? _value.backupInterval
           : backupInterval // ignore: cast_nullable_to_non_nullable
               as int,
-      cloudBackup: null == cloudBackup;
+      cloudBackup: null == cloudBackup
           ? _value.cloudBackup
           : cloudBackup // ignore: cast_nullable_to_non_nullable
               as bool,
-      cloudService: null == cloudService;
+      cloudService: null == cloudService
           ? _value.cloudService
           : cloudService // ignore: cast_nullable_to_non_nullable
               as CloudService,
-      backupEncryption: null == backupEncryption;
+      backupEncryption: null == backupEncryption
           ? _value.backupEncryption
           : backupEncryption // ignore: cast_nullable_to_non_nullable
               as bool,
-      keepCount: null == keepCount;
+      keepCount: null == keepCount
           ? _value.keepCount
           : keepCount // ignore: cast_nullable_to_non_nullable
               as int,
@@ -186,7 +186,7 @@ class _$BackupImpl extends _Backup {
       this.cloudBackup = false,
       this.cloudService = CloudService.aliyun,
       this.backupEncryption = true,
-      this.keepCount = 5});
+      this.keepCount = 5})
       : super._();
 
   factory _$BackupImpl.fromJson(Map<String, dynamic> json) =>

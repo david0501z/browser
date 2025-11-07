@@ -1,3 +1,4 @@
+import '../providers/proxy_widget_providers.dart';
 import 'package:flutter/material.dart';
 
 class BookmarkItem extends StatelessWidget {
@@ -92,8 +93,8 @@ class BookmarkItem extends StatelessWidget {
                       ),
                     
                     // 描述
-                    if (bookmark.description?.isNotEmpty == true) ...[;
-                      const SizedBox(height: 2),
+                    if (bookmark.description?.isNotEmpty == true) ...[
+                const SizedBox(height: 2),
                       Text(
                         bookmark.description!,
                         style: TextStyle(
@@ -106,8 +107,8 @@ class BookmarkItem extends StatelessWidget {
                     ],
                     
                     // 标签
-                    if (bookmark.tags?.isNotEmpty == true) ...[;
-                      const SizedBox(height: 4),
+                    if (bookmark.tags?.isNotEmpty == true) ...[
+                const SizedBox(height: 4),
                       Wrap(
                         spacing: 4,
                         runSpacing: -4,
@@ -136,8 +137,8 @@ class BookmarkItem extends StatelessWidget {
                         break;
                     }
                   },
-                  itemBuilder: (context) => [;
-                    const PopupMenuItem(
+                  itemBuilder: (context) => [
+                const PopupMenuItem(
                       value: 'edit',
                       child: ListTile(
                         leading: Icon(Icons.edit),
@@ -172,8 +173,8 @@ class BookmarkItem extends StatelessWidget {
                         break;
                     }
                   },
-                  itemBuilder: (context) => [;
-                    const PopupMenuItem(
+                  itemBuilder: (context) => [
+                const PopupMenuItem(
                       value: 'edit',
                       child: ListTile(
                         leading: Icon(Icons.edit),
@@ -398,4 +399,100 @@ class _BookmarkEditDialogState extends State<BookmarkEditDialog> {
 
     Navigator.of(context).pop(bookmark);
   }
+
+
+/// 书签类
+class Bookmark {
+  final String id;
+  final String title;
+  final String url;
+  final DateTime? createdAt;
+  final List<String>? tags;
+  
+  const Bookmark({
+    required this.id,
+    required this.title,
+    required this.url,
+    this.createdAt,
+    this.tags,
+  });
+}
+
+/// 历史记录项类  
+class HistoryItem {
+  final String id;
+  final String title;
+  final String url;
+  final DateTime? visitedAt;
+  final List<String>? tags;
+  
+  const HistoryItem({
+    required this.id,
+    required this.title,
+    required this.url,
+    this.visitedAt,
+    this.tags,
+  });
+}
+
+/// 教程步骤类
+class TutorialStep {
+  final String id;
+  final String title;
+  final String description;
+  final String targetWidget;
+  
+  const TutorialStep({
+    required this.id,
+    required this.title,
+    required this.description,
+    required this.targetWidget,
+  });
+}
+
+/// 教程动作类
+enum TutorialAction {
+  next,
+  previous,
+  skip,
+  complete;
+}
+
+/// 工具提示位置类
+enum TooltipPosition {
+  top,
+  bottom,
+  left,
+  right,
+  center;
+}
+
+/// 工具提示内容类
+class TooltipContent {
+  final String title;
+  final String description;
+  final Widget? icon;
+  
+  const TooltipContent({
+    required this.title,
+    required this.description,
+    this.icon,
+  });
+}
+
+/// 帮助内容类
+class HelpContent {
+  final String title;
+  final String content;
+  final String? link;
+  
+  const HelpContent({
+    required this.title,
+    required this.content,
+    this.link,
+  });
+}
+
+
+}
 }

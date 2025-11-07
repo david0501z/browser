@@ -9,6 +9,8 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:path_provider/path_provider.dart';
 
+import '../config/index.dart';
+
 /// 设置服务类
 /// 
 /// 提供统一的设置管理功能，包括：

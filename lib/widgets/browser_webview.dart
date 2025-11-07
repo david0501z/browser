@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import '../models/browser_models.dart';
 
 /// 浏览器WebView组件
 /// 
@@ -73,7 +74,7 @@ class _BrowserWebViewState extends State<BrowserWebView> {
   Future<void> _loadUrl(String url) async {
     if (_webViewController != null) {
       await _webViewController.loadUrl(
-        urlRequest: URLRequest(url: Uri.parse(url)),
+        urlRequest: URLRequest(url: WebUri.uri(Uri.parse(url))),
       );
     }
   }
@@ -126,7 +127,7 @@ class _BrowserWebViewState extends State<BrowserWebView> {
         // WebView主体
         InAppWebView(
           initialUrlRequest: URLRequest(
-            url: Uri.parse(widget.tab.url),
+            url: WebUri.uri(Uri.parse(widget.tab.url)),
           ),
           onWebViewCreated: (controller) {
             _webViewController = controller;
@@ -160,10 +161,13 @@ class _BrowserWebViewState extends State<BrowserWebView> {
               
               if (favicons.isNotEmpty) {
                 // 选择最大的favicon
-                favicon = favicons;
-                    .where((fav) => fav.url != null);
-                    .map((fav) => fav.url!);
-                    .first;
+                final faviconUrl = favicons
+                    .where((fav) => fav.url != null && fav.url!.isNotEmpty)
+                    .map((fav) => fav.url!)
+                    .firstOrNull;
+                if (faviconUrl != null) {
+                  favicon = faviconUrl;
+                }
               }
               
               setState(() {
@@ -221,32 +225,19 @@ class _BrowserWebViewState extends State<BrowserWebView> {
             return NavigationActionPolicy.CANCEL;
           },
           // WebView配置
-          initialOptions: InAppWebViewGroupOptions(
-            crossPlatform: InAppWebViewOptions(
-              useShouldOverrideUrlLoading: true,
-              useOnLoadResource: true,
-              javaScriptEnabled: true,
-              domStorageEnabled: true,
-              cacheEnabled: true,
-              clearCache: false,
-              userAgent: _getUserAgent(),
-              incognito: false, // 可以根据设置调整
-            ),
-            android: AndroidInAppWebViewOptions(
-              useHybridComposition: false, // 解决Flutter 3.27.x性能问题
-              builtInZoomControls: true,
-              displayZoomControls: false,
-              supportMultipleWindows: true,
-              allowContentAccess: true,
-              allowFileAccess: true,
-              allowFileAccessFromFileURLs: true,
-              allowUniversalAccessFromFileURLs: true,
-            ),
-            ios: IOSInAppWebViewOptions(
-              allowsBackForwardNavigationGestures: true,
-              allowsLinkPreview: true,
-              suppressesIncrementalRendering: true,
-            ),
+          initialSettings: InAppWebViewSettings(
+            useShouldOverrideUrlLoading: true,
+            useOnLoadResource: true,
+            javaScriptEnabled: true,
+            clearCache: false,
+            userAgent: _getUserAgent(),
+            incognito: false, // 可以根据设置调整
+            isVerticalScrollGestureEnabled: true,
+            isHorizontalScrollGestureEnabled: true,
+            supportMultipleWindows: true,
+            allowsBackForwardNavigationGestures: true,
+            allowsLinkPreview: true,
+            suppressesIncrementalRendering: true,
           ),
           pullToRefreshController: _pullToRefreshController,
         ),

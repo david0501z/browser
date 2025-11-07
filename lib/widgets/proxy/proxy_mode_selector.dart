@@ -6,6 +6,28 @@ library proxy_mode_selector;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../core/proxy_types.dart';
+import '../../providers/proxy_widget_providers.dart';
+import '../../core/proxy_types.dart';
+
+/// 代理模式选项类
+class ProxyModeOption {
+  final ProxyMode mode;
+  final String title;
+  final String? description;
+  final String? usage;
+  final List<String>? features;
+  final IconData icon;
+
+  const ProxyModeOption({
+    required this.mode,
+    required this.title,
+    this.description,
+    this.usage,
+    this.features,
+    required this.icon,
+  });
+}
 
 /// 代理模式选择器
 /// 
@@ -92,8 +114,8 @@ class _ProxyModeSelectorState extends ConsumerState<ProxyModeSelector>
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final isDark = theme.colorScheme.brightness == Brightness.dark;
-    final primaryColor = widget.primaryColor ??;
+    final isDark = theme.brightness == Brightness.dark;
+    final primaryColor = widget.primaryColor ??
         (isDark ? const Color(0xFF64B5F6) : const Color(0xFF2196F3));
     
     return Container(
@@ -172,7 +194,7 @@ class _ProxyModeSelectorState extends ConsumerState<ProxyModeSelector>
                         ),
                         const SizedBox(width: 4),
                         Text(
-                          mode.label,
+                          mode.title,
                           style: TextStyle(
                             fontSize: 12,
                             color: isSelected 
@@ -271,7 +293,7 @@ class _ProxyModeSelectorState extends ConsumerState<ProxyModeSelector>
                                 Row(
                                   children: [
                                     Text(
-                                      mode.label,
+                                      mode.title,
                                       style: theme.textTheme.titleSmall?.copyWith(
                                         fontWeight: FontWeight.w600,
                                         color: isSelected 
@@ -292,7 +314,7 @@ class _ProxyModeSelectorState extends ConsumerState<ProxyModeSelector>
                                   ],
                                 ),
                                 
-                                if (widget.showDescriptions && mode.description != null) ...[;
+                                if (widget.showDescriptions && mode.description != null) ...[
                                   const SizedBox(height: 4),
                                   Text(
                                     mode.description!,
@@ -329,45 +351,26 @@ class _ProxyModeSelectorState extends ConsumerState<ProxyModeSelector>
 }
 
 /// 默认代理模式选项
-List<ProxyModeOption> get _defaultModes => [;
-  ProxyModeOption(
+List<ProxyModeOption> get _defaultModes => [
+  const ProxyModeOption(
     mode: ProxyMode.rule,
-    label: '规则模式',
+    title: '规则模式',
     icon: Icons.rule,
     description: '基于规则文件的智能分流，适合日常使用',
   ),
-  ProxyModeOption(
+  const ProxyModeOption(
     mode: ProxyMode.global,
-    label: '全局模式',
+    title: '全局模式',
     icon: Icons.public,
     description: '所有网络请求都通过代理服务器',
   ),
-  ProxyModeOption(
+  const ProxyModeOption(
     mode: ProxyMode.direct,
-    label: '直连模式',
+    title: '直连模式',
     icon: Icons.link_off,
     description: '不使用代理，直接连接网络',
   ),
 ];
-
-/// 代理模式选项数据类
-class ProxyModeOption {
-  final ProxyMode mode;
-  final String label;
-  final IconData icon;
-  final String? description;
-  final String? usage;
-  final List<String>? features;
-  
-  const ProxyModeOption({
-    required this.mode,
-    required this.label,
-    required this.icon,
-    this.description,
-    this.usage,
-    this.features,
-  });
-}
 
 /// 代理模式选择器样式
 class ProxyModeSelectorStyles {

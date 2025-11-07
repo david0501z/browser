@@ -1,3 +1,4 @@
+import '../providers/proxy_widget_providers.dart';
 import 'package:flutter/material.dart';
 
 class HistoryItemWidget extends StatelessWidget {
@@ -86,8 +87,8 @@ class HistoryItemWidget extends StatelessWidget {
                     ),
                     
                     // 描述
-                    if (history.description?.isNotEmpty == true) ...[;
-                      const SizedBox(height: 2),
+                    if (history.description?.isNotEmpty == true) ...[
+                const SizedBox(height: 2),
                       Text(
                         history.description!,
                         style: TextStyle(
@@ -121,8 +122,8 @@ class HistoryItemWidget extends StatelessWidget {
                         const SizedBox(width: 16),
                         
                         // 访问时长
-                        if (history.duration != null) ...[;
-                          Icon(
+                        if (history.duration != null) ...[
+                Icon(
                             Icons.timer,
                             size: 12,
                             color: Colors.grey[600],
@@ -175,8 +176,8 @@ class HistoryItemWidget extends StatelessWidget {
                       break;
                   }
                 },
-                itemBuilder: (context) => [;
-                  const PopupMenuItem(
+                itemBuilder: (context) => [
+                const PopupMenuItem(
                     value: 'open',
                     child: ListTile(
                       leading: Icon(Icons.open_in_new),
@@ -272,20 +273,20 @@ class HistoryDetailDialog extends StatelessWidget {
               '${history.visitedAt.hour.toString().padLeft(2, '0')}:${history.visitedAt.minute.toString().padLeft(2, '0')}'),
             const SizedBox(height: 12),
             _buildDetailRow('访问次数', '${history.visitCount}次'),
-            if (history.duration != null) ...[;
-              const SizedBox(height: 12),
+            if (history.duration != null) ...[
+                const SizedBox(height: 12),
               _buildDetailRow('访问时长', history.formattedDuration),
             ],
-            if (history.description?.isNotEmpty == true) ...[;
-              const SizedBox(height: 12),
+            if (history.description?.isNotEmpty == true) ...[
+                const SizedBox(height: 12),
               _buildDetailRow('描述', history.description!),
             ],
-            if (history.userAgent?.isNotEmpty == true) ...[;
-              const SizedBox(height: 12),
+            if (history.userAgent?.isNotEmpty == true) ...[
+                const SizedBox(height: 12),
               _buildDetailRow('用户代理', history.userAgent!),
             ],
-            if (history.referrer?.isNotEmpty == true) ...[;
-              const SizedBox(height: 12),
+            if (history.referrer?.isNotEmpty == true) ...[
+                const SizedBox(height: 12),
               _buildDetailRow('来源页面', history.referrer!),
             ],
           ],
@@ -327,4 +328,100 @@ class HistoryDetailDialog extends StatelessWidget {
       ],
     );
   }
+
+
+/// 书签类
+class Bookmark {
+  final String id;
+  final String title;
+  final String url;
+  final DateTime? createdAt;
+  final List<String>? tags;
+  
+  const Bookmark({
+    required this.id,
+    required this.title,
+    required this.url,
+    this.createdAt,
+    this.tags,
+  });
+}
+
+/// 历史记录项类  
+class HistoryItem {
+  final String id;
+  final String title;
+  final String url;
+  final DateTime? visitedAt;
+  final List<String>? tags;
+  
+  const HistoryItem({
+    required this.id,
+    required this.title,
+    required this.url,
+    this.visitedAt,
+    this.tags,
+  });
+}
+
+/// 教程步骤类
+class TutorialStep {
+  final String id;
+  final String title;
+  final String description;
+  final String targetWidget;
+  
+  const TutorialStep({
+    required this.id,
+    required this.title,
+    required this.description,
+    required this.targetWidget,
+  });
+}
+
+/// 教程动作类
+enum TutorialAction {
+  next,
+  previous,
+  skip,
+  complete;
+}
+
+/// 工具提示位置类
+enum TooltipPosition {
+  top,
+  bottom,
+  left,
+  right,
+  center;
+}
+
+/// 工具提示内容类
+class TooltipContent {
+  final String title;
+  final String description;
+  final Widget? icon;
+  
+  const TooltipContent({
+    required this.title,
+    required this.description,
+    this.icon,
+  });
+}
+
+/// 帮助内容类
+class HelpContent {
+  final String title;
+  final String content;
+  final String? link;
+  
+  const HelpContent({
+    required this.title,
+    required this.content,
+    this.link,
+  });
+}
+
+
+}
 }

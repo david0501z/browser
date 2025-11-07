@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
 import 'rule_manager.dart';
 
@@ -321,6 +320,9 @@ class RuleValidator {
       case RuleType.cidr:
         return _validateCIDRPattern(rule.pattern, warnings);
       
+      case RuleType.ipcidr:
+        return _validateCIDRPattern(rule.pattern, warnings);
+      
       case RuleType.port:
         return _validatePortPattern(rule.pattern, warnings);
       
@@ -568,10 +570,7 @@ class RuleValidator {
       return ValidationResult.failure('动作类型与规则类型不兼容');
     }
 
-    // 验证优先级范围
-    if (rule.priority < RulePriority.lowest || rule.priority > RulePriority.critical) {
-      warnings.add('优先级超出建议范围 (${RulePriority.lowest}-${RulePriority.critical})');
-    }
+    // RulePriority是枚举类型，无需验证范围，因为所有有效值都是定义的
 
     return ValidationResult.successWithWarnings(warnings);
   }
@@ -724,7 +723,7 @@ class RuleValidator {
   }
 
   bool _isCriticalDomain(String domain) {
-    final criticalDomains = [;
+    final criticalDomains = [
       'google.com',
       'facebook.com',
       'amazon.com',
@@ -759,7 +758,7 @@ class RuleValidator {
   }
 
   /// 静态方法：验证单个规则
-  static ValidationResult validateRule(RuleConfig rule) {
+  static ValidationResult validateRuleStatic(RuleConfig rule) {
     return instance.validateRule(rule);
   }
 
@@ -775,6 +774,9 @@ class RuleValidator {
         return _validateStaticIPPattern(pattern, localWarnings);
       
       case RuleType.cidr:
+        return _validateStaticCIDRPattern(pattern, localWarnings);
+      
+      case RuleType.ipcidr:
         return _validateStaticCIDRPattern(pattern, localWarnings);
       
       case RuleType.port:

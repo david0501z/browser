@@ -2,6 +2,8 @@
 /// 
 /// 将 ClashCoreSettings 转换为 ClashMeta 兼容的 YAML 配置文件
 
+import 'models/models.dart';
+
 
 /// Clash 配置生成器类
 class ClashConfigGenerator {
@@ -12,7 +14,7 @@ class ClashConfigGenerator {
   static const int maxPort = 65535;
   
   /// 支持的代理协议类型
-  static const List<String> supportedProxyTypes = [;
+  static const List<String> supportedProxyTypes = [
     'vmess',
     'vless', 
     'trojan',
@@ -285,7 +287,7 @@ class ClashConfigGenerator {
       rules.addAll(customRules);
     } else if (ruleConfiguration.enable && ruleConfiguration.rules.isNotEmpty) {
       // 使用配置中的规则
-      rules.addAll(ruleConfiguration.rules);
+      rules.addAll(ruleConfiguration.rules.map((rule) => rule.toString()).toList());
     } else {
       // 默认规则
       rules.addAll(_getDefaultRules());
@@ -472,8 +474,6 @@ class ClashConfigGenerator {
   /// 转换日志级别
   String _convertLogLevel(LogLevel level) {
     switch (level) {
-      case LogLevel.verbose:
-        return 'verbose';
       case LogLevel.debug:
         return 'debug';
       case LogLevel.info:
@@ -482,7 +482,7 @@ class ClashConfigGenerator {
         return 'warning';
       case LogLevel.error:
         return 'error';
-      case LogLevel.critical:
+      case LogLevel.silent:
         return 'silent';
       default:
         return 'info'; // 默认返回

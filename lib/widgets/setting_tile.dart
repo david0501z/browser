@@ -4,6 +4,7 @@
 /// 支持多种设置项类型：开关、选择、输入、按钮等。
 library setting_tile;
 
+import '../providers/proxy_widget_providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -210,8 +211,8 @@ class SettingTile extends StatelessWidget {
             child: Row(
               children: [
                 // 图标
-                if (icon != null) ...[;
-                  Icon(
+                if (icon != null) ...[
+                Icon(
                     icon,
                     color: iconColor ?? theme.primaryColor,
                     size: 20,
@@ -254,8 +255,8 @@ class SettingTile extends StatelessWidget {
                       ),
                       
                       // 副标题
-                      if (subtitle != null) ...[;
-                        const SizedBox(height: 2),
+                      if (subtitle != null) ...[
+                const SizedBox(height: 2),
                         Text(
                           subtitle!,
                           style: theme.textTheme.bodySmall?.copyWith(
@@ -267,8 +268,8 @@ class SettingTile extends StatelessWidget {
                       ],
                       
                       // 错误消息
-                      if (hasError && errorMessage != null) ...[;
-                        const SizedBox(height: 4),
+                      if (hasError && errorMessage != null) ...[
+                const SizedBox(height: 4),
                         Text(
                           errorMessage!,
                           style: theme.textTheme.bodySmall?.copyWith(
@@ -278,8 +279,8 @@ class SettingTile extends StatelessWidget {
                       ],
                       
                       // 警告消息
-                      if (hasWarning && warningMessage != null) ...[;
-                        const SizedBox(height: 4),
+                      if (hasWarning && warningMessage != null) ...[
+                const SizedBox(height: 4),
                         Text(
                           warningMessage!,
                           style: theme.textTheme.bodySmall?.copyWith(
@@ -450,8 +451,8 @@ class SettingTile extends StatelessWidget {
           color: iconColor,
           size: 16,
         ),
-        if (infoConfig!.showValue && value != null) ...[;
-          const SizedBox(width: 4),
+        if (infoConfig!.showValue && value != null) ...[
+                const SizedBox(width: 4),
           Text(
             value.toString(),
             style: theme.textTheme.bodySmall?.copyWith(
@@ -716,4 +717,100 @@ class SettingTileBuilder {
   void clear() {
     _tiles.clear();
   }
+
+
+/// 书签类
+class Bookmark {
+  final String id;
+  final String title;
+  final String url;
+  final DateTime? createdAt;
+  final List<String>? tags;
+  
+  const Bookmark({
+    required this.id,
+    required this.title,
+    required this.url,
+    this.createdAt,
+    this.tags,
+  });
+}
+
+/// 历史记录项类  
+class HistoryItem {
+  final String id;
+  final String title;
+  final String url;
+  final DateTime? visitedAt;
+  final List<String>? tags;
+  
+  const HistoryItem({
+    required this.id,
+    required this.title,
+    required this.url,
+    this.visitedAt,
+    this.tags,
+  });
+}
+
+/// 教程步骤类
+class TutorialStep {
+  final String id;
+  final String title;
+  final String description;
+  final String targetWidget;
+  
+  const TutorialStep({
+    required this.id,
+    required this.title,
+    required this.description,
+    required this.targetWidget,
+  });
+}
+
+/// 教程动作类
+enum TutorialAction {
+  next,
+  previous,
+  skip,
+  complete;
+}
+
+/// 工具提示位置类
+enum TooltipPosition {
+  top,
+  bottom,
+  left,
+  right,
+  center;
+}
+
+/// 工具提示内容类
+class TooltipContent {
+  final String title;
+  final String description;
+  final Widget? icon;
+  
+  const TooltipContent({
+    required this.title,
+    required this.description,
+    this.icon,
+  });
+}
+
+/// 帮助内容类
+class HelpContent {
+  final String title;
+  final String content;
+  final String? link;
+  
+  const HelpContent({
+    required this.title,
+    required this.content,
+    this.link,
+  });
+}
+
+
+}
 }

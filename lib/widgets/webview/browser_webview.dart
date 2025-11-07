@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
+// 导入所需的数据模型
+import '../../models/BrowserTab.dart';
+import '../../core/proxy_config.dart';
+import '../../services/webview_proxy_service.dart';
+
 /// 浏览器WebView组件
 /// 
 /// 集成flutter_inappwebview组件，实现：
@@ -188,8 +193,6 @@ class _BrowserWebViewState extends State<BrowserWebView> {
           initialUrlRequest: URLRequest(
             url: WebUri.uri(widget.tab.url),
           ),
-          // 代理设置
-          proxySettings: WebViewProxyService.instance.adapter.generateProxySettings(),
           onWebViewCreated: (controller) {
             _webViewController = controller;
           },
@@ -222,9 +225,9 @@ class _BrowserWebViewState extends State<BrowserWebView> {
               
               if (favicons.isNotEmpty) {
                 // 选择最大的favicon
-                favicon = favicons;
-                    .where((fav) => fav.url != null);
-                    .map((fav) => fav.url!);
+                favicon = favicons
+                    .where((fav) => fav.url != null)
+                    .map((fav) => fav.url!.toString())
                     .first;
               }
               
@@ -283,39 +286,20 @@ class _BrowserWebViewState extends State<BrowserWebView> {
             return NavigationActionPolicy.CANCEL;
           },
           // WebView配置
-          initialSettings: InAppWebViewGroupOptions(
-            crossPlatform: InAppWebViewOptions(
-              useShouldOverrideUrlLoading: true,
-              useOnLoadResource: true,
-              javaScriptEnabled: true,
-              // domStorageEnabled 参数已移除，使用默认设置
-              cacheEnabled: true,
-              clearCache: false,
-              userAgent: _getUserAgent(),
-              incognito: false, // 可以根据设置调整
-              
-              // 代理设置
-              proxyEnabled: _proxyEnabled,
-            ),
-            android: AndroidInAppWebViewOptions(
-              useHybridComposition: false, // 解决Flutter 3.27.x性能问题
-              builtInZoomControls: true,
-              displayZoomControls: false,
-              supportMultipleWindows: true,
-              // allowContentAccess, allowFileAccess, allowFileAccessFromFileURLs, allowUniversalAccessFromFileURLs 已移除
-              // 使用默认的安全设置
-              
-              // 代理设置
-              proxyEnabled: _proxyEnabled,
-            ),
-            ios: IOSInAppWebViewOptions(
-              allowsBackForwardNavigationGestures: true,
-              allowsLinkPreview: true,
-              suppressesIncrementalRendering: true,
-              
-              // 代理设置
-              proxyEnabled: _proxyEnabled,
-            ),
+          initialSettings: InAppWebViewSettings(
+            useShouldOverrideUrlLoading: true,
+            useOnLoadResource: true,
+            javaScriptEnabled: true,
+            cacheEnabled: true,
+            clearCache: false,
+            userAgent: _getUserAgent(),
+            incognito: false,
+            builtInZoomControls: true,
+            displayZoomControls: false,
+            supportMultipleWindows: true,
+            allowsBackForwardNavigationGestures: true,
+            allowsLinkPreview: true,
+            suppressesIncrementalRendering: true,
           ),
           pullToRefreshController: _pullToRefreshController,
         ),
@@ -336,7 +320,7 @@ class _BrowserWebViewState extends State<BrowserWebView> {
           ),
         
         // 错误页面
-        if (_errorMessage != null);
+        if (_errorMessage != null)
           Positioned(
             top: 0,
             left: 0,
@@ -452,7 +436,7 @@ class _BrowserWebViewState extends State<BrowserWebView> {
   Future<String?> evaluateJavaScript(String javaScriptString) async {
     try {
       return await _webViewController.evaluateJavascript(
-        javascriptString: javaScriptString,
+        source: javaScriptString,
       );
     } catch (e) {
       return null;

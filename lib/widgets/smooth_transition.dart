@@ -1,7 +1,44 @@
 import 'dart:async';
+import '../providers/proxy_widget_providers.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+/// 切换模式枚举
+enum SwitchMode {
+  auto('AUTO'),
+  manual('MANUAL');
+
+  const SwitchMode(this.value);
+  final String value;
+}
+
+/// 共享状态类
+class SharedState {
+  final SwitchMode mode;
+  final bool isAnimating;
+
+  const SharedState({
+    required this.mode,
+    this.isAnimating = false,
+  });
+}
+
+/// 过渡状态类
+class TransitionState {
+  final bool isForward;
+  final Duration duration;
+
+  const TransitionState({
+    required this.isForward,
+    this.duration = const Duration(milliseconds: 300),
+  });
+}
+
+/// 共享状态提供者
+final sharedStateProvider = StateProvider<SharedState>((ref) {
+  return const SharedState(mode: SwitchMode.auto);
+});
 
 /// 平滑过渡动画组件
 class SmoothTransition extends ConsumerStatefulWidget {

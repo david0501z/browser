@@ -40,8 +40,8 @@ class _BrowserToolbarState extends State<BrowserToolbar> {
   bool _isLoading = false;
   
   // 搜索建议
-  final List<String> _searchSuggestions = [;
-    'https://www.google.com',
+  final List<String> _searchSuggestions = [
+                'https://www.google.com',
     'https://www.baidu.com',
     'https://github.com',
     'https://stackoverflow.com',
@@ -281,8 +281,8 @@ class _BrowserToolbarState extends State<BrowserToolbar> {
                       break;
                   }
                 },
-                itemBuilder: (context) => [;
-                  PopupMenuItem(
+                itemBuilder: (context) => [
+                PopupMenuItem(
                     value: 'copy_url',
                     child: Row(
                       children: [

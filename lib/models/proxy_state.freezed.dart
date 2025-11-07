@@ -66,7 +66,7 @@ mixin _$ProxyServer {
 /// @nodoc
 abstract class $ProxyServerCopyWith<$Res> {
   factory $ProxyServerCopyWith(
-          ProxyServer value, $Res Function(ProxyServer) then) =;
+          ProxyServer value, $Res Function(ProxyServer) then) =
       _$ProxyServerCopyWithImpl<$Res, ProxyServer>;
   @useResult
   $Res call(
@@ -111,47 +111,47 @@ class _$ProxyServerCopyWithImpl<$Res, $Val extends ProxyServer>
     Object? latency = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id;
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name;
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      server: null == server;
+      server: null == server
           ? _value.server
           : server // ignore: cast_nullable_to_non_nullable
               as String,
-      port: null == port;
+      port: null == port
           ? _value.port
           : port // ignore: cast_nullable_to_non_nullable
               as int,
-      username: freezed == username;
+      username: freezed == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String?,
-      password: freezed == password;
+      password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String?,
-      protocol: null == protocol;
+      protocol: null == protocol
           ? _value.protocol
           : protocol // ignore: cast_nullable_to_non_nullable
               as ProxyProtocol,
-      enabled: null == enabled;
+      enabled: null == enabled
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      createdAt: null == createdAt;
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      lastUsedAt: freezed == lastUsedAt;
+      lastUsedAt: freezed == lastUsedAt
           ? _value.lastUsedAt
           : lastUsedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      latency: freezed == latency;
+      latency: freezed == latency
           ? _value.latency
           : latency // ignore: cast_nullable_to_non_nullable
               as int?,
@@ -163,7 +163,7 @@ class _$ProxyServerCopyWithImpl<$Res, $Val extends ProxyServer>
 abstract class _$$ProxyServerImplCopyWith<$Res>
     implements $ProxyServerCopyWith<$Res> {
   factory _$$ProxyServerImplCopyWith(
-          _$ProxyServerImpl value, $Res Function(_$ProxyServerImpl) then) =;
+          _$ProxyServerImpl value, $Res Function(_$ProxyServerImpl) then) =
       __$$ProxyServerImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -207,47 +207,47 @@ class __$$ProxyServerImplCopyWithImpl<$Res>
     Object? latency = freezed,
   }) {
     return _then(_$ProxyServerImpl(
-      id: null == id;
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name;
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      server: null == server;
+      server: null == server
           ? _value.server
           : server // ignore: cast_nullable_to_non_nullable
               as String,
-      port: null == port;
+      port: null == port
           ? _value.port
           : port // ignore: cast_nullable_to_non_nullable
               as int,
-      username: freezed == username;
+      username: freezed == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String?,
-      password: freezed == password;
+      password: freezed == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String?,
-      protocol: null == protocol;
+      protocol: null == protocol
           ? _value.protocol
           : protocol // ignore: cast_nullable_to_non_nullable
               as ProxyProtocol,
-      enabled: null == enabled;
+      enabled: null == enabled
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      createdAt: null == createdAt;
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      lastUsedAt: freezed == lastUsedAt;
+      lastUsedAt: freezed == lastUsedAt
           ? _value.lastUsedAt
           : lastUsedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      latency: freezed == latency;
+      latency: freezed == latency
           ? _value.latency
           : latency // ignore: cast_nullable_to_non_nullable
               as int?,
@@ -381,7 +381,7 @@ abstract class _ProxyServer implements ProxyServer {
       final DateTime? lastUsedAt,
       final int? latency}) = _$ProxyServerImpl;
 
-  factory _ProxyServer.fromJson(Map<String, dynamic> json) =;
+  factory _ProxyServer.fromJson(Map<String, dynamic> json) =
       _$ProxyServerImpl.fromJson;
 
   /// 服务器ID
@@ -482,7 +482,7 @@ mixin _$ProxyConnectionState {
 /// @nodoc
 abstract class $ProxyConnectionStateCopyWith<$Res> {
   factory $ProxyConnectionStateCopyWith(ProxyConnectionState value,
-          $Res Function(ProxyConnectionState) then) =;
+          $Res Function(ProxyConnectionState) then) =
       _$ProxyConnectionStateCopyWithImpl<$Res, ProxyConnectionState>;
   @useResult
   $Res call(
@@ -524,39 +524,39 @@ class _$ProxyConnectionStateCopyWithImpl<$Res,
     Object? downloadSpeed = null,
   }) {
     return _then(_value.copyWith(
-      isConnected: null == isConnected;
+      isConnected: null == isConnected
           ? _value.isConnected
           : isConnected // ignore: cast_nullable_to_non_nullable
               as bool,
-      currentServerId: freezed == currentServerId;
+      currentServerId: freezed == currentServerId
           ? _value.currentServerId
           : currentServerId // ignore: cast_nullable_to_non_nullable
               as String?,
-      connectedAt: freezed == connectedAt;
+      connectedAt: freezed == connectedAt
           ? _value.connectedAt
           : connectedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      disconnectedAt: freezed == disconnectedAt;
+      disconnectedAt: freezed == disconnectedAt
           ? _value.disconnectedAt
           : disconnectedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      errorMessage: freezed == errorMessage;
+      errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String?,
-      uploadBytes: null == uploadBytes;
+      uploadBytes: null == uploadBytes
           ? _value.uploadBytes
           : uploadBytes // ignore: cast_nullable_to_non_nullable
               as int,
-      downloadBytes: null == downloadBytes;
+      downloadBytes: null == downloadBytes
           ? _value.downloadBytes
           : downloadBytes // ignore: cast_nullable_to_non_nullable
               as int,
-      uploadSpeed: null == uploadSpeed;
+      uploadSpeed: null == uploadSpeed
           ? _value.uploadSpeed
           : uploadSpeed // ignore: cast_nullable_to_non_nullable
               as int,
-      downloadSpeed: null == downloadSpeed;
+      downloadSpeed: null == downloadSpeed
           ? _value.downloadSpeed
           : downloadSpeed // ignore: cast_nullable_to_non_nullable
               as int,
@@ -568,7 +568,7 @@ class _$ProxyConnectionStateCopyWithImpl<$Res,
 abstract class _$$ProxyConnectionStateImplCopyWith<$Res>
     implements $ProxyConnectionStateCopyWith<$Res> {
   factory _$$ProxyConnectionStateImplCopyWith(_$ProxyConnectionStateImpl value,
-          $Res Function(_$ProxyConnectionStateImpl) then) =;
+          $Res Function(_$ProxyConnectionStateImpl) then) =
       __$$ProxyConnectionStateImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -608,39 +608,39 @@ class __$$ProxyConnectionStateImplCopyWithImpl<$Res>
     Object? downloadSpeed = null,
   }) {
     return _then(_$ProxyConnectionStateImpl(
-      isConnected: null == isConnected;
+      isConnected: null == isConnected
           ? _value.isConnected
           : isConnected // ignore: cast_nullable_to_non_nullable
               as bool,
-      currentServerId: freezed == currentServerId;
+      currentServerId: freezed == currentServerId
           ? _value.currentServerId
           : currentServerId // ignore: cast_nullable_to_non_nullable
               as String?,
-      connectedAt: freezed == connectedAt;
+      connectedAt: freezed == connectedAt
           ? _value.connectedAt
           : connectedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      disconnectedAt: freezed == disconnectedAt;
+      disconnectedAt: freezed == disconnectedAt
           ? _value.disconnectedAt
           : disconnectedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      errorMessage: freezed == errorMessage;
+      errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String?,
-      uploadBytes: null == uploadBytes;
+      uploadBytes: null == uploadBytes
           ? _value.uploadBytes
           : uploadBytes // ignore: cast_nullable_to_non_nullable
               as int,
-      downloadBytes: null == downloadBytes;
+      downloadBytes: null == downloadBytes
           ? _value.downloadBytes
           : downloadBytes // ignore: cast_nullable_to_non_nullable
               as int,
-      uploadSpeed: null == uploadSpeed;
+      uploadSpeed: null == uploadSpeed
           ? _value.uploadSpeed
           : uploadSpeed // ignore: cast_nullable_to_non_nullable
               as int,
-      downloadSpeed: null == downloadSpeed;
+      downloadSpeed: null == downloadSpeed
           ? _value.downloadSpeed
           : downloadSpeed // ignore: cast_nullable_to_non_nullable
               as int,
@@ -775,7 +775,7 @@ abstract class _ProxyConnectionState implements ProxyConnectionState {
       required final int uploadSpeed,
       required final int downloadSpeed}) = _$ProxyConnectionStateImpl;
 
-  factory _ProxyConnectionState.fromJson(Map<String, dynamic> json) =;
+  factory _ProxyConnectionState.fromJson(Map<String, dynamic> json) =
       _$ProxyConnectionStateImpl.fromJson;
 
   /// 是否已连接
@@ -861,7 +861,7 @@ mixin _$ProxyRule {
 
 /// @nodoc
 abstract class $ProxyRuleCopyWith<$Res> {
-  factory $ProxyRuleCopyWith(ProxyRule value, $Res Function(ProxyRule) then) =;
+  factory $ProxyRuleCopyWith(ProxyRule value, $Res Function(ProxyRule) then) =
       _$ProxyRuleCopyWithImpl<$Res, ProxyRule>;
   @useResult
   $Res call(
@@ -898,31 +898,31 @@ class _$ProxyRuleCopyWithImpl<$Res, $Val extends ProxyRule>
     Object? createdAt = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id;
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name;
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      pattern: null == pattern;
+      pattern: null == pattern
           ? _value.pattern
           : pattern // ignore: cast_nullable_to_non_nullable
               as String,
-      type: null == type;
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as ProxyRuleType,
-      proxyServerId: null == proxyServerId;
+      proxyServerId: null == proxyServerId
           ? _value.proxyServerId
           : proxyServerId // ignore: cast_nullable_to_non_nullable
               as String,
-      enabled: null == enabled;
+      enabled: null == enabled
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      createdAt: null == createdAt;
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
@@ -934,7 +934,7 @@ class _$ProxyRuleCopyWithImpl<$Res, $Val extends ProxyRule>
 abstract class _$$ProxyRuleImplCopyWith<$Res>
     implements $ProxyRuleCopyWith<$Res> {
   factory _$$ProxyRuleImplCopyWith(
-          _$ProxyRuleImpl value, $Res Function(_$ProxyRuleImpl) then) =;
+          _$ProxyRuleImpl value, $Res Function(_$ProxyRuleImpl) then) =
       __$$ProxyRuleImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -970,31 +970,31 @@ class __$$ProxyRuleImplCopyWithImpl<$Res>
     Object? createdAt = null,
   }) {
     return _then(_$ProxyRuleImpl(
-      id: null == id;
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name;
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      pattern: null == pattern;
+      pattern: null == pattern
           ? _value.pattern
           : pattern // ignore: cast_nullable_to_non_nullable
               as String,
-      type: null == type;
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as ProxyRuleType,
-      proxyServerId: null == proxyServerId;
+      proxyServerId: null == proxyServerId
           ? _value.proxyServerId
           : proxyServerId // ignore: cast_nullable_to_non_nullable
               as String,
-      enabled: null == enabled;
+      enabled: null == enabled
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      createdAt: null == createdAt;
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
@@ -1097,7 +1097,7 @@ abstract class _ProxyRule implements ProxyRule {
       required final bool enabled,
       required final DateTime createdAt}) = _$ProxyRuleImpl;
 
-  factory _ProxyRule.fromJson(Map<String, dynamic> json) =;
+  factory _ProxyRule.fromJson(Map<String, dynamic> json) =
       _$ProxyRuleImpl.fromJson;
 
   /// 规则ID
@@ -1182,7 +1182,7 @@ mixin _$GlobalProxyState {
 /// @nodoc
 abstract class $GlobalProxyStateCopyWith<$Res> {
   factory $GlobalProxyStateCopyWith(
-          GlobalProxyState value, $Res Function(GlobalProxyState) then) =;
+          GlobalProxyState value, $Res Function(GlobalProxyState) then) =
       _$GlobalProxyStateCopyWithImpl<$Res, GlobalProxyState>;
   @useResult
   $Res call(
@@ -1225,35 +1225,35 @@ class _$GlobalProxyStateCopyWithImpl<$Res, $Val extends GlobalProxyState>
     Object? lastUpdated = null,
   }) {
     return _then(_value.copyWith(
-      status: null == status;
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ProxyStatus,
-      servers: null == servers;
+      servers: null == servers
           ? _value.servers
           : servers // ignore: cast_nullable_to_non_nullable
               as List<ProxyServer>,
-      connectionState: null == connectionState;
+      connectionState: null == connectionState
           ? _value.connectionState
           : connectionState // ignore: cast_nullable_to_non_nullable
               as ProxyConnectionState,
-      rules: null == rules;
+      rules: null == rules
           ? _value.rules
           : rules // ignore: cast_nullable_to_non_nullable
               as List<ProxyRule>,
-      isGlobalProxy: null == isGlobalProxy;
+      isGlobalProxy: null == isGlobalProxy
           ? _value.isGlobalProxy
           : isGlobalProxy // ignore: cast_nullable_to_non_nullable
               as bool,
-      systemProxySettings: null == systemProxySettings;
+      systemProxySettings: null == systemProxySettings
           ? _value.systemProxySettings
           : systemProxySettings // ignore: cast_nullable_to_non_nullable
               as SystemProxySettings,
-      autoConnectSettings: null == autoConnectSettings;
+      autoConnectSettings: null == autoConnectSettings
           ? _value.autoConnectSettings
           : autoConnectSettings // ignore: cast_nullable_to_non_nullable
               as AutoConnectSettings,
-      lastUpdated: null == lastUpdated;
+      lastUpdated: null == lastUpdated
           ? _value.lastUpdated
           : lastUpdated // ignore: cast_nullable_to_non_nullable
               as DateTime,
@@ -1297,7 +1297,7 @@ class _$GlobalProxyStateCopyWithImpl<$Res, $Val extends GlobalProxyState>
 abstract class _$$GlobalProxyStateImplCopyWith<$Res>
     implements $GlobalProxyStateCopyWith<$Res> {
   factory _$$GlobalProxyStateImplCopyWith(_$GlobalProxyStateImpl value,
-          $Res Function(_$GlobalProxyStateImpl) then) =;
+          $Res Function(_$GlobalProxyStateImpl) then) =
       __$$GlobalProxyStateImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1342,35 +1342,35 @@ class __$$GlobalProxyStateImplCopyWithImpl<$Res>
     Object? lastUpdated = null,
   }) {
     return _then(_$GlobalProxyStateImpl(
-      status: null == status;
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ProxyStatus,
-      servers: null == servers;
+      servers: null == servers
           ? _value._servers
           : servers // ignore: cast_nullable_to_non_nullable
               as List<ProxyServer>,
-      connectionState: null == connectionState;
+      connectionState: null == connectionState
           ? _value.connectionState
           : connectionState // ignore: cast_nullable_to_non_nullable
               as ProxyConnectionState,
-      rules: null == rules;
+      rules: null == rules
           ? _value._rules
           : rules // ignore: cast_nullable_to_non_nullable
               as List<ProxyRule>,
-      isGlobalProxy: null == isGlobalProxy;
+      isGlobalProxy: null == isGlobalProxy
           ? _value.isGlobalProxy
           : isGlobalProxy // ignore: cast_nullable_to_non_nullable
               as bool,
-      systemProxySettings: null == systemProxySettings;
+      systemProxySettings: null == systemProxySettings
           ? _value.systemProxySettings
           : systemProxySettings // ignore: cast_nullable_to_non_nullable
               as SystemProxySettings,
-      autoConnectSettings: null == autoConnectSettings;
+      autoConnectSettings: null == autoConnectSettings
           ? _value.autoConnectSettings
           : autoConnectSettings // ignore: cast_nullable_to_non_nullable
               as AutoConnectSettings,
-      lastUpdated: null == lastUpdated;
+      lastUpdated: null == lastUpdated
           ? _value.lastUpdated
           : lastUpdated // ignore: cast_nullable_to_non_nullable
               as DateTime,
@@ -1508,7 +1508,7 @@ abstract class _GlobalProxyState implements GlobalProxyState {
       required final AutoConnectSettings autoConnectSettings,
       required final DateTime lastUpdated}) = _$GlobalProxyStateImpl;
 
-  factory _GlobalProxyState.fromJson(Map<String, dynamic> json) =;
+  factory _GlobalProxyState.fromJson(Map<String, dynamic> json) =
       _$GlobalProxyStateImpl.fromJson;
 
   /// 当前代理状态
@@ -1585,7 +1585,7 @@ mixin _$SystemProxySettings {
 /// @nodoc
 abstract class $SystemProxySettingsCopyWith<$Res> {
   factory $SystemProxySettingsCopyWith(
-          SystemProxySettings value, $Res Function(SystemProxySettings) then) =;
+          SystemProxySettings value, $Res Function(SystemProxySettings) then) =
       _$SystemProxySettingsCopyWithImpl<$Res, SystemProxySettings>;
   @useResult
   $Res call(
@@ -1618,23 +1618,23 @@ class _$SystemProxySettingsCopyWithImpl<$Res, $Val extends SystemProxySettings>
     Object? bypassList = null,
   }) {
     return _then(_value.copyWith(
-      enabled: null == enabled;
+      enabled: null == enabled
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      httpProxy: freezed == httpProxy;
+      httpProxy: freezed == httpProxy
           ? _value.httpProxy
           : httpProxy // ignore: cast_nullable_to_non_nullable
               as String?,
-      httpsProxy: freezed == httpsProxy;
+      httpsProxy: freezed == httpsProxy
           ? _value.httpsProxy
           : httpsProxy // ignore: cast_nullable_to_non_nullable
               as String?,
-      socksProxy: freezed == socksProxy;
+      socksProxy: freezed == socksProxy
           ? _value.socksProxy
           : socksProxy // ignore: cast_nullable_to_non_nullable
               as String?,
-      bypassList: null == bypassList;
+      bypassList: null == bypassList
           ? _value.bypassList
           : bypassList // ignore: cast_nullable_to_non_nullable
               as List<String>,
@@ -1646,7 +1646,7 @@ class _$SystemProxySettingsCopyWithImpl<$Res, $Val extends SystemProxySettings>
 abstract class _$$SystemProxySettingsImplCopyWith<$Res>
     implements $SystemProxySettingsCopyWith<$Res> {
   factory _$$SystemProxySettingsImplCopyWith(_$SystemProxySettingsImpl value,
-          $Res Function(_$SystemProxySettingsImpl) then) =;
+          $Res Function(_$SystemProxySettingsImpl) then) =
       __$$SystemProxySettingsImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1678,23 +1678,23 @@ class __$$SystemProxySettingsImplCopyWithImpl<$Res>
     Object? bypassList = null,
   }) {
     return _then(_$SystemProxySettingsImpl(
-      enabled: null == enabled;
+      enabled: null == enabled
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      httpProxy: freezed == httpProxy;
+      httpProxy: freezed == httpProxy
           ? _value.httpProxy
           : httpProxy // ignore: cast_nullable_to_non_nullable
               as String?,
-      httpsProxy: freezed == httpsProxy;
+      httpsProxy: freezed == httpsProxy
           ? _value.httpsProxy
           : httpsProxy // ignore: cast_nullable_to_non_nullable
               as String?,
-      socksProxy: freezed == socksProxy;
+      socksProxy: freezed == socksProxy
           ? _value.socksProxy
           : socksProxy // ignore: cast_nullable_to_non_nullable
               as String?,
-      bypassList: null == bypassList;
+      bypassList: null == bypassList
           ? _value._bypassList
           : bypassList // ignore: cast_nullable_to_non_nullable
               as List<String>,
@@ -1794,7 +1794,7 @@ abstract class _SystemProxySettings implements SystemProxySettings {
       final String? socksProxy,
       required final List<String> bypassList}) = _$SystemProxySettingsImpl;
 
-  factory _SystemProxySettings.fromJson(Map<String, dynamic> json) =;
+  factory _SystemProxySettings.fromJson(Map<String, dynamic> json) =
       _$SystemProxySettingsImpl.fromJson;
 
   /// 是否启用系统代理
@@ -1859,7 +1859,7 @@ mixin _$AutoConnectSettings {
 /// @nodoc
 abstract class $AutoConnectSettingsCopyWith<$Res> {
   factory $AutoConnectSettingsCopyWith(
-          AutoConnectSettings value, $Res Function(AutoConnectSettings) then) =;
+          AutoConnectSettings value, $Res Function(AutoConnectSettings) then) =
       _$AutoConnectSettingsCopyWithImpl<$Res, AutoConnectSettings>;
   @useResult
   $Res call(
@@ -1892,23 +1892,23 @@ class _$AutoConnectSettingsCopyWithImpl<$Res, $Val extends AutoConnectSettings>
     Object? maxReconnectAttempts = null,
   }) {
     return _then(_value.copyWith(
-      enabled: null == enabled;
+      enabled: null == enabled
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      autoConnectOnStartup: null == autoConnectOnStartup;
+      autoConnectOnStartup: null == autoConnectOnStartup
           ? _value.autoConnectOnStartup
           : autoConnectOnStartup // ignore: cast_nullable_to_non_nullable
               as bool,
-      autoReconnect: null == autoReconnect;
+      autoReconnect: null == autoReconnect
           ? _value.autoReconnect
           : autoReconnect // ignore: cast_nullable_to_non_nullable
               as bool,
-      reconnectInterval: null == reconnectInterval;
+      reconnectInterval: null == reconnectInterval
           ? _value.reconnectInterval
           : reconnectInterval // ignore: cast_nullable_to_non_nullable
               as int,
-      maxReconnectAttempts: null == maxReconnectAttempts;
+      maxReconnectAttempts: null == maxReconnectAttempts
           ? _value.maxReconnectAttempts
           : maxReconnectAttempts // ignore: cast_nullable_to_non_nullable
               as int,
@@ -1920,7 +1920,7 @@ class _$AutoConnectSettingsCopyWithImpl<$Res, $Val extends AutoConnectSettings>
 abstract class _$$AutoConnectSettingsImplCopyWith<$Res>
     implements $AutoConnectSettingsCopyWith<$Res> {
   factory _$$AutoConnectSettingsImplCopyWith(_$AutoConnectSettingsImpl value,
-          $Res Function(_$AutoConnectSettingsImpl) then) =;
+          $Res Function(_$AutoConnectSettingsImpl) then) =
       __$$AutoConnectSettingsImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1952,23 +1952,23 @@ class __$$AutoConnectSettingsImplCopyWithImpl<$Res>
     Object? maxReconnectAttempts = null,
   }) {
     return _then(_$AutoConnectSettingsImpl(
-      enabled: null == enabled;
+      enabled: null == enabled
           ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool,
-      autoConnectOnStartup: null == autoConnectOnStartup;
+      autoConnectOnStartup: null == autoConnectOnStartup
           ? _value.autoConnectOnStartup
           : autoConnectOnStartup // ignore: cast_nullable_to_non_nullable
               as bool,
-      autoReconnect: null == autoReconnect;
+      autoReconnect: null == autoReconnect
           ? _value.autoReconnect
           : autoReconnect // ignore: cast_nullable_to_non_nullable
               as bool,
-      reconnectInterval: null == reconnectInterval;
+      reconnectInterval: null == reconnectInterval
           ? _value.reconnectInterval
           : reconnectInterval // ignore: cast_nullable_to_non_nullable
               as int,
-      maxReconnectAttempts: null == maxReconnectAttempts;
+      maxReconnectAttempts: null == maxReconnectAttempts
           ? _value.maxReconnectAttempts
           : maxReconnectAttempts // ignore: cast_nullable_to_non_nullable
               as int,
@@ -2060,7 +2060,7 @@ abstract class _AutoConnectSettings implements AutoConnectSettings {
       required final int reconnectInterval,
       required final int maxReconnectAttempts}) = _$AutoConnectSettingsImpl;
 
-  factory _AutoConnectSettings.fromJson(Map<String, dynamic> json) =;
+  factory _AutoConnectSettings.fromJson(Map<String, dynamic> json) =
       _$AutoConnectSettingsImpl.fromJson;
 
   /// 是否启用自动连接

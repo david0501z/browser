@@ -2,7 +2,9 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:path/path.dart' as path;
+import 'package:path_provider/path_provider.dart';
 import 'rule_manager.dart';
+import 'rule_validator.dart';
 
 /// 模板类型
 enum TemplateType {
@@ -1018,7 +1020,8 @@ class RuleTemplateManager extends ChangeNotifier {
       
       // 标签统计
       for (final tag in template.tags) {
-        stats['mostUsedTags'][tag] = (stats['mostUsedTags'][tag] ?? 0) + 1;
+        final tagCount = (stats['mostUsedTags'] as Map<String, dynamic>?)[tag] ?? 0;
+        stats['mostUsedTags'][tag] = tagCount + 1;
       }
     }
 

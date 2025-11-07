@@ -5,6 +5,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
+import '../config/index.dart';
+
 /// 配置系统使用示例主页面
 class ConfigSystemExamplePage extends StatefulWidget {
   const ConfigSystemExamplePage({Key? key}) : super(key: key);

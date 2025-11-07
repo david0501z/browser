@@ -55,7 +55,7 @@ mixin _$Privacy {
 
 /// @nodoc
 abstract class $PrivacyCopyWith<$Res> {
-  factory $PrivacyCopyWith(Privacy value, $Res Function(Privacy) then) =;
+  factory $PrivacyCopyWith(Privacy value, $Res Function(Privacy) then) =
       _$PrivacyCopyWithImpl<$Res, Privacy>;
   @useResult
   $Res call(
@@ -94,35 +94,35 @@ class _$PrivacyCopyWithImpl<$Res, $Val extends Privacy>
     Object? crashReporting = null,
   }) {
     return _then(_value.copyWith(
-      privacyMode: null == privacyMode;
+      privacyMode: null == privacyMode
           ? _value.privacyMode
           : privacyMode // ignore: cast_nullable_to_non_nullable
               as bool,
-      anonymousMode: null == anonymousMode;
+      anonymousMode: null == anonymousMode
           ? _value.anonymousMode
           : anonymousMode // ignore: cast_nullable_to_non_nullable
               as bool,
-      dataEncryption: null == dataEncryption;
+      dataEncryption: null == dataEncryption
           ? _value.dataEncryption
           : dataEncryption // ignore: cast_nullable_to_non_nullable
               as bool,
-      localDataEncryption: null == localDataEncryption;
+      localDataEncryption: null == localDataEncryption
           ? _value.localDataEncryption
           : localDataEncryption // ignore: cast_nullable_to_non_nullable
               as bool,
-      autoClean: null == autoClean;
+      autoClean: null == autoClean
           ? _value.autoClean
           : autoClean // ignore: cast_nullable_to_non_nullable
               as bool,
-      cleanInterval: null == cleanInterval;
+      cleanInterval: null == cleanInterval
           ? _value.cleanInterval
           : cleanInterval // ignore: cast_nullable_to_non_nullable
               as int,
-      telemetry: null == telemetry;
+      telemetry: null == telemetry
           ? _value.telemetry
           : telemetry // ignore: cast_nullable_to_non_nullable
               as bool,
-      crashReporting: null == crashReporting;
+      crashReporting: null == crashReporting
           ? _value.crashReporting
           : crashReporting // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -133,7 +133,7 @@ class _$PrivacyCopyWithImpl<$Res, $Val extends Privacy>
 /// @nodoc
 abstract class _$$PrivacyImplCopyWith<$Res> implements $PrivacyCopyWith<$Res> {
   factory _$$PrivacyImplCopyWith(
-          _$PrivacyImpl value, $Res Function(_$PrivacyImpl) then) =;
+          _$PrivacyImpl value, $Res Function(_$PrivacyImpl) then) =
       __$$PrivacyImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -171,35 +171,35 @@ class __$$PrivacyImplCopyWithImpl<$Res>
     Object? crashReporting = null,
   }) {
     return _then(_$PrivacyImpl(
-      privacyMode: null == privacyMode;
+      privacyMode: null == privacyMode
           ? _value.privacyMode
           : privacyMode // ignore: cast_nullable_to_non_nullable
               as bool,
-      anonymousMode: null == anonymousMode;
+      anonymousMode: null == anonymousMode
           ? _value.anonymousMode
           : anonymousMode // ignore: cast_nullable_to_non_nullable
               as bool,
-      dataEncryption: null == dataEncryption;
+      dataEncryption: null == dataEncryption
           ? _value.dataEncryption
           : dataEncryption // ignore: cast_nullable_to_non_nullable
               as bool,
-      localDataEncryption: null == localDataEncryption;
+      localDataEncryption: null == localDataEncryption
           ? _value.localDataEncryption
           : localDataEncryption // ignore: cast_nullable_to_non_nullable
               as bool,
-      autoClean: null == autoClean;
+      autoClean: null == autoClean
           ? _value.autoClean
           : autoClean // ignore: cast_nullable_to_non_nullable
               as bool,
-      cleanInterval: null == cleanInterval;
+      cleanInterval: null == cleanInterval
           ? _value.cleanInterval
           : cleanInterval // ignore: cast_nullable_to_non_nullable
               as int,
-      telemetry: null == telemetry;
+      telemetry: null == telemetry
           ? _value.telemetry
           : telemetry // ignore: cast_nullable_to_non_nullable
               as bool,
-      crashReporting: null == crashReporting;
+      crashReporting: null == crashReporting
           ? _value.crashReporting
           : crashReporting // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -218,7 +218,7 @@ class _$PrivacyImpl extends _Privacy {
       this.autoClean = false,
       this.cleanInterval = 7,
       this.telemetry = false,
-      this.crashReporting = false});
+      this.crashReporting = false})
       : super._();
 
   factory _$PrivacyImpl.fromJson(Map<String, dynamic> json) =>

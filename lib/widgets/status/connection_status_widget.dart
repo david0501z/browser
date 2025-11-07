@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import '../../providers/proxy_widget_providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../models/proxy_state.dart';
 
 /// 连接状态组件
 /// 用于显示和管理代理连接状态，包括连接、断开、切换服务器等操作
@@ -50,28 +52,16 @@ class ConnectionStatusWidget extends ConsumerWidget {
                 currentServer: currentServer,
                 operations: operations,
               ),
-              const SizedBox(height: 16),
+            ] else if (isConnecting) ...[
+              _ConnectingStatePanel(
+                operations: operations,
+              ),
             ] else ...[
               _DisconnectedStatePanel(
-                isConnecting: isConnecting,
-                operations: operations,
                 availableServers: availableServers,
-              ),
-              const SizedBox(height: 16),
-            ],
-
-            // 服务器列表
-            if (availableServers.isNotEmpty) ...[
-              _ServerListPanel(
-                availableServers: availableServers,
-                currentServer: currentServer,
                 operations: operations,
               ),
-              const SizedBox(height: 16),
             ],
-
-            // 连接选项
-            _ConnectionOptions(operations: operations),
           ],
         ),
       ),
@@ -81,74 +71,62 @@ class ConnectionStatusWidget extends ConsumerWidget {
 
 /// 连接状态徽章
 class _ConnectionStatusBadge extends StatelessWidget {
-  const _ConnectionStatusBadge({required this.status});
-
   final ProxyStatus status;
+
+  const _ConnectionStatusBadge({required this.status});
 
   @override
   Widget build(BuildContext context) {
-    Color statusColor;
-    String statusText;
+    Color color;
+    String text;
+    IconData icon;
 
     switch (status) {
       case ProxyStatus.connected:
-        statusColor = Colors.green;
-        statusText = '已连接';
+        color = Colors.green;
+        text = '已连接';
+        icon = Icons.check_circle;
         break;
       case ProxyStatus.connecting:
-        statusColor = Colors.orange;
-        statusText = '连接中';
-        break;
-      case ProxyStatus.disconnecting:
-        statusColor = Colors.orange;
-        statusText = '断开中';
-        break;
-      case ProxyStatus.error:
-        statusColor = Colors.red;
-        statusText = '错误';
+        color = Colors.orange;
+        text = '连接中';
+        icon = Icons.refresh;
         break;
       case ProxyStatus.disconnected:
-      default:
-        statusColor = Colors.grey;
-        statusText = '未连接';
+        color = Colors.grey;
+        text = '已断开';
+        icon = Icons.link_off;
+        break;
+      case ProxyStatus.error:
+        color = Colors.red;
+        text = '错误';
+        icon = Icons.error;
         break;
     }
 
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       decoration: BoxDecoration(
-        color: statusColor.withOpacity(0.1),
+        color: color.withOpacity(0.2),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: statusColor.withOpacity(0.3)),
+        border: Border.all(color: color.withOpacity(0.3)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (status == ProxyStatus.connecting);
-            SizedBox(
-              width: 12,
-              height: 12,
-              child: CircularProgressIndicator(
-                strokeWidth: 2,
-                valueColor: AlwaysStoppedAnimation<Color>(statusColor),
-              ),
-            )
-          else
-            Container(
-              width: 8,
-              height: 8,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: statusColor,
-              ),
-            ),
-          const SizedBox(width: 6),
+          Icon(
+            icon,
+            color: color,
+            size: 16,
+          ),
+          const SizedBox(width: 4),
           Text(
-            statusText,
-            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: statusColor,
-                  fontWeight: FontWeight.w500,
-                ),
+            text,
+            style: TextStyle(
+              color: color,
+              fontWeight: FontWeight.w600,
+              fontSize: 12,
+            ),
           ),
         ],
       ),
@@ -158,444 +136,298 @@ class _ConnectionStatusBadge extends StatelessWidget {
 
 /// 已连接状态面板
 class _ConnectedStatePanel extends StatelessWidget {
+  final ProxyServer? currentServer;
+  final ProxyOperations operations;
+
   const _ConnectedStatePanel({
     required this.currentServer,
     required this.operations,
   });
 
-  final ProxyServer? currentServer;
-  final ProxyOperations operations;
-
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.green.withOpacity(0.05),
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.green.withOpacity(0.2)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Icon(
-                Icons.check_circle,
-                color: Colors.green,
-                size: 20,
-              ),
-              const SizedBox(width: 8),
-              Text(
-                '连接成功',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: Colors.green,
-                      fontWeight: FontWeight.w600,
+    final theme = Theme.of(context);
+    
+    return Column(
+      children: [
+        // 服务器信息
+        if (currentServer != null) ...[
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: theme.colorScheme.surfaceContainer,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Icon(
+                      Icons.dns,
+                      color: theme.colorScheme.onSurface,
+                      size: 16,
                     ),
-              ),
-              const Spacer(),
-              ElevatedButton.icon(
+                    const SizedBox(width: 8),
+                    Text(
+                      '当前服务器',
+                      style: theme.textTheme.titleSmall?.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  currentServer!.name,
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                const SizedBox(height: 2),
+                Text(
+                  '${currentServer!.server}:${currentServer!.port}',
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    color: theme.colorScheme.onSurface.withOpacity(0.7),
+                  ),
+                ),
+                if (currentServer!.latency != null) ...[
+                  const SizedBox(height: 4),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                    decoration: BoxDecoration(
+                      color: _getLatencyColor(currentServer!.latency!, context).withOpacity(0.2),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Text(
+                      '${currentServer!.latency}ms',
+                      style: theme.textTheme.bodySmall?.copyWith(
+                        color: _getLatencyColor(currentServer!.latency!, context),
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ],
+              ],
+            ),
+          ),
+          const SizedBox(height: 12),
+        ],
+
+        // 操作按钮
+        Row(
+          children: [
+            Expanded(
+              child: ElevatedButton.icon(
                 onPressed: () => operations.disconnect(),
-                icon: const Icon(Icons.link_off, size: 16),
-                label: const Text('断开'),
+                icon: const Icon(Icons.link_off, size: 18),
+                label: const Text('断开连接'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red,
-                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.red.withOpacity(0.1),
+                  foregroundColor: Colors.red,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
                 ),
               ),
-            ],
-          ),
-          if (currentServer != null) ...[;
-            const SizedBox(height: 12),
-            _ServerConnectionInfo(server: currentServer!),
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              child: OutlinedButton.icon(
+                onPressed: () => _showServerSwitchDialog(context),
+                icon: const Icon(Icons.swap_horiz, size: 18),
+                label: const Text('切换服务器'),
+                style: OutlinedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+              ),
+            ),
           ],
-        ],
-      ),
-    );
-  }
-}
-
-/// 服务器连接信息
-class _ServerConnectionInfo extends StatelessWidget {
-  const _ServerConnectionInfo({required this.server});
-
-  final ProxyServer server;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        CircleAvatar(
-          radius: 16,
-          backgroundColor: Theme.of(context).primaryColor.withOpacity(0.1),
-          child: Icon(
-            Icons.dns,
-            color: Theme.of(context).primaryColor,
-            size: 16,
-          ),
         ),
-        const SizedBox(width: 12),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                server.name,
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      fontWeight: FontWeight.w500,
-                    ),
-              ),
-              Text(
-                '${server.server}:${server.port} (${server.protocol.value})',
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: Colors.grey[600],
-                    ),
-              ),
-            ],
-          ),
-        ),
-        if (server.latency != null) ...[;
-          const SizedBox(width: 8),
-          _LatencyIndicator(latency: server.latency!),
-        ],
       ],
     );
   }
+
+  void _showServerSwitchDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => const _ServerSwitchDialog(),
+    );
+  }
+
+  Color _getLatencyColor(int latency, BuildContext context) {
+    if (latency < 50) return Colors.green;
+    if (latency < 100) return Colors.orange;
+    return Colors.red;
+  }
 }
 
-/// 延迟指示器
-class _LatencyIndicator extends StatelessWidget {
-  const _LatencyIndicator({required this.latency});
+/// 连接中状态面板
+class _ConnectingStatePanel extends StatelessWidget {
+  final ProxyOperations operations;
 
-  final int latency;
+  const _ConnectingStatePanel({required this.operations});
 
   @override
   Widget build(BuildContext context) {
-    Color latencyColor;
-    IconData latencyIcon;
-
-    if (latency < 100) {
-      latencyColor = Colors.green;
-      latencyIcon = Icons.signal_wifi_4_bar;
-    } else if (latency < 300) {
-      latencyColor = Colors.orange;
-      latencyIcon = Icons.signal_wifi_3_bar;
-    } else if (latency < 500) {
-      latencyColor = Colors.orange[700]!;
-      latencyIcon = Icons.signal_wifi_2_bar;
-    } else {
-      latencyColor = Colors.red;
-      latencyIcon = Icons.signal_wifi_1_bar;
-    }
-
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-      decoration: BoxDecoration(
-        color: latencyColor.withOpacity(0.1),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(
-            latencyIcon,
-            color: latencyColor,
-            size: 14,
-          ),
-          const SizedBox(width: 2),
-          Text(
-            '${latency}ms',
-            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: latencyColor,
-                  fontWeight: FontWeight.w500,
+    return Column(
+      children: [
+        // 加载动画
+        Center(
+          child: Column(
+            children: [
+              CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(
+                  Theme.of(context).primaryColor,
                 ),
+              ),
+              const SizedBox(height: 16),
+              Text(
+                '正在连接代理服务器...',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              const SizedBox(height: 8),
+              Text(
+                '请稍候，正在建立安全连接',
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      color: Theme.of(context).textTheme.bodyMedium?.color?.withOpacity(0.7),
+                    ),
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+        const SizedBox(height: 16),
+        // 取消按钮
+        SizedBox(
+          width: double.infinity,
+          child: OutlinedButton(
+            onPressed: () => operations.disconnect(),
+            child: const Text('取消连接'),
+          ),
+        ),
+      ],
     );
   }
 }
 
 /// 未连接状态面板
 class _DisconnectedStatePanel extends StatelessWidget {
+  final List<ProxyServer> availableServers;
+  final ProxyOperations operations;
+
   const _DisconnectedStatePanel({
-    required this.isConnecting,
-    required this.operations,
     required this.availableServers,
-  });
-
-  final bool isConnecting;
-  final ProxyOperations operations;
-  final List<ProxyServer> availableServers;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.grey.withOpacity(0.05),
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.grey.withOpacity(0.2)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Icon(
-                Icons.link_off,
-                color: Colors.grey,
-                size: 20,
-              ),
-              const SizedBox(width: 8),
-              Text(
-                '未连接',
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: Colors.grey,
-                      fontWeight: FontWeight.w600,
-                    ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 16),
-          Row(
-            children: [
-              if (availableServers.isNotEmpty) ...[
-                Expanded(
-                  child: ElevatedButton.icon(
-                    onPressed: isConnecting ? null : () => operations.smartConnect(),
-                    icon: isConnecting
-                        ? const SizedBox(
-                            width: 16,
-                            height: 16,
-                            child: CircularProgressIndicator(strokeWidth: 2),
-                          )
-                        : const Icon(Icons.autorenew, size: 16),
-                    label: const Text('智能连接'),
-                  ),
-                ),
-                const SizedBox(width: 12),
-              ],
-              Expanded(
-                child: ElevatedButton.icon(
-                  onPressed: isConnecting ? null : () => operations.disconnect(),
-                  icon: const Icon(Icons.link, size: 16),
-                  label: const Text('手动连接'),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Theme.of(context).primaryColor,
-                    foregroundColor: Colors.white,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          if (availableServers.isEmpty) ...[
-            const SizedBox(height: 12),
-            Text(
-              '没有可用的代理服务器，请先添加服务器配置',
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: Colors.orange,
-                  ),
-            ),
-          ],
-        ],
-      ),
-    );
-  }
-}
-
-/// 服务器列表面板
-class _ServerListPanel extends StatelessWidget {
-  const _ServerListPanel({
-    required this.availableServers,
-    required this.currentServer,
     required this.operations,
   });
-
-  final List<ProxyServer> availableServers;
-  final ProxyServer? currentServer;
-  final ProxyOperations operations;
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          '可用服务器 (${availableServers.length})',
-          style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                fontWeight: FontWeight.w600,
+        // 连接按钮
+        SizedBox(
+          width: double.infinity,
+          child: ElevatedButton.icon(
+            onPressed: () => operations.smartConnect(),
+            icon: const Icon(Icons.link, size: 20),
+            label: const Text('智能连接'),
+            style: ElevatedButton.styleFrom(
+              padding: const EdgeInsets.symmetric(vertical: 12),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
               ),
+            ),
+          ),
         ),
-        const SizedBox(height: 8),
-        ListView.builder(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          itemCount: availableServers.length,
-          itemBuilder: (context, index) {
-            final server = availableServers[index];
-            final isCurrentServer = currentServer?.id == server.id;
-            
-            return _ServerListItem(
-              server: server,
-              isCurrentServer: isCurrentServer,
-              operations: operations,
-            );
-          },
+        const SizedBox(height: 12),
+        
+        // 快速连接选项
+        if (availableServers.isNotEmpty) ...[
+          Text(
+            '或选择服务器快速连接',
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
+          const SizedBox(height: 8),
+          // 显示前3个服务器
+          ...availableServers.take(3).map(
+            (server) => ListTile(
+              leading: CircleAvatar(
+                radius: 16,
+                backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+                child: Icon(
+                  Icons.dns,
+                  size: 16,
+                  color: Theme.of(context).colorScheme.onPrimaryContainer,
+                ),
+              ),
+              title: Text(server.name),
+              subtitle: Text('${server.server}:${server.port}'),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => _connectToServer(context, server),
+            ),
+          ),
+          if (availableServers.length > 3) ...[
+            const SizedBox(height: 4),
+            TextButton(
+              onPressed: () => _showAllServersDialog(context),
+              child: Text('查看全部 ${availableServers.length} 个服务器'),
+            ),
+          ],
+        ],
+      ],
+    );
+  }
+
+  void _connectToServer(BuildContext context, ProxyServer server) {
+    // 模拟连接逻辑
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('正在连接到 ${server.name}...')),
+    );
+  }
+
+  void _showAllServersDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => const _ServerListDialog(),
+    );
+  }
+}
+
+/// 服务器切换对话框
+class _ServerSwitchDialog extends StatelessWidget {
+  const _ServerSwitchDialog();
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: const Text('切换服务器'),
+      content: const Text('请选择要连接的服务器'),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.of(context).pop(),
+          child: const Text('取消'),
         ),
       ],
     );
   }
 }
 
-/// 服务器列表项
-class _ServerListItem extends StatelessWidget {
-  const _ServerListItem({
-    required this.server,
-    required this.isCurrentServer,
-    required this.operations,
-  });
-
-  final ProxyServer server;
-  final bool isCurrentServer;
-  final ProxyOperations operations;
+/// 服务器列表对话框
+class _ServerListDialog extends StatelessWidget {
+  const _ServerListDialog();
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 8),
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: isCurrentServer
-            ? Theme.of(context).primaryColor.withOpacity(0.1)
-            : Theme.of(context).colorScheme.surface,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(
-          color: isCurrentServer
-              ? Theme.of(context).primaryColor.withOpacity(0.3)
-              : Theme.of(context).dividerColor,
-        ),
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Expanded(
-                      child: Text(
-                        server.name,
-                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                              fontWeight: FontWeight.w500,
-                            ),
-                      ),
-                    ),
-                    if (isCurrentServer)
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 8,
-                          vertical: 2,
-                        ),
-                        decoration: BoxDecoration(
-                          color: Theme.of(context).primaryColor,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Text(
-                          '当前',
-                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                              ),
-                        ),
-                      ),
-                  ],
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  '${server.server}:${server.port}',
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: Colors.grey[600],
-                      ),
-                ),
-                if (server.latency != null) ...[;
-                  const SizedBox(height: 4),
-                  _LatencyIndicator(latency: server.latency!),
-                ],
-              ],
-            ),
-          ),
-          const SizedBox(width: 8),
-          Column(
-            children: [
-              if (!isCurrentServer)
-                ElevatedButton(
-                  onPressed: () => operations.connect(serverId: server.id),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Theme.of(context).primaryColor,
-                    foregroundColor: Colors.white,
-                    minimumSize: const Size(60, 32),
-                  ),
-                  child: const Text('连接'),
-                ),
-              const SizedBox(height: 4),
-              IconButton(
-                onPressed: () => operations.testServer(server.id),
-                icon: const Icon(Icons.speed, size: 16),
-                tooltip: '测试延迟',
-                style: IconButton.styleFrom(
-                  minimumSize: const Size(32, 32),
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-/// 连接选项面板
-class _ConnectionOptions extends StatelessWidget {
-  const _ConnectionOptions({required this.operations});
-
-  final ProxyOperations operations;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          '连接选项',
-          style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                fontWeight: FontWeight.w600,
-              ),
-        ),
-        const SizedBox(height: 8),
-        Row(
-          children: [
-            Expanded(
-              child: OutlinedButton.icon(
-                onPressed: () {
-                  // 显示添加服务器对话框
-                },
-                icon: const Icon(Icons.add, size: 16),
-                label: const Text('添加服务器'),
-              ),
-            ),
-            const SizedBox(width: 8),
-            Expanded(
-              child: OutlinedButton.icon(
-                onPressed: () {
-                  // 显示导入配置对话框
-                },
-                icon: const Icon(Icons.file_upload, size: 16),
-                label: const Text('导入配置'),
-              ),
-            ),
-          ],
+    return AlertDialog(
+      title: const Text('所有服务器'),
+      content: const Text('服务器列表功能开发中...'),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.of(context).pop(),
+          child: const Text('关闭'),
         ),
       ],
     );

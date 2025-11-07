@@ -17,16 +17,16 @@ _$ProxyNodeImpl _$$ProxyNodeImplFromJson(Map<String, dynamic> json) =>
       port: (json['port'] as num).toInt(),
       security: json['security'] as String?,
       auth: json['auth'] as String?,
-      vmessConfig: json['vmessConfig'] == null;
+      vmessConfig: json['vmessConfig'] == null
           ? null
           : VMessConfig.fromJson(json['vmessConfig'] as Map<String, dynamic>),
-      vlessConfig: json['vlessConfig'] == null;
+      vlessConfig: json['vlessConfig'] == null
           ? null
           : VLessConfig.fromJson(json['vlessConfig'] as Map<String, dynamic>),
-      ssConfig: json['ssConfig'] == null;
+      ssConfig: json['ssConfig'] == null
           ? null
           : SSConfig.fromJson(json['ssConfig'] as Map<String, dynamic>),
-      trojanConfig: json['trojanConfig'] == null;
+      trojanConfig: json['trojanConfig'] == null
           ? null
           : TrojanConfig.fromJson(json['trojanConfig'] as Map<String, dynamic>),
       status: $enumDecodeNullable(_$NodeStatusEnumMap, json['status']) ??
@@ -34,39 +34,39 @@ _$ProxyNodeImpl _$$ProxyNodeImplFromJson(Map<String, dynamic> json) =>
       latency: (json['latency'] as num?)?.toInt(),
       downloadSpeed: (json['downloadSpeed'] as num?)?.toDouble(),
       uploadSpeed: (json['uploadSpeed'] as num?)?.toDouble(),
-      lastTested: json['lastTested'] == null;
+      lastTested: json['lastTested'] == null
           ? null
           : DateTime.parse(json['lastTested'] as String),
       enabled: json['enabled'] as bool? ?? true,
       autoSelect: json['autoSelect'] as bool? ?? false,
       favorite: json['favorite'] as bool? ?? false,
       tags:
-          (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList() ??;
+          (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList() ??
               const [],
       remark: json['remark'] as String?,
       country: json['country'] as String?,
       city: json['city'] as String?,
       isp: json['isp'] as String?,
       latencyHistory: (json['latencyHistory'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt());
+              ?.map((e) => (e as num).toInt())
               .toList() ??
           const [],
       priority: (json['priority'] as num?)?.toInt() ?? 0,
       errorMessage: json['errorMessage'] as String?,
-      createdAt: json['createdAt'] == null;
+      createdAt: json['createdAt'] == null
           ? DateTime.now
           : DateTime.parse(json['createdAt'] as String),
-      updatedAt: json['updatedAt'] == null;
+      updatedAt: json['updatedAt'] == null
           ? null
           : DateTime.parse(json['updatedAt'] as String),
       subscriptionId: json['subscriptionId'] as String?,
       group: json['group'] as String?,
       rawConfig: json['rawConfig'] as String?,
       iconUrl: json['iconUrl'] as String?,
-      geoInfo: json['geoInfo'] == null;
+      geoInfo: json['geoInfo'] == null
           ? null
           : GeoInfo.fromJson(json['geoInfo'] as Map<String, dynamic>),
-      performance: json['performance'] == null;
+      performance: json['performance'] == null
           ? null
           : NodePerformance.fromJson(
               json['performance'] as Map<String, dynamic>),
@@ -154,16 +154,16 @@ _$VMessConfigImpl _$$VMessConfigImplFromJson(Map<String, dynamic> json) =>
       tlsKey: json['tlsKey'] as String?,
       sni: json['sni'] as String?,
       verifyCertificate: json['verifyCertificate'] as bool? ?? true,
-      wsConfig: json['wsConfig'] == null;
+      wsConfig: json['wsConfig'] == null
           ? null
           : WSConfig.fromJson(json['wsConfig'] as Map<String, dynamic>),
-      http2Config: json['http2Config'] == null;
+      http2Config: json['http2Config'] == null
           ? null
           : HTTP2Config.fromJson(json['http2Config'] as Map<String, dynamic>),
-      tcpConfig: json['tcpConfig'] == null;
+      tcpConfig: json['tcpConfig'] == null
           ? null
           : TCPConfig.fromJson(json['tcpConfig'] as Map<String, dynamic>),
-      grpcConfig: json['grpcConfig'] == null;
+      grpcConfig: json['grpcConfig'] == null
           ? null
           : GRPCConfig.fromJson(json['grpcConfig'] as Map<String, dynamic>),
     );
@@ -200,7 +200,7 @@ _$VLessConfigImpl _$$VLessConfigImplFromJson(Map<String, dynamic> json) =>
       tlsCert: json['tlsCert'] as String?,
       tlsKey: json['tlsKey'] as String?,
       sni: json['sni'] as String?,
-      wsConfig: json['wsConfig'] == null;
+      wsConfig: json['wsConfig'] == null
           ? null
           : WSConfig.fromJson(json['wsConfig'] as Map<String, dynamic>),
     );
@@ -240,10 +240,10 @@ Map<String, dynamic> _$$SSConfigImplToJson(_$SSConfigImpl instance) =>
 _$TrojanConfigImpl _$$TrojanConfigImplFromJson(Map<String, dynamic> json) =>
     _$TrojanConfigImpl(
       password: json['password'] as String,
-      tlsConfig: json['tlsConfig'] == null;
+      tlsConfig: json['tlsConfig'] == null
           ? null
           : TLSConfig.fromJson(json['tlsConfig'] as Map<String, dynamic>),
-      wsConfig: json['wsConfig'] == null;
+      wsConfig: json['wsConfig'] == null
           ? null
           : WSConfig.fromJson(json['wsConfig'] as Map<String, dynamic>),
     );
@@ -313,7 +313,7 @@ _$TLSConfigImpl _$$TLSConfigImplFromJson(Map<String, dynamic> json) =>
     _$TLSConfigImpl(
       sni: json['sni'] as String,
       alpn:
-          (json['alpn'] as List<dynamic>?)?.map((e) => e as String).toList() ??;
+          (json['alpn'] as List<dynamic>?)?.map((e) => e as String).toList() ??
               const ['http/1.1'],
       certPath: json['certPath'] as String?,
       keyPath: json['keyPath'] as String?,
@@ -361,10 +361,10 @@ _$NodePerformanceImpl _$$NodePerformanceImplFromJson(
       maxLatency: (json['maxLatency'] as num?)?.toInt(),
       successRate: (json['successRate'] as num?)?.toDouble() ?? 0.0,
       testCount: (json['testCount'] as num?)?.toInt() ?? 0,
-      lastSuccessTime: json['lastSuccessTime'] == null;
+      lastSuccessTime: json['lastSuccessTime'] == null
           ? null
           : DateTime.parse(json['lastSuccessTime'] as String),
-      lastFailTime: json['lastFailTime'] == null;
+      lastFailTime: json['lastFailTime'] == null
           ? null
           : DateTime.parse(json['lastFailTime'] as String),
       consecutiveFailures: (json['consecutiveFailures'] as num?)?.toInt() ?? 0,
@@ -388,13 +388,13 @@ Map<String, dynamic> _$$NodePerformanceImplToJson(
 _$NodeFilterImpl _$$NodeFilterImplFromJson(Map<String, dynamic> json) =>
     _$NodeFilterImpl(
       types: (json['types'] as List<dynamic>?)
-          ?.map((e) => $enumDecode(_$ProxyTypeEnumMap, e));
+          ?.map((e) => $enumDecode(_$ProxyTypeEnumMap, e))
           .toList(),
       statuses: (json['statuses'] as List<dynamic>?)
-          ?.map((e) => $enumDecode(_$NodeStatusEnumMap, e));
+          ?.map((e) => $enumDecode(_$NodeStatusEnumMap, e))
           .toList(),
       countries: (json['countries'] as List<dynamic>?)
-          ?.map((e) => e as String);
+          ?.map((e) => e as String)
           .toList(),
       isps: (json['isps'] as List<dynamic>?)?.map((e) => e as String).toList(),
       tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -459,14 +459,14 @@ _$NodeImportResultImpl _$$NodeImportResultImplFromJson(
       invalidNodes: (json['invalidNodes'] as num?)?.toInt() ?? 0,
       duplicateNodes: (json['duplicateNodes'] as num?)?.toInt() ?? 0,
       errors: (json['errors'] as List<dynamic>?)
-              ?.map((e) => e as String);
+              ?.map((e) => e as String)
               .toList() ??
           const [],
       nodes: (json['nodes'] as List<dynamic>?)
-              ?.map((e) => ProxyNode.fromJson(e as Map<String, dynamic>));
+              ?.map((e) => ProxyNode.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
-      importStats: json['importStats'] == null;
+      importStats: json['importStats'] == null
           ? _emptyImportStats
           : NodeImportStats.fromJson(
               json['importStats'] as Map<String, dynamic>),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import '../../providers/proxy_widget_providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../models/proxy_state.dart';
 
 /// 代理状态指示器组件
 /// 用于显示当前代理的状态，包括连接状态、服务器信息等
@@ -44,17 +46,44 @@ class ProxyStatusWidget extends ConsumerWidget {
             const SizedBox(height: 16),
 
             // 当前服务器信息
-            if (currentServer != null && isConnected) ...[;
-              _ServerInfoCard(server: currentServer),
+            if (currentServer != null && isConnected) ...[
+                _ServerInfoCard(server: currentServer),
               const SizedBox(height: 16),
             ],
 
-            // 连接统计信息
-            _ConnectionStatsCard(connectionState: proxyState.connectionState),
-            const SizedBox(height: 16),
+            // 流量统计
+            if (isConnected) ...[
+              _TrafficStatsCard(
+                connectionState: proxyState.connectionState,
+              ),
+              const SizedBox(height: 16),
+            ],
 
-            // 全局代理设置
-            _GlobalProxyToggle(isEnabled: proxyState.isGlobalProxy),
+            // 操作按钮
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                _ActionButton(
+                  icon: isConnected ? Icons.link_off : Icons.link,
+                  label: isConnected ? '断开' : '连接',
+                  onPressed: () {
+                    final operations = ref.read(proxyOperationsProvider);
+                    if (isConnected) {
+                      operations.disconnect();
+                    } else {
+                      operations.smartConnect();
+                    }
+                  },
+                ),
+                _ActionButton(
+                  icon: Icons.settings,
+                  label: '设置',
+                  onPressed: () {
+                    // 打开设置页面
+                  },
+                ),
+              ],
+            ),
           ],
         ),
       ),
@@ -62,14 +91,16 @@ class ProxyStatusWidget extends ConsumerWidget {
   }
 }
 
-/// 状态指示器子组件
+/// 状态指示器
 class _StatusIndicator extends StatelessWidget {
-  const _StatusIndicator({required this.status});
-
   final ProxyStatus status;
+
+  const _StatusIndicator({required this.status});
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    
     Color statusColor;
     IconData statusIcon;
     String statusText;
@@ -81,30 +112,24 @@ class _StatusIndicator extends StatelessWidget {
         statusText = '已连接';
         break;
       case ProxyStatus.connecting:
-        statusColor = Colors.orange;
-        statusIcon = Icons.sync;
+        statusColor = theme.primaryColor;
+        statusIcon = Icons.refresh;
         statusText = '连接中';
         break;
-      case ProxyStatus.disconnecting:
-        statusColor = Colors.orange;
-        statusIcon = Icons.sync_disabled;
-        statusText = '断开连接中';
+      case ProxyStatus.disconnected:
+        statusColor = Colors.grey;
+        statusIcon = Icons.link_off;
+        statusText = '已断开';
         break;
       case ProxyStatus.error:
         statusColor = Colors.red;
         statusIcon = Icons.error;
         statusText = '连接错误';
         break;
-      case ProxyStatus.disconnected:
-      default:
-        statusColor = Colors.grey;
-        statusIcon = Icons.cancel;
-        statusText = '未连接';
-        break;
     }
 
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: statusColor.withOpacity(0.1),
         borderRadius: BorderRadius.circular(8),
@@ -112,39 +137,19 @@ class _StatusIndicator extends StatelessWidget {
       ),
       child: Row(
         children: [
-          AnimatedRotation(
-            duration: status == ProxyStatus.connecting;
-                ? const Duration(seconds: 1) 
-                : Duration.zero,
-            turns: status == ProxyStatus.connecting ? 1 : 0,
-            child: Icon(
-              statusIcon,
-              color: statusColor,
-              size: 24,
-            ),
+          Icon(
+            statusIcon,
+            color: statusColor,
+            size: 24,
           ),
           const SizedBox(width: 12),
           Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  statusText,
-                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        color: statusColor,
-                        fontWeight: FontWeight.w600,
-                      ),
-                ),
-                if (status == ProxyStatus.error) ...[;
-                  const SizedBox(height: 4),
-                  Text(
-                    '请检查网络连接和代理配置',
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: Colors.grey[600],
-                        ),
-                  ),
-                ],
-              ],
+            child: Text(
+              statusText,
+              style: theme.textTheme.titleMedium?.copyWith(
+                color: statusColor,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
         ],
@@ -155,187 +160,22 @@ class _StatusIndicator extends StatelessWidget {
 
 /// 服务器信息卡片
 class _ServerInfoCard extends StatelessWidget {
-  const _ServerInfoCard({required this.server});
-
   final ProxyServer server;
 
+  const _ServerInfoCard({required this.server});
+
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.surface,
+        color: theme.colorScheme.surfaceContainer,
         borderRadius: BorderRadius.circular(8),
         border: Border.all(
-          color: Theme.of(context).dividerColor,
-          width: 1,
+          color: theme.colorScheme.outline.withOpacity(0.2),
         ),
-      ),
-      child: Row(
-        children: [
-          CircleAvatar(
-            radius: 20,
-            backgroundColor: Theme.of(context).primaryColor.withOpacity(0.1),
-            child: Icon(
-              Icons.dns,
-              color: Theme.of(context).primaryColor,
-              size: 20,
-            ),
-          ),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  server.name,
-                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                        fontWeight: FontWeight.w600,
-                      ),
-                ),
-                const SizedBox(height: 2),
-                Text(
-                  '${server.server}:${server.port}',
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: Colors.grey[600],
-                      ),
-                ),
-              ],
-            ),
-          ),
-          if (server.latency != null);
-            _LatencyIndicator(latency: server.latency!),
-        ],
-      ),
-    );
-  }
-}
-
-/// 延迟指示器
-class _LatencyIndicator extends StatelessWidget {
-  const _LatencyIndicator({required this.latency});
-
-  final int latency;
-
-  @override
-  Widget build(BuildContext context) {
-    Color latencyColor;
-    IconData latencyIcon;
-
-    if (latency < 100) {
-      latencyColor = Colors.green;
-      latencyIcon = Icons.signal_wifi_4_bar;
-    } else if (latency < 300) {
-      latencyColor = Colors.orange;
-      latencyIcon = Icons.signal_wifi_3_bar;
-    } else if (latency < 500) {
-      latencyColor = Colors.orange[700]!;
-      latencyIcon = Icons.signal_wifi_2_bar;
-    } else {
-      latencyColor = Colors.red;
-      latencyIcon = Icons.signal_wifi_1_bar;
-    }
-
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-      decoration: BoxDecoration(
-        color: latencyColor.withOpacity(0.1),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(
-            latencyIcon,
-            color: latencyColor,
-            size: 16,
-          ),
-          const SizedBox(width: 4),
-          Text(
-            '${latency}ms',
-            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: latencyColor,
-                  fontWeight: FontWeight.w500,
-                ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-/// 连接统计信息卡片
-class _ConnectionStatsCard extends ConsumerWidget {
-  const _ConnectionStatsCard({required this.connectionState});
-
-  final ProxyConnectionState connectionState;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final formattedStats = ref.watch(formattedProxyTrafficProvider);
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          '连接统计',
-          style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                fontWeight: FontWeight.w600,
-              ),
-        ),
-        const SizedBox(height: 8),
-        Row(
-          children: [
-            Expanded(
-              child: _StatItem(
-                icon: Icons.upload,
-                label: '上传',
-                value: formattedStats.uploadBytesFormatted,
-                speed: formattedStats.uploadSpeedFormatted,
-                color: Colors.blue,
-              ),
-            ),
-            const SizedBox(width: 16),
-            Expanded(
-              child: _StatItem(
-                icon: Icons.download,
-                label: '下载',
-                value: formattedStats.downloadBytesFormatted,
-                speed: formattedStats.downloadSpeedFormatted,
-                color: Colors.green,
-              ),
-            ),
-          ],
-        ),
-      ],
-    );
-  }
-}
-
-/// 统计项组件
-class _StatItem extends StatelessWidget {
-  const _StatItem({
-    required this.icon,
-    required this.label,
-    required this.value,
-    required this.speed,
-    required this.color,
-  });
-
-  final IconData icon;
-  final String label;
-  final String value;
-  final String speed;
-  final Color color;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: color.withOpacity(0.05),
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: color.withOpacity(0.2)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -343,84 +183,237 @@ class _StatItem extends StatelessWidget {
           Row(
             children: [
               Icon(
-                icon,
-                color: color,
-                size: 16,
+                Icons.dns,
+                color: theme.colorScheme.onSurface,
+                size: 18,
               ),
-              const SizedBox(width: 4),
-              Text(
-                label,
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: color,
-                      fontWeight: FontWeight.w500,
+              const SizedBox(width: 8),
+              Expanded(
+                child: Text(
+                  server.name,
+                  style: theme.textTheme.titleSmall?.copyWith(
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              if (server.latency != null)
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  decoration: BoxDecoration(
+                    color: _getLatencyColor(server.latency!, context).withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Text(
+                    '${server.latency}ms',
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      color: _getLatencyColor(server.latency!, context),
+                      fontWeight: FontWeight.w600,
                     ),
-              ),
+                  ),
+                ),
             ],
           ),
           const SizedBox(height: 4),
           Text(
-            value,
-            style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                  fontWeight: FontWeight.w600,
-                ),
-          ),
-          const SizedBox(height: 2),
-          Text(
-            speed,
-            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: Colors.grey[600],
-                ),
+            '${server.server}:${server.port}',
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: theme.colorScheme.onSurface.withOpacity(0.7),
+            ),
           ),
         ],
       ),
     );
   }
+
+  Color _getLatencyColor(int latency, BuildContext context) {
+    if (latency < 50) return Colors.green;
+    if (latency < 100) return Colors.orange;
+    return Colors.red;
+  }
 }
 
-/// 全局代理切换组件
-class _GlobalProxyToggle extends ConsumerWidget {
-  const _GlobalProxyToggle({required this.isEnabled});
+/// 流量统计卡片
+class _TrafficStatsCard extends StatelessWidget {
+  final ProxyConnectionState connectionState;
 
-  final bool isEnabled;
+  const _TrafficStatsCard({required this.connectionState});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final operations = ref.watch(proxyOperationsProvider);
-
-    return Row(
-      children: [
-        Icon(
-          Icons.public,
-          color: Theme.of(context).primaryColor,
-          size: 20,
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: theme.colorScheme.surfaceContainer,
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(
+          color: theme.colorScheme.outline.withOpacity(0.2),
         ),
-        const SizedBox(width: 12),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
             children: [
-              Text(
-                '全局代理',
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      fontWeight: FontWeight.w600,
-                    ),
+              Icon(
+                Icons.speed,
+                color: theme.colorScheme.onSurface,
+                size: 18,
               ),
+              const SizedBox(width: 8),
               Text(
-                isEnabled ? '所有应用都将通过代理访问网络' : '仅当前应用使用代理',
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: Colors.grey[600],
-                    ),
+                '流量统计',
+                style: theme.textTheme.titleSmall?.copyWith(
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ],
           ),
+          const SizedBox(height: 8),
+          Row(
+            children: [
+              Expanded(
+                child: _TrafficItem(
+                  label: '上传速度',
+                  value: _formatSpeed(connectionState.uploadSpeed),
+                  icon: Icons.upload,
+                  color: theme.colorScheme.primary,
+                ),
+              ),
+              const SizedBox(width: 16),
+              Expanded(
+                child: _TrafficItem(
+                  label: '下载速度',
+                  value: _formatSpeed(connectionState.downloadSpeed),
+                  icon: Icons.download,
+                  color: theme.colorScheme.secondary,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Row(
+            children: [
+              Expanded(
+                child: _TrafficItem(
+                  label: '已上传',
+                  value: _formatBytes(connectionState.uploadBytes),
+                  icon: Icons.upload_outlined,
+                  color: theme.colorScheme.primary.withOpacity(0.7),
+                ),
+              ),
+              const SizedBox(width: 16),
+              Expanded(
+                child: _TrafficItem(
+                  label: '已下载',
+                  value: _formatBytes(connectionState.downloadBytes),
+                  icon: Icons.download_outlined,
+                  color: theme.colorScheme.secondary.withOpacity(0.7),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  String _formatBytes(int bytes) {
+    if (bytes < 1024) return '${bytes}B';
+    if (bytes < 1024 * 1024) return '${(bytes / 1024).toStringAsFixed(1)}KB';
+    if (bytes < 1024 * 1024 * 1024) {
+      return '${(bytes / (1024 * 1024)).toStringAsFixed(1)}MB';
+    }
+    return '${(bytes / (1024 * 1024 * 1024)).toStringAsFixed(1)}GB';
+  }
+
+  String _formatSpeed(int bytesPerSecond) {
+    if (bytesPerSecond < 1024) return '${bytesPerSecond}B/s';
+    if (bytesPerSecond < 1024 * 1024) {
+      return '${(bytesPerSecond / 1024).toStringAsFixed(1)}KB/s';
+    }
+    return '${(bytesPerSecond / (1024 * 1024)).toStringAsFixed(1)}MB/s';
+  }
+}
+
+/// 流量项目
+class _TrafficItem extends StatelessWidget {
+  final String label;
+  final String value;
+  final IconData icon;
+  final Color color;
+
+  const _TrafficItem({
+    required this.label,
+    required this.value,
+    required this.icon,
+    required this.color,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            Icon(
+              icon,
+              color: color,
+              size: 14,
+            ),
+            const SizedBox(width: 4),
+            Text(
+              label,
+              style: theme.textTheme.bodySmall?.copyWith(
+                color: color,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ],
         ),
-        Switch(
-          value: isEnabled,
-          onChanged: (value) {
-            operations.setGlobalProxy(value);
-          },
+        const SizedBox(height: 2),
+        Text(
+          value,
+          style: theme.textTheme.bodyMedium?.copyWith(
+            fontWeight: FontWeight.w600,
+          ),
         ),
       ],
+    );
+  }
+}
+
+/// 操作按钮
+class _ActionButton extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final VoidCallback onPressed;
+
+  const _ActionButton({
+    required this.icon,
+    required this.label,
+    required this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    
+    return ElevatedButton.icon(
+      onPressed: onPressed,
+      icon: Icon(icon, size: 18),
+      label: Text(label),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: theme.colorScheme.primaryContainer,
+        foregroundColor: theme.colorScheme.onPrimaryContainer,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+      ),
     );
   }
 }

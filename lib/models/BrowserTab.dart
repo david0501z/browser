@@ -169,7 +169,7 @@ extension BrowserTabExt on BrowserTab {
   
   /// 检查是否为搜索引擎URL
   bool get isSearchEngine {
-    const searchEngines = [;
+    const searchEngines = [
       'google.com',
       'bing.com',
       'baidu.com',
@@ -182,7 +182,7 @@ extension BrowserTabExt on BrowserTab {
   
   /// 检查是否为社交媒体URL
   bool get isSocialMedia {
-    const socialMediaDomains = [;
+    const socialMediaDomains = [
       'facebook.com',
       'twitter.com',
       'instagram.com',

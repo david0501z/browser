@@ -616,8 +616,8 @@ class GuideContentCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // 图片
-            if (image != null) ...[;
-              Center(child: image),
+            if (image != null) ...[
+                Center(child: image),
               const SizedBox(height: 16),
             ],
             
@@ -638,8 +638,8 @@ class GuideContentCard extends StatelessWidget {
             ),
             
             // 操作按钮
-            if (actions != null) ...[;
-              const SizedBox(height: 24),
+            if (actions != null) ...[
+                const SizedBox(height: 24),
               ...actions!,
             ],
           ],

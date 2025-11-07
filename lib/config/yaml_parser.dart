@@ -4,7 +4,9 @@
 
 import 'package:yaml/yaml.dart';
 import 'package:logging/logging.dart';
+import 'dart:io';
 import 'clash_config_generator.dart';
+import 'models/models.dart';
 
 /// YAML 解析器类
 class YamlParser {
@@ -326,11 +328,12 @@ class YamlParser {
     // 解析 DNS 设置
     DNSSettings dnsSettings;
     if (dnsConfig != null && dnsConfig['enable'] == true) {
+      final nameservers = List<String>.from(dnsConfig['nameserver'] ?? []);
       dnsSettings = DNSSettings(
-        customDNS: true,
-        dnsServers: List<String>.from(dnsConfig['nameserver'] ?? []),
-        dnsOverHttps: false,
-        dohServer: null,
+        primary: nameservers.isNotEmpty ? nameservers.first : '223.5.5.5',
+        secondary: nameservers.length > 1 ? nameservers[1] : null,
+        proxyServers: List<String>.from(dnsConfig['nameserver'] ?? []),
+        directServers: List<String>.from(dnsConfig['fallback'] ?? []),
       );
     } else {
       dnsSettings = const DNSSettings();
@@ -341,7 +344,7 @@ class YamlParser {
       httpPort: port,
       socksPort: socksPort,
       mixedPort: mixedPort,
-      apiPort: apiPort,
+      controllerPort: apiPort,
     );
     
     // 创建合并的配置
