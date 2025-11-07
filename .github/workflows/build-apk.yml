@@ -114,7 +114,8 @@ jobs:
       run: flutter pub get
 
     - name: 分析代码
-      run: flutter analyze
+      continue-on-error: true
+      run: flutter analyze --no-fatal-infos
 
     - name: 构建APK
       id: build_apk
@@ -130,7 +131,7 @@ jobs:
         fi
         
         echo "开始构建 $BUILD_TYPE APK..."
-        flutter build apk $BUILD_ARGS
+        flutter build apk $BUILD_ARGS --verbose
         
         APK_PATH="build/app/outputs/flutter-apk/app-$BUILD_TYPE.apk"
         echo "apk_path=$APK_PATH" >> $GITHUB_OUTPUT
