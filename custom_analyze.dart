@@ -12,7 +12,7 @@ void main() {
   
   // 检查1: 验证所有生成文件存在
   print('📁 检查生成文件存在性...');
-  final generatedFiles = [;
+  final generatedFiles = [
     'lib/models/generated/app_settings.freezed.dart',
     'lib/models/generated/app_settings.g.dart',
     'lib/models/generated/browser_tab.freezed.dart',
@@ -44,7 +44,7 @@ void main() {
   
   // 检查2: 验证freezed文件的import语句
   print('\n📦 检查freezed文件import语句...');
-  final freezedFiles = [;
+  final freezedFiles = [
     'lib/models/generated/browser_tab.freezed.dart',
     'lib/models/generated/history_entry.freezed.dart',
     'lib/models/generated/browser_models.freezed.dart',
@@ -75,7 +75,7 @@ void main() {
   print('\n🔢 检查枚举文件...');
   if (File('lib/models/enums.dart').existsSync()) {
     final content = File('lib/models/enums.dart').readAsStringSync();
-    final requiredEnums = [;
+    final requiredEnums = [
       'ProxyMode',
       'LogLevel', 
       'CloudService',
@@ -95,7 +95,7 @@ void main() {
   
   // 检查4: 验证主要Dart文件语法
   print('\n🔧 检查主要Dart文件语法...');
-  final dartFiles = [;
+  final dartFiles = [
     'lib/models/app_settings.dart',
     'lib/models/BrowserTab.dart',
     'lib/models/HistoryEntry.dart',
